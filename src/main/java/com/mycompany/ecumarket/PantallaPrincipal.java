@@ -51,6 +51,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
         jLabel2 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -146,7 +149,19 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         productosPanel.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, -1, -1));
 
         jTextField1.setText("jTextField1");
-        productosPanel.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 110, -1, -1));
+        productosPanel.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 180, -1, -1));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        productosPanel.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 240, -1, -1));
+
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane4.setViewportView(jList1);
+
+        productosPanel.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 20, -1, -1));
 
         getContentPane().add(productosPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 48, 640, 380));
 
@@ -154,7 +169,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, -1, -1));
 
         jButton7.setText("Puto");
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 240, -1, -1));
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 230, -1, -1));
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -200,6 +220,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
 public void agregarProducto(String productos) {
    
     }
@@ -240,10 +264,12 @@ public void agregarProducto(String productos) {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JList<String> jList1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -252,6 +278,7 @@ public void agregarProducto(String productos) {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel productosPanel;
