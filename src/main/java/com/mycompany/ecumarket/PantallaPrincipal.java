@@ -50,6 +50,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -142,6 +143,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             }
         });
         productosPanel.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, -1, -1));
+
+        jTextField1.setText("jTextField1");
+        productosPanel.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 110, -1, -1));
 
         getContentPane().add(productosPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 48, 640, 380));
 
@@ -244,6 +248,7 @@ public void agregarProducto(String productos) {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel productosPanel;
     // End of variables declaration//GEN-END:variables
 }
