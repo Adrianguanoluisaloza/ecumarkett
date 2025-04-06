@@ -4,6 +4,7 @@
  */
 package com.mycompany.ecumarket;
 
+import java.io.File;
 import javax.swing.*;
 
 /**
@@ -106,6 +107,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(506, 35, 184, 24));
 
         productosPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Producctos"));
+        productosPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        productosPanel.add(jScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 24, 165, 167));
 
         jButton3.setText("Detalles");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -113,6 +116,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
+        productosPanel.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, -1, -1));
+        productosPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 24, 143, 167));
 
         jButton4.setText("Detalles");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -120,69 +125,23 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
+        productosPanel.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, -1, -1));
 
         jButton2.setText("Iniciar");
+        productosPanel.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, -1, -1));
+        productosPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 24, 143, 167));
+        productosPanel.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 140, 149));
 
         jButton5.setText("jButton5");
+        productosPanel.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, -1, -1));
 
-        jButton6.setText("jButton6");
-
-        javax.swing.GroupLayout productosPanelLayout = new javax.swing.GroupLayout(productosPanel);
-        productosPanel.setLayout(productosPanelLayout);
-        productosPanelLayout.setHorizontalGroup(
-            productosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(productosPanelLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, productosPanelLayout.createSequentialGroup()
-                .addGroup(productosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(productosPanelLayout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(jButton3)
-                        .addGap(143, 143, 143)
-                        .addComponent(jButton4))
-                    .addGroup(productosPanelLayout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jButton5)
-                        .addGap(34, 34, 34)
-                        .addGroup(productosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton6)
-                            .addComponent(jButton2))))
-                .addGap(144, 144, 144)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        productosPanelLayout.setVerticalGroup(
-            productosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(productosPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(productosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jScrollPane2))
-                .addGroup(productosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, productosPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(productosPanelLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(productosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton3)
-                            .addComponent(jButton4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(productosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton5)
-                            .addComponent(jButton6))
-                        .addGap(53, 53, 53))))
-        );
+        jButton6.setText("Subir archivo");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        productosPanel.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, -1, -1));
 
         getContentPane().add(productosPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 48, 640, 380));
 
@@ -212,6 +171,27 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+         
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Selecciona un archivo para subir");
+
+        int resultado = fileChooser.showOpenDialog(null); // null: lo muestra en pantalla
+
+        if (resultado == JFileChooser.APPROVE_OPTION) {
+            File archivoSeleccionado = fileChooser.getSelectedFile();
+            System.out.println("Archivo seleccionado: " + archivoSeleccionado.getAbsolutePath());
+
+            // Aquí puedes hacer lo que necesites con el archivo:
+            // ➤ Mostrarlo
+            // ➤ Guardarlo en base de datos
+            // ➤ Copiarlo a una carpeta
+            // ➤ Subirlo con FileOutputStream
+        
+        }
+
+    }//GEN-LAST:event_jButton6ActionPerformed
 public void agregarProducto(String productos) {
    
     }
