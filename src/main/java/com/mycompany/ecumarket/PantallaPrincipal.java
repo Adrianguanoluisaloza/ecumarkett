@@ -52,6 +52,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        jButton7 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -152,6 +153,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabel2.setText("nose probando UNODOSTRES AAAAAAAA");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, -1, -1));
 
+        jButton7.setText("Puto");
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 240, -1, -1));
+
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
 
@@ -235,6 +239,7 @@ public void agregarProducto(String productos) {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
