@@ -56,6 +56,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jList1 = new javax.swing.JList<>();
         jLabel2 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -176,6 +177,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         });
         getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 230, -1, -1));
 
+        jLabel3.setText("Gei");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 110, -1, -1));
+
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
 
@@ -269,6 +273,7 @@ public void agregarProducto(String productos) {
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JList<String> jList1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
