@@ -44,6 +44,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         btnRegistrar = new javax.swing.JButton();
         jComboBox2 = new javax.swing.JComboBox<>();
         btnIngresar = new javax.swing.JButton();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu4 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
@@ -113,7 +117,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         getContentPane().add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(806, 10, 90, -1));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
+        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
 
         btnIngresar.setText("Iniciar Sesion");
         btnIngresar.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -122,6 +126,18 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, -1, -1));
+
+        jTextField2.setText("jTextField2");
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 70, -1, -1));
+
+        jTextField3.setText("jTextField2");
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 110, -1, -1));
+
+        jLabel2.setText("Nombreusuariologeado");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 10, -1, -1));
+
+        jButton2.setText("Cerrar sesion");
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 450, -1, -1));
 
         jMenu4.setText("File");
         jMenuBar2.add(jMenu4);
@@ -192,16 +208,20 @@ public void agregarProducto(String productos) {
     private javax.swing.JButton btnIngresar;
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField searchField;
     private javax.swing.JButton searchProducts;
     // End of variables declaration//GEN-END:variables
