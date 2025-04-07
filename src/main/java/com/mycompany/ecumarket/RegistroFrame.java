@@ -47,29 +47,31 @@ public class RegistroFrame extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         Direccion = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jPanel3 = new javax.swing.JPanel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(" Registro Cliente"));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.setLayout(null);
 
         txtUsuario.setActionCommand("<Not Set>");
-        jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 52, 190, -1));
+        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtUsuario);
+        txtUsuario.setBounds(122, 34, 190, 24);
 
         txtPassword.setActionCommand("<Not Set>");
-        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 190, -1));
+        jPanel1.add(txtPassword);
+        txtPassword.setBounds(122, 160, 190, 22);
 
         txtCiudad.setActionCommand("<Not Set>");
-        jPanel1.add(txtCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 98, 190, -1));
+        jPanel1.add(txtCiudad);
+        txtCiudad.setBounds(122, 118, 190, 24);
 
         btnRegistrar.setText("Registrar");
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
@@ -77,7 +79,8 @@ public class RegistroFrame extends javax.swing.JFrame {
                 btnRegistrarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 141, -1));
+        jPanel1.add(btnRegistrar);
+        btnRegistrar.setBounds(60, 384, 141, 24);
 
         btnVolver.setText("Iniciar sesion");
         btnVolver.addActionListener(new java.awt.event.ActionListener() {
@@ -85,58 +88,44 @@ public class RegistroFrame extends javax.swing.JFrame {
                 btnVolverActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 380, 141, -1));
+        jPanel1.add(btnVolver);
+        btnVolver.setBounds(260, 384, 141, 24);
 
-        jLabel2.setText("Nombre");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 55, -1, -1));
+        jLabel2.setText("Nombres");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(29, 38, 52, 16);
 
         txtProductos.setActionCommand("<Not Set>");
-        jPanel1.add(txtProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 190, -1));
+        jPanel1.add(txtProductos);
+        txtProductos.setBounds(120, 240, 190, 24);
 
         jLabel3.setText("Ciudad");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 101, -1, -1));
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(29, 122, 40, 16);
 
         jLabel4.setText("Telefono");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(20, 250, 48, 16);
 
         jLabel5.setText("Contraseña");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(20, 170, 65, 16);
 
         Direccion.setText("Direccion");
-        jPanel1.add(Direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
+        jPanel1.add(Direccion);
+        Direccion.setBounds(20, 210, 52, 16);
 
         jTextField1.setActionCommand("<Not Set>");
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 190, -1));
+        jPanel1.add(jTextField1);
+        jTextField1.setBounds(120, 200, 190, 24);
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("¿Te interesa vender?"));
+        jLabel8.setText("Apellidos");
+        jPanel1.add(jLabel8);
+        jLabel8.setBounds(29, 80, 51, 16);
+        jPanel1.add(jTextField2);
+        jTextField2.setBounds(122, 76, 190, 24);
 
-        jRadioButton1.setText("Si");
-        jPanel3.add(jRadioButton1);
-
-        jRadioButton2.setText("No");
-        jPanel3.add(jRadioButton2);
-
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 160, 70));
-
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Registro Empresa"));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setText("Tipo de empresa");
-        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, 20));
-
-        jLabel6.setText("Nombre de la empresa");
-        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, 20));
-
-        jLabel7.setText("Direccion");
-        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
-
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, 450, 280));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 460, 440));
-
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Registro Empresa"));
-        jPanel2.setName(""); // NOI18N
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 30, 450, 380));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 450, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -149,6 +138,10 @@ public class RegistroFrame extends javax.swing.JFrame {
         new LoginFrame().setVisible(true);
             dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
+
+    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuarioActionPerformed
 
    
     /**
@@ -184,20 +177,14 @@ public class RegistroFrame extends javax.swing.JFrame {
     private javax.swing.JLabel Direccion;
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnVolver;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField txtCiudad;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtProductos;
