@@ -152,7 +152,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 110, -1, -1));
 
         jLabel2.setText("Nombreusuariologeado");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 10, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, -1, -1));
 
         jButton2.setText("Cerrar sesion");
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 450, -1, -1));
