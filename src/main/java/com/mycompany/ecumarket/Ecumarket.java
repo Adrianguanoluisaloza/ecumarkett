@@ -17,11 +17,11 @@ public class Ecumarket {
        try{
            UIManager.setLookAndFeel("javax.swing.plaf.nibus.NibusLookAndFeel");
            
-       }catch (Exception e){
+       }catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException e){
            e.printStackTrace();
        }
         SwingUtilities.invokeLater(() -> {
-        new LoginFrame().setVisible(true); // Asegura que se inicializa correctamente
+        new PantallaPrincipal().setVisible(true); 
     });
     }
 }

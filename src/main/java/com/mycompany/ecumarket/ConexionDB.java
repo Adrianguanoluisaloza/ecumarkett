@@ -11,23 +11,20 @@ import java.sql.SQLException;
  * @author Adrian
  */
 public class ConexionDB {
-   private static final String URL = "jdbc:mysql://localhost:3306/ecumarket";
-    private static final String USUARIO = "root";  // Cambia si tienes otro usuario en MySQL
-    private static final String CONTRASEÑA = ""; 
- public static Connection conectar() {
+ private static final String URL = "jdbc:mysql://localhost:3306/ECUMARKET";
+    private static final String USER = "root";
+    private static final String PASSWORD = "root"; // Cambia la contraseña si es necesario.
+
+    public static Connection getConnection() throws SQLException {
         try {
-            Connection conn = DriverManager.getConnection(URL, USUARIO, CONTRASEÑA);
-            //jksksj
-            System.out.println("✅ Conexión exitosa a la base de datos");
-            return conn;
-        } catch (SQLException e) {
-            System.out.println("❌ Error de conexión: " + e.getMessage());
-            return null;
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            return DriverManager.getConnection(URL, USER, PASSWORD);
+        } catch (ClassNotFoundException | SQLException e) {
+            throw new SQLException("Error al conectar con la base de datos", e);
         }
     }
 
-    // Método para probar la conexión
-    public static void main(String[] args) {
-        ConexionDB.conectar();
+    static Connection getConexion() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

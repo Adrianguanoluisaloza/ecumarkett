@@ -19,11 +19,11 @@ public class LoginFrame extends javax.swing.JFrame {
     public LoginFrame() {
         try {
     UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
-} catch (Exception e) {
+} catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException e) {
     e.printStackTrace();
 }
+   
 
-    
         initComponents();
     }
 
@@ -48,12 +48,12 @@ public class LoginFrame extends javax.swing.JFrame {
         setBackground(new java.awt.Color(153, 255, 153));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Iniciar Sesion"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Cliente"));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Contraseña");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 97, 233, -1));
-        jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 153, -1));
+        jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 60, 190, -1));
 
         jLabel2.setText("Usuario");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 57, -1, -1));
@@ -64,7 +64,7 @@ public class LoginFrame extends javax.swing.JFrame {
                 btnLoginActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 176, -1, -1));
+        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, -1, -1));
 
         btnRegistrar.setText("Registrarse");
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
@@ -72,14 +72,14 @@ public class LoginFrame extends javax.swing.JFrame {
                 btnRegistrarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 232, 100, -1));
+        jPanel1.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 100, -1));
 
         txtPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPasswordActionPerformed(evt);
             }
         });
-        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 153, -1));
+        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 100, 180, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 6, 340, 280));
 
@@ -98,31 +98,11 @@ public class LoginFrame extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
        
-                iniciarSesion();
+               
             
     }//GEN-LAST:event_btnLoginActionPerformed
         
-     private void iniciarSesion() {
-    String usuario = txtUsuario.getText();
-    String contraseña = new String(txtPassword.getPassword());
-
-    if (usuario.isEmpty() || contraseña.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Ingrese usuario y contraseña.");
-        return;
-    }
-
-    UsuarioDAO dao = new UsuarioDAO();
-    String productos = dao.validarLogin(usuario, contraseña);
-    if (productos != null) {
-        JOptionPane.showMessageDialog(this, "Inicio de sesión exitoso.");
-        PantallaPrincipal pantalla = new PantallaPrincipal();
-        pantalla.agregarProducto(productos);
-        pantalla.setVisible(true);
-        dispose();
-    } else {
-        JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos.");
-    }
-}
+  
       
     /**
      * @param args the command line arguments

@@ -4,9 +4,7 @@
  */
 package com.mycompany.ecumarket;
 
-import java.io.File;
 import javax.swing.*;
-
 /**
  *
  * @author Adrian
@@ -36,30 +34,19 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jDialog1 = new javax.swing.JDialog();
         jFrame1 = new javax.swing.JFrame();
+        jPopupMenu1 = new javax.swing.JPopupMenu();
+        jMenu3 = new javax.swing.JMenu();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        productosPanel = new javax.swing.JPanel();
-        jScrollPane = new javax.swing.JScrollPane();
-        jButton3 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jButton4 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
-        jLabel2 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        searchField = new javax.swing.JTextField();
+        searchProducts = new javax.swing.JButton();
+        btnRegistrar = new javax.swing.JButton();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        btnIngresar = new javax.swing.JButton();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -83,6 +70,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
+        jMenu3.setText("jMenu3");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -99,94 +88,48 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1005, 27, -1, -1));
 
-        jButton1.setText("Cerrar sesion");
+        jButton1.setText("Salir");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 450, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel1.setText("Bienvenidos a Ecumarket");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 205, 23));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(506, 35, 184, 24));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 205, 23));
+        getContentPane().add(searchField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 350, -1));
 
-        productosPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Producctos"));
-        productosPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        productosPanel.add(jScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 24, 165, 167));
-
-        jButton3.setText("Detalles");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        searchProducts.setText("Buscar");
+        searchProducts.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                searchProductsActionPerformed(evt);
             }
         });
-        productosPanel.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, -1, -1));
-        productosPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 24, 143, 167));
+        getContentPane().add(searchProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, -1, -1));
 
-        jButton4.setText("Detalles");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+        btnRegistrar.setText("Registrar");
+        getContentPane().add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(806, 10, 90, -1));
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
+
+        btnIngresar.setText("Iniciar Sesion");
+        btnIngresar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnIngresarKeyPressed(evt);
             }
         });
-        productosPanel.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, -1, -1));
+        getContentPane().add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, -1, -1));
 
-        jButton2.setText("Iniciar");
-        productosPanel.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, -1, -1));
-        productosPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 24, 143, 167));
-        productosPanel.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 140, 149));
+        jMenu4.setText("File");
+        jMenuBar2.add(jMenu4);
 
-        jButton5.setText("jButton5");
-        productosPanel.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, -1, -1));
+        jMenu5.setText("Edit");
+        jMenuBar2.add(jMenu5);
 
-        jButton6.setText("Subir archivo");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-        productosPanel.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, -1, -1));
-
-        jTextField1.setText("jTextField1");
-        productosPanel.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 180, -1, -1));
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        productosPanel.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 240, -1, -1));
-
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane4.setViewportView(jList1);
-
-        productosPanel.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 20, -1, -1));
-
-        getContentPane().add(productosPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 48, 640, 380));
-
-        jLabel2.setText("nose probando UNODOSTRES AAAAAAAA");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, -1, -1));
-
-        jButton7.setText("Puto");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 230, -1, -1));
-
-        jLabel3.setText("Gei");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 110, -1, -1));
-
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
-
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(jMenuBar2);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -196,38 +139,23 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     dispose(); //
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnIngresarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnIngresarKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnIngresarKeyPressed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-         
-        JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle("Selecciona un archivo para subir");
-
-        int resultado = fileChooser.showOpenDialog(null); // null: lo muestra en pantalla
-
-        if (resultado == JFileChooser.APPROVE_OPTION) {
-            File archivoSeleccionado = fileChooser.getSelectedFile();
-            System.out.println("Archivo seleccionado: " + archivoSeleccionado.getAbsolutePath());
-
-            // Aquí puedes hacer lo que necesites con el archivo:
-            // ➤ Mostrarlo
-            // ➤ Guardarlo en base de datos
-            // ➤ Copiarlo a una carpeta
-            // ➤ Subirlo con FileOutputStream
-        
+    private void searchProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchProductsActionPerformed
+         String query = searchField.getText().trim();
+        if (!query.isEmpty()) {
+            // Llamar al DAO para buscar productos con el nombre o descripción que coincidan
+            ProductoBs.searchProducts(query);
+            JOptionPane.showMessageDialog(this, "Búsqueda realizada para: " + query);
         }
+    }//GEN-LAST:event_searchProductsActionPerformed
+    // TODO add your handling code here:
+    // TODO add your handling code here:
 
-    }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+
 public void agregarProducto(String productos) {
    
     }
@@ -261,31 +189,20 @@ public void agregarProducto(String productos) {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnIngresar;
+    private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JPanel productosPanel;
+    private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JTextField searchField;
+    private javax.swing.JButton searchProducts;
     // End of variables declaration//GEN-END:variables
 }

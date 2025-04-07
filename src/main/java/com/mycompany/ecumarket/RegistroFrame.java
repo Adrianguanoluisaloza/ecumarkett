@@ -35,33 +35,33 @@ public class RegistroFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        cmbTipo = new javax.swing.JComboBox<>();
         txtUsuario = new javax.swing.JTextField();
         txtPassword = new javax.swing.JPasswordField();
         txtCiudad = new javax.swing.JTextField();
         btnRegistrar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         btnVolver = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         txtProductos = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        Direccion = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Registro"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(" Registro Cliente"));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        cmbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cliente", "Vendedor" }));
-        cmbTipo.setToolTipText("");
-        cmbTipo.setBorder(new javax.swing.border.MatteBorder(null));
-        cmbTipo.setFocusCycleRoot(true);
-        cmbTipo.setOpaque(true);
-        cmbTipo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbTipoActionPerformed(evt);
-            }
-        });
+        txtUsuario.setActionCommand("<Not Set>");
+        jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 52, 190, -1));
+
+        txtPassword.setActionCommand("<Not Set>");
+        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 190, -1));
+
+        txtCiudad.setActionCommand("<Not Set>");
+        jPanel1.add(txtCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 98, 190, -1));
 
         btnRegistrar.setText("Registrar");
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
@@ -69,8 +69,7 @@ public class RegistroFrame extends javax.swing.JFrame {
                 btnRegistrarActionPerformed(evt);
             }
         });
-
-        jLabel1.setText("Tipo De Usuario");
+        jPanel1.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, 141, -1));
 
         btnVolver.setText("Iniciar sesion");
         btnVolver.addActionListener(new java.awt.event.ActionListener() {
@@ -78,104 +77,36 @@ public class RegistroFrame extends javax.swing.JFrame {
                 btnVolverActionPerformed(evt);
             }
         });
+        jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 350, 141, -1));
 
         jLabel2.setText("Nombre");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 55, -1, -1));
+
+        txtProductos.setActionCommand("<Not Set>");
+        jPanel1.add(txtProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 190, -1));
 
         jLabel3.setText("Ciudad");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 101, -1, -1));
 
-        jLabel4.setText("Productos");
+        jLabel4.setText("Telefono");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
 
         jLabel5.setText("Contraseña");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel2)
-                                .addComponent(jLabel3))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel4)))
-                            .addComponent(jLabel1))
-                        .addGap(54, 54, 54)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(cmbTipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(102, 102, 102)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(33, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmbTipo)
-                    .addComponent(jLabel1))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(24, 24, 24)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtProductos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(40, 40, 40)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addGap(30, 30, 30)
-                .addComponent(btnRegistrar)
-                .addGap(18, 18, 18)
-                .addComponent(btnVolver)
-                .addGap(82, 82, 82))
-        );
+        Direccion.setText("Direccion");
+        jPanel1.add(Direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(34, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 397, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jTextField1.setActionCommand("<Not Set>");
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 190, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 460, 397));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cmbTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbTipoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbTipoActionPerformed
-
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        registrarUsuario();
+       
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
@@ -183,36 +114,7 @@ public class RegistroFrame extends javax.swing.JFrame {
             dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
 
-    private void registrarUsuario() {
-    String usuario = txtUsuario.getText();
-    String contraseña = new String(txtPassword.getPassword());
-    String tipo = cmbTipo.getSelectedItem().toString();
-    String nombre = txtUsuario.getText();
-    String ciudad = txtCiudad.getText();
-    String productos = txtProductos.getText();
-
-    if (usuario.isEmpty() || contraseña.isEmpty() || tipo.isEmpty() || nombre.isEmpty() || ciudad.isEmpty() || productos.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios.");
-        return;
-    }
-
-    UsuarioDAO dao = new UsuarioDAO();
-    String productosExistentes = dao.validarLogin(usuario, contraseña);
-    if (productosExistentes != null) {
-        JOptionPane.showMessageDialog(this, "El usuario ya existe.");
-        return;
-    }
-
-    if (dao.registrarUsuario(usuario, contraseña, tipo, nombre, ciudad, productos)) {
-        JOptionPane.showMessageDialog(this, "Usuario registrado con éxito.");
-        PantallaPrincipal pantalla = new PantallaPrincipal();
-        pantalla.agregarProducto(productos);
-        pantalla.setVisible(true);
-        dispose();
-    } else {
-        JOptionPane.showMessageDialog(this, "Error al registrar usuario.");
-    }
-}
+   
     /**
      * @param args the command line arguments
      */
@@ -243,15 +145,15 @@ public class RegistroFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Direccion;
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnVolver;
-    private javax.swing.JComboBox<String> cmbTipo;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField txtCiudad;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtProductos;
