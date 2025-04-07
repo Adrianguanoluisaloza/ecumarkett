@@ -51,12 +51,110 @@
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="jMenu4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="File"/>
+            <Property name="text" type="java.lang.String" value=" Categorias"/>
           </Properties>
+          <SubComponents>
+            <Menu class="javax.swing.JMenu" name="jMenu7">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Productos"/>
+              </Properties>
+              <SubComponents>
+                <Menu class="javax.swing.JMenu" name="jMenu10">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Tecnologia"/>
+                  </Properties>
+                </Menu>
+                <Menu class="javax.swing.JMenu" name="jMenu11">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Hogar"/>
+                  </Properties>
+                </Menu>
+              </SubComponents>
+            </Menu>
+            <Menu class="javax.swing.JMenu" name="jMenu8">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Servicios"/>
+              </Properties>
+              <SubComponents>
+                <Menu class="javax.swing.JMenu" name="jMenu12">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Belleza"/>
+                  </Properties>
+                </Menu>
+                <Menu class="javax.swing.JMenu" name="jMenu13">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Reparaciones/instalaciones"/>
+                  </Properties>
+                </Menu>
+                <Menu class="javax.swing.JMenu" name="jMenu14">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Fiestas"/>
+                  </Properties>
+                </Menu>
+                <Menu class="javax.swing.JMenu" name="jMenu19">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Servicios medicos"/>
+                  </Properties>
+                </Menu>
+                <Menu class="javax.swing.JMenu" name="jMenu20">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Viajes"/>
+                  </Properties>
+                </Menu>
+                <Menu class="javax.swing.JMenu" name="jMenu21">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Otros"/>
+                  </Properties>
+                </Menu>
+              </SubComponents>
+            </Menu>
+            <Menu class="javax.swing.JMenu" name="jMenu9">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Vehiculos"/>
+              </Properties>
+              <SubComponents>
+                <Menu class="javax.swing.JMenu" name="jMenu15">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Autos"/>
+                  </Properties>
+                </Menu>
+                <Menu class="javax.swing.JMenu" name="jMenu16">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Autos pesados"/>
+                  </Properties>
+                </Menu>
+                <Menu class="javax.swing.JMenu" name="jMenu17">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Motocicletas"/>
+                  </Properties>
+                </Menu>
+                <Menu class="javax.swing.JMenu" name="jMenu18">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Otros"/>
+                  </Properties>
+                </Menu>
+              </SubComponents>
+            </Menu>
+          </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu5">
           <Properties>
             <Property name="text" type="java.lang.String" value="Edit"/>
+          </Properties>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="jMenu1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="jMenu1"/>
+          </Properties>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="jMenu2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="jMenu2"/>
+          </Properties>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="jMenu6">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Vender"/>
           </Properties>
         </Menu>
       </SubComponents>
@@ -155,7 +253,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnRegistrar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Registrar"/>
+        <Property name="text" type="java.lang.String" value="Registrarse"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

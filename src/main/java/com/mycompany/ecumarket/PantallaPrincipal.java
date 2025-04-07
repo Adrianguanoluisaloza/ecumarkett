@@ -50,7 +50,25 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu4 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
+        jMenu10 = new javax.swing.JMenu();
+        jMenu11 = new javax.swing.JMenu();
+        jMenu8 = new javax.swing.JMenu();
+        jMenu12 = new javax.swing.JMenu();
+        jMenu13 = new javax.swing.JMenu();
+        jMenu14 = new javax.swing.JMenu();
+        jMenu19 = new javax.swing.JMenu();
+        jMenu20 = new javax.swing.JMenu();
+        jMenu21 = new javax.swing.JMenu();
+        jMenu9 = new javax.swing.JMenu();
+        jMenu15 = new javax.swing.JMenu();
+        jMenu16 = new javax.swing.JMenu();
+        jMenu17 = new javax.swing.JMenu();
+        jMenu18 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -113,7 +131,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         });
         getContentPane().add(searchProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, -1, -1));
 
-        btnRegistrar.setText("Registrar");
+        btnRegistrar.setText("Registrarse");
         getContentPane().add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(806, 10, 90, -1));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -139,11 +157,69 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jButton2.setText("Cerrar sesion");
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 450, -1, -1));
 
-        jMenu4.setText("File");
+        jMenu4.setText(" Categorias");
+
+        jMenu7.setText("Productos");
+
+        jMenu10.setText("Tecnologia");
+        jMenu7.add(jMenu10);
+
+        jMenu11.setText("Hogar");
+        jMenu7.add(jMenu11);
+
+        jMenu4.add(jMenu7);
+
+        jMenu8.setText("Servicios");
+
+        jMenu12.setText("Belleza");
+        jMenu8.add(jMenu12);
+
+        jMenu13.setText("Reparaciones/instalaciones");
+        jMenu8.add(jMenu13);
+
+        jMenu14.setText("Fiestas");
+        jMenu8.add(jMenu14);
+
+        jMenu19.setText("Servicios medicos");
+        jMenu8.add(jMenu19);
+
+        jMenu20.setText("Viajes");
+        jMenu8.add(jMenu20);
+
+        jMenu21.setText("Otros");
+        jMenu8.add(jMenu21);
+
+        jMenu4.add(jMenu8);
+
+        jMenu9.setText("Vehiculos");
+
+        jMenu15.setText("Autos");
+        jMenu9.add(jMenu15);
+
+        jMenu16.setText("Autos pesados");
+        jMenu9.add(jMenu16);
+
+        jMenu17.setText("Motocicletas");
+        jMenu9.add(jMenu17);
+
+        jMenu18.setText("Otros");
+        jMenu9.add(jMenu18);
+
+        jMenu4.add(jMenu9);
+
         jMenuBar2.add(jMenu4);
 
         jMenu5.setText("Edit");
         jMenuBar2.add(jMenu5);
+
+        jMenu1.setText("jMenu1");
+        jMenuBar2.add(jMenu1);
+
+        jMenu2.setText("jMenu2");
+        jMenuBar2.add(jMenu2);
+
+        jMenu6.setText("Vender");
+        jMenuBar2.add(jMenu6);
 
         setJMenuBar(jMenuBar2);
 
@@ -214,9 +290,27 @@ public void agregarProducto(String productos) {
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu10;
+    private javax.swing.JMenu jMenu11;
+    private javax.swing.JMenu jMenu12;
+    private javax.swing.JMenu jMenu13;
+    private javax.swing.JMenu jMenu14;
+    private javax.swing.JMenu jMenu15;
+    private javax.swing.JMenu jMenu16;
+    private javax.swing.JMenu jMenu17;
+    private javax.swing.JMenu jMenu18;
+    private javax.swing.JMenu jMenu19;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu20;
+    private javax.swing.JMenu jMenu21;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopupMenu1;
