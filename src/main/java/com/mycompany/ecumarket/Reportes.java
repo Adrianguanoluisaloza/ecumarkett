@@ -4,8 +4,6 @@
  */
 package com.mycompany.ecumarket;
 
-import javax.swing.JFrame;
-
 /**
  *
  * @author Adrian
@@ -17,8 +15,8 @@ public class Reportes extends javax.swing.JFrame {
      */
     public Reportes() {
         initComponents();
-        setLocationRelativeTo(true);
-       setExtendedState(JFrame.MAXIMIZED_BOTH); 
+      //setLocationRelativeTo(true);
+       //tExtendedState(JFrame.MAXIMIZED_BOTH); 
     }
 
     /**
