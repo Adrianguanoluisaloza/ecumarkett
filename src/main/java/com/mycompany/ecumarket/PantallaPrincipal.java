@@ -48,6 +48,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         bkgregister = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu4 = new javax.swing.JMenu();
         jMenu7 = new javax.swing.JMenu();
@@ -131,7 +132,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         lblnombreusuario.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblnombreusuario.setText("Nombreusuariologeado");
-        bkgprincipalform.add(lblnombreusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, -1, -1));
+        bkgprincipalform.add(lblnombreusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, -1, -1));
 
         jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -169,7 +170,22 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         bkgprincipalform.add(bkgregister, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 100, 30));
 
-        getContentPane().add(bkgprincipalform, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 480));
+        jPanel2.setBackground(new java.awt.Color(0, 102, 255));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 810, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 340, Short.MAX_VALUE)
+        );
+
+        bkgprincipalform.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 810, 340));
+
+        getContentPane().add(bkgprincipalform, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 490));
 
         jMenuBar2.setBackground(new java.awt.Color(255, 51, 51));
         jMenuBar2.setBorder(null);
@@ -338,6 +354,7 @@ public void agregarProducto(String productos) {
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblnombreusuario;
