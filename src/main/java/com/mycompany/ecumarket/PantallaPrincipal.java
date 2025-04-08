@@ -37,17 +37,17 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jPopupMenu1 = new javax.swing.JPopupMenu();
         jMenu3 = new javax.swing.JMenu();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        bkgprincipalform = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        searchField = new javax.swing.JTextField();
         searchProducts = new javax.swing.JButton();
-        btnRegistrar = new javax.swing.JButton();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        btnIngresar = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        lblnombreusuario = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        bkglogin = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        bkgexit = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        bkgregister = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu4 = new javax.swing.JMenu();
         jMenu7 = new javax.swing.JMenu();
@@ -65,10 +65,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenu16 = new javax.swing.JMenu();
         jMenu17 = new javax.swing.JMenu();
         jMenu18 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -95,6 +95,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenu3.setText("jMenu3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setFocusable(false);
+        setFocusableWindowState(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -110,54 +112,74 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1005, 27, -1, -1));
 
-        jButton1.setText("Salir");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 450, -1, -1));
+        bkgprincipalform.setBackground(new java.awt.Color(255, 255, 255));
+        bkgprincipalform.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Bienvenidos a Ecumarket");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 205, 23));
-        getContentPane().add(searchField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 350, -1));
+        bkgprincipalform.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 480, 30));
 
+        searchProducts.setBackground(new java.awt.Color(0, 51, 204));
         searchProducts.setText("Buscar");
         searchProducts.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchProductsActionPerformed(evt);
             }
         });
-        getContentPane().add(searchProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, -1, -1));
+        bkgprincipalform.add(searchProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 60, -1));
 
-        btnRegistrar.setText("Registrarse");
-        getContentPane().add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(806, 10, 90, -1));
+        lblnombreusuario.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        lblnombreusuario.setText("Nombreusuariologeado");
+        bkgprincipalform.add(lblnombreusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, -1, -1));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextField1.setText("Ingresa lo que estas buscando");
+        jTextField1.setBorder(null);
+        bkgprincipalform.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 310, -1));
 
-        btnIngresar.setText("Iniciar Sesion");
-        btnIngresar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                btnIngresarKeyPressed(evt);
-            }
-        });
-        getContentPane().add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, -1, -1));
+        bkglogin.setBackground(new java.awt.Color(0, 51, 204));
+        bkglogin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField2.setText("jTextField2");
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 70, -1, -1));
+        jLabel3.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Registrarse");
+        bkglogin.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 30));
 
-        jTextField3.setText("jTextField2");
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 110, -1, -1));
+        bkgprincipalform.add(bkglogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, 100, 30));
 
-        jLabel2.setText("Nombreusuariologeado");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, -1, -1));
+        bkgexit.setBackground(new java.awt.Color(0, 51, 204));
+        bkgexit.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setText("Cerrar sesion");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 450, -1, -1));
+        jLabel4.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Cerrar sesion");
+        bkgexit.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 30));
 
-        jMenu4.setText(" Categorias");
+        bkgprincipalform.add(bkgexit, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 100, 30));
+
+        bkgregister.setBackground(new java.awt.Color(0, 51, 204));
+        bkgregister.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Iniciar sesion");
+        bkgregister.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 30));
+
+        bkgprincipalform.add(bkgregister, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 100, 30));
+
+        getContentPane().add(bkgprincipalform, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 480));
+
+        jMenuBar2.setBackground(new java.awt.Color(255, 51, 51));
+        jMenuBar2.setBorder(null);
+        jMenuBar2.setForeground(new java.awt.Color(255, 51, 51));
+
+        jMenu4.setBackground(new java.awt.Color(255, 255, 0));
+        jMenu4.setBorder(null);
+        jMenu4.setForeground(new java.awt.Color(0, 0, 0));
+        jMenu4.setText("Comprar");
+        jMenu4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         jMenu7.setText("Productos");
 
@@ -209,34 +231,41 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jMenuBar2.add(jMenu4);
 
-        jMenu5.setText("Edit");
-        jMenuBar2.add(jMenu5);
+        jMenu6.setBackground(new java.awt.Color(255, 255, 0));
+        jMenu6.setBorder(null);
+        jMenu6.setForeground(new java.awt.Color(0, 0, 0));
+        jMenu6.setText("Vender");
+        jMenu6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jMenuBar2.add(jMenu6);
 
-        jMenu1.setText("jMenu1");
+        jMenu1.setBackground(new java.awt.Color(255, 255, 0));
+        jMenu1.setBorder(null);
+        jMenu1.setForeground(new java.awt.Color(0, 0, 0));
+        jMenu1.setText("Reportes");
+        jMenu1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jMenuBar2.add(jMenu1);
 
-        jMenu2.setText("jMenu2");
+        jMenu2.setBackground(new java.awt.Color(0, 51, 204));
+        jMenu2.setBorder(null);
+        jMenu2.setForeground(new java.awt.Color(0, 0, 0));
+        jMenu2.setText("Ayuda");
+        jMenu2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jMenuBar2.add(jMenu2);
 
-        jMenu6.setText("Vender");
-        jMenuBar2.add(jMenu6);
+        jMenu5.setBackground(new java.awt.Color(0, 51, 204));
+        jMenu5.setBorder(null);
+        jMenu5.setForeground(new java.awt.Color(0, 0, 0));
+        jMenu5.setText("Salir");
+        jMenu5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jMenuBar2.add(jMenu5);
 
         setJMenuBar(jMenuBar2);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new LoginFrame().setVisible(true); // Abre LoginFrame
-    dispose(); //
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void btnIngresarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnIngresarKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnIngresarKeyPressed
-
     private void searchProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchProductsActionPerformed
-         String query = searchField.getText().trim();
+        String query = searchField.getText().trim();
         if (!query.isEmpty()) {
             // Llamar al DAO para buscar productos con el nombre o descripción que coincidan
             ProductoBs.searchProducts(query);
@@ -281,15 +310,16 @@ public void agregarProducto(String productos) {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnIngresar;
-    private javax.swing.JButton btnRegistrar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JPanel bkgexit;
+    private javax.swing.JPanel bkglogin;
+    private javax.swing.JPanel bkgprincipalform;
+    private javax.swing.JPanel bkgregister;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu11;
@@ -314,9 +344,8 @@ public void agregarProducto(String productos) {
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopupMenu1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField searchField;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel lblnombreusuario;
     private javax.swing.JButton searchProducts;
     // End of variables declaration//GEN-END:variables
 }
