@@ -196,6 +196,7 @@ public class GestionProductos extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Cuchillo.png"))); // NOI18N
         jLabel9.setText("jLabel9");
 
         jLabel10.setText("Nombre:");
