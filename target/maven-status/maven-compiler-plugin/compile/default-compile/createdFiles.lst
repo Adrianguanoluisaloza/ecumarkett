@@ -1,7 +1,5 @@
 com\mycompany\ecumarket\Facturacion$1.class
-com\mycompany\ecumarket\RegistroFrame$3.class
 com\mycompany\ecumarket\Facturacion.class
-com\mycompany\ecumarket\RegistroFrame$2.class
 com\mycompany\ecumarket\GestionProductos.class
 com\mycompany\ecumarket\Reportes.class
 com\mycompany\ecumarket\Reportes$1.class
@@ -12,5 +10,4 @@ com\mycompany\ecumarket\ConexionDB.class
 com\mycompany\ecumarket\PantallaPrincipal.class
 com\mycompany\ecumarket\Ecumarket.class
 com\mycompany\ecumarket\GestionProductos$1.class
-com\mycompany\ecumarket\RegistroFrame$1.class
 com\mycompany\ecumarket\RegistroFrame.class
