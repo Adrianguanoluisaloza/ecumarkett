@@ -1,7 +1,5 @@
-com\mycompany\ecumarket\PantallaPrincipal$3.class
 com\mycompany\ecumarket\FormularioLoginVendedor.class
 com\mycompany\ecumarket\RegistroFrame$2.class
-com\mycompany\ecumarket\FormularioRegistroTipo.class
 com\mycompany\ecumarket\FormularioRegistroVendedor.class
 com\mycompany\ecumarket\Cliente.class
 com\mycompany\ecumarket\PantallaPrincipal$1.class
@@ -13,13 +11,10 @@ com\mycompany\ecumarket\Ecumarket.class
 com\mycompany\ecumarket\RegistroFrame$1.class
 com\mycompany\ecumarket\FormularioLoginVendedor$2.class
 com\mycompany\ecumarket\FormularioRegistroVendedor$1.class
-com\mycompany\ecumarket\PantallaPrincipal$2.class
-com\mycompany\ecumarket\LoginFrame$3.class
 com\mycompany\ecumarket\FormularioDetalleProducto.class
 com\mycompany\ecumarket\FormularioLoginTipo$1.class
-com\mycompany\ecumarket\LoginFrame$2.class
 com\mycompany\ecumarket\Vendedor.class
-com\mycompany\ecumarket\FormularioRegistroTipo$1.class
+com\mycompany\ecumarket\RegistroFrame$3.class
 com\mycompany\ecumarket\FormularioDetalleProducto$1.class
 com\mycompany\ecumarket\UsuarioDAO.class
 com\mycompany\ecumarket\ProductoBs.class
