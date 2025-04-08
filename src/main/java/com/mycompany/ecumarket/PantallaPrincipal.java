@@ -265,12 +265,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchProductsActionPerformed
-        String query = searchField.getText().trim();
-        if (!query.isEmpty()) {
-            // Llamar al DAO para buscar productos con el nombre o descripción que coincidan
-            ProductoBs.searchProducts(query);
-            JOptionPane.showMessageDialog(this, "Búsqueda realizada para: " + query);
-        }
+       
     }//GEN-LAST:event_searchProductsActionPerformed
     // TODO add your handling code here:
     // TODO add your handling code here:

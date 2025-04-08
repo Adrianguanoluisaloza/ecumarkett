@@ -8,12 +8,12 @@ package com.mycompany.ecumarket;
  *
  * @author Adrian
  */
-public class FormularioVerCarrito extends javax.swing.JFrame {
+public class GestionProductos extends javax.swing.JFrame {
 
     /**
-     * Creates new form FormularioVerCarrito
+     * Creates new form GestionProductos
      */
-    public FormularioVerCarrito() {
+    public GestionProductos() {
         initComponents();
     }
 
@@ -59,20 +59,20 @@ public class FormularioVerCarrito extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FormularioVerCarrito.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GestionProductos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FormularioVerCarrito.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GestionProductos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FormularioVerCarrito.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GestionProductos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FormularioVerCarrito.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GestionProductos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FormularioVerCarrito().setVisible(true);
+                new GestionProductos().setVisible(true);
             }
         });
     }

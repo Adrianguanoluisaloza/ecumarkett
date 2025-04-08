@@ -60,9 +60,7 @@ public class LoginFrame extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtPassword.setBackground(new java.awt.Color(255, 255, 255));
         txtPassword.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txtPassword.setText("********");
         txtPassword.setBorder(null);
         txtPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,7 +69,6 @@ public class LoginFrame extends javax.swing.JFrame {
         });
         jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 220, 20));
 
-        txtUsuario.setBackground(new java.awt.Color(255, 255, 255));
         txtUsuario.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtUsuario.setForeground(new java.awt.Color(204, 204, 204));
         txtUsuario.setText("Ingrese su usuario");

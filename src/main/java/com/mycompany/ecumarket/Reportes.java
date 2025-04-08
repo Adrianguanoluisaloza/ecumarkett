@@ -8,12 +8,12 @@ package com.mycompany.ecumarket;
  *
  * @author Adrian
  */
-public class FormularioDetalleProducto extends javax.swing.JFrame {
+public class Reportes extends javax.swing.JFrame {
 
     /**
-     * Creates new form FormularioDetalleProducto
+     * Creates new form Reportes
      */
-    public FormularioDetalleProducto() {
+    public Reportes() {
         initComponents();
     }
 
@@ -26,34 +26,17 @@ public class FormularioDetalleProducto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnAgregarAlCarrito = new javax.swing.JButton();
-        btnComprarAhora = new javax.swing.JButton();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        btnAgregarAlCarrito.setText("Carrito");
-
-        btnComprarAhora.setText("Comprar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(btnAgregarAlCarrito)
-                .addGap(53, 53, 53)
-                .addComponent(btnComprarAhora)
-                .addContainerGap(108, Short.MAX_VALUE))
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(244, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAgregarAlCarrito)
-                    .addComponent(btnComprarAhora))
-                .addGap(33, 33, 33))
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         pack();
@@ -76,26 +59,24 @@ public class FormularioDetalleProducto extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FormularioDetalleProducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reportes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FormularioDetalleProducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reportes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FormularioDetalleProducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reportes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FormularioDetalleProducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reportes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FormularioDetalleProducto().setVisible(true);
+                new Reportes().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgregarAlCarrito;
-    private javax.swing.JButton btnComprarAhora;
     // End of variables declaration//GEN-END:variables
 }
