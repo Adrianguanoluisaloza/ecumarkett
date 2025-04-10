@@ -26,18 +26,69 @@ public class Facturacion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        txtUsuario = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(51, 102, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel1.setText("Usuario");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 39, -1, -1));
+
+        txtUsuario.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
+        jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 36, 162, -1));
+
+        jLabel2.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel2.setText("Fecha de venta");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 77, -1, -1));
+        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 77, 185, -1));
+
+        jLabel3.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel3.setText("Metodo de pago");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 157, 177, -1));
+
+        jLabel4.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel4.setText("Total");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paypal", "Banco Pichincha", "Banco Guayaquil", "Produbanco" }));
+        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 117, 143, -1));
+
+        jButton1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jButton1.setText("Aceptar");
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 238, 121, 48));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 380, 500));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Producto", "Cantidad", "Precio", "Metodo pago"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 0, 530, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -78,5 +129,17 @@ public class Facturacion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
