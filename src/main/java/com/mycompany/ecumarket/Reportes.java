@@ -35,7 +35,6 @@ public class Reportes extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         btnExportar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaResultados = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -70,7 +69,6 @@ public class Reportes extends javax.swing.JFrame {
         getContentPane().add(btnExportar, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 80, 140, 25));
         btnExportar.getAccessibleContext().setAccessibleDescription("");
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, -1, -1));
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 110, -1, -1));
 
         jTable1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -141,7 +139,6 @@ public class Reportes extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JScrollPane tablaResultados;
