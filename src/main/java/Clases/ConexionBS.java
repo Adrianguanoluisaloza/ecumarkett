@@ -6,35 +6,37 @@ package Clases;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import javax.swing.JOptionPane;
+import java.sql.SQLException;
 
 /**
  *
  * @author Adrian
  */
 public class ConexionBS {
-     Connection conectar;
-        String usuario="root";
-    String contrasenia="";
-    String bd="login";
-    String ip="localhost";
-    String puerto="3306";
-    String cadena = "jdbc:mysql://"+ip+":"+puerto+"/"+bd;
-    public Connection estableceConexion(){
-    
+
+    static Connection conectar() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+   public class ConexionDB {
+   private static final String URL = "jdbc:mysql://localhost:3306/ecumarket";
+    private static final String USUARIO = "root";  // Cambia si tienes otro usuario en MySQL
+    private static final String CONTRASEÑA = ""; 
+ public static Connection conectar() {
         try {
-            
-            Class.forName("com.mysql.jdbc.Driver");
-            conectar = DriverManager.getConnection(cadena,usuario,contrasenia);
-            
-            
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,"Problemas en la conexion"+ e.toString());
+            Connection conn = DriverManager.getConnection(URL, USUARIO, CONTRASEÑA);
+            System.out.println("✅ Conexión exitosa a la base de datos");
+            return conn;
+        } catch (SQLException e) {
+            System.out.println("❌ Error de conexión: " + e.getMessage());
+            return null;
         }
-        return conectar;
+    }
 
+    // Método para probar la conexión
+    public static void main(String[] args) {
+        ConexionDB.conectar();
+    }
+   }
 }
-}
-
 
 

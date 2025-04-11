@@ -4,7 +4,7 @@
  */
 package com.mycompany.ecumarket;
 
-import java.awt.event.ActionEvent;
+//import java.awt.event.ActionEvent;
 import javax.swing.*;
 /**
  *
@@ -14,20 +14,13 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form PantallaPrincipal
      */
-    public PantallaPrincipal() {
-        setTitle("Mi Aplicación");
-
-        // Establecer el ícono de la ventana
-        ImageIcon icon = new ImageIcon(getClass().getResource("/Imagenes/Logo/icono.png"));
-        setIconImage(icon.getImage());
-        
-        
-        try {
+    public PantallaPrincipal() { 
+         try {
     UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
 } catch (Exception e) {
     e.printStackTrace();
 }
-
+        
         initComponents();
     }
 
@@ -74,7 +67,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenu17 = new javax.swing.JMenu();
         jMenu18 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
-        jMenu26 = new javax.swing.JMenu();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -261,12 +253,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenu5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jMenuBar2.add(jMenu5);
 
-        jMenu26.setBackground(new java.awt.Color(0, 51, 204));
-        jMenu26.setBorder(null);
-        jMenu26.setText("Salir");
-        jMenu26.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jMenuBar2.add(jMenu26);
-
         setJMenuBar(jMenuBar2);
 
         pack();
@@ -277,12 +263,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_searchProductsActionPerformed
 
     private void btnIniciarsesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarsesionActionPerformed
-     LoginFrame loginframe  = new LoginFrame();
-      loginframe.setVisible(true);
+      new LoginFrame().setVisible(true); 
+    dispose(); 
     }//GEN-LAST:event_btnIniciarsesionActionPerformed
 
     private void jMenuItem_reporte_ventaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_reporte_ventaActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jMenuItem_reporte_ventaActionPerformed
     // TODO add your handling code here:
     // TODO add your handling code here:
@@ -343,7 +329,6 @@ public void agregarProducto(String productos) {
     private javax.swing.JMenu jMenu19;
     private javax.swing.JMenu jMenu20;
     private javax.swing.JMenu jMenu21;
-    private javax.swing.JMenu jMenu26;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
