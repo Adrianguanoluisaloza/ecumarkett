@@ -4,6 +4,7 @@
  */
 package com.mycompany.ecumarket;
 
+import java.awt.event.ActionEvent;
 import javax.swing.*;
 /**
  *
@@ -65,10 +66,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenu16 = new javax.swing.JMenu();
         jMenu17 = new javax.swing.JMenu();
         jMenu18 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
+        jMenu26 = new javax.swing.JMenu();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -125,56 +124,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabel1.setText("Bienvenidos a Ecumarket");
         bkgprincipalform.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, 480, 30));
 
-        getContentPane().add(bkgprincipalform, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 670));
-
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/usuario.png"))); // NOI18N
-        jMenu1.setText("Usuario");
-        jMenu1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-
-        jMenuItem_nuevo_usuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/nuevo-cliente.png"))); // NOI18N
-        jMenuItem_nuevo_usuario.setText("Nuevo usuario");
-        jMenuItem_nuevo_usuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem_nuevo_usuarioActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem_nuevo_usuario);
-
-        jMenuItem_gestionar_usuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/configuraciones.png"))); // NOI18N
-        jMenuItem_gestionar_usuario.setText("Gestion usuarios");
-        jMenu1.add(jMenuItem_gestionar_usuario);
-
-        jMenuBar1.add(jMenu1);
-
-        jMenu7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/producto.png"))); // NOI18N
-        jMenu7.setText("Producto");
-        jMenu7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-
-        jMenuItem_nuevo_produc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/nuevo-producto.png"))); // NOI18N
-        jMenuItem_nuevo_produc.setText("Nuevo Producto");
-        jMenu7.add(jMenuItem_nuevo_produc);
-
-        jMenuItem_gestionar_producto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/producto.png"))); // NOI18N
-        jMenuItem_gestionar_producto.setText("Gestionar Producto");
-        jMenu7.add(jMenuItem_gestionar_producto);
-
-        jMenuItem_actualiazar_stock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/nuevo.png"))); // NOI18N
-        jMenuItem_actualiazar_stock.setText("Actualizar Stock");
-        jMenu7.add(jMenuItem_actualiazar_stock);
-
-        jMenuBar1.add(jMenu7);
-
-        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cliente.png"))); // NOI18N
-        jMenu2.setText("Cliente");
-        jMenu2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-
-        jMenuItem_nuevo_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/nuevo-cliente.png"))); // NOI18N
-        jMenuItem_nuevo_cliente.setText("Nuevo cliente");
-        jMenu2.add(jMenuItem_nuevo_cliente);
-
-        jMenuItem_gestionar_clientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cliente.png"))); // NOI18N
-        jMenuItem_gestionar_clientes.setText("Gestionar clientes");
-        jMenuItem_gestionar_clientes.addActionListener(new java.awt.event.ActionListener() {
+        searchProducts.setBackground(new java.awt.Color(0, 51, 204));
+        searchProducts.setText("Buscar");
+        searchProducts.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchProductsActionPerformed(evt);
             }
@@ -295,34 +247,17 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jMenuBar2.add(jMenu4);
 
-        jMenu6.setBackground(new java.awt.Color(255, 255, 0));
-        jMenu6.setBorder(null);
-        jMenu6.setText("Vender");
-        jMenu6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jMenuBar2.add(jMenu6);
-
-        jMenu1.setBackground(new java.awt.Color(255, 255, 0));
-        jMenu1.setBorder(null);
-        jMenu1.setText("Reportes");
-        jMenu1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu1MouseClicked(evt);
-            }
-        });
-        jMenuBar2.add(jMenu1);
-
-        jMenu2.setBackground(new java.awt.Color(0, 51, 204));
-        jMenu2.setBorder(null);
-        jMenu2.setText("Ayuda");
-        jMenu2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jMenuBar2.add(jMenu2);
-
         jMenu5.setBackground(new java.awt.Color(0, 51, 204));
         jMenu5.setBorder(null);
-        jMenu5.setText("Salir");
+        jMenu5.setText("Ayuda");
         jMenu5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jMenuBar2.add(jMenu5);
+
+        jMenu26.setBackground(new java.awt.Color(0, 51, 204));
+        jMenu26.setBorder(null);
+        jMenu26.setText("Salir");
+        jMenu26.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jMenuBar2.add(jMenu26);
 
         setJMenuBar(jMenuBar2);
 
@@ -338,17 +273,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
       loginframe.setVisible(true);
     }//GEN-LAST:event_btnIniciarsesionActionPerformed
 
-    private void jMenuItem_gestionar_ventasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_gestionar_ventasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem_gestionar_ventasActionPerformed
-
     private void jMenuItem_reporte_ventaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_reporte_ventaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem_reporte_ventaActionPerformed
-
-    private void jMenuItem_nuevo_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_nuevo_usuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem_nuevo_usuarioActionPerformed
     // TODO add your handling code here:
     // TODO add your handling code here:
 
@@ -396,7 +323,6 @@ public void agregarProducto(String productos) {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu12;
@@ -407,31 +333,16 @@ public void agregarProducto(String productos) {
     private javax.swing.JMenu jMenu17;
     private javax.swing.JMenu jMenu18;
     private javax.swing.JMenu jMenu19;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu20;
     private javax.swing.JMenu jMenu21;
+    private javax.swing.JMenu jMenu26;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenu jMenu9;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem_actualiazar_stock;
-    private javax.swing.JMenuItem jMenuItem_cerrar_sesion;
-    private javax.swing.JMenuItem jMenuItem_gestionar_categorias;
-    private javax.swing.JMenuItem jMenuItem_gestionar_clientes;
-    private javax.swing.JMenuItem jMenuItem_gestionar_producto;
-    private javax.swing.JMenuItem jMenuItem_gestionar_usuario;
-    private javax.swing.JMenuItem jMenuItem_gestionar_ventas;
-    private javax.swing.JMenuItem jMenuItem_nueva_categoria;
-    private javax.swing.JMenuItem jMenuItem_nueva_venta;
-    private javax.swing.JMenuItem jMenuItem_nuevo_cliente;
-    private javax.swing.JMenuItem jMenuItem_nuevo_produc;
-    private javax.swing.JMenuItem jMenuItem_nuevo_usuario;
-    private javax.swing.JMenuItem jMenuItem_reporte_producto;
-    private javax.swing.JMenuItem jMenuItem_reporte_venta;
-    private javax.swing.JMenuItem jMenuItem_reportes_categorias;
-    private javax.swing.JMenuItem jMenuItem_reportes_cliente;
-    private javax.swing.JMenuItem jMenuItem_ver_historial;
+    private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPopupMenu jPopupMenu1;
