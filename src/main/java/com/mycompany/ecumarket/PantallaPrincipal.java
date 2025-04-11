@@ -15,6 +15,13 @@ public class PantallaPrincipal extends javax.swing.JFrame {
      * Creates new form PantallaPrincipal
      */
     public PantallaPrincipal() {
+        setTitle("Mi Aplicación");
+
+        // Establecer el ícono de la ventana
+        ImageIcon icon = new ImageIcon(getClass().getResource("/Imagenes/Logo/icono.png"));
+        setIconImage(icon.getImage());
+        
+        
         try {
     UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
 } catch (Exception e) {
@@ -177,6 +184,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         bkgprincipalform.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 810, 340));
 
+        btnIniciarsesion.setIcon(new javax.swing.ImageIcon("F:\\Users\\Adrian\\Documents\\NetBeansProjects\\ecumarkett\\src\\main\\resources\\Imagenes\\anadir.png")); // NOI18N
         btnIniciarsesion.setText("Iniciar sesion");
         btnIniciarsesion.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnIniciarsesion.addActionListener(new java.awt.event.ActionListener() {
@@ -184,7 +192,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 btnIniciarsesionActionPerformed(evt);
             }
         });
-        bkgprincipalform.add(btnIniciarsesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, -1, -1));
+        bkgprincipalform.add(btnIniciarsesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, -1, -1));
 
         getContentPane().add(bkgprincipalform, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 490));
 
