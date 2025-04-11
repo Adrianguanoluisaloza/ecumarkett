@@ -128,7 +128,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
         jLabel1.setText("Bienvenidos a Ecumarket");
-        bkgprincipalform.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 480, 30));
+        bkgprincipalform.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, 480, 30));
 
         getContentPane().add(bkgprincipalform, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 670));
 
@@ -138,6 +138,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jMenuItem_nuevo_usuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/nuevo-cliente.png"))); // NOI18N
         jMenuItem_nuevo_usuario.setText("Nuevo usuario");
+        jMenuItem_nuevo_usuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem_nuevo_usuarioActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem_nuevo_usuario);
 
         jMenuItem_gestionar_usuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/configuraciones.png"))); // NOI18N
@@ -288,6 +293,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void jMenuItem_reporte_ventaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_reporte_ventaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem_reporte_ventaActionPerformed
+
+    private void jMenuItem_nuevo_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_nuevo_usuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem_nuevo_usuarioActionPerformed
     // TODO add your handling code here:
     // TODO add your handling code here:
 
@@ -337,9 +346,6 @@ public void agregarProducto(String productos) {
     private javax.swing.JMenu jMenu13;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenu jMenu9;
@@ -355,9 +361,6 @@ public void agregarProducto(String productos) {
     private javax.swing.JMenuItem jMenuItem_nueva_venta;
     private javax.swing.JMenuItem jMenuItem_nuevo_cliente;
     private javax.swing.JMenuItem jMenuItem_nuevo_produc;
-    private javax.swing.JMenuItem jMenuItem_nuevo_producto;
-    private javax.swing.JMenuItem jMenuItem_nuevo_producto1;
-    private javax.swing.JMenuItem jMenuItem_nuevo_producto2;
     private javax.swing.JMenuItem jMenuItem_nuevo_usuario;
     private javax.swing.JMenuItem jMenuItem_reporte_producto;
     private javax.swing.JMenuItem jMenuItem_reporte_venta;
