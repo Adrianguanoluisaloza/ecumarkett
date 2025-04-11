@@ -184,7 +184,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         bkgprincipalform.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 810, 340));
 
-        btnIniciarsesion.setIcon(new javax.swing.ImageIcon("F:\\Users\\Adrian\\Documents\\NetBeansProjects\\ecumarkett\\src\\main\\resources\\Imagenes\\anadir.png")); // NOI18N
+        btnIniciarsesion.setIcon(new javax.swing.ImageIcon("F:\\Users\\Adrian\\Documents\\NetBeansProjects\\ecumarkett\\src\\main\\resources\\Imagenes\\Imagenes pantalla principal\\anadir.png")); // NOI18N
         btnIniciarsesion.setText("Iniciar sesion");
         btnIniciarsesion.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnIniciarsesion.addActionListener(new java.awt.event.ActionListener() {
