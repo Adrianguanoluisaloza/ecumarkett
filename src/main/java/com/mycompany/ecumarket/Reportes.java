@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.ecumarket;
+import Clases.PDFExporter;
+import javax.swing.*;
+
 
 /**
  *
@@ -15,8 +18,12 @@ public class Reportes extends javax.swing.JFrame {
      */
     public Reportes() {
         initComponents();
-      //setLocationRelativeTo(true);
-       //tExtendedState(JFrame.MAXIMIZED_BOTH); 
+        
+        setTitle("Reporte de Ventas");
+        setSize(800, 600);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+      
     }
 
     /**
@@ -40,7 +47,9 @@ public class Reportes extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setForeground(java.awt.SystemColor.menu);
         setSize(new java.awt.Dimension(800, 600));
+        setType(java.awt.Window.Type.UTILITY);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jComboBox1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -66,6 +75,11 @@ public class Reportes extends javax.swing.JFrame {
 
         btnExportar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnExportar.setText("Exportar PDF");
+        btnExportar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExportarActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnExportar, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 80, 140, 25));
         btnExportar.getAccessibleContext().setAccessibleDescription("");
 
@@ -74,18 +88,26 @@ public class Reportes extends javax.swing.JFrame {
         jTable1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Identifiacion", "Nombre", "cositas", "productos", "Datos"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Double.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         tablaResultados.setViewportView(jTable1);
 
-        getContentPane().add(tablaResultados, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 720, 400));
+        getContentPane().add(tablaResultados, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 780, 400));
 
         getAccessibleContext().setAccessibleParent(jComboBox1);
 
@@ -95,6 +117,13 @@ public class Reportes extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void btnExportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportarActionPerformed
+   //   String nombreReporte = "Reporte_ventas";
+   //     PDFExporter.exportarReportePDF(tablaResultados, nombreReporte);
+            // Creamos el documento PDF
+         
+    }//GEN-LAST:event_btnExportarActionPerformed
 
     /**
      * @param args the command line arguments

@@ -3,28 +3,36 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.ecumarket;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
+
 /**
  *
  * @author Adrian
  */
-public class ConexionDB {
- private static final String URL = "jdbc:mysql://localhost:3306/ECUMARKET";
-    private static final String USER = "root";
-    private static final String PASSWORD = "root"; // Cambia la contraseña si es necesario.
-
-    public static Connection getConnection() throws SQLException {
+  public class ConexionDB {
+    Connection conectar;
+        String usuario="root";
+    String contrasenia="";
+    String bd="login";
+    String ip="localhost";
+    String puerto="3306";
+    String cadena = "jdbc:mysql://"+ip+":"+puerto+"/"+bd;
+    public Connection estableceConexion(){
+    
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            return DriverManager.getConnection(URL, USER, PASSWORD);
-        } catch (ClassNotFoundException | SQLException e) {
-            throw new SQLException("Error al conectar con la base de datos", e);
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            conectar = DriverManager.getConnection(cadena,usuario,contrasenia);
+            
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Problemas en la conexion"+ e.toString());
         }
-    }
+        return conectar;
 
-    static Connection getConexion() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-}
+}}
+
