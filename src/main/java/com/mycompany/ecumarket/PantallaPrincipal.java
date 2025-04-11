@@ -135,7 +135,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         lblnombreusuario.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblnombreusuario.setText("Nombreusuariologeado");
-        bkgprincipalform.add(lblnombreusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, -1, -1));
+        bkgprincipalform.add(lblnombreusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, -1, -1));
 
         jTextField1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jTextField1.setText("Ingresa lo que estas buscando");
