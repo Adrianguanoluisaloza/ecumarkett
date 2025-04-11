@@ -2,19 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.ecumarket;
+package Clases;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
 
-
 /**
  *
  * @author Adrian
  */
-  public class ConexionDB {
-    Connection conectar;
+public class ConexionBS {
+     Connection conectar;
         String usuario="root";
     String contrasenia="";
     String bd="login";
@@ -34,5 +33,8 @@ import javax.swing.JOptionPane;
         }
         return conectar;
 
-}}
+}
+}
+
+
 
