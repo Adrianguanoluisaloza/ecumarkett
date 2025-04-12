@@ -65,6 +65,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenu16 = new javax.swing.JMenu();
         jMenu17 = new javax.swing.JMenu();
         jMenu18 = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -260,6 +262,27 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jMenuBar2.add(jMenu4);
 
+        jMenu1.setText("Reporte");
+        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu1MouseClicked(evt);
+            }
+        });
+        jMenuBar2.add(jMenu1);
+
+        jMenu2.setText("Productos");
+        jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu2MouseClicked(evt);
+            }
+        });
+        jMenu2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu2ActionPerformed(evt);
+            }
+        });
+        jMenuBar2.add(jMenu2);
+
         setJMenuBar(jMenuBar2);
 
         pack();
@@ -270,8 +293,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_searchProductsActionPerformed
 
     private void btnIniciarsesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarsesionActionPerformed
-      new LoginFrame().setVisible(true); 
-    dispose(); 
+       // TODO add your handling code here:
     }//GEN-LAST:event_btnIniciarsesionActionPerformed
 
     private void jMenuItem_reporte_ventaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_reporte_ventaActionPerformed
@@ -279,12 +301,27 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem_reporte_ventaActionPerformed
 
     private void btnIniciarsesion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarsesion1ActionPerformed
-        // TODO add your handling code here:
+         new RegistroFrame().setVisible(true); 
+    dispose(); 
     }//GEN-LAST:event_btnIniciarsesion1ActionPerformed
 
     private void btnIniciarsesion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarsesion2ActionPerformed
-        // TODO add your handling code here:
+        new LoginFrame().setVisible(true); 
+    dispose(); 
     }//GEN-LAST:event_btnIniciarsesion2ActionPerformed
+
+    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
+       new Reportes().setVisible(true); 
+    dispose(); 
+    }//GEN-LAST:event_jMenu1MouseClicked
+
+    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
+        new GestionProductos().setVisible(true);
+    }//GEN-LAST:event_jMenu2ActionPerformed
+
+    private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
+          new GestionProductos().setVisible(true);
+    }//GEN-LAST:event_jMenu2MouseClicked
     // TODO add your handling code here:
     // TODO add your handling code here:
 
@@ -330,6 +367,7 @@ public void agregarProducto(String productos) {
     private javax.swing.JDialog jDialog1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu12;
@@ -340,6 +378,7 @@ public void agregarProducto(String productos) {
     private javax.swing.JMenu jMenu17;
     private javax.swing.JMenu jMenu18;
     private javax.swing.JMenu jMenu19;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu20;
     private javax.swing.JMenu jMenu21;
     private javax.swing.JMenu jMenu3;

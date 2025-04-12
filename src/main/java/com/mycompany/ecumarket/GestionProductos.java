@@ -66,6 +66,11 @@ public class GestionProductos extends javax.swing.JFrame {
         jPanel1.add(btnguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 80, -1));
 
         btnactualizar.setText("Actualizar");
+        btnactualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnactualizarActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnactualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 90, -1));
 
         jButton3.setText("Cerrar");
@@ -95,6 +100,10 @@ public class GestionProductos extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnactualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactualizarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnactualizarActionPerformed
 
     /**
      * @param args the command line arguments
