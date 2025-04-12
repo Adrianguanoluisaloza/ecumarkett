@@ -32,6 +32,10 @@ public class ConexionBS {
         }
     }
 
+ 
+ 
+ 
+ 
     // Método para probar la conexión
     public static void main(String[] args) {
         ConexionDB.conectar();
