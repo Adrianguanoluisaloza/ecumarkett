@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.ecumarket;
-import Clases.UsuarioDao;
 import com.mycompany.ecumarket.PantallaPrincipal;
 import javax.swing.*;
 //import Clases.ConexionBS;
@@ -148,39 +147,8 @@ public class RegistroFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-                  registrarUsuario();        
-            //new PantallaPrincipal().setVisible(true);
-} 
-     private void registrarUsuario() {
-    String usuario = txtUsuario.getText();
-    String nombre = txtCorreo.getText();
-    String contraseña = new String(txtPassword.getPassword());
-    String ciudad = txtTelefono.getText();
-    String tipo = cmbTipo.getSelectedItem().toString();
-    String productos = txtProductos.getText();
-
-    if (usuario.isEmpty() || contraseña.isEmpty() || tipo.isEmpty() || nombre.isEmpty() || ciudad.isEmpty() || productos.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios.");
-        return;
-    }
-
-    UsuarioDao dao = new UsuarioDao();
-    String productosExistentes = dao.validarLogin(usuario, contraseña);
-    if (productosExistentes != null) {
-        JOptionPane.showMessageDialog(this, "El usuario ya existe.");
-        return;
-    }
-
-    if (dao.registrarUsuario(usuario, contraseña, tipo, nombre, ciudad, productos)) {
-        JOptionPane.showMessageDialog(this, "Usuario registrado con éxito.");
-        PantallaPrincipal pantalla = new PantallaPrincipal();
-        pantalla.agregarProducto(productos);
-        pantalla.setVisible(true);
-        dispose();
-    } else {
-        JOptionPane.showMessageDialog(this, "Error al registrar usuario.");
-    }
-
+                     
+           new PantallaPrincipal().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
    
