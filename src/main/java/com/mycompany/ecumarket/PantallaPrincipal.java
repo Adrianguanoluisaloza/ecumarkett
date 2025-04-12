@@ -43,13 +43,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         searchProducts = new javax.swing.JButton();
         lblnombreusuario = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        bkglogin = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        bkgexit = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         btnIniciarsesion = new javax.swing.JButton();
+        btnIniciarsesion1 = new javax.swing.JButton();
+        btnIniciarsesion2 = new javax.swing.JButton();
         jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu5 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         jMenu7 = new javax.swing.JMenu();
         jMenu10 = new javax.swing.JMenu();
@@ -66,7 +65,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenu16 = new javax.swing.JMenu();
         jMenu17 = new javax.swing.JMenu();
         jMenu18 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -120,46 +118,32 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         bkgprincipalform.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Bienvenidos a Ecumarket");
-        bkgprincipalform.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, 480, 30));
+        bkgprincipalform.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 480, 30));
 
-        searchProducts.setBackground(new java.awt.Color(0, 51, 204));
+        searchProducts.setBackground(new java.awt.Color(0, 102, 204));
+        searchProducts.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        searchProducts.setForeground(new java.awt.Color(255, 255, 255));
         searchProducts.setText("Buscar");
+        searchProducts.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         searchProducts.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchProductsActionPerformed(evt);
             }
         });
-        bkgprincipalform.add(searchProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 60, -1));
+        bkgprincipalform.add(searchProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 80, 30));
 
         lblnombreusuario.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblnombreusuario.setText("Nombreusuariologeado");
-        bkgprincipalform.add(lblnombreusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, -1, -1));
+        bkgprincipalform.add(lblnombreusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 30, -1, -1));
 
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
         jTextField1.setText("Ingresa lo que estas buscando");
-        jTextField1.setBorder(null);
-        bkgprincipalform.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 310, -1));
-
-        bkglogin.setBackground(new java.awt.Color(0, 51, 204));
-        bkglogin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel3.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Registrarse");
-        bkglogin.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 30));
-
-        bkgprincipalform.add(bkglogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, 100, 30));
-
-        bkgexit.setBackground(new java.awt.Color(0, 51, 204));
-        bkgexit.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel4.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Cerrar sesion");
-        bkgexit.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 30));
-
-        bkgprincipalform.add(bkgexit, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 100, 30));
+        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        bkgprincipalform.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 310, -1));
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 255));
 
@@ -167,33 +151,64 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 810, Short.MAX_VALUE)
+            .addGap(0, 860, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 340, Short.MAX_VALUE)
+            .addGap(0, 350, Short.MAX_VALUE)
         );
 
-        bkgprincipalform.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 810, 340));
+        bkgprincipalform.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 860, 350));
 
-        btnIniciarsesion.setIcon(new javax.swing.ImageIcon("F:\\Users\\Adrian\\Documents\\NetBeansProjects\\ecumarkett\\src\\main\\resources\\Imagenes\\Imagenes pantalla principal\\anadir.png")); // NOI18N
-        btnIniciarsesion.setText("Iniciar sesion");
-        btnIniciarsesion.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnIniciarsesion.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnIniciarsesion.setForeground(new java.awt.Color(255, 255, 255));
+        btnIniciarsesion.setText("Cerrar sesion");
+        btnIniciarsesion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnIniciarsesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIniciarsesionActionPerformed(evt);
             }
         });
-        bkgprincipalform.add(btnIniciarsesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, -1, -1));
+        bkgprincipalform.add(btnIniciarsesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 20, 100, 30));
 
-        getContentPane().add(bkgprincipalform, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 490));
+        btnIniciarsesion1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnIniciarsesion1.setForeground(new java.awt.Color(255, 255, 255));
+        btnIniciarsesion1.setText("Registrarse");
+        btnIniciarsesion1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnIniciarsesion1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIniciarsesion1ActionPerformed(evt);
+            }
+        });
+        bkgprincipalform.add(btnIniciarsesion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 20, 100, 30));
+
+        btnIniciarsesion2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnIniciarsesion2.setForeground(new java.awt.Color(255, 255, 255));
+        btnIniciarsesion2.setText("Iniciar sesion");
+        btnIniciarsesion2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btnIniciarsesion2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIniciarsesion2ActionPerformed(evt);
+            }
+        });
+        bkgprincipalform.add(btnIniciarsesion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 20, 100, 30));
+
+        getContentPane().add(bkgprincipalform, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 490));
 
         jMenuBar2.setBackground(new java.awt.Color(255, 51, 51));
-        jMenuBar2.setBorder(null);
+        jMenuBar2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jMenuBar2.setForeground(new java.awt.Color(255, 51, 51));
 
-        jMenu4.setBackground(new java.awt.Color(255, 255, 0));
-        jMenu4.setBorder(null);
+        jMenu5.setBackground(new java.awt.Color(255, 255, 0));
+        jMenu5.setBorder(null);
+        jMenu5.setForeground(new java.awt.Color(0, 0, 0));
+        jMenu5.setText("Ayuda");
+        jMenu5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jMenuBar2.add(jMenu5);
+
+        jMenu4.setBackground(new java.awt.Color(0, 51, 204));
+        jMenu4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenu4.setForeground(new java.awt.Color(0, 0, 0));
         jMenu4.setText("Comprar");
         jMenu4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
@@ -247,12 +262,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jMenuBar2.add(jMenu4);
 
-        jMenu5.setBackground(new java.awt.Color(0, 51, 204));
-        jMenu5.setBorder(null);
-        jMenu5.setText("Ayuda");
-        jMenu5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jMenuBar2.add(jMenu5);
-
         setJMenuBar(jMenuBar2);
 
         pack();
@@ -270,6 +279,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void jMenuItem_reporte_ventaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_reporte_ventaActionPerformed
         
     }//GEN-LAST:event_jMenuItem_reporte_ventaActionPerformed
+
+    private void btnIniciarsesion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarsesion1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnIniciarsesion1ActionPerformed
+
+    private void btnIniciarsesion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarsesion2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnIniciarsesion2ActionPerformed
     // TODO add your handling code here:
     // TODO add your handling code here:
 
@@ -308,15 +325,13 @@ public void agregarProducto(String productos) {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel bkgexit;
-    private javax.swing.JPanel bkglogin;
     private javax.swing.JPanel bkgprincipalform;
     private javax.swing.JButton btnIniciarsesion;
+    private javax.swing.JButton btnIniciarsesion1;
+    private javax.swing.JButton btnIniciarsesion2;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu12;
