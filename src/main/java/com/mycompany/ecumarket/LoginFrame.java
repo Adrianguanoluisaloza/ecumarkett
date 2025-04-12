@@ -73,6 +73,7 @@ public class LoginFrame extends javax.swing.JFrame {
         jLabel5.setText("Contraseña");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Iniciar Sesion");
@@ -83,6 +84,7 @@ public class LoginFrame extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, -1, -1));
 
+        jButton2.setBackground(new java.awt.Color(0, 0, 0));
         jButton2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Registrar");
@@ -92,11 +94,7 @@ public class LoginFrame extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 100, -1));
-
-        txtUsuario.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 270, -1));
-
-        txtPassword.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 270, -1));
 
         bkg.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 360, 300));

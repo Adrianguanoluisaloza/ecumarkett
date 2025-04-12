@@ -118,7 +118,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         bkgprincipalform.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Bienvenidos a Ecumarket");
         bkgprincipalform.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 480, 30));
 
@@ -138,14 +137,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         lblnombreusuario.setText("Nombreusuariologeado");
         bkgprincipalform.add(lblnombreusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 30, -1, -1));
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
         jTextField1.setText("Ingresa lo que estas buscando");
         jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         bkgprincipalform.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 310, -1));
 
-        jPanel2.setBackground(new java.awt.Color(0, 102, 255));
+        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -160,6 +157,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         bkgprincipalform.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 860, 350));
 
+        btnIniciarsesion.setBackground(new java.awt.Color(0, 0, 0));
         btnIniciarsesion.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnIniciarsesion.setForeground(new java.awt.Color(255, 255, 255));
         btnIniciarsesion.setText("Cerrar sesion");
@@ -171,6 +169,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         });
         bkgprincipalform.add(btnIniciarsesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 20, 100, 30));
 
+        btnIniciarsesion1.setBackground(new java.awt.Color(0, 0, 0));
         btnIniciarsesion1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnIniciarsesion1.setForeground(new java.awt.Color(255, 255, 255));
         btnIniciarsesion1.setText("Registrarse");
@@ -182,6 +181,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         });
         bkgprincipalform.add(btnIniciarsesion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 20, 100, 30));
 
+        btnIniciarsesion2.setBackground(new java.awt.Color(0, 0, 0));
         btnIniciarsesion2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnIniciarsesion2.setForeground(new java.awt.Color(255, 255, 255));
         btnIniciarsesion2.setText("Iniciar sesion");
@@ -195,20 +195,18 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         getContentPane().add(bkgprincipalform, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 490));
 
-        jMenuBar2.setBackground(new java.awt.Color(255, 51, 51));
+        jMenuBar2.setBackground(new java.awt.Color(0, 0, 0));
         jMenuBar2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jMenuBar2.setForeground(new java.awt.Color(255, 51, 51));
 
         jMenu5.setBackground(new java.awt.Color(255, 255, 0));
         jMenu5.setBorder(null);
-        jMenu5.setForeground(new java.awt.Color(0, 0, 0));
         jMenu5.setText("Ayuda");
         jMenu5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jMenuBar2.add(jMenu5);
 
         jMenu4.setBackground(new java.awt.Color(0, 51, 204));
         jMenu4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jMenu4.setForeground(new java.awt.Color(0, 0, 0));
         jMenu4.setText("Comprar");
         jMenu4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
