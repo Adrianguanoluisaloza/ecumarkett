@@ -107,7 +107,7 @@ public class Reportes extends javax.swing.JFrame {
         });
         tablaResultados.setViewportView(jTable1);
 
-        getContentPane().add(tablaResultados, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 780, 400));
+        getContentPane().add(tablaResultados, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 780, 400));
 
         getAccessibleContext().setAccessibleParent(jComboBox1);
 
