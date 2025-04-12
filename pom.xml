@@ -12,7 +12,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>23</maven.compiler.release>
+        <maven.compiler.release>24</maven.compiler.release>
         <exec.mainClass>com.mycompany.ecumarket.Ecumarket</exec.mainClass>
     </properties>
 
@@ -21,12 +21,12 @@
         <dependency>
             <groupId>com.itextpdf</groupId>
             <artifactId>kernel</artifactId>
-            <version>7.2.5</version>
+            <version>9.1.0</version>
         </dependency>
         <dependency>
             <groupId>com.itextpdf</groupId>
             <artifactId>layout</artifactId>
-            <version>7.2.5</version>
+            <version>9.1.0</version>
         </dependency>
 
         <!-- MySQL Connector -->
@@ -67,3 +67,4 @@
 </build>
 
 </project>
+
