@@ -65,8 +65,8 @@ public class LoginFrame extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel4.setText("Usuario");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 90, -1));
+        jLabel4.setText("Correo electronico");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 150, -1));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 102, 204));
