@@ -23,12 +23,26 @@ public class Control_frmGestionProducto implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-       if(e.getSource()==frm_rp){
-       System.out.print("OK,funciona");
+       if(e.getSource()==frm_rp.btnguardar){
+           ListProducto lp=new ListProducto();
+           lp.MostrarTable(frm_rp.TablaProductos);
+
+           
+           limpiarentradas();
+       
            
            
            
        } 
+    }
+
+    private void limpiarentradas() {
+        
+        frm_rp.txtusuario.setText("");
+        frm_rp.txtnombre.setText("");
+        frm_rp.txtcantidad.setText("");
+        frm_rp.txtprecio.setText("");
+        
     }
     
 }

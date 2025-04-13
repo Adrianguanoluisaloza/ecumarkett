@@ -35,6 +35,7 @@ public class GestionProductos extends javax.swing.JFrame {
         btnguardar = new javax.swing.JButton();
         btnactualizar = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        txtusuario = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaProductos = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
@@ -51,19 +52,19 @@ public class GestionProductos extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtprecio.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Precio:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Roboto SemiCondensed Light", 1, 12))); // NOI18N
-        jPanel1.add(txtprecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 232, 294, -1));
+        jPanel1.add(txtprecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 290, -1));
 
         txtcantidad.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cantidad:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Roboto SemiCondensed Light", 1, 12))); // NOI18N
-        jPanel1.add(txtcantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 166, 294, -1));
+        jPanel1.add(txtcantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 290, -1));
 
         txtnombre.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nombre:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Roboto SemiCondensed Light", 1, 12))); // NOI18N
-        jPanel1.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 110, 294, -1));
+        jPanel1.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 290, -1));
 
         txtId.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ID:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Roboto SemiCondensed Light", 1, 12))); // NOI18N
-        jPanel1.add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 55, 292, -1));
+        jPanel1.add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 292, -1));
 
         btnguardar.setText("Guardar");
-        jPanel1.add(btnguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 80, -1));
+        jPanel1.add(btnguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 80, -1));
 
         btnactualizar.setText("Actualizar");
         btnactualizar.addActionListener(new java.awt.event.ActionListener() {
@@ -71,10 +72,13 @@ public class GestionProductos extends javax.swing.JFrame {
                 btnactualizarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnactualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 90, -1));
+        jPanel1.add(btnactualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 90, -1));
 
         jButton3.setText("Cerrar");
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 90, -1));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 90, -1));
+
+        txtusuario.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Usuario:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
+        jPanel1.add(txtusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 290, -1));
 
         jPanel4.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 310, 530));
 
@@ -153,5 +157,6 @@ public class GestionProductos extends javax.swing.JFrame {
     public javax.swing.JTextField txtcantidad;
     public javax.swing.JTextField txtnombre;
     public javax.swing.JTextField txtprecio;
+    public javax.swing.JTextField txtusuario;
     // End of variables declaration//GEN-END:variables
 }
