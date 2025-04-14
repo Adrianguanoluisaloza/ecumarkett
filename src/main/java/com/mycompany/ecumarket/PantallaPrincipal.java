@@ -67,6 +67,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenu18 = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -283,6 +284,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         });
         jMenuBar2.add(jMenu2);
 
+        jMenu6.setText("Facturacion");
+        jMenu6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu6MouseClicked(evt);
+            }
+        });
+        jMenuBar2.add(jMenu6);
+
         setJMenuBar(jMenuBar2);
 
         pack();
@@ -322,6 +331,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
           new GestionProductos().setVisible(true);
     }//GEN-LAST:event_jMenu2MouseClicked
+
+    private void jMenu6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu6MouseClicked
+       new Facturacion().setVisible(true);
+    }//GEN-LAST:event_jMenu6MouseClicked
     // TODO add your handling code here:
     // TODO add your handling code here:
 
@@ -384,6 +397,7 @@ public void agregarProducto(String productos) {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenu jMenu9;
