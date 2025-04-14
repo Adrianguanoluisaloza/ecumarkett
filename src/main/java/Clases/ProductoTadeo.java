@@ -10,17 +10,28 @@ package Clases;
  */
 public class ProductoTadeo {
     
+    private String usuario;
     private String nombre;
     private int cantidad;
     private Double precio;
     private Double total;
 
-    public ProductoTadeo(String nombre, int cantidad, Double precio) {
+    public ProductoTadeo(String usuario,String nombre, int cantidad, Double precio) {
+        this.usuario = usuario;
         this.nombre = nombre;
         this.cantidad = cantidad;
         this.precio = precio;
     }
 
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    
     public String getNombre() {
         return nombre;
     }

@@ -61,6 +61,7 @@ public class GestionProductos extends javax.swing.JFrame {
         jPanel1.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 290, -1));
 
         txtId.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ID:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Roboto SemiCondensed Light", 1, 12))); // NOI18N
+        txtId.setEnabled(false);
         jPanel1.add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 292, -1));
 
         btnguardar.setText("Guardar");

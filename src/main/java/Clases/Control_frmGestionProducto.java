@@ -24,6 +24,17 @@ public class Control_frmGestionProducto implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
        if(e.getSource()==frm_rp.btnguardar){
+           System.out.println("OK");
+           
+           String usuario=frm_rp.txtusuario.getText();
+           String nombre=frm_rp.txtnombre.getText();
+           int cantidad=Integer.parseInt(frm_rp.txtcantidad.getText());
+           Double precio=Double.valueOf(frm_rp.txtprecio.getText());
+           
+           ProductoTadeo P=new ProductoTadeo(usuario,nombre,cantidad, precio);
+           RegistroT R=new RegistroT();
+           R.registrarbd(P);
+           
            ListProducto lp=new ListProducto();
            lp.MostrarTable(frm_rp.TablaProductos);
 

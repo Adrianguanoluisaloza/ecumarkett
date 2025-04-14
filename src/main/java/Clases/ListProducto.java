@@ -24,7 +24,7 @@ public class ListProducto {
         modelo.addColumn("Cantidad");
         modelo.addColumn("Precio");
         modelo.addColumn("Total");
-        String consultasql="SELECT*FROM producto";
+        String consultasql="SELECT*FROM productos";
         Statement st;
         try {
             st=cn.createStatement();
