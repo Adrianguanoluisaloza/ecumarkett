@@ -46,6 +46,10 @@ public class Facturacion extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jTextField_Precio = new javax.swing.JTextField();
         jButton_Guardar = new javax.swing.JButton();
+        jLabel_Subtotal = new javax.swing.JLabel();
+        jTextField_Subtotal = new javax.swing.JTextField();
+        jLabel_Iva = new javax.swing.JLabel();
+        jTextField_Iva = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable_modelo = new javax.swing.JTable();
 
@@ -66,15 +70,15 @@ public class Facturacion extends javax.swing.JFrame {
 
         jLabel_Metodo_de_pago.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel_Metodo_de_pago.setText("Metodo de pago:");
-        jPanel1.add(jLabel_Metodo_de_pago, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, -1));
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, 177, -1));
+        jPanel1.add(jLabel_Metodo_de_pago, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, -1, -1));
+        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, 177, -1));
 
         jLabel_Total.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel_Total.setText("Total:");
-        jPanel1.add(jLabel_Total, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, -1));
+        jPanel1.add(jLabel_Total, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, -1, -1));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paypal", "Banco Pichincha", "Banco Guayaquil", "Produbanco" }));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, 143, -1));
+        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 440, 143, -1));
 
         jButton_buscar_Cliente.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jButton_buscar_Cliente.setText("buscar");
@@ -107,19 +111,29 @@ public class Facturacion extends javax.swing.JFrame {
 
         jButton_Guardar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jButton_Guardar.setText("Guardar");
-        jPanel1.add(jButton_Guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 470, 140, 50));
+        jPanel1.add(jButton_Guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 550, 140, 50));
+
+        jLabel_Subtotal.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel_Subtotal.setText("Subtotal:");
+        jPanel1.add(jLabel_Subtotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, -1));
+        jPanel1.add(jTextField_Subtotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, 130, -1));
+
+        jLabel_Iva.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel_Iva.setText("Iva:");
+        jPanel1.add(jLabel_Iva, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, -1, -1));
+        jPanel1.add(jTextField_Iva, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 100, 20));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 730));
 
         jTable_modelo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Cliente", "Producto", "Cantidad", "Fecha", "Precio", "Metodo de pago", "Total"
+                "Cliente", "Producto", "Cantidad", "Fecha", "Precio", "Subtotal", "Iva", "Metodo de pago", "Total"
             }
         ));
         jScrollPane1.setViewportView(jTable_modelo);
@@ -176,14 +190,18 @@ public class Facturacion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel_Cliente;
     private javax.swing.JLabel jLabel_Fecha_de_venta;
+    private javax.swing.JLabel jLabel_Iva;
     private javax.swing.JLabel jLabel_Metodo_de_pago;
+    private javax.swing.JLabel jLabel_Subtotal;
     private javax.swing.JLabel jLabel_Total;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable_modelo;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField_Iva;
     private javax.swing.JTextField jTextField_Precio;
+    private javax.swing.JTextField jTextField_Subtotal;
     private javax.swing.JTextField txt_cantidad;
     private javax.swing.JTextField txt_cliente_buscar;
     // End of variables declaration//GEN-END:variables
