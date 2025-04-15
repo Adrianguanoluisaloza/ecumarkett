@@ -31,6 +31,8 @@ public class ListProducto {
             ResultSet rs=st.executeQuery(consultasql);
             while (rs.next()){
                 Object[] lista = {rs.getInt(1),rs.getString(2),rs.getString(3),rs.getInt(4),rs.getDouble(5),rs.getDouble(6)};
+                
+                
 
                 modelo.addRow(lista);
             

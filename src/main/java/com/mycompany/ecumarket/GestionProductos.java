@@ -4,6 +4,10 @@
  */
 package com.mycompany.ecumarket;
 
+import Clases.ListProducto;
+import Clases.ProductoTadeo;
+import Clases.RegistroT;
+
 /**
  *
  * @author Adrian
@@ -65,6 +69,11 @@ public class GestionProductos extends javax.swing.JFrame {
         jPanel1.add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 292, -1));
 
         btnguardar.setText("Guardar");
+        btnguardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnguardarActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 80, -1));
 
         btnactualizar.setText("Actualizar");
@@ -109,6 +118,26 @@ public class GestionProductos extends javax.swing.JFrame {
     private void btnactualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactualizarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnactualizarActionPerformed
+
+    private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
+         ProductoTadeo p = new ProductoTadeo(
+        txtusuario.getText(),
+        txtnombre.getText(),
+        Integer.parseInt(txtcantidad.getText()),
+        Double.valueOf(txtprecio.getText())
+    );
+
+    
+    RegistroT reg = new RegistroT();
+    reg.registrarbd(p);
+
+    
+    ListProducto list = new ListProducto();
+    list.MostrarTable(TablaProductos);
+    
+    
+    
+    }//GEN-LAST:event_btnguardarActionPerformed
 
     /**
      * @param args the command line arguments
