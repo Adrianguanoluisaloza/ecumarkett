@@ -134,7 +134,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 searchProductsActionPerformed(evt);
             }
         });
-        bkgprincipalform.add(searchProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 80, 30));
+        bkgprincipalform.add(searchProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 80, 30));
 
         lblnombreusuario.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblnombreusuario.setText("Nombreusuariologeado");
@@ -200,7 +200,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jMenuBar2.setBackground(new java.awt.Color(0, 0, 0));
         jMenuBar2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jMenuBar2.setForeground(new java.awt.Color(255, 51, 51));
 
         jMenu5.setBackground(new java.awt.Color(255, 255, 0));
         jMenu5.setBorder(null);
@@ -284,6 +283,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         });
         jMenuBar2.add(jMenu2);
 
+        jMenu6.setBackground(new java.awt.Color(204, 0, 51));
         jMenu6.setText("Facturacion");
         jMenu6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
