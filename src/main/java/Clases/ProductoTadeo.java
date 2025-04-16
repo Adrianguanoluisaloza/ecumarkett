@@ -10,27 +10,28 @@ package Clases;
  */
 public class ProductoTadeo {
     
-    private String usuario;
+    private int usuarioId;
     private String nombre;
     private int cantidad;
     private Double precio;
     private Double total;
 
-    public ProductoTadeo(String usuario,String nombre, int cantidad, Double precio) {
-        this.usuario = usuario;
+    public ProductoTadeo(String usuario, String nombre, int cantidad, Double precio) {
+    this.usuarioId = Integer.parseInt(usuario);
         this.nombre = nombre;
         this.cantidad = cantidad;
         this.precio = precio;
     }
 
-    public String getUsuario() {
-        return usuario;
+    public int getUsuarioId() {
+        return usuarioId;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setUsuarioId(int usuarioId) {
+        this.usuarioId = usuarioId;
     }
 
+   
     
     public String getNombre() {
         return nombre;
