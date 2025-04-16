@@ -6,6 +6,9 @@ package com.mycompany.ecumarket;
 
 //import java.awt.event.ActionEvent;
 import javax.swing.*;
+import java.awt.BorderLayout;
+
+
 /**
  *
  * @author Adrian
@@ -40,16 +43,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         bkgprincipalform = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        searchProducts = new javax.swing.JButton();
-        lblnombreusuario = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
-        btnIniciarsesion = new javax.swing.JButton();
-        btnIniciarsesion1 = new javax.swing.JButton();
-        btnIniciarsesion2 = new javax.swing.JButton();
+        btnbuscar = new javax.swing.JButton();
+        txtbuscar = new javax.swing.JTextField();
+        contenedor = new javax.swing.JPanel();
+        btncerrarsesion = new javax.swing.JButton();
+        btnregister = new javax.swing.JButton();
+        btnlogin = new javax.swing.JButton();
         jMenuBar2 = new javax.swing.JMenuBar();
-        jMenu5 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
+        menucomprar = new javax.swing.JMenu();
         jMenu7 = new javax.swing.JMenu();
         jMenu10 = new javax.swing.JMenu();
         jMenu11 = new javax.swing.JMenu();
@@ -65,9 +66,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenu16 = new javax.swing.JMenu();
         jMenu17 = new javax.swing.JMenu();
         jMenu18 = new javax.swing.JMenu();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
+        menuproductos = new javax.swing.JMenu();
+        menureporte = new javax.swing.JMenu();
+        menufacturacion = new javax.swing.JMenu();
+        menuayuda = new javax.swing.JMenu();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -94,8 +96,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenu3.setText("jMenu3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Ecuamarket");
         setFocusable(false);
         setFocusableWindowState(false);
+        setMinimumSize(new java.awt.Dimension(1020, 592));
+        setResizable(false);
+        setSize(new java.awt.Dimension(1005, 550));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -122,95 +128,90 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
         jLabel1.setText("Bienvenidos a Ecumarket");
-        bkgprincipalform.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 480, 30));
+        bkgprincipalform.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 480, 30));
 
-        searchProducts.setBackground(new java.awt.Color(0, 102, 204));
-        searchProducts.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        searchProducts.setForeground(new java.awt.Color(255, 255, 255));
-        searchProducts.setText("Buscar");
-        searchProducts.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        searchProducts.addActionListener(new java.awt.event.ActionListener() {
+        btnbuscar.setBackground(new java.awt.Color(0, 102, 204));
+        btnbuscar.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        btnbuscar.setForeground(new java.awt.Color(255, 255, 255));
+        btnbuscar.setText("Buscar");
+        btnbuscar.setBorder(null);
+        btnbuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchProductsActionPerformed(evt);
+                btnbuscarActionPerformed(evt);
             }
         });
-        bkgprincipalform.add(searchProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 80, 30));
+        bkgprincipalform.add(btnbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 110, 40));
 
-        lblnombreusuario.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        lblnombreusuario.setText("Nombreusuariologeado");
-        bkgprincipalform.add(lblnombreusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 30, -1, -1));
+        txtbuscar.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        txtbuscar.setForeground(new java.awt.Color(204, 204, 204));
+        txtbuscar.setText("Ingresa lo que estas buscando");
+        txtbuscar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtbuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtbuscarMousePressed(evt);
+            }
+        });
+        bkgprincipalform.add(txtbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, 350, 30));
 
-        jTextField1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jTextField1.setText("Ingresa lo que estas buscando");
-        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        bkgprincipalform.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 310, -1));
+        contenedor.setBackground(new java.awt.Color(102, 102, 102));
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 860, Short.MAX_VALUE)
+        javax.swing.GroupLayout contenedorLayout = new javax.swing.GroupLayout(contenedor);
+        contenedor.setLayout(contenedorLayout);
+        contenedorLayout.setHorizontalGroup(
+            contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 960, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 350, Short.MAX_VALUE)
+        contenedorLayout.setVerticalGroup(
+            contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 410, Short.MAX_VALUE)
         );
 
-        bkgprincipalform.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 860, 350));
+        bkgprincipalform.add(contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 960, 410));
 
-        btnIniciarsesion.setBackground(new java.awt.Color(0, 0, 0));
-        btnIniciarsesion.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnIniciarsesion.setForeground(new java.awt.Color(255, 255, 255));
-        btnIniciarsesion.setText("Cerrar sesion");
-        btnIniciarsesion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        btnIniciarsesion.addActionListener(new java.awt.event.ActionListener() {
+        btncerrarsesion.setBackground(new java.awt.Color(51, 102, 255));
+        btncerrarsesion.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        btncerrarsesion.setForeground(new java.awt.Color(255, 255, 255));
+        btncerrarsesion.setText("Cerrar sesion");
+        btncerrarsesion.setBorder(null);
+        btncerrarsesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnIniciarsesionActionPerformed(evt);
+                btncerrarsesionActionPerformed(evt);
             }
         });
-        bkgprincipalform.add(btnIniciarsesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 20, 100, 30));
+        bkgprincipalform.add(btncerrarsesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 20, 130, 40));
 
-        btnIniciarsesion1.setBackground(new java.awt.Color(0, 0, 0));
-        btnIniciarsesion1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnIniciarsesion1.setForeground(new java.awt.Color(255, 255, 255));
-        btnIniciarsesion1.setText("Registrarse");
-        btnIniciarsesion1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        btnIniciarsesion1.addActionListener(new java.awt.event.ActionListener() {
+        btnregister.setBackground(new java.awt.Color(51, 102, 255));
+        btnregister.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        btnregister.setForeground(new java.awt.Color(255, 255, 255));
+        btnregister.setText("Registrarse");
+        btnregister.setBorder(null);
+        btnregister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnIniciarsesion1ActionPerformed(evt);
+                btnregisterActionPerformed(evt);
             }
         });
-        bkgprincipalform.add(btnIniciarsesion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 20, 100, 30));
+        bkgprincipalform.add(btnregister, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 20, 130, 40));
 
-        btnIniciarsesion2.setBackground(new java.awt.Color(0, 0, 0));
-        btnIniciarsesion2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnIniciarsesion2.setForeground(new java.awt.Color(255, 255, 255));
-        btnIniciarsesion2.setText("Iniciar sesion");
-        btnIniciarsesion2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        btnIniciarsesion2.addActionListener(new java.awt.event.ActionListener() {
+        btnlogin.setBackground(new java.awt.Color(51, 102, 255));
+        btnlogin.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        btnlogin.setForeground(new java.awt.Color(255, 255, 255));
+        btnlogin.setText("Iniciar sesion");
+        btnlogin.setBorder(null);
+        btnlogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnIniciarsesion2ActionPerformed(evt);
+                btnloginActionPerformed(evt);
             }
         });
-        bkgprincipalform.add(btnIniciarsesion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 20, 100, 30));
+        bkgprincipalform.add(btnlogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 20, 130, 40));
 
-        getContentPane().add(bkgprincipalform, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 490));
+        getContentPane().add(bkgprincipalform, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 570));
 
-        jMenuBar2.setBackground(new java.awt.Color(0, 0, 0));
-        jMenuBar2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuBar2.setBorder(null);
+        jMenuBar2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
-        jMenu5.setBackground(new java.awt.Color(255, 255, 0));
-        jMenu5.setBorder(null);
-        jMenu5.setText("Ayuda");
-        jMenu5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jMenuBar2.add(jMenu5);
-
-        jMenu4.setBackground(new java.awt.Color(0, 51, 204));
-        jMenu4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jMenu4.setText("Comprar");
-        jMenu4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        menucomprar.setBackground(new java.awt.Color(0, 51, 204));
+        menucomprar.setText("Comprar");
+        menucomprar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         jMenu7.setText("Productos");
 
@@ -220,7 +221,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenu11.setText("Hogar");
         jMenu7.add(jMenu11);
 
-        jMenu4.add(jMenu7);
+        menucomprar.add(jMenu7);
 
         jMenu8.setText("Servicios");
 
@@ -242,7 +243,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenu21.setText("Otros");
         jMenu8.add(jMenu21);
 
-        jMenu4.add(jMenu8);
+        menucomprar.add(jMenu8);
 
         jMenu9.setText("Vehiculos");
 
@@ -258,85 +259,105 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenu18.setText("Otros");
         jMenu9.add(jMenu18);
 
-        jMenu4.add(jMenu9);
+        menucomprar.add(jMenu9);
 
-        jMenuBar2.add(jMenu4);
+        jMenuBar2.add(menucomprar);
 
-        jMenu1.setText("Reporte");
-        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
+        menuproductos.setText("Productos");
+        menuproductos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        menuproductos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu1MouseClicked(evt);
+                menuproductosMouseClicked(evt);
             }
         });
-        jMenuBar2.add(jMenu1);
-
-        jMenu2.setText("Productos");
-        jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu2MouseClicked(evt);
-            }
-        });
-        jMenu2.addActionListener(new java.awt.event.ActionListener() {
+        menuproductos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu2ActionPerformed(evt);
+                menuproductosActionPerformed(evt);
             }
         });
-        jMenuBar2.add(jMenu2);
+        jMenuBar2.add(menuproductos);
 
-        jMenu6.setBackground(new java.awt.Color(204, 0, 51));
-        jMenu6.setText("Facturacion");
-        jMenu6.addMouseListener(new java.awt.event.MouseAdapter() {
+        menureporte.setText("Reporte");
+        menureporte.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        menureporte.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu6MouseClicked(evt);
+                menureporteMouseClicked(evt);
             }
         });
-        jMenuBar2.add(jMenu6);
+        jMenuBar2.add(menureporte);
+
+        menufacturacion.setBackground(new java.awt.Color(204, 0, 51));
+        menufacturacion.setText("Facturacion");
+        menufacturacion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        menufacturacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menufacturacionMouseClicked(evt);
+            }
+        });
+        jMenuBar2.add(menufacturacion);
+
+        menuayuda.setBackground(new java.awt.Color(255, 255, 0));
+        menuayuda.setBorder(null);
+        menuayuda.setText("Ayuda");
+        menuayuda.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jMenuBar2.add(menuayuda);
 
         setJMenuBar(jMenuBar2);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void searchProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchProductsActionPerformed
+    private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
        
-    }//GEN-LAST:event_searchProductsActionPerformed
+    }//GEN-LAST:event_btnbuscarActionPerformed
 
-    private void btnIniciarsesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarsesionActionPerformed
+    private void btncerrarsesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncerrarsesionActionPerformed
        // TODO add your handling code here:
-    }//GEN-LAST:event_btnIniciarsesionActionPerformed
+    }//GEN-LAST:event_btncerrarsesionActionPerformed
 
     private void jMenuItem_reporte_ventaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_reporte_ventaActionPerformed
         
     }//GEN-LAST:event_jMenuItem_reporte_ventaActionPerformed
 
-    private void btnIniciarsesion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarsesion1ActionPerformed
-         new RegistroFrame().setVisible(true); 
-    dispose(); 
-    }//GEN-LAST:event_btnIniciarsesion1ActionPerformed
+    private void btnregisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregisterActionPerformed
+registerpanel rp=new registerpanel();
+rp.setSize(960,410);
+rp.setLocation(0,0);
+contenedor.removeAll();
+contenedor.add(rp, BorderLayout.CENTER);
+contenedor.repaint();        
+    }//GEN-LAST:event_btnregisterActionPerformed
 
-    private void btnIniciarsesion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarsesion2ActionPerformed
-        new LoginFrame().setVisible(true); 
-    dispose(); 
-    }//GEN-LAST:event_btnIniciarsesion2ActionPerformed
+    private void btnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginActionPerformed
+loginpanel lp=new loginpanel();
+lp.setSize(960,410);
+lp.setLocation(0,0);
+contenedor.removeAll();
+contenedor.add(lp, BorderLayout.CENTER);
+contenedor.repaint();
+    }//GEN-LAST:event_btnloginActionPerformed
 
-    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
+    private void menureporteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menureporteMouseClicked
        new Reportes().setVisible(true); 
     dispose(); 
-    }//GEN-LAST:event_jMenu1MouseClicked
+    }//GEN-LAST:event_menureporteMouseClicked
 
-    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
+    private void menuproductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuproductosActionPerformed
         new GestionProductos().setVisible(true);
-    }//GEN-LAST:event_jMenu2ActionPerformed
+    }//GEN-LAST:event_menuproductosActionPerformed
 
-    private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
+    private void menuproductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuproductosMouseClicked
           new GestionProductos().setVisible(true);
-    }//GEN-LAST:event_jMenu2MouseClicked
+    }//GEN-LAST:event_menuproductosMouseClicked
 
-    private void jMenu6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu6MouseClicked
+    private void menufacturacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menufacturacionMouseClicked
        new Facturacion().setVisible(true);
-    }//GEN-LAST:event_jMenu6MouseClicked
-    // TODO add your handling code here:
-    // TODO add your handling code here:
+    }//GEN-LAST:event_menufacturacionMouseClicked
+
+    private void txtbuscarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbuscarMousePressed
+      
+    }//GEN-LAST:event_txtbuscarMousePressed
+
 
 
 
@@ -374,13 +395,14 @@ public void agregarProducto(String productos) {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bkgprincipalform;
-    private javax.swing.JButton btnIniciarsesion;
-    private javax.swing.JButton btnIniciarsesion1;
-    private javax.swing.JButton btnIniciarsesion2;
+    private javax.swing.JButton btnbuscar;
+    private javax.swing.JButton btncerrarsesion;
+    private javax.swing.JButton btnlogin;
+    private javax.swing.JButton btnregister;
+    private javax.swing.JPanel contenedor;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu12;
@@ -391,22 +413,20 @@ public void agregarProducto(String productos) {
     private javax.swing.JMenu jMenu17;
     private javax.swing.JMenu jMenu18;
     private javax.swing.JMenu jMenu19;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu20;
     private javax.swing.JMenu jMenu21;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPopupMenu jPopupMenu1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JLabel lblnombreusuario;
-    private javax.swing.JButton searchProducts;
+    private javax.swing.JMenu menuayuda;
+    private javax.swing.JMenu menucomprar;
+    private javax.swing.JMenu menufacturacion;
+    private javax.swing.JMenu menuproductos;
+    private javax.swing.JMenu menureporte;
+    private javax.swing.JTextField txtbuscar;
     // End of variables declaration//GEN-END:variables
 }
