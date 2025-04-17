@@ -7,6 +7,7 @@ package com.mycompany.ecumarket;
 //import java.awt.event.ActionEvent;
 import javax.swing.*;
 import java.awt.BorderLayout;
+import java.awt.Color;
 
 
 /**
@@ -68,8 +69,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenu18 = new javax.swing.JMenu();
         menuproductos = new javax.swing.JMenu();
         menureporte = new javax.swing.JMenu();
-        menufacturacion = new javax.swing.JMenu();
         menuayuda = new javax.swing.JMenu();
+        menufacturacion = new javax.swing.JMenu();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -97,8 +98,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ecuamarket");
-        setFocusable(false);
-        setFocusableWindowState(false);
         setMinimumSize(new java.awt.Dimension(1020, 592));
         setResizable(false);
         setSize(new java.awt.Dimension(1005, 550));
@@ -120,8 +119,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         bkgprincipalform.setBackground(new java.awt.Color(255, 255, 255));
         bkgprincipalform.setAutoscrolls(true);
         bkgprincipalform.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        bkgprincipalform.setFocusCycleRoot(true);
-        bkgprincipalform.setFocusTraversalPolicyProvider(true);
         bkgprincipalform.setInheritsPopupMenu(true);
         bkgprincipalform.setName(""); // NOI18N
         bkgprincipalform.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -145,7 +142,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         txtbuscar.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         txtbuscar.setForeground(new java.awt.Color(204, 204, 204));
         txtbuscar.setText("Ingresa lo que estas buscando");
-        txtbuscar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtbuscar.setCaretPosition(0);
         txtbuscar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 txtbuscarMousePressed(evt);
@@ -286,6 +283,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         });
         jMenuBar2.add(menureporte);
 
+        menuayuda.setBackground(new java.awt.Color(255, 255, 0));
+        menuayuda.setBorder(null);
+        menuayuda.setText("Ayuda");
+        menuayuda.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jMenuBar2.add(menuayuda);
+
         menufacturacion.setBackground(new java.awt.Color(204, 0, 51));
         menufacturacion.setText("Facturacion");
         menufacturacion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -295,12 +298,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             }
         });
         jMenuBar2.add(menufacturacion);
-
-        menuayuda.setBackground(new java.awt.Color(255, 255, 0));
-        menuayuda.setBorder(null);
-        menuayuda.setText("Ayuda");
-        menuayuda.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jMenuBar2.add(menuayuda);
 
         setJMenuBar(jMenuBar2);
 
@@ -325,6 +322,7 @@ rp.setSize(960,410);
 rp.setLocation(0,0);
 contenedor.removeAll();
 contenedor.add(rp, BorderLayout.CENTER);
+contenedor.revalidate();
 contenedor.repaint();        
     }//GEN-LAST:event_btnregisterActionPerformed
 
@@ -334,6 +332,7 @@ lp.setSize(960,410);
 lp.setLocation(0,0);
 contenedor.removeAll();
 contenedor.add(lp, BorderLayout.CENTER);
+contenedor.revalidate( );
 contenedor.repaint();
     }//GEN-LAST:event_btnloginActionPerformed
 
@@ -355,7 +354,8 @@ contenedor.repaint();
     }//GEN-LAST:event_menufacturacionMouseClicked
 
     private void txtbuscarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbuscarMousePressed
-      
+txtbuscar.setText("");
+txtbuscar.setForeground(Color.black);
     }//GEN-LAST:event_txtbuscarMousePressed
 
 

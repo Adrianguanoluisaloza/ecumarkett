@@ -4,6 +4,8 @@
  */
 package com.mycompany.ecumarket;
 
+import java.awt.Color;
+
 /**
  *
  * @author LENOVO IDEAPAD
@@ -30,12 +32,12 @@ public class loginpanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        txtcorreo = new javax.swing.JTextField();
+        txtcontrase = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
 
         setMinimumSize(new java.awt.Dimension(960, 410));
+        setPreferredSize(new java.awt.Dimension(960, 410));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setMinimumSize(new java.awt.Dimension(740, 339));
@@ -43,7 +45,7 @@ public class loginpanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setText("Inicia sesion");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setText("Correo electronico");
@@ -53,42 +55,71 @@ public class loginpanel extends javax.swing.JPanel {
         jLabel3.setText("Contraseña");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, -1, -1));
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, 280, -1));
+        txtcorreo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        txtcorreo.setForeground(new java.awt.Color(204, 204, 204));
+        txtcorreo.setText("alguien@example.com");
+        txtcorreo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtcorreoMousePressed(evt);
+            }
+        });
+        jPanel1.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, 280, -1));
 
-        jPasswordField1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jPasswordField1.setText("jPasswordField1");
-        jPanel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, 280, -1));
+        txtcontrase.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        txtcontrase.setForeground(new java.awt.Color(204, 204, 204));
+        txtcontrase.setText("********");
+        txtcontrase.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtcontraseMousePressed(evt);
+            }
+        });
+        jPanel1.add(txtcontrase, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 280, -1));
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton1.setText("Entrar");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 100, -1));
-
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton2.setText("Registrarse");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, -1, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 200, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 960, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtcontraseMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtcontraseMousePressed
+if(String.valueOf(txtcontrase.getPassword()).equals("********")){
+        txtcontrase.setText("");
+txtcontrase.setForeground(Color.black);
+}
+if(txtcorreo.getText().isEmpty()){
+txtcorreo.setText("alguien@example.com");
+txtcorreo.setForeground(Color.gray);}
+// TODO add your handling code here:
+    }//GEN-LAST:event_txtcontraseMousePressed
+
+    private void txtcorreoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtcorreoMousePressed
+        if(String.valueOf(txtcontrase.getPassword()).isEmpty()){
+        txtcontrase.setText("********");
+txtcontrase.setForeground(Color.gray);
+}
+if(txtcorreo.getText().equals("alguien@example.com")){
+txtcorreo.setText("");
+txtcorreo.setForeground(Color.black);}
+    }//GEN-LAST:event_txtcorreoMousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPasswordField txtcontrase;
+    private javax.swing.JTextField txtcorreo;
     // End of variables declaration//GEN-END:variables
 }
