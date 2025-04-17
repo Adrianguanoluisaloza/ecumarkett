@@ -36,6 +36,7 @@ public class loginpanel extends javax.swing.JPanel {
         txtcontrase = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        lblfondito = new javax.swing.JLabel();
 
         setMinimumSize(new java.awt.Dimension(960, 410));
         setPreferredSize(new java.awt.Dimension(960, 410));
@@ -87,6 +88,10 @@ public class loginpanel extends javax.swing.JPanel {
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblfondito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Loginregister/70843685-fondo-transparente-azul-categorías-de-productos-tienda-en-línea-fondo-azul-sin-fisuras-con-los (2).jpg"))); // NOI18N
+        jPanel2.add(lblfondito, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 0, 370, 410));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -130,6 +135,7 @@ txtcorreo.setForeground(Color.black);}
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblfondito;
     private javax.swing.JPasswordField txtcontrase;
     private javax.swing.JTextField txtcorreo;
     // End of variables declaration//GEN-END:variables
