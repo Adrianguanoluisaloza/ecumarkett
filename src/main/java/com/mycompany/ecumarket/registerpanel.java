@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package com.mycompany.ecumarket;
-import java.awt.BorderLayout;
+
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author LENOVO IDEAPAD
@@ -33,12 +35,12 @@ public class registerpanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        txtcontra = new javax.swing.JTextField();
+        txtnumero = new javax.swing.JTextField();
+        txtcorreo = new javax.swing.JTextField();
+        txtnombre = new javax.swing.JTextField();
+        cmbciudad = new javax.swing.JComboBox<>();
+        btnregistrar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -80,28 +82,33 @@ public class registerpanel extends javax.swing.JPanel {
         jLabel6.setText("Ciudad");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 270, -1));
+        txtcontra.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jPanel1.add(txtcontra, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 270, -1));
 
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 270, -1));
+        txtnumero.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jPanel1.add(txtnumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 270, -1));
 
-        jTextField3.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 270, -1));
+        txtcorreo.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jPanel1.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 270, -1));
 
-        jTextField4.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 270, -1));
+        txtnombre.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jPanel1.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 270, -1));
 
-        jComboBox1.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(0, 153, 255));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Azuay", "Bolívar", "Cañar", "Carchi", "Chimborazo", "Cotopaxi", "El Oro", "Esmeraldas", "Galápagos", "Guayas", "Imbabura", "Loja", "Los Ríos", "Manabí", "Morona Santiago", "Napo", "Orellana", "Pastaza", "Pichincha", "Santa Elena", "Santo Domingo de los tsáchilas", "Sucumbíos", "Tungurahua", "Zamora Chinchipe" }));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 200, -1));
+        cmbciudad.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        cmbciudad.setForeground(new java.awt.Color(0, 153, 255));
+        cmbciudad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Azuay", "Bolívar", "Cañar", "Carchi", "Chimborazo", "Cotopaxi", "El Oro", "Esmeraldas", "Galápagos", "Guayas", "Imbabura", "Loja", "Los Ríos", "Manabí", "Morona Santiago", "Napo", "Orellana", "Pastaza", "Pichincha", "Santa Elena", "Santo Domingo de los tsáchilas", "Sucumbíos", "Tungurahua", "Zamora Chinchipe" }));
+        jPanel1.add(cmbciudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 200, -1));
 
-        jButton1.setBackground(new java.awt.Color(0, 153, 255));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Registrarse");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 340, 150, 40));
+        btnregistrar.setBackground(new java.awt.Color(0, 153, 255));
+        btnregistrar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnregistrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnregistrar.setText("Registrarse");
+        btnregistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnregistrarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnregistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 340, 150, 40));
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -128,10 +135,48 @@ public class registerpanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnregistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregistrarActionPerformed
+       
+        String correo = txtcorreo.getText().trim();
+        String contraseña = txtcontra.getText().trim(); // Ya es JTextField
+        String nombreCompleto = txtnombre.getText().trim();
+        String telefonoStr = txtnumero.getText().trim();
+        String ciudad = cmbciudad.getSelectedItem().toString();
+
+        // Validación básica
+        if (correo.isEmpty() || contraseña.isEmpty() || nombreCompleto.isEmpty() || telefonoStr.isEmpty() || ciudad.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Por favor completa todos los campos", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        try {
+            int telefono = Integer.parseInt(telefonoStr);
+
+            Clases.UsuarioDao dao = new Clases.UsuarioDao();
+            boolean exito = dao.registrarUsuario(correo, contraseña, nombreCompleto, telefono, ciudad);
+
+            if (exito) {
+                JOptionPane.showMessageDialog(null, "✅ Usuario registrado con éxito");
+
+                // Limpiar campos
+                txtcorreo.setText("");
+                txtcontra.setText("");
+                txtnombre.setText("");
+                txtnumero.setText("");
+                cmbciudad.setSelectedIndex(0);
+            } else {
+                JOptionPane.showMessageDialog(null, "❌ Error al registrar usuario", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "El teléfono debe ser un número válido", "Formato incorrecto", JOptionPane.ERROR_MESSAGE);
+        }
+    }{
+    }//GEN-LAST:event_btnregistrarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton btnregistrar;
+    private javax.swing.JComboBox<String> cmbciudad;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -142,9 +187,9 @@ public class registerpanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField txtcontra;
+    private javax.swing.JTextField txtcorreo;
+    private javax.swing.JTextField txtnombre;
+    private javax.swing.JTextField txtnumero;
     // End of variables declaration//GEN-END:variables
 }

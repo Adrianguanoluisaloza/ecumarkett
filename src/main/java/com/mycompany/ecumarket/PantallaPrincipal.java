@@ -27,6 +27,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         
         initComponents();
     }
+loginpanel login = new loginpanel(this);
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -50,6 +51,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         btncerrarsesion = new javax.swing.JButton();
         btnregister = new javax.swing.JButton();
         btnlogin = new javax.swing.JButton();
+        lblnombrecompleto = new javax.swing.JLabel();
         jMenuBar2 = new javax.swing.JMenuBar();
         menucomprar = new javax.swing.JMenu();
         jMenu7 = new javax.swing.JMenu();
@@ -202,6 +204,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         });
         bkgprincipalform.add(btnlogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 20, 130, 40));
 
+        lblnombrecompleto.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblnombrecompleto.setText("as");
+        bkgprincipalform.add(lblnombrecompleto, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 80, 250, 30));
+
         getContentPane().add(bkgprincipalform, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 570));
 
         jMenuBar2.setBorder(null);
@@ -304,6 +310,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+public void actualizarNombreUsuario(String nombre) {
+    lblnombrecompleto.setText("Bienvenido, " + nombre); // lblUsuario es tu JLabel en el JFrame
+}
 
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
        
@@ -422,6 +431,7 @@ public void agregarProducto(String productos) {
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JLabel lblnombrecompleto;
     private javax.swing.JLabel lblsaludo;
     private javax.swing.JMenu menuayuda;
     private javax.swing.JMenu menucomprar;

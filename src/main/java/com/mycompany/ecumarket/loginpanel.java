@@ -34,7 +34,7 @@ public class loginpanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         txtcorreo = new javax.swing.JTextField();
         txtcontrase = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        btnentrar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -81,11 +81,16 @@ public class loginpanel extends javax.swing.JPanel {
         });
         jPanel1.add(txtcontrase, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 310, -1));
 
-        jButton1.setBackground(new java.awt.Color(0, 153, 255));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Entrar");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 200, -1));
+        btnentrar.setBackground(new java.awt.Color(0, 153, 255));
+        btnentrar.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
+        btnentrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnentrar.setText("Entrar");
+        btnentrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnentrarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnentrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 200, -1));
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -111,6 +116,12 @@ public class loginpanel extends javax.swing.JPanel {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+private PantallaPrincipal pantallaPrincipal;
+
+public loginpanel(PantallaPrincipal pantallaPrincipal) {
+    initComponents();
+    this.pantallaPrincipal = pantallaPrincipal;
+}
 
     private void txtcontraseMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtcontraseMousePressed
 if(String.valueOf(txtcontrase.getPassword()).equals("********")){
@@ -133,9 +144,30 @@ txtcorreo.setText("");
 txtcorreo.setForeground(Color.black);}
     }//GEN-LAST:event_txtcorreoMousePressed
 
+    private void btnentrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnentrarActionPerformed
+       Clases.UsuarioDao objetoLogin = new Clases.UsuarioDao();
+
+    String correo = txtcorreo.getText().trim();
+    String contraseña = new String(txtcontrase.getPassword()).trim();
+
+    String resultado = objetoLogin.validarLogin(correo, contraseña);
+
+    if (resultado != null) {
+        // Login exitoso
+        javax.swing.JOptionPane.showMessageDialog(this, "¡Bienvenido, " + resultado + "!");
+         pantallaPrincipal.actualizarNombreUsuario(resultado);
+
+    } else {
+        // Login fallido
+        javax.swing.JOptionPane.showMessageDialog(this, "Correo o contraseña incorrectos.", "Error de autenticación", javax.swing.JOptionPane.ERROR_MESSAGE);
+    }
+
+       
+    }//GEN-LAST:event_btnentrarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnentrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
