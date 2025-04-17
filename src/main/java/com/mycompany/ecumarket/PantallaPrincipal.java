@@ -43,7 +43,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jPanel1 = new javax.swing.JPanel();
         bkgprincipalform = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lblsaludo = new javax.swing.JLabel();
         btnbuscar = new javax.swing.JButton();
         txtbuscar = new javax.swing.JTextField();
         contenedor = new javax.swing.JPanel();
@@ -123,11 +123,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         bkgprincipalform.setName(""); // NOI18N
         bkgprincipalform.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        jLabel1.setText("Bienvenidos a Ecumarket");
-        bkgprincipalform.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 480, 30));
+        lblsaludo.setFont(new java.awt.Font("Arial Black", 1, 30)); // NOI18N
+        lblsaludo.setForeground(new java.awt.Color(0, 0, 153));
+        lblsaludo.setText("Bienvenidos a Ecumarket");
+        bkgprincipalform.add(lblsaludo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 480, 30));
 
-        btnbuscar.setBackground(new java.awt.Color(0, 102, 204));
+        btnbuscar.setBackground(new java.awt.Color(0, 153, 255));
         btnbuscar.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         btnbuscar.setForeground(new java.awt.Color(255, 255, 255));
         btnbuscar.setText("Buscar");
@@ -148,9 +149,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 txtbuscarMousePressed(evt);
             }
         });
-        bkgprincipalform.add(txtbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, 350, 30));
+        bkgprincipalform.add(txtbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 26, 350, 30));
 
-        contenedor.setBackground(new java.awt.Color(102, 102, 102));
+        contenedor.setBackground(new java.awt.Color(0, 153, 255));
 
         javax.swing.GroupLayout contenedorLayout = new javax.swing.GroupLayout(contenedor);
         contenedor.setLayout(contenedorLayout);
@@ -165,7 +166,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         bkgprincipalform.add(contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 960, 410));
 
-        btncerrarsesion.setBackground(new java.awt.Color(51, 102, 255));
+        btncerrarsesion.setBackground(new java.awt.Color(0, 153, 255));
         btncerrarsesion.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         btncerrarsesion.setForeground(new java.awt.Color(255, 255, 255));
         btncerrarsesion.setText("Cerrar sesion");
@@ -177,7 +178,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         });
         bkgprincipalform.add(btncerrarsesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 20, 130, 40));
 
-        btnregister.setBackground(new java.awt.Color(51, 102, 255));
+        btnregister.setBackground(new java.awt.Color(0, 153, 255));
         btnregister.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         btnregister.setForeground(new java.awt.Color(255, 255, 255));
         btnregister.setText("Registrarse");
@@ -189,7 +190,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         });
         bkgprincipalform.add(btnregister, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 20, 130, 40));
 
-        btnlogin.setBackground(new java.awt.Color(51, 102, 255));
+        btnlogin.setBackground(new java.awt.Color(0, 153, 255));
         btnlogin.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         btnlogin.setForeground(new java.awt.Color(255, 255, 255));
         btnlogin.setText("Iniciar sesion");
@@ -402,7 +403,6 @@ public void agregarProducto(String productos) {
     private javax.swing.JPanel contenedor;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JFrame jFrame1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu12;
@@ -422,6 +422,7 @@ public void agregarProducto(String productos) {
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JLabel lblsaludo;
     private javax.swing.JMenu menuayuda;
     private javax.swing.JMenu menucomprar;
     private javax.swing.JMenu menufacturacion;
