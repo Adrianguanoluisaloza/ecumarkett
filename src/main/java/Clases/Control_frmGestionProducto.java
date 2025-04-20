@@ -24,7 +24,7 @@ public class Control_frmGestionProducto implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
        if(e.getSource()==frm_rp.btnguardar){
-           System.out.println("OK");
+           
            
            String usuario=frm_rp.txtusuario.getText();
            String nombre=frm_rp.txtnombre.getText();
@@ -37,8 +37,6 @@ public class Control_frmGestionProducto implements ActionListener {
            
            ListProducto lp=new ListProducto();
            lp.MostrarTable(frm_rp.TablaProductos);
-
-           
            limpiarentradas();
        
            

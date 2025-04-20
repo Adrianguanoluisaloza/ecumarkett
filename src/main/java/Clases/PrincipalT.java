@@ -14,12 +14,15 @@ public class PrincipalT {
 
   public static GestionProductos frm_rp;
   public static Control_frmGestionProducto c_frm_rp;
+   public static ListProducto lp;
     public static void main(String[] args) {
       frm_rp=new GestionProductos();
       frm_rp.setVisible(true);
       frm_rp.setLocationRelativeTo(null);
       
       c_frm_rp=new Control_frmGestionProducto(frm_rp);
+      lp=new ListProducto();
+      lp.MostrarTable(frm_rp.TablaProductos);
     }
     
 }
