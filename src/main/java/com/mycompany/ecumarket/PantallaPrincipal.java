@@ -27,6 +27,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         
         initComponents( );
         mostrarLogin();
+        jMenuBar2.setEnabled(false);
+        menuproductos.setEnabled(false);
         
     }
 
@@ -174,6 +176,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         getContentPane().add(bkgprincipalform, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 570));
 
         jMenuBar2.setBorder(null);
+        jMenuBar2.setEnabled(false);
         jMenuBar2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         menucomprar.setBackground(new java.awt.Color(0, 51, 204));
@@ -272,6 +275,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 menufacturacionMouseClicked(evt);
             }
         });
+        menufacturacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menufacturacionActionPerformed(evt);
+            }
+        });
         jMenuBar2.add(menufacturacion);
 
         menudeslog.setText("Cerrar sesion");
@@ -330,8 +338,7 @@ public void mostrarRegistro() {
     }//GEN-LAST:event_jMenuItem_reporte_ventaActionPerformed
 
     private void menureporteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menureporteMouseClicked
-       new Reportes().setVisible(true); 
-    dispose(); 
+       
     }//GEN-LAST:event_menureporteMouseClicked
 
     private void menuproductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuproductosActionPerformed
@@ -339,11 +346,11 @@ public void mostrarRegistro() {
     }//GEN-LAST:event_menuproductosActionPerformed
 
     private void menuproductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuproductosMouseClicked
-          new GestionProductos().setVisible(true);
+         
     }//GEN-LAST:event_menuproductosMouseClicked
 
     private void menufacturacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menufacturacionMouseClicked
-       new Facturacion().setVisible(true);
+      
     }//GEN-LAST:event_menufacturacionMouseClicked
 
     private void txtbuscarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbuscarMousePressed
@@ -360,6 +367,10 @@ menufacturacion.setEnabled(false);
 menudeslog.setEnabled(false);
 lblnombrecompleto.setText("");
     }//GEN-LAST:event_menudeslogActionPerformed
+
+    private void menufacturacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menufacturacionActionPerformed
+        new Facturacion().setVisible(true);
+    }//GEN-LAST:event_menufacturacionActionPerformed
 
 
 
