@@ -64,6 +64,14 @@ public class loginpanel extends javax.swing.JPanel {
         txtcorreo.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         txtcorreo.setForeground(new java.awt.Color(204, 204, 204));
         txtcorreo.setText("alguien@example.com");
+        txtcorreo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtcorreoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtcorreoFocusLost(evt);
+            }
+        });
         txtcorreo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 txtcorreoMousePressed(evt);
@@ -74,6 +82,14 @@ public class loginpanel extends javax.swing.JPanel {
         txtcontrase.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         txtcontrase.setForeground(new java.awt.Color(204, 204, 204));
         txtcontrase.setText("********");
+        txtcontrase.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtcontraseFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtcontraseFocusLost(evt);
+            }
+        });
         txtcontrase.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 txtcontraseMousePressed(evt);
@@ -164,6 +180,34 @@ txtcorreo.setForeground(Color.black);}
 
        
     }//GEN-LAST:event_btnentrarActionPerformed
+
+    private void txtcontraseFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtcontraseFocusGained
+        if (String.valueOf(txtcontrase.getPassword()).equals("********")) {
+            txtcontrase.setText("");
+            txtcontrase.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_txtcontraseFocusGained
+
+    private void txtcontraseFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtcontraseFocusLost
+        if (String.valueOf(txtcontrase.getPassword()).isEmpty()) {
+            txtcontrase.setText("********");
+            txtcontrase.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_txtcontraseFocusLost
+
+    private void txtcorreoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtcorreoFocusGained
+        if (txtcorreo.getText().equals("alguien@example.com")) {
+            txtcorreo.setText("");
+            txtcorreo.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_txtcorreoFocusGained
+
+    private void txtcorreoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtcorreoFocusLost
+         if (txtcorreo.getText().isEmpty()) {
+            txtcorreo.setText("alguien@example.com");
+            txtcorreo.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_txtcorreoFocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

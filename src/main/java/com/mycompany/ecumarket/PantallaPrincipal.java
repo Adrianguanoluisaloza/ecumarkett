@@ -311,7 +311,9 @@ loginpanel login = new loginpanel(this);
         pack();
     }// </editor-fold>//GEN-END:initComponents
 public void actualizarNombreUsuario(String nombre) {
-    lblnombrecompleto.setText("Bienvenido, " + nombre); // lblUsuario es tu JLabel en el JFrame
+    lblnombrecompleto.setText("Bienvenido, " + nombre); 
+    lblnombrecompleto.revalidate();
+lblnombrecompleto.repaint();
 }
 
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed

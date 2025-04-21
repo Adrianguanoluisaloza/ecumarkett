@@ -42,7 +42,7 @@ public class registerpanel extends javax.swing.JPanel {
         cmbciudad = new javax.swing.JComboBox<>();
         btnregistrar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
+        lbllogo = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
         setMinimumSize(new java.awt.Dimension(960, 410));
@@ -113,8 +113,8 @@ public class registerpanel extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(0, 153, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Loginregister/lalaa.png"))); // NOI18N
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 240, 220));
+        lbllogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Loginregister/lalaa.png"))); // NOI18N
+        jPanel2.add(lbllogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 240, 220));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -183,10 +183,10 @@ public class registerpanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lbllogo;
     private javax.swing.JTextField txtcontra;
     private javax.swing.JTextField txtcorreo;
     private javax.swing.JTextField txtnombre;
