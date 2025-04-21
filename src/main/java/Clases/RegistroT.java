@@ -18,14 +18,12 @@ public class RegistroT {
     
    public void registrarbd(ProductoTadeo p){
    try{
-   PreparedStatement ps = cn.prepareStatement(
-    "INSERT INTO productos(usuario_id, nombre, cantidad, precio, total) VALUES (?, ?, ?, ?, ?)");
-   ps.setInt(1, p.getUsuarioId());
+   PreparedStatement ps = cn.prepareStatement("INSERT INTO productos(usuario_id, nombre_producto, cantidad, precio, total) VALUES (?, ?, ?, ?, ?)");
+            ps.setString(1, p.getUsuario());
             ps.setString(2, p.getNombre());
             ps.setInt(3, p.getCantidad());
             ps.setDouble(4, p.getPrecio());
             ps.setDouble(5, p.Total());
-            
             ps.executeUpdate();
             
              JOptionPane.showMessageDialog(null, "✅ Producto guardado correctamente");
