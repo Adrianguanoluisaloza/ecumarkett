@@ -15,8 +15,15 @@ public class loginpanel extends javax.swing.JPanel {
     /**
      * Creates new form loginpanel
      */
+  PantallaPrincipal pantallaPrincipal;
+    public loginpanel(PantallaPrincipal pantallaPrincipal) {
+    initComponents();
+    this.pantallaPrincipal = pantallaPrincipal;
+    lblregistrarse.setText("<html><u>Registrate!</u></html>");
+}
     public loginpanel() {
         initComponents();
+        
     }
 
     /**
@@ -38,6 +45,8 @@ public class loginpanel extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        lblregistrarse = new javax.swing.JLabel();
 
         setMinimumSize(new java.awt.Dimension(960, 410));
         setPreferredSize(new java.awt.Dimension(960, 410));
@@ -100,13 +109,13 @@ public class loginpanel extends javax.swing.JPanel {
         btnentrar.setBackground(new java.awt.Color(0, 153, 255));
         btnentrar.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         btnentrar.setForeground(new java.awt.Color(255, 255, 255));
-        btnentrar.setText("Entrar");
+        btnentrar.setText("Iniciar sesion");
         btnentrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnentrarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnentrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 200, -1));
+        jPanel1.add(btnentrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 200, -1));
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -121,6 +130,31 @@ public class loginpanel extends javax.swing.JPanel {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 0, 370, 410));
 
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel4.setText("¿No tienes cuenta?");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 360, -1, -1));
+
+        lblregistrarse.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblregistrarse.setForeground(new java.awt.Color(204, 204, 204));
+        lblregistrarse.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblregistrarseMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblregistrarseMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblregistrarseMouseExited(evt);
+            }
+        });
+        lblregistrarse.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                lblregistrarseKeyPressed(evt);
+            }
+        });
+        jPanel1.add(lblregistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -132,12 +166,7 @@ public class loginpanel extends javax.swing.JPanel {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-private PantallaPrincipal pantallaPrincipal;
 
-public loginpanel(PantallaPrincipal pantallaPrincipal) {
-    initComponents();
-    this.pantallaPrincipal = pantallaPrincipal;
-}
 
     private void txtcontraseMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtcontraseMousePressed
 if(String.valueOf(txtcontrase.getPassword()).equals("********")){
@@ -169,12 +198,11 @@ txtcorreo.setForeground(Color.black);}
     String resultado = objetoLogin.validarLogin(correo, contraseña);
 
     if (resultado != null) {
-        // Login exitoso
         javax.swing.JOptionPane.showMessageDialog(this, "¡Bienvenido, " + resultado + "!");
          pantallaPrincipal.actualizarNombreUsuario(resultado);
+         pantallaPrincipal.activarMenu();
 
     } else {
-        // Login fallido
         javax.swing.JOptionPane.showMessageDialog(this, "Correo o contraseña incorrectos.", "Error de autenticación", javax.swing.JOptionPane.ERROR_MESSAGE);
     }
 
@@ -209,16 +237,34 @@ txtcorreo.setForeground(Color.black);}
         }
     }//GEN-LAST:event_txtcorreoFocusLost
 
+    private void lblregistrarseKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lblregistrarseKeyPressed
+        
+    }//GEN-LAST:event_lblregistrarseKeyPressed
+
+    private void lblregistrarseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblregistrarseMouseClicked
+        pantallaPrincipal.mostrarRegistro();
+    }//GEN-LAST:event_lblregistrarseMouseClicked
+
+    private void lblregistrarseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblregistrarseMouseEntered
+        lblregistrarse.setForeground(Color.black);
+    }//GEN-LAST:event_lblregistrarseMouseEntered
+
+    private void lblregistrarseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblregistrarseMouseExited
+        lblregistrarse.setForeground(Color.gray);
+    }//GEN-LAST:event_lblregistrarseMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnentrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblregistrarse;
     private javax.swing.JPasswordField txtcontrase;
     private javax.swing.JTextField txtcorreo;
     // End of variables declaration//GEN-END:variables

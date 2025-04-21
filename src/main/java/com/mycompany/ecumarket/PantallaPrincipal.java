@@ -25,9 +25,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     e.printStackTrace();
 }
         
-        initComponents();
+        initComponents( );
+        mostrarLogin();
+        
     }
-loginpanel login = new loginpanel(this);
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -48,9 +50,6 @@ loginpanel login = new loginpanel(this);
         btnbuscar = new javax.swing.JButton();
         txtbuscar = new javax.swing.JTextField();
         contenedor = new javax.swing.JPanel();
-        btncerrarsesion = new javax.swing.JButton();
-        btnregister = new javax.swing.JButton();
-        btnlogin = new javax.swing.JButton();
         lblnombrecompleto = new javax.swing.JLabel();
         jMenuBar2 = new javax.swing.JMenuBar();
         menucomprar = new javax.swing.JMenu();
@@ -73,6 +72,7 @@ loginpanel login = new loginpanel(this);
         menureporte = new javax.swing.JMenu();
         menuayuda = new javax.swing.JMenu();
         menufacturacion = new javax.swing.JMenu();
+        menudeslog = new javax.swing.JMenu();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -168,45 +168,8 @@ loginpanel login = new loginpanel(this);
 
         bkgprincipalform.add(contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 960, 410));
 
-        btncerrarsesion.setBackground(new java.awt.Color(0, 153, 255));
-        btncerrarsesion.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        btncerrarsesion.setForeground(new java.awt.Color(255, 255, 255));
-        btncerrarsesion.setText("Cerrar sesion");
-        btncerrarsesion.setBorder(null);
-        btncerrarsesion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btncerrarsesionActionPerformed(evt);
-            }
-        });
-        bkgprincipalform.add(btncerrarsesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 20, 130, 40));
-
-        btnregister.setBackground(new java.awt.Color(0, 153, 255));
-        btnregister.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        btnregister.setForeground(new java.awt.Color(255, 255, 255));
-        btnregister.setText("Registrarse");
-        btnregister.setBorder(null);
-        btnregister.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnregisterActionPerformed(evt);
-            }
-        });
-        bkgprincipalform.add(btnregister, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 20, 130, 40));
-
-        btnlogin.setBackground(new java.awt.Color(0, 153, 255));
-        btnlogin.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        btnlogin.setForeground(new java.awt.Color(255, 255, 255));
-        btnlogin.setText("Iniciar sesion");
-        btnlogin.setBorder(null);
-        btnlogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnloginActionPerformed(evt);
-            }
-        });
-        bkgprincipalform.add(btnlogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 20, 130, 40));
-
-        lblnombrecompleto.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblnombrecompleto.setText("as");
-        bkgprincipalform.add(lblnombrecompleto, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 80, 250, 30));
+        lblnombrecompleto.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        bkgprincipalform.add(lblnombrecompleto, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 30, 350, 30));
 
         getContentPane().add(bkgprincipalform, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 570));
 
@@ -215,6 +178,7 @@ loginpanel login = new loginpanel(this);
 
         menucomprar.setBackground(new java.awt.Color(0, 51, 204));
         menucomprar.setText("Comprar");
+        menucomprar.setEnabled(false);
         menucomprar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         jMenu7.setText("Productos");
@@ -268,6 +232,7 @@ loginpanel login = new loginpanel(this);
         jMenuBar2.add(menucomprar);
 
         menuproductos.setText("Productos");
+        menuproductos.setEnabled(false);
         menuproductos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         menuproductos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -282,6 +247,7 @@ loginpanel login = new loginpanel(this);
         jMenuBar2.add(menuproductos);
 
         menureporte.setText("Reporte");
+        menureporte.setEnabled(false);
         menureporte.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         menureporte.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -293,11 +259,13 @@ loginpanel login = new loginpanel(this);
         menuayuda.setBackground(new java.awt.Color(255, 255, 0));
         menuayuda.setBorder(null);
         menuayuda.setText("Ayuda");
+        menuayuda.setEnabled(false);
         menuayuda.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jMenuBar2.add(menuayuda);
 
         menufacturacion.setBackground(new java.awt.Color(204, 0, 51));
         menufacturacion.setText("Facturacion");
+        menufacturacion.setEnabled(false);
         menufacturacion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         menufacturacion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -305,6 +273,16 @@ loginpanel login = new loginpanel(this);
             }
         });
         jMenuBar2.add(menufacturacion);
+
+        menudeslog.setText("Cerrar sesion");
+        menudeslog.setEnabled(false);
+        menudeslog.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        menudeslog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menudeslogActionPerformed(evt);
+            }
+        });
+        jMenuBar2.add(menudeslog);
 
         setJMenuBar(jMenuBar2);
 
@@ -315,38 +293,41 @@ public void actualizarNombreUsuario(String nombre) {
     lblnombrecompleto.revalidate();
 lblnombrecompleto.repaint();
 }
+public void activarMenu(){
+ menucomprar.setEnabled(true);
+menuproductos.setEnabled(true);
+menureporte.setEnabled(true);
+menuayuda.setEnabled(true);
+menufacturacion.setEnabled(true);
+menudeslog.setEnabled(true);
 
+}
+public void mostrarLogin() {
+    loginpanel lp = new loginpanel(this);
+        lp.setSize(960, 410);
+        lp.setLocation(0, 0);
+        contenedor.removeAll();
+        contenedor.add(lp, BorderLayout.CENTER);
+        contenedor.revalidate();
+        contenedor.repaint();
+}
+
+public void mostrarRegistro() {
+     registerpanel rp = new registerpanel(this);
+        rp.setSize(960, 410);
+        rp.setLocation(0, 0);
+        contenedor.removeAll();
+        contenedor.add(rp, BorderLayout.CENTER);
+        contenedor.revalidate();
+        contenedor.repaint();
+}
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
        
     }//GEN-LAST:event_btnbuscarActionPerformed
 
-    private void btncerrarsesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncerrarsesionActionPerformed
-       // TODO add your handling code here:
-    }//GEN-LAST:event_btncerrarsesionActionPerformed
-
     private void jMenuItem_reporte_ventaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_reporte_ventaActionPerformed
         
     }//GEN-LAST:event_jMenuItem_reporte_ventaActionPerformed
-
-    private void btnregisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregisterActionPerformed
-registerpanel rp=new registerpanel();
-rp.setSize(960,410);
-rp.setLocation(0,0);
-contenedor.removeAll();
-contenedor.add(rp, BorderLayout.CENTER);
-contenedor.revalidate();
-contenedor.repaint();        
-    }//GEN-LAST:event_btnregisterActionPerformed
-
-    private void btnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginActionPerformed
-loginpanel lp=new loginpanel();
-lp.setSize(960,410);
-lp.setLocation(0,0);
-contenedor.removeAll();
-contenedor.add(lp, BorderLayout.CENTER);
-contenedor.revalidate( );
-contenedor.repaint();
-    }//GEN-LAST:event_btnloginActionPerformed
 
     private void menureporteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menureporteMouseClicked
        new Reportes().setVisible(true); 
@@ -369,6 +350,16 @@ contenedor.repaint();
 txtbuscar.setText("");
 txtbuscar.setForeground(Color.black);
     }//GEN-LAST:event_txtbuscarMousePressed
+
+    private void menudeslogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menudeslogActionPerformed
+        menucomprar.setEnabled(false);
+menuproductos.setEnabled(false);
+menureporte.setEnabled(false);
+menuayuda.setEnabled(false);
+menufacturacion.setEnabled(false);
+menudeslog.setEnabled(false);
+lblnombrecompleto.setText("");
+    }//GEN-LAST:event_menudeslogActionPerformed
 
 
 
@@ -408,9 +399,6 @@ public void agregarProducto(String productos) {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bkgprincipalform;
     private javax.swing.JButton btnbuscar;
-    private javax.swing.JButton btncerrarsesion;
-    private javax.swing.JButton btnlogin;
-    private javax.swing.JButton btnregister;
     private javax.swing.JPanel contenedor;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JFrame jFrame1;
@@ -437,6 +425,7 @@ public void agregarProducto(String productos) {
     private javax.swing.JLabel lblsaludo;
     private javax.swing.JMenu menuayuda;
     private javax.swing.JMenu menucomprar;
+    private javax.swing.JMenu menudeslog;
     private javax.swing.JMenu menufacturacion;
     private javax.swing.JMenu menuproductos;
     private javax.swing.JMenu menureporte;

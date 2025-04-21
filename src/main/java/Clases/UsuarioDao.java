@@ -14,16 +14,16 @@ import java.sql.SQLException;
  * @author Adrian
  */
 public class UsuarioDao {
-       public boolean registrarUsuario(String correo, String contraseña, String nombrecompleto, int telefono, String ciudad) {
-        String sql = "INSERT INTO usuarios (correo, contraseña, nombrecompleto, telefono, ciudad) VALUES (?, ?, ?, ?, ?)";
+       public boolean registrarUsuario(String usuario,String correo, String contraseña, String nombrecompleto, int telefono, String ciudad) {
+        String sql = "INSERT INTO usuarios (usuario, correo, contraseña, nombrecompleto, telefono, ciudad) VALUES (?, ?, ?, ?, ?, ?)";
         try (Connection conn = ConexionBS.conectar();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
-            
-            stmt.setString(1, correo);
-            stmt.setString(2, contraseña);
-            stmt.setString(3, nombrecompleto);
-            stmt.setInt(4, telefono);
-            stmt.setString(5, ciudad);
+            stmt.setString(1, usuario);
+            stmt.setString(2, correo);
+            stmt.setString(3, contraseña);
+            stmt.setString(4, nombrecompleto);
+            stmt.setInt(5, telefono);
+            stmt.setString(6, ciudad);
             
             return stmt.executeUpdate() > 0;
         } catch (SQLException e) {

@@ -15,10 +15,15 @@ public class registerpanel extends javax.swing.JPanel {
     /**
      * Creates new form registerpanel
      */
-    public registerpanel() {
+    PantallaPrincipal pantallaPrincipal;
+    public registerpanel(PantallaPrincipal pantallaPrincipal) {
+        
         initComponents();
+        this.pantallaPrincipal = pantallaPrincipal;
     }
-
+public registerpanel() {
+    initComponents(); // para que funcione cuando NetBeans lo llame
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -40,10 +45,13 @@ public class registerpanel extends javax.swing.JPanel {
         txtcorreo = new javax.swing.JTextField();
         txtnombre = new javax.swing.JTextField();
         cmbciudad = new javax.swing.JComboBox<>();
-        btnregistrar = new javax.swing.JButton();
+        btnlog = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         lbllogo = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        btnlogin = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        txtusuario = new javax.swing.JTextField();
 
         setMinimumSize(new java.awt.Dimension(960, 410));
         setPreferredSize(new java.awt.Dimension(960, 410));
@@ -60,55 +68,55 @@ public class registerpanel extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 153, 255));
         jLabel2.setText("Contraseña");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 153, 255));
         jLabel3.setText("Correo electronico");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 153, 255));
         jLabel4.setText("Numero de telefono");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 153, 255));
         jLabel5.setText("Nombre completo");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 153, 255));
         jLabel6.setText("Ciudad");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
 
         txtcontra.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jPanel1.add(txtcontra, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 270, -1));
+        jPanel1.add(txtcontra, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 270, -1));
 
         txtnumero.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jPanel1.add(txtnumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 270, -1));
+        jPanel1.add(txtnumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, 270, -1));
 
         txtcorreo.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jPanel1.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 270, -1));
+        jPanel1.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 270, -1));
 
         txtnombre.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jPanel1.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 270, -1));
+        jPanel1.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 270, -1));
 
         cmbciudad.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         cmbciudad.setForeground(new java.awt.Color(0, 153, 255));
         cmbciudad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Azuay", "Bolívar", "Cañar", "Carchi", "Chimborazo", "Cotopaxi", "El Oro", "Esmeraldas", "Galápagos", "Guayas", "Imbabura", "Loja", "Los Ríos", "Manabí", "Morona Santiago", "Napo", "Orellana", "Pastaza", "Pichincha", "Santa Elena", "Santo Domingo de los tsáchilas", "Sucumbíos", "Tungurahua", "Zamora Chinchipe" }));
-        jPanel1.add(cmbciudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 200, -1));
+        jPanel1.add(cmbciudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 200, -1));
 
-        btnregistrar.setBackground(new java.awt.Color(0, 153, 255));
-        btnregistrar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnregistrar.setForeground(new java.awt.Color(255, 255, 255));
-        btnregistrar.setText("Registrarse");
-        btnregistrar.addActionListener(new java.awt.event.ActionListener() {
+        btnlog.setBackground(new java.awt.Color(0, 153, 255));
+        btnlog.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnlog.setForeground(new java.awt.Color(255, 255, 255));
+        btnlog.setText("Registrarse");
+        btnlog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnregistrarActionPerformed(evt);
+                btnlogActionPerformed(evt);
             }
         });
-        jPanel1.add(btnregistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 340, 150, 40));
+        jPanel1.add(btnlog, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 150, 40));
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -123,6 +131,30 @@ public class registerpanel extends javax.swing.JPanel {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 0, 370, 410));
 
+        btnlogin.setBackground(new java.awt.Color(0, 153, 255));
+        btnlogin.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnlogin.setForeground(new java.awt.Color(255, 255, 255));
+        btnlogin.setText("Iniciar sesion");
+        btnlogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnloginActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnlogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 350, 150, 40));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 153, 255));
+        jLabel7.setText("Usuario");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
+
+        txtusuario.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        txtusuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtusuarioActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 270, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -135,10 +167,10 @@ public class registerpanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnregistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregistrarActionPerformed
-       
+    private void btnlogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlogActionPerformed
+        String usuario= txtusuario.getText().trim();
         String correo = txtcorreo.getText().trim();
-        String contraseña = txtcontra.getText().trim(); // Ya es JTextField
+        String contraseña = txtcontra.getText().trim(); 
         String nombreCompleto = txtnombre.getText().trim();
         String telefonoStr = txtnumero.getText().trim();
         String ciudad = cmbciudad.getSelectedItem().toString();
@@ -153,12 +185,12 @@ public class registerpanel extends javax.swing.JPanel {
             int telefono = Integer.parseInt(telefonoStr);
 
             Clases.UsuarioDao dao = new Clases.UsuarioDao();
-            boolean exito = dao.registrarUsuario(correo, contraseña, nombreCompleto, telefono, ciudad);
+            boolean exito = dao.registrarUsuario(usuario, correo, contraseña, nombreCompleto, telefono, ciudad);
 
             if (exito) {
                 JOptionPane.showMessageDialog(null, "✅ Usuario registrado con éxito");
 
-                // Limpiar campos
+                txtusuario.setText("");
                 txtcorreo.setText("");
                 txtcontra.setText("");
                 txtnombre.setText("");
@@ -171,11 +203,20 @@ public class registerpanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "El teléfono debe ser un número válido", "Formato incorrecto", JOptionPane.ERROR_MESSAGE);
         }
     }{
-    }//GEN-LAST:event_btnregistrarActionPerformed
+    }//GEN-LAST:event_btnlogActionPerformed
+
+    private void btnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginActionPerformed
+        pantallaPrincipal.mostrarLogin();
+    }//GEN-LAST:event_btnloginActionPerformed
+
+    private void txtusuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtusuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtusuarioActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnregistrar;
+    private javax.swing.JButton btnlog;
+    private javax.swing.JButton btnlogin;
     private javax.swing.JComboBox<String> cmbciudad;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -183,6 +224,7 @@ public class registerpanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -191,5 +233,6 @@ public class registerpanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtcorreo;
     private javax.swing.JTextField txtnombre;
     private javax.swing.JTextField txtnumero;
+    private javax.swing.JTextField txtusuario;
     // End of variables declaration//GEN-END:variables
 }
