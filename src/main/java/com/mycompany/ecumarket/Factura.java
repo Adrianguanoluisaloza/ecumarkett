@@ -12,7 +12,7 @@ import java.util.List;
  * @author Adrian
  */
 public class Factura extends javax.swing.JPanel {
-private final List<DetalleFactura> listaDetalles = null; 
+
     /**
      * Creates new form Factura
      */
@@ -55,7 +55,6 @@ private final List<DetalleFactura> listaDetalles = null;
         jPanel2 = new javax.swing.JPanel();
         jLabel_Cliente = new javax.swing.JLabel();
         txtCliente = new javax.swing.JTextField();
-        fechaventa = new com.toedter.calendar.JDateChooser();
         jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -160,7 +159,6 @@ private final List<DetalleFactura> listaDetalles = null;
         jLabel_Cliente.setText("Cliente:");
         jPanel2.add(jLabel_Cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
         jPanel2.add(txtCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 130, -1));
-        jPanel2.add(fechaventa, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 130, -1));
 
         jLabel5.setText("Fecha");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
@@ -168,7 +166,7 @@ private final List<DetalleFactura> listaDetalles = null;
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 260, 120));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Productos a Agregar"));
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 210, 120));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 210, 120));
 
         tablaDetalles.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -195,17 +193,17 @@ private final List<DetalleFactura> listaDetalles = null;
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 780, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 774, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -239,7 +237,6 @@ private final List<DetalleFactura> listaDetalles = null;
     private javax.swing.JButton btnElimiar;
     private javax.swing.JButton btnagregar;
     private javax.swing.JComboBox<String> cmbMetodoPago;
-    private com.toedter.calendar.JDateChooser fechaventa;
     private javax.swing.JButton jButton_Guardar;
     private javax.swing.JButton jButton_buscar_Cliente;
     private javax.swing.JComboBox<String> jComboBox_Producto;
