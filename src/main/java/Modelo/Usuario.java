@@ -12,15 +12,15 @@ public class Usuario {
     private String usuario;
     private String correo;
     private  String contraseña;
-      private   String nombrecompleto;
+      private   String nombre;
      private   int telefono;
        private     String ciudad;
 
-    public Usuario(String usuario, String correo, String contraseña, String nombrecompleto, int telefono, String ciudad) {
+    public Usuario(String usuario, String correo, String contraseña, String nombre, int telefono, String ciudad) {
         this.usuario = usuario;
         this.correo = correo;
         this.contraseña = contraseña;
-        this.nombrecompleto = nombrecompleto;
+        this.nombre = nombre;
         this.telefono = telefono;
         this.ciudad = ciudad;
     }
@@ -38,7 +38,7 @@ public class Usuario {
     }
 
     public void setNombrecompleto(String nombrecompleto) {
-        this.nombrecompleto = nombrecompleto;
+        this.nombre= nombrecompleto;
     }
 
     public void setTelefono(int telefono) {
@@ -63,8 +63,8 @@ public class Usuario {
         return contraseña;
     }
 
-    public String getNombrecompleto() {
-        return nombrecompleto;
+    public String getNombre() {
+        return nombre;
     }
 
     public int getTelefono() {

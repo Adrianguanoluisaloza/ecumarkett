@@ -15,7 +15,8 @@ import java.sql.SQLException;
  */
 
 public class DaoUsuario {
-       public boolean registrarUsuario(String usuario,String correo, String contraseña, String nombrecompleto, int telefono, String ciudad) {
+   
+    public boolean registrarUsuario(String usuario,String correo, String contraseña, String nombrecompleto, int telefono, String ciudad) {
         String sql = "INSERT INTO usuarios (usuario, correo, contraseña, nombrecompleto, telefono, ciudad) VALUES (?, ?, ?, ?, ?, ?)";
         try (Connection conn = ConexionBS.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -34,8 +35,8 @@ public class DaoUsuario {
     
     }
 
-    
-public String validarLogin(String correo, String contraseña) {
+
+    public String validarLogin(String correo, String contraseña) {
     String sql = "SELECT * FROM usuarios WHERE correo = ? AND contraseña = ?";
     
     try (Connection conn = ConexionBS.getConnection();
