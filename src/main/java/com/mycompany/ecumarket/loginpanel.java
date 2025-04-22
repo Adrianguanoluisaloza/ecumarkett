@@ -160,6 +160,14 @@ public class loginpanel extends javax.swing.JPanel {
         });
         jPanel1.add(lblregistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, -1, -1));
 
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 330, -1, -1));
+
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
