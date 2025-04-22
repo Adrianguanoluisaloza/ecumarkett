@@ -49,8 +49,11 @@ public class loginpanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         lblregistrarse = new javax.swing.JLabel();
 
-        setMinimumSize(new java.awt.Dimension(960, 410));
-        setPreferredSize(new java.awt.Dimension(960, 410));
+        setBackground(new java.awt.Color(255, 255, 255));
+        setForeground(new java.awt.Color(255, 255, 255));
+        setMinimumSize(new java.awt.Dimension(1430, 640));
+        setPreferredSize(new java.awt.Dimension(1430, 640));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setMinimumSize(new java.awt.Dimension(740, 339));
@@ -156,19 +159,7 @@ public class loginpanel extends javax.swing.JPanel {
         });
         jPanel1.add(lblregistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 948, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
