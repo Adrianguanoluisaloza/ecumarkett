@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Clases;
+package Dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,10 +13,11 @@ import java.sql.SQLException;
  *
  * @author Adrian
  */
-public class UsuarioDao {
+
+public class DaoUsuario {
        public boolean registrarUsuario(String usuario,String correo, String contraseña, String nombrecompleto, int telefono, String ciudad) {
         String sql = "INSERT INTO usuarios (usuario, correo, contraseña, nombrecompleto, telefono, ciudad) VALUES (?, ?, ?, ?, ?, ?)";
-        try (Connection conn = ConexionBS.conectar();
+        try (Connection conn = ConexionBS.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, usuario);
             stmt.setString(2, correo);
@@ -24,8 +25,7 @@ public class UsuarioDao {
             stmt.setString(4, nombrecompleto);
             stmt.setInt(5, telefono);
             stmt.setString(6, ciudad);
-            
-            return stmt.executeUpdate() > 0;
+              return stmt.executeUpdate() > 0;
         } catch (SQLException e) {
             System.err.println("Error al registrar usuario: " + e.getMessage());
             e.printStackTrace(); // Para depuración en consola
@@ -38,7 +38,7 @@ public class UsuarioDao {
 public String validarLogin(String correo, String contraseña) {
     String sql = "SELECT * FROM usuarios WHERE correo = ? AND contraseña = ?";
     
-    try (Connection conn = ConexionBS.conectar();
+    try (Connection conn = ConexionBS.getConnection();
          PreparedStatement stmt = conn.prepareStatement(sql)) {
 
         stmt.setString(1, correo.trim());
@@ -61,7 +61,4 @@ public String validarLogin(String correo, String contraseña) {
         return null;
     }
 }
-
-
 }
-

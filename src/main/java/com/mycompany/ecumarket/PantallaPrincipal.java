@@ -342,7 +342,7 @@ public void mostrarRegistro() {
     }//GEN-LAST:event_menureporteMouseClicked
 
     private void menuproductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuproductosActionPerformed
-        new GestionProductos().setVisible(true);
+//        new GestionProductos().setVisible(true);
     }//GEN-LAST:event_menuproductosActionPerformed
 
     private void menuproductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuproductosMouseClicked
@@ -443,3 +443,4 @@ public void agregarProducto(String productos) {
     private javax.swing.JTextField txtbuscar;
     // End of variables declaration//GEN-END:variables
 }
+

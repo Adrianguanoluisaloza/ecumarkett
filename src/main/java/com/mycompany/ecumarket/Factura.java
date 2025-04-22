@@ -1,36 +1,24 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package com.mycompany.ecumarket;
 
-import Dao.DaoDetalleFactura;
-import Dao.DaoFactura;
 import Modelo.DetalleFactura;
-import Modelo.Factura;
-import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Adrian
  */
-public class Facturacion extends javax.swing.JFrame {
-private final List<DetalleFactura> listaDetalles; 
-
-
+public class Factura extends javax.swing.JPanel {
+private final List<DetalleFactura> listaDetalles = null; 
     /**
-     * Creates new form Facturacion
+     * Creates new form Factura
      */
-    public Facturacion() {
-        
+    public Factura() {
         initComponents();
-         listaDetalles = new ArrayList<>();
-         
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -72,9 +60,6 @@ private final List<DetalleFactura> listaDetalles;
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaDetalles = new javax.swing.JTable();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -185,8 +170,6 @@ private final List<DetalleFactura> listaDetalles;
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Productos a Agregar"));
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 210, 120));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 720));
-
         tablaDetalles.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
@@ -205,162 +188,52 @@ private final List<DetalleFactura> listaDetalles;
         });
         jScrollPane1.setViewportView(tablaDetalles);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 0, 780, 730));
-
-        pack();
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 780, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(46, Short.MAX_VALUE))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton_buscar_ClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_buscar_ClienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton_buscar_ClienteActionPerformed
 
-    private void jButton_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_GuardarActionPerformed
-       Factura factura = new Factura();
-factura.setCliente(txtCliente.getText());
-factura.setFechaVenta(new java.sql.Date(System.currentTimeMillis()));
-factura.setMetodoPago((String) cmbMetodoPago.getSelectedItem());
-factura.setSubtotal(calcularSubtotal());
-factura.setIva(calcularIVA());
-factura.setTotal(calcularTotal());
-
-// Registrar la factura en la base de datos
-DaoFactura daoFactura = new DaoFactura();
-int idFactura = daoFactura.registrarFactura(factura);
-
-// Si la factura se registró correctamente
-if (idFactura != -1) {
-    DaoDetalleFactura daoDetalle = new DaoDetalleFactura();
-    
-    // Pasamos la lista de detalles y el ID de la factura
-    boolean detallesAgregados = daoDetalle.agregarDetallesFactura(idFactura, listaDetalles);
-    
-    if (detallesAgregados) {
-        JOptionPane.showMessageDialog(null, "✅ Factura y detalles registrados exitosamente");
-    } else {
-        JOptionPane.showMessageDialog(null, "❌ Error al registrar los detalles de la factura");
-    }
-} else {
-    JOptionPane.showMessageDialog(null, "❌ Error al registrar la factura");
-}
-    
-    }//GEN-LAST:event_jButton_GuardarActionPerformed
-
-    private void btnElimiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElimiarActionPerformed
-       int filaSeleccionada = tablaDetalles.getSelectedRow();
-        if (filaSeleccionada >= 0) {
-            listaDetalles.remove(filaSeleccionada);
-            actualizarTabla();
-        } else {
-            JOptionPane.showMessageDialog(this, "❌ Seleccione un producto para eliminar");
-        }
-
-    }//GEN-LAST:event_btnElimiarActionPerformed
-
-    private void btnagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarActionPerformed
-         
-   Factura factura = new Factura();
-factura.setCliente(txtCliente.getText());
-factura.setFechaVenta(new java.sql.Date(System.currentTimeMillis()));
-factura.setMetodoPago((String) cmbMetodoPago.getSelectedItem());
-factura.setSubtotal(calcularSubtotal());
-factura.setIva(calcularIVA());
-factura.setTotal(calcularTotal());
-
-// Registrar la factura en la base de datos
-DaoFactura daoFactura = new DaoFactura();
-int idFactura = daoFactura.registrarFactura(factura);
-
-// Si la factura se registró correctamente
-if (idFactura != -1) {
-    DaoDetalleFactura daoDetalle = new DaoDetalleFactura();
-       Iterable<DetalleFactura> Listadetalles = null;
-    for (DetalleFactura detalle : Listadetalles) {
-        detalle.setIdFactura(idFactura);  // Corregido para usar el método setIdFactura()
-        daoDetalle.agregarDetalle(detalle);  // Insertar cada detalle de la factura
-    }
-    JOptionPane.showMessageDialog(null, "✅ Factura registrada exitosamente");
-} else {
-    JOptionPane.showMessageDialog(null, "❌ Error al registrar la factura");
-}
-    }//GEN-LAST:event_btnagregarActionPerformed
-
     private void txt_cliente_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_cliente_buscarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_cliente_buscarActionPerformed
 
+    private void jButton_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_GuardarActionPerformed
+       
+    }//GEN-LAST:event_jButton_GuardarActionPerformed
+
+    private void btnagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarActionPerformed
+
+       
+    }//GEN-LAST:event_btnagregarActionPerformed
+
+    private void btnElimiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElimiarActionPerformed
+       
+    }//GEN-LAST:event_btnElimiarActionPerformed
+
     private void tablaDetallesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaDetallesMouseClicked
-       DefaultTableModel modelo = new DefaultTableModel();
-modelo.addColumn("Producto");
-modelo.addColumn("Cantidad");
-modelo.addColumn("Precio");
-modelo.addColumn("Subtotal");
-tablaDetalles.setModel(modelo);
+       
     }//GEN-LAST:event_tablaDetallesMouseClicked
 
-private double calcularSubtotal() {
-        double subtotal = 0;
-        for (DetalleFactura detalle : listaDetalles) {
-            subtotal += detalle.getCantidad() * detalle.getPrecio();
-        }
-        return subtotal;
-    }
-
-    private double calcularIVA() {
-        return calcularSubtotal() * 0.12;  // 12% IVA
-    }
-
-    private double calcularTotal() {
-        return calcularSubtotal() + calcularIVA();
-    }
-
-    private void actualizarTabla() {
-        DefaultTableModel modelo = (DefaultTableModel) tablaDetalles.getModel();
-        modelo.setRowCount(0); // Limpiar la tabla antes de actualizar
-        for (DetalleFactura detalle : listaDetalles) {
-            modelo.addRow(new Object[]{
-                detalle.getIdProducto(),
-                detalle.getCantidad(),
-                detalle.getPrecio(),
-                detalle.getCantidad() * detalle.getPrecio()
-            });
-        }
-    }
-   
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Facturacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Facturacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Facturacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Facturacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Facturacion().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnElimiar;

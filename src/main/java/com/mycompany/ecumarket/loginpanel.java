@@ -4,6 +4,7 @@
  */
 package com.mycompany.ecumarket;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 
 /**
@@ -23,7 +24,7 @@ public class loginpanel extends javax.swing.JPanel {
 }
     public loginpanel() {
         initComponents();
-        
+
     }
 
     /**
@@ -159,7 +160,10 @@ public class loginpanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 948, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,7 +194,7 @@ txtcorreo.setForeground(Color.black);}
     }//GEN-LAST:event_txtcorreoMousePressed
 
     private void btnentrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnentrarActionPerformed
-       Clases.UsuarioDao objetoLogin = new Clases.UsuarioDao();
+       Dao.DaoUsuario objetoLogin = new Dao.DaoUsuario();
 
     String correo = txtcorreo.getText().trim();
     String contraseña = new String(txtcontrase.getPassword()).trim();

@@ -9,15 +9,12 @@
     <artifactId>Ecumarket</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>23</maven.compiler.release>
         <exec.mainClass>com.mycompany.ecumarket.Ecumarket</exec.mainClass>
     </properties>
-
-    <dependencies>
-        <!-- iText 7 Core Modules -->
+    <dependencies>       
         <dependency>
             <groupId>com.itextpdf</groupId>
             <artifactId>kernel</artifactId>
@@ -35,13 +32,18 @@
             <artifactId>mysql-connector-j</artifactId>
             <version>9.2.0</version>
         </dependency>
-
-        <!-- AbsoluteLayout para NetBeans -->
         <dependency>
             <groupId>org.netbeans.external</groupId>
             <artifactId>AbsoluteLayout</artifactId>
             <version>RELEASE250</version>
         </dependency>
+        
+        <dependency>
+    <groupId>com.toedter</groupId>
+    <artifactId>jcalendar</artifactId>
+    <version>1.4</version>
+</dependency>
+        
     </dependencies>
 
     <build>
@@ -59,12 +61,10 @@
     </plugins>
 
     <resources>
-        <!-- Asegúrate de que los recursos se empaqueten correctamente -->
         <resource>
             <directory>src/main/resources</directory>
         </resource>
     </resources>
 </build>
-
 </project>
 
