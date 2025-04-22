@@ -11,6 +11,7 @@ import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -73,6 +74,7 @@ modeloTabla.setColumnIdentifiers(new Object[]{
         btnCargar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         TblaProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -104,7 +106,6 @@ modeloTabla.setColumnIdentifiers(new Object[]{
 
         txtunombreProducto.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nombre Producto:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Roboto SemiCondensed Light", 1, 12))); // NOI18N
         jPanel1.add(txtunombreProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 300, -1));
-        txtunombreProducto.getAccessibleContext().setAccessibleName("Nombre Producto:");
 
         txtprecio.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Precio:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Roboto SemiCondensed Light", 1, 12))); // NOI18N
         jPanel1.add(txtprecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 300, -1));
@@ -160,6 +161,14 @@ modeloTabla.setColumnIdentifiers(new Object[]{
 
         jLabel2.setText("id Producto");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, -1, -1));
+
+        jButton1.setText("Reporte");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 410, -1, -1));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -327,6 +336,10 @@ try {
         listarProducto();
     }//GEN-LAST:event_btnCargarActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    GestionProducto gestionProducto = new GestionProducto();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 private void listarProducto() {
     modeloTabla.setRowCount(0); // Limpiar la tabla
     DaoProducto dao = new DaoProducto();
@@ -372,6 +385,15 @@ System.out.println("Se encontraron " + lista.size() + " productos");
     txtFechaRegistro.setText("");  // Si usas un selector de fecha, limpiarlo también
 }
 
+    
+    
+    
+
+    
+    
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TblaProductos;
     private javax.swing.JButton btnActualizar;
@@ -379,6 +401,7 @@ System.out.println("Se encontraron " + lista.size() + " productos");
     private javax.swing.JButton btnElimiar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnLimpiar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
