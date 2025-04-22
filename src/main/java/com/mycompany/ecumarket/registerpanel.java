@@ -54,8 +54,10 @@ public registerpanel() {
         jLabel7 = new javax.swing.JLabel();
         txtusuario = new javax.swing.JTextField();
 
-        setMinimumSize(new java.awt.Dimension(960, 410));
+        setBackground(new java.awt.Color(255, 255, 255));
+        setMinimumSize(new java.awt.Dimension(1430, 640));
         setPreferredSize(new java.awt.Dimension(960, 410));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setForeground(new java.awt.Color(0, 153, 255));
@@ -156,16 +158,7 @@ public registerpanel() {
         });
         jPanel1.add(txtusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 270, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 960, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnlogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlogActionPerformed

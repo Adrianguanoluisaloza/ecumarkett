@@ -1,10 +1,3 @@
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `usuarios`
---
-
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `usuario` varchar(50) NOT NULL,
@@ -22,3 +15,4 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id`,`usuario`, `correo`, `contraseña`, `nombrecompleto`, `telefono`, `ciudad`) VALUES
 (1,'juan', 'juancito@hotmail.com', '1234', 'Juan Pérez', '123456', 'Quito');
+

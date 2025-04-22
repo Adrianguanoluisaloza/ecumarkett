@@ -49,8 +49,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         bkgprincipalform = new javax.swing.JPanel();
         lblsaludo = new javax.swing.JLabel();
-        btnbuscar = new javax.swing.JButton();
-        txtbuscar = new javax.swing.JTextField();
         contenedor = new javax.swing.JPanel();
         lblnombrecompleto = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -76,6 +74,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         menuayuda = new javax.swing.JMenu();
         menufacturacion = new javax.swing.JMenu();
         menudeslog = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -131,30 +130,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         lblsaludo.setFont(new java.awt.Font("Arial Black", 1, 30)); // NOI18N
         lblsaludo.setForeground(new java.awt.Color(0, 0, 153));
         lblsaludo.setText("Bienvenidos a Ecumarket");
-        bkgprincipalform.add(lblsaludo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 480, 30));
-
-        btnbuscar.setBackground(new java.awt.Color(0, 153, 255));
-        btnbuscar.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        btnbuscar.setForeground(new java.awt.Color(255, 255, 255));
-        btnbuscar.setText("Buscar");
-        btnbuscar.setBorder(null);
-        btnbuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnbuscarActionPerformed(evt);
-            }
-        });
-        bkgprincipalform.add(btnbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 110, 40));
-
-        txtbuscar.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        txtbuscar.setForeground(new java.awt.Color(204, 204, 204));
-        txtbuscar.setText("Ingresa lo que estas buscando");
-        txtbuscar.setCaretPosition(0);
-        txtbuscar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                txtbuscarMousePressed(evt);
-            }
-        });
-        bkgprincipalform.add(txtbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 26, 350, 30));
+        bkgprincipalform.add(lblsaludo, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, 480, 30));
 
         contenedor.setBackground(new java.awt.Color(0, 153, 255));
 
@@ -172,7 +148,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         bkgprincipalform.add(contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 1430, 640));
 
         lblnombrecompleto.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bkgprincipalform.add(lblnombrecompleto, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 30, 350, 30));
+        lblnombrecompleto.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        bkgprincipalform.add(lblnombrecompleto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 0, 350, 30));
 
         jButton1.setText("Reportes");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -301,12 +278,17 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         });
         jMenuBar2.add(menudeslog);
 
+        jMenu1.setText("Eliminar cuenta");
+        jMenu1.setEnabled(false);
+        jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jMenuBar2.add(jMenu1);
+
         setJMenuBar(jMenuBar2);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 public void actualizarNombreUsuario(String nombre) {
-    lblnombrecompleto.setText("Bienvenido, " + nombre); 
+    lblnombrecompleto.setText(nombre); 
     lblnombrecompleto.revalidate();
 lblnombrecompleto.repaint();
 }
@@ -321,7 +303,7 @@ menudeslog.setEnabled(true);
 }
 public void mostrarLogin() {
     loginpanel lp = new loginpanel(this);
-        lp.setSize(960, 410);
+        lp.setSize(1430, 640);
         lp.setLocation(0, 0);
         contenedor.removeAll();
         contenedor.add(lp, BorderLayout.CENTER);
@@ -331,17 +313,13 @@ public void mostrarLogin() {
 
 public void mostrarRegistro() {
      registerpanel rp = new registerpanel(this);
-        rp.setSize(960, 410);
+        rp.setSize(1430, 640);
         rp.setLocation(0, 0);
         contenedor.removeAll();
         contenedor.add(rp, BorderLayout.CENTER);
         contenedor.revalidate();
         contenedor.repaint();
 }
-    private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
-       
-    }//GEN-LAST:event_btnbuscarActionPerformed
-
     private void jMenuItem_reporte_ventaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_reporte_ventaActionPerformed
         
     }//GEN-LAST:event_jMenuItem_reporte_ventaActionPerformed
@@ -353,11 +331,6 @@ public void mostrarRegistro() {
     private void menufacturacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menufacturacionMouseClicked
       
     }//GEN-LAST:event_menufacturacionMouseClicked
-
-    private void txtbuscarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbuscarMousePressed
-txtbuscar.setText("");
-txtbuscar.setForeground(Color.black);
-    }//GEN-LAST:event_txtbuscarMousePressed
 
     private void menudeslogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menudeslogActionPerformed
         menucomprar.setEnabled(false);
@@ -428,11 +401,11 @@ this.add(bkgprincipalform, BorderLayout.CENTER);
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bkgprincipalform;
-    private javax.swing.JButton btnbuscar;
     private javax.swing.JPanel contenedor;
     private javax.swing.JButton jButton1;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JFrame jFrame1;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu12;
@@ -460,7 +433,6 @@ this.add(bkgprincipalform, BorderLayout.CENTER);
     private javax.swing.JMenu menufacturacion;
     private javax.swing.JMenu menuproductos;
     private javax.swing.JMenu menureporte;
-    private javax.swing.JTextField txtbuscar;
     // End of variables declaration//GEN-END:variables
 }
 
