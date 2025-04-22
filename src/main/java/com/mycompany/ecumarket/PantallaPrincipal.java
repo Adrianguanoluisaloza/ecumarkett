@@ -369,7 +369,7 @@ lblnombrecompleto.setText("");
     }//GEN-LAST:event_menudeslogActionPerformed
 
     private void menufacturacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menufacturacionActionPerformed
-        new Facturacion().setVisible(true);
+//        new Facturacion().setVisible(true);
     }//GEN-LAST:event_menufacturacionActionPerformed
 
 
