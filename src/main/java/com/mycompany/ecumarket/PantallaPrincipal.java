@@ -161,19 +161,19 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         contenedor.setLayout(contenedorLayout);
         contenedorLayout.setHorizontalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 960, Short.MAX_VALUE)
+            .addGap(0, 1430, Short.MAX_VALUE)
         );
         contenedorLayout.setVerticalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 410, Short.MAX_VALUE)
+            .addGap(0, 640, Short.MAX_VALUE)
         );
 
-        bkgprincipalform.add(contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 960, 410));
+        bkgprincipalform.add(contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 1430, 640));
 
         lblnombrecompleto.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         bkgprincipalform.add(lblnombrecompleto, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 30, 350, 30));
 
-        getContentPane().add(bkgprincipalform, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 570));
+        getContentPane().add(bkgprincipalform, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1510, 790));
 
         jMenuBar2.setBorder(null);
         jMenuBar2.setEnabled(false);
@@ -240,11 +240,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         menuproductos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 menuproductosMouseClicked(evt);
-            }
-        });
-        menuproductos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuproductosActionPerformed(evt);
             }
         });
         jMenuBar2.add(menuproductos);
@@ -341,14 +336,6 @@ public void mostrarRegistro() {
        
     }//GEN-LAST:event_menureporteMouseClicked
 
-    private void menuproductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuproductosActionPerformed
-//        new GestionProductos().setVisible(true);
-    }//GEN-LAST:event_menuproductosActionPerformed
-
-    private void menuproductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuproductosMouseClicked
-         
-    }//GEN-LAST:event_menuproductosMouseClicked
-
     private void menufacturacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menufacturacionMouseClicked
       
     }//GEN-LAST:event_menufacturacionMouseClicked
@@ -372,10 +359,20 @@ lblnombrecompleto.setText("");
 //        new Facturacion().setVisible(true);
     }//GEN-LAST:event_menufacturacionActionPerformed
 
+    private void menuproductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuproductosMouseClicked
+        mostrarFormulario(new GestionProducto());
+    }//GEN-LAST:event_menuproductosMouseClicked
+public void mostrarFormulario(JPanel formulario) {
+contenedor.removeAll();
+contenedor.setLayout(new BorderLayout());
+contenedor.add(formulario, BorderLayout.CENTER);
+contenedor.revalidate();
+contenedor.repaint();
+     this.setLayout(new BorderLayout());
+this.add(bkgprincipalform, BorderLayout.CENTER);
 
 
 
-public void agregarProducto(String productos) {
    
     }
     /**

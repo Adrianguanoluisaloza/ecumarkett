@@ -22,7 +22,7 @@ import javax.swing.table.DefaultTableModel;
 public class DaoProducto {
   public boolean insertarProducto(Producto producto) {
         String sql = "INSERT INTO productos (usuario_id, nombre, Usuario_nombre,  cantidad, precio, total, fecha_registro) " +
-                     "VALUES (?, ?, ?, ?, ?, ?)";
+                     "VALUES (?, ?, ?, ?, ?, ?, ?)";
         
         try (Connection con = ConexionBS.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
@@ -45,7 +45,7 @@ public class DaoProducto {
     }
 
     public boolean actualizarProducto(Producto producto) {
-        String sql = "UPDATE productos SET usuario_id = ?,Usuario_nombre = ?,nombre = ?, cantidad = ?, precio = ?, total = ?, fecha_registro = ? WHERE id = ?";
+        String sql = "UPDATE productos SET usuario_id = ?,Usuario_nombre = ?, nombre = ?, cantidad = ?, precio = ?, total = ?, fecha_registro = ? WHERE id = ?";
         
         try (Connection con = ConexionBS.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
@@ -55,7 +55,7 @@ public class DaoProducto {
             ps.setString(3, producto.getNombre());
             ps.setInt(4, producto.getCantidad());
             ps.setDouble(5, producto.getPrecio());
-            ps.setDouble(5, producto.getTotal());
+            ps.setDouble(6, producto.getTotal());
             ps.setTimestamp(7, producto.getFechaRegistro());
             ps.setInt(8, producto.getId());
             
@@ -86,32 +86,33 @@ public class DaoProducto {
     }
 
     public List<Producto> consultarProductos() {
-        List<Producto> listaProductos = new ArrayList<>();
-        String sql = "SELECT * FROM productos";
+    List<Producto> listaProductos = new ArrayList<>();
+    String sql = "SELECT p.id, p.usuario_id, u.nombre AS usuario_nombre, p.nombre, p.cantidad, p.precio, p.total, p.fecha_registro " +
+                 "FROM productos p JOIN usuarios u ON p.usuario_id = u.id";
+    
+    try (Connection con = ConexionBS.getConnection();
+         PreparedStatement ps = con.prepareStatement(sql);
+         ResultSet rs = ps.executeQuery()) {
         
-        try (Connection con = ConexionBS.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql);
-             ResultSet rs = ps.executeQuery()) {
-            
-            while (rs.next()) {
-                Producto producto = new Producto();
-                producto.setId(rs.getInt("id"));
-                producto.setUsuario_id(rs.getString("usuario_id"));
-                producto.setUsuario_nombre(rs.getString("usuario_nombre"));
-                producto.setNombre(rs.getString("nombre"));
-                producto.setCantidad(rs.getInt("cantidad"));
-                producto.setPrecio(rs.getDouble("precio"));
-                producto.setTotal(rs.getDouble("total"));
-                producto.setFechaRegistro(rs.getTimestamp("fecha_registro"));
-                listaProductos.add(producto);
-            }
-            
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al consultar productos: " + e.getMessage());
+        while (rs.next()) {
+            Producto producto = new Producto();
+            producto.setId(rs.getInt("id"));
+            producto.setUsuario_id(rs.getString("usuario_id"));
+            producto.setUsuario_nombre(rs.getString("usuario_nombre")); // Este ahora sí viene del JOIN
+            producto.setNombre(rs.getString("nombre"));
+            producto.setCantidad(rs.getInt("cantidad"));
+            producto.setPrecio(rs.getDouble("precio"));
+            producto.setTotal(rs.getDouble("total"));
+            producto.setFechaRegistro(rs.getTimestamp("fecha_registro"));
+            listaProductos.add(producto);
         }
         
-        return listaProductos;
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(null, "Error al consultar productos: " + e.getMessage());
     }
+    
+    return listaProductos;
+}
 
     public Producto obtenerProductoPorId(int id) {
         String sql = "SELECT * FROM productos WHERE id = ?";

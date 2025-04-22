@@ -60,8 +60,8 @@ modeloTabla.setColumnIdentifiers(new Object[]{
         txtusuario_id = new javax.swing.JTextField();
         txtId = new javax.swing.JTextField();
         txtusuario = new javax.swing.JTextField();
-        txtunombreProducto = new javax.swing.JTextField();
         txtcantidad = new javax.swing.JTextField();
+        txtunombreProducto = new javax.swing.JTextField();
         txtprecio = new javax.swing.JTextField();
         txtFechaRegistro = new javax.swing.JTextField();
         txttotal = new javax.swing.JTextField();
@@ -70,6 +70,8 @@ modeloTabla.setColumnIdentifiers(new Object[]{
         btnActualizar = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
         btnCargar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         TblaProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -90,26 +92,27 @@ modeloTabla.setColumnIdentifiers(new Object[]{
         jScrollPane1.setViewportView(TblaProductos);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(txtusuario_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 290, -1));
+        jPanel1.add(txtusuario_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 230, -1));
         jPanel1.add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 12, 70, 20));
 
         txtusuario.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Usuario:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
         jPanel1.add(txtusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 305, -1));
 
-        txtunombreProducto.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nombre:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Roboto SemiCondensed Light", 1, 12))); // NOI18N
-        jPanel1.add(txtunombreProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 134, 300, -1));
-
         txtcantidad.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cantidad:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Roboto SemiCondensed Light", 1, 12))); // NOI18N
-        jPanel1.add(txtcantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 296, -1));
+        jPanel1.add(txtcantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 296, -1));
+
+        txtunombreProducto.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nombre Producto:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Roboto SemiCondensed Light", 1, 12))); // NOI18N
+        jPanel1.add(txtunombreProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 300, -1));
+        txtunombreProducto.getAccessibleContext().setAccessibleName("Nombre Producto:");
 
         txtprecio.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Precio:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Roboto SemiCondensed Light", 1, 12))); // NOI18N
-        jPanel1.add(txtprecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 300, -1));
+        jPanel1.add(txtprecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 300, -1));
 
         txtFechaRegistro.setBorder(javax.swing.BorderFactory.createTitledBorder("Fecha"));
-        jPanel1.add(txtFechaRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 300, -1));
+        jPanel1.add(txtFechaRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 300, -1));
 
         txttotal.setBorder(javax.swing.BorderFactory.createTitledBorder("Total"));
-        jPanel1.add(txttotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 300, -1));
+        jPanel1.add(txttotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 300, -1));
 
         btnGuardar.setText("Registrar ");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -117,7 +120,7 @@ modeloTabla.setColumnIdentifiers(new Object[]{
                 btnGuardarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, -1, -1));
+        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, -1, -1));
 
         btnElimiar.setText("Eliminar ");
         btnElimiar.addActionListener(new java.awt.event.ActionListener() {
@@ -125,7 +128,7 @@ modeloTabla.setColumnIdentifiers(new Object[]{
                 btnElimiarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnElimiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, -1, -1));
+        jPanel1.add(btnElimiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, -1, -1));
 
         btnActualizar.setText("Actualizar ");
         btnActualizar.addActionListener(new java.awt.event.ActionListener() {
@@ -133,7 +136,7 @@ modeloTabla.setColumnIdentifiers(new Object[]{
                 btnActualizarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 420, -1, -1));
+        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 480, -1, -1));
 
         btnLimpiar.setText("Limpiar ");
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -141,7 +144,7 @@ modeloTabla.setColumnIdentifiers(new Object[]{
                 btnLimpiarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 450, 90, -1));
+        jPanel1.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 530, 90, -1));
 
         btnCargar.setText("Ver Productos");
         btnCargar.addActionListener(new java.awt.event.ActionListener() {
@@ -149,7 +152,13 @@ modeloTabla.setColumnIdentifiers(new Object[]{
                 btnCargarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, -1, -1));
+        jPanel1.add(btnCargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 500, -1, -1));
+
+        jLabel1.setText("Id");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
+
+        jLabel2.setText("id Producto");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, -1, -1));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -157,20 +166,20 @@ modeloTabla.setColumnIdentifiers(new Object[]{
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 973, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 724, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 73, Short.MAX_VALUE)))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -180,7 +189,7 @@ modeloTabla.setColumnIdentifiers(new Object[]{
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,7 +212,7 @@ if (fila >= 0) {
     txtprecio.setText(modeloTabla.getValueAt(fila, 5).toString());
     txttotal.setText(modeloTabla.getValueAt(fila, 6).toString());
     txtFechaRegistro.setText(modeloTabla.getValueAt(fila, 7).toString());
-    txtunombreProducto.setEditable(false); 
+    //txtunombreProducto.setEditable(false); 
 }
     }//GEN-LAST:event_TblaProductosMouseClicked
 
@@ -345,6 +354,8 @@ private void listarProducto() {
     private javax.swing.JButton btnElimiar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnLimpiar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
