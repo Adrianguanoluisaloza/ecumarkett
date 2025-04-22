@@ -210,7 +210,9 @@ txtcorreo.setForeground(Color.black);}
         javax.swing.JOptionPane.showMessageDialog(this, "Correo o contraseña incorrectos.", "Error de autenticación", javax.swing.JOptionPane.ERROR_MESSAGE);
     }
 
-       
+       btnentrar.setBackground(new Color(70, 130, 180));
+btnentrar.setForeground(Color.WHITE);
+btnentrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     }//GEN-LAST:event_btnentrarActionPerformed
 
     private void txtcontraseFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtcontraseFocusGained

@@ -9,77 +9,80 @@ package Modelo;
  * @author Adrian
  */
 public class DetalleFactura {
-   private int idFactura;
+  private int idFactura;
     private int idProducto;
     private int cantidad;
     private double precio;
     private double subtotal;
-      private String producto;
-      
-      
+    private String nombreProducto; // Para mostrar en reportes/UI
+    
+    public DetalleFactura() {
+    }
+    
     public DetalleFactura(int idFactura, int idProducto, int cantidad, double precio) {
         this.idFactura = idFactura;
         this.idProducto = idProducto;
         this.cantidad = cantidad;
         this.precio = precio;
-        this.subtotal = cantidad * precio; // Calcula el subtotal del producto
+        this.subtotal = cantidad * precio;
     }
-  public DetalleFactura(String producto, int cantidad, double precio) {
-        this.producto = producto;
+    
+    // Sobrecarga para la versión que usa el nombre de producto en lugar del ID
+    public DetalleFactura(String nombreProducto, int cantidad, double precio) {
+        this.nombreProducto = nombreProducto;
         this.cantidad = cantidad;
         this.precio = precio;
-        // Calcula el subtotal automáticamente al crear el objeto
-    }
-
-    public void setSubtotal(double subtotal) {
-        this.subtotal = subtotal;
-    }
-
-    public void setProducto(String producto) {
-        this.producto = producto;
-    }
-
-    public String getProducto() {
-        return producto;
+        this.subtotal = cantidad * precio;
     }
     
-    
-    // Getters y Setters
+    // Getters y setters
     public int getIdFactura() {
         return idFactura;
     }
-
+    
     public void setIdFactura(int idFactura) {
         this.idFactura = idFactura;
     }
-
+    
     public int getIdProducto() {
         return idProducto;
     }
-
+    
     public void setIdProducto(int idProducto) {
         this.idProducto = idProducto;
     }
-
+    
     public int getCantidad() {
         return cantidad;
     }
-
+    
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
-        this.subtotal = cantidad * precio;
+        this.subtotal = this.cantidad * this.precio;
     }
-
+    
     public double getPrecio() {
         return precio;
     }
-
+    
     public void setPrecio(double precio) {
         this.precio = precio;
-        this.subtotal = cantidad * precio;
+        this.subtotal = this.cantidad * this.precio;
     }
-
+    
     public double getSubtotal() {
         return subtotal;
+    }
+    
+    public void setSubtotal(double subtotal) {
+        this.subtotal = subtotal;
+    }
+    
+    public String getNombreProducto() {
+        return nombreProducto;
+    }
+    
+    public void setNombreProducto(String nombreProducto) {
+        this.nombreProducto = nombreProducto;
     }
 }

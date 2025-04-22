@@ -27,7 +27,7 @@ private DefaultTableModel modeloTabla = null;
          
      
 
-    modeloTabla = new DefaultTableModel();
+   modeloTabla = new DefaultTableModel();
 modeloTabla.setColumnIdentifiers(new Object[]{
     "ID",              // p.getId()
     "usuario_id",      // p.getUsuario_id()
@@ -38,6 +38,7 @@ modeloTabla.setColumnIdentifiers(new Object[]{
     "total",           // p.getTotal()
     "fecha_registro"   // p.getFechaRegistro()
 });
+
     
      TblaProductos.setModel(modeloTabla); 
     listarProducto();
@@ -246,35 +247,43 @@ try {
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
 
         // Validaciones
+     
        if (txtunombreProducto.getText().isEmpty() || 
-    txtcantidad.getText().isEmpty() || 
-    txtprecio.getText().isEmpty()) {
-    JOptionPane.showMessageDialog(null, "Por favor, completa todos los campos obligatorios.", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
-    return;
-}
-
-try {
-    int cantidad = Integer.parseInt(txtcantidad.getText());
-    double precio = Double.parseDouble(txtprecio.getText());
+        txtcantidad.getText().isEmpty() || 
+        txtprecio.getText().isEmpty() ||
+        txtusuario_id.getText().isEmpty() ||
+        txtusuario.getText().isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Por favor, completa todos los campos obligatorios.", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
     
-    Producto p = new Producto();
-    p.setUsuario_id(txtusuario_id.getText()); // Asumiendo que tienes este campo, si no lo tienes lo puedes omitir
-    p.setNombre(txtunombreProducto.getText());
-    p.setCantidad(cantidad);
-    p.setPrecio(precio);
-    p.setTotal(cantidad * precio); // Calculamos el total
-    p.setFechaRegistro(Timestamp.valueOf(LocalDateTime.now())); // Fecha actual
-    
-    DaoProducto dao = new DaoProducto();
-    dao.insertarProducto(p); // Asegúrate de que tienes este método en tu DAO
-    
-    listarProducto(); // Recargar tabla
-    limpiarCampos();   // Limpiar campos del formulario
-
-} catch (NumberFormatException e) {
-    JOptionPane.showMessageDialog(null, "La cantidad y el precio deben ser números válidos.", "Error en datos numéricos", JOptionPane.ERROR_MESSAGE);
-}
-                                    
+    try {
+        int cantidad = Integer.parseInt(txtcantidad.getText());
+        double precio = Double.parseDouble(txtprecio.getText());
+        
+        Producto p = new Producto();
+        p.setUsuario_id(txtusuario_id.getText());
+        p.setUsuario_nombre(txtusuario.getText()); // Asegurar que se establece el usuario_nombre
+        p.setNombre(txtunombreProducto.getText());
+        p.setCantidad(cantidad);
+        p.setPrecio(precio);
+        p.setTotal(cantidad * precio); // Calculamos el total
+        p.setFechaRegistro(Timestamp.valueOf(LocalDateTime.now())); // Fecha actual
+        
+        DaoProducto dao = new DaoProducto();
+        boolean resultado = dao.insertarProducto(p);
+        
+        if (resultado) {
+            JOptionPane.showMessageDialog(null, "Producto guardado correctamente");
+            listarProducto(); // Recargar tabla
+            limpiarCampos();   // Limpiar campos del formulario
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al guardar el producto", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(null, "La cantidad y el precio deben ser números válidos.", "Error en datos numéricos", JOptionPane.ERROR_MESSAGE);
+    }
+                         
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnElimiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElimiarActionPerformed
@@ -317,25 +326,41 @@ try {
     private void btnCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarActionPerformed
         listarProducto();
     }//GEN-LAST:event_btnCargarActionPerformed
+
 private void listarProducto() {
     modeloTabla.setRowCount(0); // Limpiar la tabla
-
     DaoProducto dao = new DaoProducto();
-    List<Producto> lista = dao.consultarProductos(); // Asegúrate que sea el nombre correcto del método
-
-    for (Producto p : lista) {
-        modeloTabla.addRow(new Object[]{
-            p.getId(),
-            p.getUsuario_id(),
-            p.getUsuario_nombre(),
-            p.getNombre(),           
-            p.getCantidad(),
-            p.getPrecio(),
-            p.getTotal(),
-            p.getFechaRegistro()
-        });
+    List<Producto> lista = dao.consultarProductos(); // Aseguramos usar el método correcto
+    
+    // Verificar si la lista está vacía
+    if (lista.isEmpty()) {
+        System.out.println("No se encontraron productos en la base de datos");
+        return;
+    }
+System.out.println("Se encontraron " + lista.size() + " productos");
+    
+    try {
+        for (Producto p : lista) {
+            // Debug: mostrar cada producto antes de agregarlo
+            System.out.println("Añadiendo producto: ID=" + p.getId() + ", Nombre=" + p.getNombre());
+            
+            modeloTabla.addRow(new Object[]{
+                p.getId(),
+                p.getUsuario_id(),
+                p.getUsuario_nombre(),
+                p.getNombre(),           
+                p.getCantidad(),
+                p.getPrecio(),
+                p.getTotal(),
+                p.getFechaRegistro()
+            });
+        }
+    } catch (Exception e) {
+        System.err.println("Error al cargar productos en la tabla: " + e.getMessage());
+        e.printStackTrace();
     }
 }
+
     private void limpiarCampos() {
     txtId.setText("");
     txtusuario_id.setText(""); // Si lo usas, si no, elimínalo
