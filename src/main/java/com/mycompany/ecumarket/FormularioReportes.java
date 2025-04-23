@@ -118,7 +118,14 @@ public class FormularioReportes {
         
         return boton;
     }
-    
+    public void deshabilitarBotonesProductos() {
+    btnReporteFactura.setEnabled(false);
+    btnReporteUsuarios.setEnabled(false);
+}
+public void deshabilitarBotonesFactura() {
+    btnReporteProductos.setEnabled(false);
+    btnReporteStockBajo.setEnabled(false);
+}
     /**
      * Muestra diálogo para seleccionar una factura específica
      */

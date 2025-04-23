@@ -57,8 +57,11 @@ public class Factura extends javax.swing.JPanel {
         txtCliente = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaDetalles = new javax.swing.JTable();
+
+        setPreferredSize(new java.awt.Dimension(1430, 640));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -168,6 +171,14 @@ public class Factura extends javax.swing.JPanel {
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Productos a Agregar"));
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 210, 120));
 
+        jButton1.setText("Reporte");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, -1, -1));
+
         tablaDetalles.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
@@ -232,11 +243,18 @@ public class Factura extends javax.swing.JPanel {
        
     }//GEN-LAST:event_tablaDetallesMouseClicked
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       FormularioReportes formulario = new FormularioReportes();
+    formulario.deshabilitarBotonesFactura();
+        formulario.mostrar();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnElimiar;
     private javax.swing.JButton btnagregar;
     private javax.swing.JComboBox<String> cmbMetodoPago;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton_Guardar;
     private javax.swing.JButton jButton_buscar_Cliente;
     private javax.swing.JComboBox<String> jComboBox_Producto;

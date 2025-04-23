@@ -27,8 +27,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         
         initComponents( );
         mostrarLogin();
-        jMenuBar2.setEnabled(false);
-        menuproductos.setEnabled(false);
+        jMenuBar2.setVisible(false);
+        
+        
         
     }
 
@@ -51,7 +52,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         lblsaludo = new javax.swing.JLabel();
         contenedor = new javax.swing.JPanel();
         lblnombrecompleto = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jMenuBar2 = new javax.swing.JMenuBar();
         menucomprar = new javax.swing.JMenu();
         jMenu7 = new javax.swing.JMenu();
@@ -70,11 +70,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenu17 = new javax.swing.JMenu();
         jMenu18 = new javax.swing.JMenu();
         menuproductos = new javax.swing.JMenu();
-        menureporte = new javax.swing.JMenu();
-        menuayuda = new javax.swing.JMenu();
         menufacturacion = new javax.swing.JMenu();
         menudeslog = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
+        menuayuda = new javax.swing.JMenu();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -148,26 +147,16 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         bkgprincipalform.add(contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 1430, 640));
 
         lblnombrecompleto.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblnombrecompleto.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        bkgprincipalform.add(lblnombrecompleto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 0, 350, 30));
-
-        jButton1.setText("Reportes");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        bkgprincipalform.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 30, -1, -1));
+        lblnombrecompleto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bkgprincipalform.add(lblnombrecompleto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 20, 350, 30));
 
         getContentPane().add(bkgprincipalform, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1510, 790));
 
         jMenuBar2.setBorder(null);
-        jMenuBar2.setEnabled(false);
         jMenuBar2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         menucomprar.setBackground(new java.awt.Color(0, 51, 204));
         menucomprar.setText("Comprar");
-        menucomprar.setEnabled(false);
         menucomprar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         jMenu7.setText("Productos");
@@ -221,7 +210,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenuBar2.add(menucomprar);
 
         menuproductos.setText("Productos");
-        menuproductos.setEnabled(false);
         menuproductos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         menuproductos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -230,31 +218,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         });
         jMenuBar2.add(menuproductos);
 
-        menureporte.setText("Reporte");
-        menureporte.setEnabled(false);
-        menureporte.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        menureporte.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                menureporteMouseClicked(evt);
-            }
-        });
-        jMenuBar2.add(menureporte);
-
-        menuayuda.setBackground(new java.awt.Color(255, 255, 0));
-        menuayuda.setBorder(null);
-        menuayuda.setText("Ayuda");
-        menuayuda.setEnabled(false);
-        menuayuda.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        menuayuda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuayudaActionPerformed(evt);
-            }
-        });
-        jMenuBar2.add(menuayuda);
-
         menufacturacion.setBackground(new java.awt.Color(204, 0, 51));
         menufacturacion.setText("Facturacion");
-        menufacturacion.setEnabled(false);
         menufacturacion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         menufacturacion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -269,8 +234,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenuBar2.add(menufacturacion);
 
         menudeslog.setText("Cerrar sesion");
-        menudeslog.setEnabled(false);
         menudeslog.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        menudeslog.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menudeslogMouseClicked(evt);
+            }
+        });
         menudeslog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menudeslogActionPerformed(evt);
@@ -279,9 +248,19 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenuBar2.add(menudeslog);
 
         jMenu1.setText("Eliminar cuenta");
-        jMenu1.setEnabled(false);
         jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jMenuBar2.add(jMenu1);
+
+        menuayuda.setBackground(new java.awt.Color(255, 255, 0));
+        menuayuda.setBorder(null);
+        menuayuda.setText("Ayuda");
+        menuayuda.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        menuayuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuayudaActionPerformed(evt);
+            }
+        });
+        jMenuBar2.add(menuayuda);
 
         setJMenuBar(jMenuBar2);
 
@@ -292,10 +271,16 @@ public void actualizarNombreUsuario(String nombre) {
     lblnombrecompleto.revalidate();
 lblnombrecompleto.repaint();
 }
+public void mostrarmenu(){
+    jMenuBar2.setVisible(true);
+}
+       
+
+
 public void activarMenu(){
  menucomprar.setEnabled(true);
 menuproductos.setEnabled(true);
-menureporte.setEnabled(true);
+
 menuayuda.setEnabled(true);
 menufacturacion.setEnabled(true);
 menudeslog.setEnabled(true);
@@ -324,18 +309,14 @@ public void mostrarRegistro() {
         
     }//GEN-LAST:event_jMenuItem_reporte_ventaActionPerformed
 
-    private void menureporteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menureporteMouseClicked
- mostrarFormulario(new GestionProducto());       
-    }//GEN-LAST:event_menureporteMouseClicked
-
     private void menufacturacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menufacturacionMouseClicked
-      
+      mostrarFormulario(new Factura());
     }//GEN-LAST:event_menufacturacionMouseClicked
 
     private void menudeslogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menudeslogActionPerformed
         menucomprar.setEnabled(false);
 menuproductos.setEnabled(false);
-menureporte.setEnabled(false);
+
 menuayuda.setEnabled(false);
 menufacturacion.setEnabled(false);
 menudeslog.setEnabled(false);
@@ -343,20 +324,21 @@ lblnombrecompleto.setText("");
     }//GEN-LAST:event_menudeslogActionPerformed
 
     private void menufacturacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menufacturacionActionPerformed
-   new Factura().setVisible(true);
+   
     }//GEN-LAST:event_menufacturacionActionPerformed
 
     private void menuproductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuproductosMouseClicked
-       
+mostrarFormulario(new GestionProducto());       
     }//GEN-LAST:event_menuproductosMouseClicked
 
     private void menuayudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuayudaActionPerformed
         mostrarFormulario(new GestionProducto()); 
     }//GEN-LAST:event_menuayudaActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      mostrarFormulario(new GestionProducto()); 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void menudeslogMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menudeslogMouseClicked
+        lblnombrecompleto.setText("");
+        jMenuBar2.setVisible(false);
+    }//GEN-LAST:event_menudeslogMouseClicked
 public void mostrarFormulario(JPanel formulario) {
 contenedor.removeAll();
 contenedor.setLayout(new BorderLayout());
@@ -402,7 +384,6 @@ this.add(bkgprincipalform, BorderLayout.CENTER);
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bkgprincipalform;
     private javax.swing.JPanel contenedor;
-    private javax.swing.JButton jButton1;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JMenu jMenu1;
@@ -432,7 +413,6 @@ this.add(bkgprincipalform, BorderLayout.CENTER);
     private javax.swing.JMenu menudeslog;
     private javax.swing.JMenu menufacturacion;
     private javax.swing.JMenu menuproductos;
-    private javax.swing.JMenu menureporte;
     // End of variables declaration//GEN-END:variables
 }
 

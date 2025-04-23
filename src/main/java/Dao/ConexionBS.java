@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  */
 public class ConexionBS {
    
-     private static final String URL = "jdbc:mysql://localhost:3306/ecumarkett"; // Cambia el nombre de la base de datos si es necesario
+     private static final String URL = "jdbc:mysql://localhost:3306/ecumarket"; // Cambia el nombre de la base de datos si es necesario
     private static final String USUARIO = "root"; // Tu usuario de MySQL
     private static final String PASSWORD = "";    // Tu contraseña de MySQL si tienes
 

@@ -48,7 +48,6 @@ public class loginpanel extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         lblregistrarse = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(255, 255, 255));
@@ -160,14 +159,6 @@ public class loginpanel extends javax.swing.JPanel {
         });
         jPanel1.add(lblregistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, -1, -1));
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 330, -1, -1));
-
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -204,7 +195,11 @@ txtcorreo.setForeground(Color.black);}
     if (resultado != null) {
         javax.swing.JOptionPane.showMessageDialog(this, "¡Bienvenido, " + resultado + "!");
          pantallaPrincipal.actualizarNombreUsuario(resultado);
-         pantallaPrincipal.activarMenu();
+         pantallaPrincipal.mostrarmenu();
+         txtcorreo.setText("");
+         txtcontrase.setText("");
+         
+
 
     } else {
         javax.swing.JOptionPane.showMessageDialog(this, "Correo o contraseña incorrectos.", "Error de autenticación", javax.swing.JOptionPane.ERROR_MESSAGE);
@@ -259,15 +254,9 @@ btnentrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblregistrarse.setForeground(Color.gray);
     }//GEN-LAST:event_lblregistrarseMouseExited
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      FormularioReportes formulario = new FormularioReportes();
-    formulario.mostrar();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnentrar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

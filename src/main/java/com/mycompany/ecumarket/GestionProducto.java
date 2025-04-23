@@ -74,7 +74,9 @@ modeloTabla.setColumnIdentifiers(new Object[]{
         btnCargar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnreporte = new javax.swing.JButton();
+
+        setPreferredSize(new java.awt.Dimension(1430, 640));
 
         TblaProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -162,13 +164,13 @@ modeloTabla.setColumnIdentifiers(new Object[]{
         jLabel2.setText("id Producto");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, -1, -1));
 
-        jButton1.setText("Reporte");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnreporte.setText("Reporte");
+        btnreporte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnreporteActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 410, -1, -1));
+        jPanel1.add(btnreporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 410, -1, -1));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -336,9 +338,11 @@ try {
         listarProducto();
     }//GEN-LAST:event_btnCargarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    GestionProducto gestionProducto = new GestionProducto();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnreporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnreporteActionPerformed
+    FormularioReportes formulario = new FormularioReportes();
+    formulario.deshabilitarBotonesProductos();
+        formulario.mostrar();
+    }//GEN-LAST:event_btnreporteActionPerformed
 
 private void listarProducto() {
     modeloTabla.setRowCount(0); // Limpiar la tabla
@@ -401,7 +405,7 @@ System.out.println("Se encontraron " + lista.size() + " productos");
     private javax.swing.JButton btnElimiar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnLimpiar;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnreporte;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
