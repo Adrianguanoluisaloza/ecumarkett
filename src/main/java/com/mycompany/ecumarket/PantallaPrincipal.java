@@ -70,6 +70,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenu17 = new javax.swing.JMenu();
         jMenu18 = new javax.swing.JMenu();
         menuproductos = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         menufacturacion = new javax.swing.JMenu();
         menudeslog = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
@@ -217,6 +220,16 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             }
         });
         jMenuBar2.add(menuproductos);
+
+        jMenu2.setText("Categorias");
+
+        jMenuItem1.setText("Nueva Categoria");
+        jMenu2.add(jMenuItem1);
+
+        jMenuItem2.setText("Gestionar Categoria");
+        jMenu2.add(jMenuItem2);
+
+        jMenuBar2.add(jMenu2);
 
         menufacturacion.setBackground(new java.awt.Color(204, 0, 51));
         menufacturacion.setText("Facturacion");
@@ -398,6 +411,7 @@ this.add(bkgprincipalform, BorderLayout.CENTER);
     private javax.swing.JMenu jMenu17;
     private javax.swing.JMenu jMenu18;
     private javax.swing.JMenu jMenu19;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu20;
     private javax.swing.JMenu jMenu21;
     private javax.swing.JMenu jMenu3;
@@ -405,6 +419,8 @@ this.add(bkgprincipalform, BorderLayout.CENTER);
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JLabel lblnombrecompleto;
