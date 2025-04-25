@@ -338,6 +338,7 @@ mostrarFormulario(new GestionProducto());
     private void menudeslogMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menudeslogMouseClicked
         lblnombrecompleto.setText("");
         jMenuBar2.setVisible(false);
+        mostrarLogin();
     }//GEN-LAST:event_menudeslogMouseClicked
 public void mostrarFormulario(JPanel formulario) {
 contenedor.removeAll();
