@@ -132,7 +132,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         lblsaludo.setFont(new java.awt.Font("Arial Black", 1, 30)); // NOI18N
         lblsaludo.setForeground(new java.awt.Color(0, 0, 153));
         lblsaludo.setText("Bienvenidos a Ecumarket");
-        bkgprincipalform.add(lblsaludo, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, 480, 30));
+        bkgprincipalform.add(lblsaludo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 40, 480, 30));
 
         contenedor.setBackground(new java.awt.Color(0, 153, 255));
 
@@ -147,7 +147,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             .addGap(0, 640, Short.MAX_VALUE)
         );
 
-        bkgprincipalform.add(contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 1430, 640));
+        bkgprincipalform.add(contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 1430, 640));
 
         lblnombrecompleto.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblnombrecompleto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

@@ -61,7 +61,9 @@ public class Factura extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaDetalles = new javax.swing.JTable();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1430, 640));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -127,7 +129,7 @@ public class Factura extends javax.swing.JPanel {
                 jButton_GuardarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton_Guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 550, 140, 50));
+        jPanel1.add(jButton_Guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 140, 50));
 
         jLabel_Subtotal.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel_Subtotal.setText("Subtotal:");
@@ -145,7 +147,7 @@ public class Factura extends javax.swing.JPanel {
                 btnagregarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnagregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 550, 140, 50));
+        jPanel1.add(btnagregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 550, 140, 50));
 
         btnElimiar.setText("Eliminar Producto");
         btnElimiar.addActionListener(new java.awt.event.ActionListener() {
@@ -153,7 +155,7 @@ public class Factura extends javax.swing.JPanel {
                 btnElimiarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnElimiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 620, 140, 50));
+        jPanel1.add(btnElimiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 550, 140, 50));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos Cliente"));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -179,6 +181,8 @@ public class Factura extends javax.swing.JPanel {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, -1, -1));
 
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 660));
+
         tablaDetalles.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
@@ -197,25 +201,7 @@ public class Factura extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tablaDetalles);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 774, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE))
-                .addContainerGap(56, Short.MAX_VALUE))
-        );
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 0, 830, 660));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton_buscar_ClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_buscar_ClienteActionPerformed
