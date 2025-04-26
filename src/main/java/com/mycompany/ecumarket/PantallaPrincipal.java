@@ -28,7 +28,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         initComponents( );
         mostrarLogin();
         jMenuBar2.setVisible(false);
-        
+        iconusuario.setVisible(false);
         
         
     }
@@ -52,6 +52,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         lblsaludo = new javax.swing.JLabel();
         contenedor = new javax.swing.JPanel();
         lblnombrecompleto = new javax.swing.JLabel();
+        iconusuario = new javax.swing.JLabel();
         jMenuBar2 = new javax.swing.JMenuBar();
         menucomprar = new javax.swing.JMenu();
         jMenu7 = new javax.swing.JMenu();
@@ -150,8 +151,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         bkgprincipalform.add(contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 1430, 640));
 
         lblnombrecompleto.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblnombrecompleto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblnombrecompleto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         bkgprincipalform.add(lblnombrecompleto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 20, 350, 30));
+
+        iconusuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Usuario/user2.png"))); // NOI18N
+        bkgprincipalform.add(iconusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 20, -1, -1));
 
         getContentPane().add(bkgprincipalform, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1510, 790));
 
@@ -289,6 +293,7 @@ public void actualizarNombreUsuario(String nombre) {
     lblnombrecompleto.setText(nombre); 
     lblnombrecompleto.revalidate();
     lblnombrecompleto.repaint();
+    iconusuario.setVisible(true);
 }
 private String usuarioActual; 
 
@@ -366,6 +371,7 @@ if (confirmacion == JOptionPane.YES_OPTION) {
     lblnombrecompleto.setText("");
     jMenuBar2.setVisible(false);
     mostrarLogin();
+    iconusuario.setVisible(false);
 }
     }//GEN-LAST:event_menudeslogMouseClicked
 
@@ -441,6 +447,7 @@ this.add(bkgprincipalform, BorderLayout.CENTER);
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bkgprincipalform;
     private javax.swing.JPanel contenedor;
+    private javax.swing.JLabel iconusuario;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JMenu jMenu1;
