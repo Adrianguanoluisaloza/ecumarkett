@@ -7,7 +7,7 @@ package com.mycompany.ecumarket;
 //import java.awt.event.ActionEvent;
 import javax.swing.*;
 import java.awt.BorderLayout;
-import java.awt.Color;
+
 
 
 /**
@@ -262,6 +262,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jMenu1.setText("Eliminar cuenta");
         jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu1MouseClicked(evt);
+            }
+        });
         jMenuBar2.add(jMenu1);
 
         menuayuda.setBackground(new java.awt.Color(255, 255, 0));
@@ -280,10 +285,13 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 public void actualizarNombreUsuario(String nombre) {
+    this.usuarioActual = nombre; // Guardas el nombre del usuario
     lblnombrecompleto.setText(nombre); 
     lblnombrecompleto.revalidate();
-lblnombrecompleto.repaint();
+    lblnombrecompleto.repaint();
 }
+private String usuarioActual; 
+
 public void mostrarmenu(){
     jMenuBar2.setVisible(true);
 }
@@ -349,10 +357,45 @@ mostrarFormulario(new GestionProducto());
     }//GEN-LAST:event_menuayudaActionPerformed
 
     private void menudeslogMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menudeslogMouseClicked
-        lblnombrecompleto.setText("");
-        jMenuBar2.setVisible(false);
-        mostrarLogin();
+        int confirmacion = JOptionPane.showConfirmDialog(this, 
+    "¿Estás seguro de que deseas cerrar sesión?", 
+    "Cerrar sesión", 
+    JOptionPane.YES_NO_OPTION);
+
+if (confirmacion == JOptionPane.YES_OPTION) {
+    lblnombrecompleto.setText("");
+    jMenuBar2.setVisible(false);
+    mostrarLogin();
+}
     }//GEN-LAST:event_menudeslogMouseClicked
+
+    public String getUsuarioActual() {
+    return usuarioActual;
+}
+    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
+       int opcion = JOptionPane.showConfirmDialog(this,
+        "¿Estás seguro de que deseas eliminar tu cuenta? Esta acción es irreversible.",
+        "Confirmación",
+        JOptionPane.YES_NO_OPTION);
+
+    if (opcion == JOptionPane.YES_OPTION) {
+        String nombreCompleto = getUsuarioActual(); 
+
+        Dao.DaoUsuario dao = new Dao.DaoUsuario();
+        boolean eliminado = dao.borrarUsuario(nombreCompleto);
+
+        if (eliminado) {
+            JOptionPane.showMessageDialog(this, "Cuenta eliminada con éxito.");
+            usuarioActual = ""; 
+            lblnombrecompleto.setText("");
+            jMenuBar2.setVisible(false);
+            mostrarLogin(); 
+        } else {
+            JOptionPane.showMessageDialog(this, "No se pudo eliminar la cuenta.",
+                "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    }//GEN-LAST:event_jMenu1MouseClicked
 public void mostrarFormulario(JPanel formulario) {
 contenedor.removeAll();
 contenedor.setLayout(new BorderLayout());

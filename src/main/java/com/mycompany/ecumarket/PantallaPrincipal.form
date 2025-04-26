@@ -213,6 +213,9 @@
               <Font name="Segoe UI" size="14" style="1"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jMenu1MouseClicked"/>
+          </Events>
         </Menu>
         <Menu class="javax.swing.JMenu" name="menuayuda">
           <Properties>
