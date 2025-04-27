@@ -6,12 +6,10 @@ package com.mycompany.ecumarket;
 
 import Dao.DaoProducto;
 import Modelo.Producto;
-import java.awt.BorderLayout;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.List;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -116,7 +114,7 @@ modeloTabla.setColumnIdentifiers(new Object[]{
         jPanel1.add(txtFechaRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 300, -1));
 
         txttotal.setBorder(javax.swing.BorderFactory.createTitledBorder("Total"));
-        jPanel1.add(txttotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 300, -1));
+        jPanel1.add(txttotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 80, -1));
 
         btnGuardar.setText("Registrar ");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -156,7 +154,7 @@ modeloTabla.setColumnIdentifiers(new Object[]{
                 btnCargarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 500, -1, -1));
+        jPanel1.add(btnCargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 500, -1, -1));
 
         jLabel1.setText("Id");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
@@ -170,7 +168,7 @@ modeloTabla.setColumnIdentifiers(new Object[]{
                 btnreporteActionPerformed(evt);
             }
         });
-        jPanel1.add(btnreporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 410, -1, -1));
+        jPanel1.add(btnreporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 500, -1, -1));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -187,12 +185,10 @@ modeloTabla.setColumnIdentifiers(new Object[]{
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 724, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 604, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -205,8 +201,7 @@ modeloTabla.setColumnIdentifiers(new Object[]{
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
