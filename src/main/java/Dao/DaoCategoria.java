@@ -1,20 +1,21 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Dao;
 
-package Modelo;
-
-import Dao.ConexionBS;
+import Modelo.Categoria;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-
 /**
- * Controlador para guardar Categorías
- * @author tadeo
+ *
+ * @author Adrian
  */
-public class Crlt_Categoria {
-    
-    // Método para registrar categorías
+public class DaoCategoria {
+     // Método para registrar categorías
     public boolean guardar(Categoria objeto) {
         boolean respuesta = false;
         
@@ -71,4 +72,3 @@ public class Crlt_Categoria {
     
 }
     
-

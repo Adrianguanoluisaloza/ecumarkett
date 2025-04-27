@@ -1,7 +1,7 @@
 package com.mycompany.ecumarket;
 
+import Dao.DaoCategoria;
 import Modelo.Categoria;
-import Modelo.Crlt_Categoria;
 import java.awt.Dimension;
 import java.util.HashSet;
 import java.util.Set;
@@ -61,7 +61,7 @@ public class InterCategoria extends javax.swing.JInternalFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
          Categoria categoria = new Categoria();
-    Crlt_Categoria controlCategoria = new Crlt_Categoria();
+    DaoCategoria controlCategoria = new DaoCategoria();
 
     String descripcion = txt_DescripcionCate.getText().trim();
 
