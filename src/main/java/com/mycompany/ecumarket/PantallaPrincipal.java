@@ -228,6 +228,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenu2.setText("Categorias");
 
         jMenuItem1.setText("Nueva Categoria");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem1);
 
         jMenuItem2.setText("Gestionar Categoria");
@@ -402,6 +407,12 @@ if (confirmacion == JOptionPane.YES_OPTION) {
         }
     }
     }//GEN-LAST:event_jMenu1MouseClicked
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+       InterCategoria interCategoria = new InterCategoria();
+      
+       interCategoria.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 public void mostrarFormulario(JPanel formulario) {
 contenedor.removeAll();
 contenedor.setLayout(new BorderLayout());
