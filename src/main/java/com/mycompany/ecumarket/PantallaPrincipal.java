@@ -7,7 +7,7 @@ package com.mycompany.ecumarket;
 //import java.awt.event.ActionEvent;
 import javax.swing.*;
 import java.awt.BorderLayout;
-import java.awt.Color;
+
 
 
 /**
@@ -28,7 +28,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         initComponents( );
         mostrarLogin();
         jMenuBar2.setVisible(false);
-        
+        iconusuario.setVisible(false);
         
         
     }
@@ -52,6 +52,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         lblsaludo = new javax.swing.JLabel();
         contenedor = new javax.swing.JPanel();
         lblnombrecompleto = new javax.swing.JLabel();
+        iconusuario = new javax.swing.JLabel();
         jMenuBar2 = new javax.swing.JMenuBar();
         menucomprar = new javax.swing.JMenu();
         jMenu7 = new javax.swing.JMenu();
@@ -70,6 +71,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenu17 = new javax.swing.JMenu();
         jMenu18 = new javax.swing.JMenu();
         menuproductos = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         menufacturacion = new javax.swing.JMenu();
         menudeslog = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
@@ -129,7 +133,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         lblsaludo.setFont(new java.awt.Font("Arial Black", 1, 30)); // NOI18N
         lblsaludo.setForeground(new java.awt.Color(0, 0, 153));
         lblsaludo.setText("Bienvenidos a Ecumarket");
-        bkgprincipalform.add(lblsaludo, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, 480, 30));
+        bkgprincipalform.add(lblsaludo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 40, 480, 30));
 
         contenedor.setBackground(new java.awt.Color(0, 153, 255));
 
@@ -144,11 +148,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             .addGap(0, 640, Short.MAX_VALUE)
         );
 
-        bkgprincipalform.add(contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 1430, 640));
+        bkgprincipalform.add(contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 1430, 640));
 
         lblnombrecompleto.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblnombrecompleto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblnombrecompleto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         bkgprincipalform.add(lblnombrecompleto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 20, 350, 30));
+
+        iconusuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Usuario/user2.png"))); // NOI18N
+        bkgprincipalform.add(iconusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 20, -1, -1));
 
         getContentPane().add(bkgprincipalform, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1510, 790));
 
@@ -218,6 +225,21 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         });
         jMenuBar2.add(menuproductos);
 
+        jMenu2.setText("Categorias");
+
+        jMenuItem1.setText("Nueva Categoria");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem1);
+
+        jMenuItem2.setText("Gestionar Categoria");
+        jMenu2.add(jMenuItem2);
+
+        jMenuBar2.add(jMenu2);
+
         menufacturacion.setBackground(new java.awt.Color(204, 0, 51));
         menufacturacion.setText("Facturacion");
         menufacturacion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -249,6 +271,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jMenu1.setText("Eliminar cuenta");
         jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu1MouseClicked(evt);
+            }
+        });
         jMenuBar2.add(jMenu1);
 
         menuayuda.setBackground(new java.awt.Color(255, 255, 0));
@@ -267,10 +294,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 public void actualizarNombreUsuario(String nombre) {
+    this.usuarioActual = nombre; // Guardas el nombre del usuario
     lblnombrecompleto.setText(nombre); 
     lblnombrecompleto.revalidate();
-lblnombrecompleto.repaint();
+    lblnombrecompleto.repaint();
+    iconusuario.setVisible(true);
 }
+private String usuarioActual; 
+
 public void mostrarmenu(){
     jMenuBar2.setVisible(true);
 }
@@ -336,9 +367,52 @@ mostrarFormulario(new GestionProducto());
     }//GEN-LAST:event_menuayudaActionPerformed
 
     private void menudeslogMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menudeslogMouseClicked
-        lblnombrecompleto.setText("");
-        jMenuBar2.setVisible(false);
+        int confirmacion = JOptionPane.showConfirmDialog(this, 
+    "¿Estás seguro de que deseas cerrar sesión?", 
+    "Cerrar sesión", 
+    JOptionPane.YES_NO_OPTION);
+
+if (confirmacion == JOptionPane.YES_OPTION) {
+    lblnombrecompleto.setText("");
+    jMenuBar2.setVisible(false);
+    mostrarLogin();
+    iconusuario.setVisible(false);
+}
     }//GEN-LAST:event_menudeslogMouseClicked
+
+    public String getUsuarioActual() {
+    return usuarioActual;
+}
+    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
+       int opcion = JOptionPane.showConfirmDialog(this,
+        "¿Estás seguro de que deseas eliminar tu cuenta? Esta acción es irreversible.",
+        "Confirmación",
+        JOptionPane.YES_NO_OPTION);
+
+    if (opcion == JOptionPane.YES_OPTION) {
+        String nombreCompleto = getUsuarioActual(); 
+
+        Dao.DaoUsuario dao = new Dao.DaoUsuario();
+        boolean eliminado = dao.borrarUsuario(nombreCompleto);
+
+        if (eliminado) {
+            JOptionPane.showMessageDialog(this, "Cuenta eliminada con éxito.");
+            usuarioActual = ""; 
+            lblnombrecompleto.setText("");
+            jMenuBar2.setVisible(false);
+            mostrarLogin(); 
+        } else {
+            JOptionPane.showMessageDialog(this, "No se pudo eliminar la cuenta.",
+                "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    }//GEN-LAST:event_jMenu1MouseClicked
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+       InterCategoria interCategoria = new InterCategoria();
+      
+       interCategoria.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 public void mostrarFormulario(JPanel formulario) {
 contenedor.removeAll();
 contenedor.setLayout(new BorderLayout());
@@ -384,6 +458,7 @@ this.add(bkgprincipalform, BorderLayout.CENTER);
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bkgprincipalform;
     private javax.swing.JPanel contenedor;
+    private javax.swing.JLabel iconusuario;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JMenu jMenu1;
@@ -397,6 +472,7 @@ this.add(bkgprincipalform, BorderLayout.CENTER);
     private javax.swing.JMenu jMenu17;
     private javax.swing.JMenu jMenu18;
     private javax.swing.JMenu jMenu19;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu20;
     private javax.swing.JMenu jMenu21;
     private javax.swing.JMenu jMenu3;
@@ -404,6 +480,8 @@ this.add(bkgprincipalform, BorderLayout.CENTER);
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JLabel lblnombrecompleto;

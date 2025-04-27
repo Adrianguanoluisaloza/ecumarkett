@@ -34,6 +34,19 @@ public class DaoUsuario {
         }
     
     }
+    public boolean borrarUsuario(String nombreCompleto) {
+    String sql = "DELETE FROM usuarios WHERE nombrecompleto = ?";
+    try (Connection conn = ConexionBS.getConnection();
+         PreparedStatement stmt = conn.prepareStatement(sql)) {
+        stmt.setString(1, nombreCompleto);
+        return stmt.executeUpdate() > 0;
+    } catch (SQLException e) {
+        System.err.println("Error al borrar usuario: " + e.getMessage());
+        e.printStackTrace();
+        return false;
+    }
+}
+
 
 
     public String validarLogin(String correo, String contraseña) {
