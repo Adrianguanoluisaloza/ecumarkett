@@ -16,8 +16,8 @@ public class registerpanel extends javax.swing.JPanel {
     /**
      * Creates new form registerpanel
      */
-    PantallaPrincipal pantallaPrincipal;
-    public registerpanel(PantallaPrincipal pantallaPrincipal) {
+    PantallaPrincipal11 pantallaPrincipal;
+    public registerpanel(PantallaPrincipal11 pantallaPrincipal) {
         
         initComponents();
         this.pantallaPrincipal = pantallaPrincipal;
@@ -161,11 +161,11 @@ public registerpanel() {
         });
         jPanel1.add(txtusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, 270, -1));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 1050, -1));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 1050, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnlogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlogActionPerformed
-        String usuario= txtusuario.getText().trim();
+    /*    String usuario= txtusuario.getText().trim();
         String correo = txtcorreo.getText().trim();
         String contraseña = txtcontra.getText().trim(); 
         String nombreCompleto = txtnombre.getText().trim();
@@ -199,7 +199,7 @@ public registerpanel() {
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "El teléfono debe ser un número válido", "Formato incorrecto", JOptionPane.ERROR_MESSAGE);
         }
-    }{
+    }{*/
     }//GEN-LAST:event_btnlogActionPerformed
 
     private void btnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginActionPerformed

@@ -16,8 +16,8 @@ public class loginpanel extends javax.swing.JPanel {
     /**
      * Creates new form loginpanel
      */
-  PantallaPrincipal pantallaPrincipal;
-    public loginpanel(PantallaPrincipal pantallaPrincipal) {
+  PantallaPrincipal11 pantallaPrincipal;
+    public loginpanel(PantallaPrincipal11 pantallaPrincipal) {
     initComponents();
     this.pantallaPrincipal = pantallaPrincipal;
     lblregistrarse.setText("<html><u>Registrate!</u></html>");
@@ -51,7 +51,7 @@ public class loginpanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(255, 255, 255));
-        setMinimumSize(new java.awt.Dimension(1430, 640));
+        setMinimumSize(new java.awt.Dimension(982, 740));
         setPreferredSize(new java.awt.Dimension(1430, 640));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -132,15 +132,17 @@ public class loginpanel extends javax.swing.JPanel {
         jLabel8.setText("ECUMARKET");
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, -1, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 0, 370, 410));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 0, 370, 410));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(153, 153, 153));
         jLabel4.setText("¿No tienes cuenta?");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 360, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, -1, -1));
 
+        lblregistrarse.setBackground(new java.awt.Color(51, 51, 51));
         lblregistrarse.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblregistrarse.setForeground(new java.awt.Color(204, 204, 204));
+        lblregistrarse.setForeground(new java.awt.Color(51, 51, 51));
+        lblregistrarse.setText("Registrarse");
         lblregistrarse.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblregistrarseMouseClicked(evt);
@@ -157,9 +159,9 @@ public class loginpanel extends javax.swing.JPanel {
                 lblregistrarseKeyPressed(evt);
             }
         });
-        jPanel1.add(lblregistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, -1, -1));
+        jPanel1.add(lblregistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 370, 90, 20));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, -1, -1));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -185,12 +187,12 @@ txtcorreo.setForeground(Color.black);}
     }//GEN-LAST:event_txtcorreoMousePressed
 
     private void btnentrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnentrarActionPerformed
-       Dao.DaoUsuario objetoLogin = new Dao.DaoUsuario();
+     /*  Dao.DaoUsuario objetoLogin = new Dao.DaoUsuario();
 
     String correo = txtcorreo.getText().trim();
     String contraseña = new String(txtcontrase.getPassword()).trim();
 
-    String resultado = objetoLogin.validarLogin(correo, contraseña);
+   // String resultado = objetoLogin.validarLogin(correo, contraseña);
 
     if (resultado != null) {
         javax.swing.JOptionPane.showMessageDialog(this, "¡Bienvenido, " + resultado + "!");
@@ -207,7 +209,7 @@ txtcorreo.setForeground(Color.black);}
 
        btnentrar.setBackground(new Color(70, 130, 180));
 btnentrar.setForeground(Color.WHITE);
-btnentrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+btnentrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));*/
     }//GEN-LAST:event_btnentrarActionPerformed
 
     private void txtcontraseFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtcontraseFocusGained
@@ -243,6 +245,8 @@ btnentrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     }//GEN-LAST:event_lblregistrarseKeyPressed
 
     private void lblregistrarseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblregistrarseMouseClicked
+         //registerpanel Re=new registerpanel();
+       // Re.setVisible(true);
         pantallaPrincipal.mostrarRegistro();
     }//GEN-LAST:event_lblregistrarseMouseClicked
 

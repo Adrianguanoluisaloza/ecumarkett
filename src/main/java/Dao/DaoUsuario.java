@@ -4,10 +4,14 @@
  */
 package Dao;
 
+import Modelo.usuarios;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,63 +20,166 @@ import java.sql.SQLException;
 
 public class DaoUsuario {
    
-    public boolean registrarUsuario(String usuario,String correo, String contraseña, String nombrecompleto, int telefono, String ciudad) {
-        String sql = "INSERT INTO usuarios (usuario, correo, contraseña, nombrecompleto, telefono, ciudad) VALUES (?, ?, ?, ?, ?, ?)";
-        try (Connection conn = ConexionBS.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, usuario);
-            stmt.setString(2, correo);
-            stmt.setString(3, contraseña);
-            stmt.setString(4, nombrecompleto);
-            stmt.setInt(5, telefono);
-            stmt.setString(6, ciudad);
-              return stmt.executeUpdate() > 0;
-        } catch (SQLException e) {
-            System.err.println("Error al registrar usuario: " + e.getMessage());
-            e.printStackTrace(); // Para depuración en consola
+      Connection con;
+    conexion cn=new conexion();
+    PreparedStatement ps;
+    ResultSet rs;
+    
+    public usuarios login(String usuario,String pass){
+        usuarios us=new usuarios();
+        String sql="SELECT * FROM usuarios WHERE correo='"+usuario+"' and pass=aes_encrypt('"+pass+"','clave')";
+        try {
+            con=cn.conectar();
+            ps=con.prepareStatement(sql);
+            rs=ps.executeQuery();
+        while(rs.next()){
+            us.setIdusuario(rs.getInt(1));
+            us.setNombre(rs.getString(2));
+            us.setApellido(rs.getString(3));
+            us.setDocumento(rs.getString(4));
+            us.setDireccion(rs.getString(5));
+            us.setTelefono(rs.getString(6));
+            us.setCorreo(rs.getString(7));
+            us.setTipoUsuario(rs.getString(8));
+            us.setUsuario(rs.getString(9));
+            us.setPassword(rs.getString(10));
+        }
+        } catch (SQLException ex) {
+            JOptionPane.showConfirmDialog(null, ex);
+        }
+        return us;
+    }
+
+    public boolean insertar(String nombre,String apellido,String documento,String direccion,String telefono,String correo,
+                            String tipouser,String user,String pass){
+        String SQL="insert into usuarios (nombre,apellido,documento,direccion,telefono,correo,tipoUsuario,usuario,pass) "
+                + "VALUES ('"+nombre+"','"+apellido+"','"+documento+"','"+direccion+"','"+telefono+"','"+correo+"','"+tipouser+"'"
+                + ",'"+user+"',aes_encrypt('"+pass+"','clave'))";
+        try{
+            con=cn.conectar();
+            ps=con.prepareStatement(SQL);
+            int n=ps.executeUpdate();
+            if(n!=0){
+                return true;
+            }else{
+                return false;
+            }
+        }catch(Exception e){
+            JOptionPane.showConfirmDialog(null, e);
             return false;
         }
-    
     }
-    public boolean borrarUsuario(String nombreCompleto) {
-    String sql = "DELETE FROM usuarios WHERE nombrecompleto = ?";
-    try (Connection conn = ConexionBS.getConnection();
-         PreparedStatement stmt = conn.prepareStatement(sql)) {
-        stmt.setString(1, nombreCompleto);
-        return stmt.executeUpdate() > 0;
-    } catch (SQLException e) {
-        System.err.println("Error al borrar usuario: " + e.getMessage());
-        e.printStackTrace();
-        return false;
-    }
-}
 
-
-
-    public String validarLogin(String correo, String contraseña) {
-    String sql = "SELECT * FROM usuarios WHERE correo = ? AND contraseña = ?";
-    
-    try (Connection conn = ConexionBS.getConnection();
-         PreparedStatement stmt = conn.prepareStatement(sql)) {
-
-        stmt.setString(1, correo.trim());
-        stmt.setString(2, contraseña.trim());
-
-        try (ResultSet rs = stmt.executeQuery()) {
-            if (rs.next()) {
-                String nombreCompleto = rs.getString("nombrecompleto");
-                System.out.println("✅ Login exitoso. Usuario: " + nombreCompleto);
-                return nombreCompleto;
-            } else {
-                System.out.println("❌ Correo o contraseña incorrectos");
-                return null;
+    public List Listar(){
+        List<usuarios> lista=new ArrayList<>();
+        String SQL="select * from usuarios";
+        try{
+            con=cn.conectar();
+            ps=con.prepareStatement(SQL);
+            rs=ps.executeQuery();
+            while(rs.next()){
+                usuarios c=new usuarios();
+                c.setIdusuario(rs.getInt(1));
+                c.setNombre(rs.getString(2));
+                c.setApellido(rs.getString(3));
+                c.setDocumento(rs.getString(4));
+                c.setDireccion(rs.getString(5));
+                c.setTelefono(rs.getString(6));
+                c.setCorreo(rs.getString(7));
+                c.setTipoUsuario(rs.getString(8));
+                c.setUsuario(rs.getString(9));
+                c.setPassword(rs.getString(10));
+                lista.add(c);
             }
+        }catch(Exception e){
+            JOptionPane.showConfirmDialog(null, e);
         }
-
-    } catch (SQLException e) {
-        System.err.println("❗ Error al validar login: " + e.getMessage());
-        e.printStackTrace();
-        return null;
+        return lista;
     }
-}
+
+    public boolean buscar(usuarios c){
+        String SQL="SELECT idUsuario,nombre,apellido,documento,direccion,telefono,correo,tipoUsuario,usuario,"
+                    + "aes_decrypt(usuarios.pass,'clave')as pass from usuarios WHERE documento=?";
+         try{
+            con=cn.conectar();
+            ps=con.prepareStatement(SQL);
+            ps.setString(1, c.getDocumento());
+            rs=ps.executeQuery();
+            if(rs.next()){
+                c.setIdusuario(rs.getInt(1));
+                c.setNombre(rs.getString(2));
+                c.setApellido(rs.getString(3));
+                c.setDocumento(rs.getString(4));
+                c.setDireccion(rs.getString(5));
+                c.setTelefono(rs.getString(6));
+                c.setCorreo(rs.getString(7));
+                c.setTipoUsuario(rs.getString(8));
+                c.setUsuario(rs.getString(9));
+                c.setPassword(rs.getString(10));
+                return true;
+            }else{
+                return false;
+            }
+        }catch(Exception e){
+            JOptionPane.showConfirmDialog(null, e);
+            return false;
+        }
+    }
+
+    public boolean editar(String nombre,String apellido,String documento,String dire,
+                            String tel,String correo,String tusuario,String user,String pass,int id){
+
+        String SQL="update usuarios SET nombre='"+nombre+"',apellido='"+apellido+"',documento='"+documento+"',direccion='"+dire+"',telefono='"+tel+"'\n" +
+                    ",correo='"+correo+"',tipoUsuario='"+tusuario+"',usuario='"+user+"',pass=aes_encrypt('"+pass+"','clave') WHERE idUsuario="+id;
+        try{
+            con=cn.conectar();
+            ps=con.prepareStatement(SQL);
+            int n=ps.executeUpdate();
+            if(n!=0){
+                return true;
+            }else{
+                return false;
+            }
+        }catch(Exception e){
+            JOptionPane.showConfirmDialog(null, e);
+            return false;
+        }
+    }
+
+    public boolean eliminar(usuarios c){
+        String SQL="delete from usuarios where idUsuario=?";
+         try{
+            con=cn.conectar();
+            ps=con.prepareStatement(SQL);
+            ps.setInt(1, c.getIdusuario());
+            int n=ps.executeUpdate();
+            if(n!=0){
+                return true;
+            }else{
+                return false;
+            }
+        }catch(Exception e){
+            JOptionPane.showConfirmDialog(null, e);
+            return false;
+        }
+    }
+
+    public int cantUsuarios(){
+        String SQL="SELECT COUNT(idUsuario) FROM usuarios";
+        int cant = 0;
+         try{
+            con=cn.conectar();
+            ps=con.prepareStatement(SQL);
+            rs=ps.executeQuery();
+            if(rs.next()){
+               cant=rs.getInt(1);
+            }else{
+               cant=0; 
+            }
+        }catch(Exception e){
+            JOptionPane.showConfirmDialog(null, e);
+            
+        }
+        return cant;
+    }
 }

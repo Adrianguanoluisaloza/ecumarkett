@@ -5,6 +5,8 @@
 package com.mycompany.ecumarket;
 
 
+
+import Formularios.pantallaPrincipal;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -22,7 +24,7 @@ public class Ecumarket {
         }
 
         SwingUtilities.invokeLater(() -> {
-            new PantallaPrincipal().setVisible(true);
+            new pantallaPrincipal().setVisible(true);
         });
     }
 }
