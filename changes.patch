@@ -1,0 +1,208 @@
+diff --git a/src/main/java/Dao/Conexion.java b/src/main/java/Dao/Conexion.java
+index 7c0a03e..1449baf 100644
+--- a/src/main/java/Dao/Conexion.java
++++ b/src/main/java/Dao/Conexion.java
+@@ -13,32 +13,25 @@ import javax.swing.JOptionPane;
+  *
+  * @author Adrian
+  */
+-public class ConexionBS {
++public class conexion {
+    
+-     private static final String URL = "jdbc:mysql://localhost:3306/ecumarkett"; // Cambia el nombre de la base de datos si es necesario
+-    private static final String USUARIO = "root"; // Tu usuario de MySQL
+-    private static final String PASSWORD = "";    // Tu contraseña de MySQL si tienes
+-
+-    // Método estático para obtener una conexión a la base de datos
+-
+-    public static Connection getConnection() throws SQLException {
+-        Connection con = null;
+-        try {
+-            Class.forName("com.mysql.cj.jdbc.Driver");  // Registramos el driver
+-            con = DriverManager.getConnection(URL, USUARIO, PASSWORD);  // Conexión a la base de datos
+-            System.out.println("✅ Conexión exitosa a la base de datos");
+-        } catch (ClassNotFoundException | SQLException e) {
+-            JOptionPane.showMessageDialog(null, "Error al conectar con la base de datos:\n" + e.getMessage());
++        Connection con;
++    String bd="inventario2";
++    String url="jdbc:mysql://localhost/"+bd;
++    String user="root";
++    String pass="";
++    
++    public Connection conectar(){
++        try{
++            Class.forName("com.mysql.cj.jdbc.Driver");
++            con=DriverManager.getConnection(url,user,pass);
++        }catch(ClassNotFoundException | SQLException e){
++            JOptionPane.showConfirmDialog(null, e);
+         }
+-        return con;  // Retorna la conexión
+-    }
+-
+-    public static Connection conectar() {
+-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
++        return con;
+     }
+ }
+ 
+-
+     /*
+       private static final String URL = "jdbc:mysql://localhost:3306/ecumarket";
+     private static final String USUARIO = "root";  // Cambia si tu usuario es distinto
+diff --git a/src/main/java/Modelo/Usuarios.java b/src/main/java/Modelo/Usuarios.java
+index 4f733c2..0d476e2 100644
+--- a/src/main/java/Modelo/Usuarios.java
++++ b/src/main/java/Modelo/Usuarios.java
+@@ -8,71 +8,115 @@ package Modelo;
+  *
+  * @author Adrian
+  */
+-public class Usuario {
+-    private String usuario;
+-    private String correo;
+-    private  String contraseña;
+-      private   String nombre;
+-     private   int telefono;
+-       private     String ciudad;
+-
+-    public Usuario(String usuario, String correo, String contraseña, String nombre, int telefono, String ciudad) {
+-        this.usuario = usuario;
+-        this.correo = correo;
+-        this.contraseña = contraseña;
++public class usuarios {
++   
++    
++    int idusuario;
++    String nombre;
++    String apellido;
++    String documento;
++    String direccion;
++    String telefono;
++    String correo;
++    String tipoUsuario;
++    String usuario;
++    String password;
++
++    public usuarios() {
++    }
++
++    public usuarios(int idusuario, String nombre, String apellido, String documento, String direccion, String telefono, String correo, String tipoUsuario, String usuario, String password) {
++        this.idusuario = idusuario;
+         this.nombre = nombre;
++        this.apellido = apellido;
++        this.documento = documento;
++        this.direccion = direccion;
+         this.telefono = telefono;
+-        this.ciudad = ciudad;
++        this.correo = correo;
++        this.tipoUsuario = tipoUsuario;
++        this.usuario = usuario;
++        this.password = password;
+     }
+ 
+-    public void setUsuario(String usuario) {
+-        this.usuario = usuario;
++    public int getIdusuario() {
++        return idusuario;
+     }
+ 
+-    public void setCorreo(String correo) {
+-        this.correo = correo;
++    public void setIdusuario(int idusuario) {
++        this.idusuario = idusuario;
+     }
+ 
+-    public void setContraseña(String contraseña) {
+-        this.contraseña = contraseña;
++    public String getNombre() {
++        return nombre;
+     }
+ 
+-    public void setNombrecompleto(String nombrecompleto) {
+-        this.nombre= nombrecompleto;
++    public void setNombre(String nombre) {
++        this.nombre = nombre;
+     }
+ 
+-    public void setTelefono(int telefono) {
+-        this.telefono = telefono;
++    public String getApellido() {
++        return apellido;
+     }
+ 
+-    public void setCiudad(String ciudad) {
+-        this.ciudad = ciudad;
++    public void setApellido(String apellido) {
++        this.apellido = apellido;
+     }
+ 
+-    public Usuario() {}
++    public String getDocumento() {
++        return documento;
++    }
+ 
+-    public String getUsuario() {
+-        return usuario;
++    public void setDocumento(String documento) {
++        this.documento = documento;
++    }
++
++    public String getDireccion() {
++        return direccion;
++    }
++
++    public void setDireccion(String direccion) {
++        this.direccion = direccion;
++    }
++
++    public String getTelefono() {
++        return telefono;
++    }
++
++    public void setTelefono(String telefono) {
++        this.telefono = telefono;
+     }
+ 
+     public String getCorreo() {
+         return correo;
+     }
+ 
+-    public String getContraseña() {
+-        return contraseña;
++    public void setCorreo(String correo) {
++        this.correo = correo;
+     }
+ 
+-    public String getNombre() {
+-        return nombre;
++    public String getTipoUsuario() {
++        return tipoUsuario;
+     }
+ 
+-    public int getTelefono() {
+-        return telefono;
++    public void setTipoUsuario(String tipoUsuario) {
++        this.tipoUsuario = tipoUsuario;
+     }
+ 
+-    public String getCiudad() {
+-        return ciudad;
++    public String getUsuario() {
++        return usuario;
++    }
++
++    public void setUsuario(String usuario) {
++        this.usuario = usuario;
+     }
++
++    public String getPassword() {
++        return password;
++    }
++
++    public void setPassword(String password) {
++        this.password = password;
++    }
++    
+     
+-}
++  }

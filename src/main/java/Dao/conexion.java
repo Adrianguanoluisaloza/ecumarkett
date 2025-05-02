@@ -13,24 +13,31 @@ import javax.swing.JOptionPane;
  *
  * @author Adrian
  */
-public class conexion {
+public class ConexionBS {
    
-        Connection con;
-    String bd="inventario2";
-    String url="jdbc:mysql://localhost/"+bd;
-    String user="root";
-    String pass="";
-    
-    public Connection conectar(){
-        try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con=DriverManager.getConnection(url,user,pass);
-        }catch(ClassNotFoundException | SQLException e){
-            JOptionPane.showConfirmDialog(null, e);
+     private static final String URL = "jdbc:mysql://localhost:3306/ecumarkett"; // Cambia el nombre de la base de datos si es necesario
+    private static final String USUARIO = "root"; // Tu usuario de MySQL
+    private static final String PASSWORD = "";    // Tu contraseña de MySQL si tienes
+
+    // Método estático para obtener una conexión a la base de datos
+
+    public static Connection getConnection() throws SQLException {
+        Connection con = null;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");  // Registramos el driver
+            con = DriverManager.getConnection(URL, USUARIO, PASSWORD);  // Conexión a la base de datos
+            System.out.println("✅ Conexión exitosa a la base de datos");
+        } catch (ClassNotFoundException | SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al conectar con la base de datos:\n" + e.getMessage());
         }
-        return con;
+        return con;  // Retorna la conexión
+    }
+
+    public static Connection conectar() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
+
 
     /*
       private static final String URL = "jdbc:mysql://localhost:3306/ecumarket";
