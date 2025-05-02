@@ -6,6 +6,7 @@ package Formularios;
 
 
 import java.awt.BorderLayout;
+import javax.swing.JPanel;
 
 
 /**
@@ -18,7 +19,20 @@ public class pantallaPrincipal extends javax.swing.JFrame {
      * Creates new form pantallaPrincipal
      */
     public pantallaPrincipal() {
-        initComponents();       
+        initComponents();     
+       JPanel panelCentral = new JPanel();
+panelCentral.setLayout(new BorderLayout());
+
+JPanel panelBotones = new JPanel(); // por ejemplo arriba
+JPanel panlSecu = new JPanel(); // el contenedor de formularios
+panlSecu.setLayout(new BorderLayout()); // muy importante
+
+panelCentral.add(panelBotones, BorderLayout.NORTH); // o WEST si es lateral
+panelCentral.add(panlSecu, BorderLayout.CENTER);
+
+this.add(panelCentral); // añades todo al JFrame
+
+        
         setLocationRelativeTo(null);
         //contenedor.setBorder(new BordeRedondeado(50));
        // contenedorbotones.setBorder(new BordeRedondeado(80));
@@ -41,7 +55,7 @@ public class pantallaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jpanelRound1 = new Modelo.JpanelRound();
+        PanlSecu = new Modelo.JpanelRound();
         contenedor = new Modelo.JpanelRound();
         jpanelRound2 = new Modelo.JpanelRound();
         btnInicio = new RSMaterialComponent.RSButtonMaterialIconShadow();
@@ -63,13 +77,13 @@ public class pantallaPrincipal extends javax.swing.JFrame {
         setTitle("Ecumarket");
         setBackground(new java.awt.Color(255, 255, 255));
 
-        jpanelRound1.setBackground(new java.awt.Color(255, 255, 255));
-        jpanelRound1.setPreferredSize(new java.awt.Dimension(1261, 787));
-        jpanelRound1.setRoundBottomLeft(40);
-        jpanelRound1.setRoundBottomRight(40);
-        jpanelRound1.setRoundTopLeft(40);
-        jpanelRound1.setRoundTopRight(40);
-        jpanelRound1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        PanlSecu.setBackground(new java.awt.Color(255, 255, 255));
+        PanlSecu.setPreferredSize(new java.awt.Dimension(1261, 787));
+        PanlSecu.setRoundBottomLeft(40);
+        PanlSecu.setRoundBottomRight(40);
+        PanlSecu.setRoundTopLeft(40);
+        PanlSecu.setRoundTopRight(40);
+        PanlSecu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         contenedor.setBackground(new java.awt.Color(255, 255, 255));
         contenedor.setPreferredSize(new java.awt.Dimension(1007, 775));
@@ -82,14 +96,14 @@ public class pantallaPrincipal extends javax.swing.JFrame {
         contenedor.setLayout(contenedorLayout);
         contenedorLayout.setHorizontalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1130, Short.MAX_VALUE)
+            .addGap(0, 1000, Short.MAX_VALUE)
         );
         contenedorLayout.setVerticalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 750, Short.MAX_VALUE)
+            .addGap(0, 770, Short.MAX_VALUE)
         );
 
-        jpanelRound1.add(contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 1130, 750));
+        PanlSecu.add(contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1000, 770));
 
         jpanelRound2.setBackground(new java.awt.Color(204, 0, 204));
         jpanelRound2.setRoundBottomLeft(50);
@@ -237,17 +251,17 @@ public class pantallaPrincipal extends javax.swing.JFrame {
         txtuser.setColorIcon(new java.awt.Color(0, 204, 255));
         jpanelRound2.add(txtuser, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 190, -1));
 
-        jpanelRound1.add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 0, 250, 790));
+        PanlSecu.add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 0, 250, 790));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanlSecu, javax.swing.GroupLayout.DEFAULT_SIZE, 1270, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanlSecu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -373,7 +387,7 @@ public class pantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalidasActionPerformed
 
     private void btnProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProveedorActionPerformed
-       /* btnCategorias.setSelected(false);
+        btnCategorias.setSelected(false);
         btnClientes.setSelected(false);
         btnEntradas.setSelected(false);
         btnProveedor.setSelected(true);
@@ -382,13 +396,13 @@ public class pantallaPrincipal extends javax.swing.JFrame {
         btnProductos.setSelected(false);
         btnSalida.setSelected(false);
         Provedores P=new Provedores();
-        P.setSize(982,740);
+        P.setSize(1007, 775);
         P.setLocation(0,0);
 
         contenedor.removeAll();
         contenedor.add(P,BorderLayout.CENTER);
         contenedor.revalidate();
-        contenedor.repaint();*/
+        contenedor.repaint();
     }//GEN-LAST:event_btnProveedorActionPerformed
 
     private void btnSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalidaActionPerformed
@@ -430,9 +444,9 @@ public class pantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-      /*  loginn ll=new loginn();
+       loginn ll=new loginn();
         ll.setVisible(true);
-        dispose();*/
+        dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void lActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lActionPerformed
@@ -517,6 +531,7 @@ public class pantallaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private Modelo.JpanelRound PanlSecu;
     public static RSMaterialComponent.RSButtonMaterialIconShadow btnCategorias;
     public static RSMaterialComponent.RSButtonMaterialIconDos btnClientes;
     public static RSMaterialComponent.RSButtonMaterialIconDos btnEntradas;
@@ -528,7 +543,6 @@ public class pantallaPrincipal extends javax.swing.JFrame {
     public static RSMaterialComponent.RSButtonMaterialIconDos btnSalidas;
     private RSMaterialComponent.RSButtonMaterialIconDos btnSalir;
     private Modelo.JpanelRound contenedor;
-    private Modelo.JpanelRound jpanelRound1;
     private Modelo.JpanelRound jpanelRound2;
     public static RSMaterialComponent.RSButtonMaterialIconDos l;
     private rojeru_san.rslabel.RSLabelBorderRound rSLabelBorderRound1;

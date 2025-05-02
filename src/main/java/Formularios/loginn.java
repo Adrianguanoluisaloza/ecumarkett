@@ -48,8 +48,9 @@ public class loginn extends javax.swing.JPanel {
         btnRegistrar = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jpanelRound3 = new Modelo.JpanelRound();
         btnentrar = new javax.swing.JButton();
+        btnSalir = new button.MyButton();
+        rSLabelBorderRound1 = new rojeru_san.rslabel.RSLabelBorderRound();
 
         jpanelRound1.setBackground(new java.awt.Color(102, 204, 255));
         jpanelRound1.setPreferredSize(new java.awt.Dimension(982, 740));
@@ -143,24 +144,6 @@ public class loginn extends javax.swing.JPanel {
         jLabel11.setText("ECUMARKET");
         jpanelRound1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 290, -1, -1));
 
-        jpanelRound3.setRoundBottomLeft(50);
-        jpanelRound3.setRoundBottomRight(50);
-        jpanelRound3.setRoundTopLeft(50);
-        jpanelRound3.setRoundTopRight(50);
-
-        javax.swing.GroupLayout jpanelRound3Layout = new javax.swing.GroupLayout(jpanelRound3);
-        jpanelRound3.setLayout(jpanelRound3Layout);
-        jpanelRound3Layout.setHorizontalGroup(
-            jpanelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 170, Short.MAX_VALUE)
-        );
-        jpanelRound3Layout.setVerticalGroup(
-            jpanelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 160, Short.MAX_VALUE)
-        );
-
-        jpanelRound1.add(jpanelRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 90, 170, 160));
-
         btnentrar.setBackground(new java.awt.Color(0, 153, 255));
         btnentrar.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         btnentrar.setForeground(new java.awt.Color(255, 255, 255));
@@ -170,20 +153,41 @@ public class loginn extends javax.swing.JPanel {
                 btnentrarActionPerformed(evt);
             }
         });
-        jpanelRound1.add(btnentrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 200, -1));
+        jpanelRound1.add(btnentrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 200, -1));
+
+        btnSalir.setForeground(new java.awt.Color(255, 255, 255));
+        btnSalir.setText("Cerrar");
+        btnSalir.setBorderColor(new java.awt.Color(204, 204, 204));
+        btnSalir.setColor(new java.awt.Color(51, 153, 255));
+        btnSalir.setColorClick(new java.awt.Color(153, 255, 255));
+        btnSalir.setColorOver(new java.awt.Color(0, 204, 51));
+        btnSalir.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+        jpanelRound1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 310, 90, 40));
+
+        rSLabelBorderRound1.setBackground(new java.awt.Color(255, 255, 255));
+        rSLabelBorderRound1.setForeground(new java.awt.Color(255, 0, 0));
+        rSLabelBorderRound1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lalaa.png"))); // NOI18N
+        rSLabelBorderRound1.setText("Ecumarket");
+        rSLabelBorderRound1.setBgBorde(new java.awt.Color(0, 204, 255));
+        jpanelRound1.add(rSLabelBorderRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 40, 250, 230));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, 865, Short.MAX_VALUE)
+                .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, 1015, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, 434, Short.MAX_VALUE)
+                .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, 493, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -285,9 +289,14 @@ txtcorreo.setForeground(Color.black);}
         // TODO add your handling code here:
     }//GEN-LAST:event_txtcorreoActionPerformed
 
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnSalirActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegistrar;
+    private button.MyButton btnSalir;
     private javax.swing.JButton btnentrar;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -295,7 +304,7 @@ txtcorreo.setForeground(Color.black);}
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private Modelo.JpanelRound jpanelRound1;
-    private Modelo.JpanelRound jpanelRound3;
+    private rojeru_san.rslabel.RSLabelBorderRound rSLabelBorderRound1;
     private javax.swing.JPasswordField txtcontrase;
     private javax.swing.JTextField txtcorreo;
     // End of variables declaration//GEN-END:variables
