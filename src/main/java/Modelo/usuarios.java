@@ -8,71 +8,116 @@ package Modelo;
  *
  * @author Adrian
  */
-public class Usuario {
-    private String usuario;
-    private String correo;
-    private  String contraseña;
-      private   String nombre;
-     private   int telefono;
-       private     String ciudad;
+public class usuarios {
+   
+  
+    
+    int idusuario;
+    String nombre;
+    String apellido;
+    String documento;
+    String direccion;
+    String telefono;
+    String correo;
+    String tipoUsuario;
+    String usuario;
+    String password;
 
-    public Usuario(String usuario, String correo, String contraseña, String nombre, int telefono, String ciudad) {
-        this.usuario = usuario;
-        this.correo = correo;
-        this.contraseña = contraseña;
+    public usuarios() {
+    }
+
+    public usuarios(int idusuario, String nombre, String apellido, String documento, String direccion, String telefono, String correo, String tipoUsuario, String usuario, String password) {
+        this.idusuario = idusuario;
         this.nombre = nombre;
+        this.apellido = apellido;
+        this.documento = documento;
+        this.direccion = direccion;
         this.telefono = telefono;
-        this.ciudad = ciudad;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
-
-    public void setCorreo(String correo) {
         this.correo = correo;
+        this.tipoUsuario = tipoUsuario;
+        this.usuario = usuario;
+        this.password = password;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public int getIdusuario() {
+        return idusuario;
     }
 
-    public void setNombrecompleto(String nombrecompleto) {
-        this.nombre= nombrecompleto;
-    }
-
-    public void setTelefono(int telefono) {
-        this.telefono = telefono;
-    }
-
-    public void setCiudad(String ciudad) {
-        this.ciudad = ciudad;
-    }
-
-    public Usuario() {}
-
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public String getContraseña() {
-        return contraseña;
+    public void setIdusuario(int idusuario) {
+        this.idusuario = idusuario;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public int getTelefono() {
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getDocumento() {
+        return documento;
+    }
+
+    public void setDocumento(String documento) {
+        this.documento = documento;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getTelefono() {
         return telefono;
     }
 
-    public String getCiudad() {
-        return ciudad;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getTipoUsuario() {
+        return tipoUsuario;
+    }
+
+    public void setTipoUsuario(String tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
     
-}
+    
+  }
