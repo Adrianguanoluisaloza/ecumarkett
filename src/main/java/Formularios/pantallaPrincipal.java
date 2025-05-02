@@ -43,6 +43,8 @@ this.add(panelCentral); // añades todo al JFrame
         contenedor.add(L,BorderLayout.CENTER);
         contenedor.revalidate();
         contenedor.repaint();
+        
+        
     }
   
 
@@ -456,32 +458,7 @@ this.add(panelCentral); // añades todo al JFrame
         contenedor.revalidate();
         contenedor.repaint();*/
     }//GEN-LAST:event_lActionPerformed
- 
-    
-    
-    
-    
-    
-    
-    
-    
-    /*btnCategorias.setSelected(false);
-        btnInicio.setSelected(false);
-        btnClientes.setSelected(false);
-        btnEntradas.setSelected(false);
-        btnProveedor.setSelected(false);
-        btnSalidas.setSelected(false);
-        btnProductos.setSelected(false);
-        btnUsuarios.setSelected(true);
-        btnSalida.setSelected(false);
-        loginn L=new loginn();
-        L.setSize(982,740);
-        L.setLocation(0,0);
 
-        contenedor.removeAll();
-        contenedor.add(L,BorderLayout.CENTER);
-        contenedor.revalidate();
-        contenedor.repaint();*/
     /**
      * @param args the command line arguments
      */
@@ -536,4 +513,9 @@ this.add(panelCentral); // añades todo al JFrame
     public static javax.swing.JLabel txtiduser;
     public static RSMaterialComponent.RSLabelTextIcon txtuser;
     // End of variables declaration//GEN-END:variables
+
+    static class LULU {
+
+        
+    }
 }

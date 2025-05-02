@@ -21,7 +21,7 @@ public class loginn extends javax.swing.JPanel {
        DaoUsuario daoU=new DaoUsuario();
     usuarios us=new usuarios();
     
-    
+
     /**
      * Creates new form loginn
      */
@@ -290,7 +290,17 @@ txtcorreo.setForeground(Color.black);}
     }//GEN-LAST:event_txtcorreoActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        System.exit(0);
+        //System.exit(0);
+     int opcion = JOptionPane.showConfirmDialog(null,
+        "¿Estás seguro de que quieres cerrar la aplicación?",
+        "Confirmar salida",
+        JOptionPane.YES_NO_OPTION,
+        JOptionPane.QUESTION_MESSAGE);
+
+if (opcion == JOptionPane.YES_OPTION) {
+    System.exit(0); // Cierre normal, sin errores
+}
+
     }//GEN-LAST:event_btnSalirActionPerformed
 
 
