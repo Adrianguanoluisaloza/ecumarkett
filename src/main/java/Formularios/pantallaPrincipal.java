@@ -69,7 +69,6 @@ this.add(panelCentral); // añades todo al JFrame
         btnSalida = new RSMaterialComponent.RSButtonMaterialIconDos();
         btnSalir = new RSMaterialComponent.RSButtonMaterialIconDos();
         txtiduser = new javax.swing.JLabel();
-        btnLogin = new RSMaterialComponent.RSButtonMaterialIconDos();
         rSLabelBorderRound1 = new rojeru_san.rslabel.RSLabelBorderRound();
         txtuser = new RSMaterialComponent.RSLabelTextIcon();
 
@@ -230,17 +229,7 @@ this.add(panelCentral); // añades todo al JFrame
         txtiduser.setText("1");
         jpanelRound2.add(txtiduser, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 6, -1, -1));
 
-        btnLogin.setBackground(new java.awt.Color(0, 204, 255));
-        btnLogin.setText("Login");
-        btnLogin.setFont(new java.awt.Font("Arial Narrow", 3, 18)); // NOI18N
-        btnLogin.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SPA);
-        btnLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLoginActionPerformed(evt);
-            }
-        });
-        jpanelRound2.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 660, -1, -1));
-
+        rSLabelBorderRound1.setBackground(new java.awt.Color(0, 153, 255));
         rSLabelBorderRound1.setForeground(new java.awt.Color(255, 255, 255));
         rSLabelBorderRound1.setText("Ecumarket");
         rSLabelBorderRound1.setBgBorde(new java.awt.Color(0, 204, 255));
@@ -248,7 +237,7 @@ this.add(panelCentral); // añades todo al JFrame
         jpanelRound2.add(rSLabelBorderRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 103, -1));
 
         txtuser.setForeground(new java.awt.Color(204, 255, 102));
-        txtuser.setColorIcon(new java.awt.Color(0, 204, 255));
+        txtuser.setColorIcon(new java.awt.Color(255, 255, 255));
         jpanelRound2.add(txtuser, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 190, -1));
 
         PanlSecu.add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 0, 250, 790));
@@ -423,8 +412,8 @@ this.add(panelCentral); // añades todo al JFrame
         contenedor.repaint();*/
     }//GEN-LAST:event_btnSalidaActionPerformed
 
-    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        btnCategorias.setSelected(false);
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+       btnCategorias.setSelected(false);
         btnCategorias.setSelected(false);
         btnClientes.setSelected(false);
         btnEntradas.setSelected(false);
@@ -441,12 +430,11 @@ this.add(panelCentral); // añades todo al JFrame
         contenedor.add(L,BorderLayout.CENTER);
         contenedor.revalidate();
         contenedor.repaint();
-    }//GEN-LAST:event_btnLoginActionPerformed
-
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-       loginn ll=new loginn();
+        
+        
+        /* loginn ll=new loginn();
         ll.setVisible(true);
-        dispose();
+        dispose();*/
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void lActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lActionPerformed
@@ -536,7 +524,6 @@ this.add(panelCentral); // añades todo al JFrame
     public static RSMaterialComponent.RSButtonMaterialIconDos btnClientes;
     public static RSMaterialComponent.RSButtonMaterialIconDos btnEntradas;
     public static RSMaterialComponent.RSButtonMaterialIconShadow btnInicio;
-    private RSMaterialComponent.RSButtonMaterialIconDos btnLogin;
     public static RSMaterialComponent.RSButtonMaterialIconDos btnProductos;
     public static RSMaterialComponent.RSButtonMaterialIconShadow btnProveedor;
     public static RSMaterialComponent.RSButtonMaterialIconDos btnSalida;
