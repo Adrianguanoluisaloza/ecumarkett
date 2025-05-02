@@ -320,7 +320,7 @@ this.add(panelCentral); // añades todo al JFrame
     }//GEN-LAST:event_btnClientesActionPerformed
 
     private void btnEntradasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntradasActionPerformed
-      /*  btnCategorias.setSelected(false);
+        btnCategorias.setSelected(false);
         btnClientes.setSelected(false);
         btnEntradas.setSelected(true);
         btnProveedor.setSelected(false);
@@ -335,7 +335,7 @@ this.add(panelCentral); // añades todo al JFrame
         contenedor.removeAll();
         contenedor.add(En,BorderLayout.CENTER);
         contenedor.revalidate();
-       contenedor.repaint();*/
+       contenedor.repaint();
     }//GEN-LAST:event_btnEntradasActionPerformed
 
     private void btnProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductosActionPerformed
