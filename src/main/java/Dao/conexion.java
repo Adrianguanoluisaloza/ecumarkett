@@ -14,8 +14,8 @@ import javax.swing.JOptionPane;
  * @author Adrian
  */
 public class conexion {
-  // jljk
-     Connection con;
+
+      Connection con;
     String bd="inventario2";
     String url="jdbc:mysql://localhost/"+bd;
     String user="root";
@@ -56,9 +56,3 @@ public class conexion {
     
     
     
-    
-    
-    
-    
-   
-   
