@@ -2,24 +2,18 @@ package Modelo;
 
 /**
  *
- * @author tadeo
+ * @author Tadeo
  */
 public class Categoria {
-
-    private int idCategoria;
-    private String descripcion;
-    private int estado;
+ int idCategoria;
+    String nomCategoria;
 
     public Categoria() {
-        this.idCategoria = 0;
-        this.descripcion = "";
-        this.estado = 0;
     }
 
-    public Categoria(int idCategoria, String descripcion, int estado) {
+    public Categoria(int idCategoria, String nomCategoria) {
         this.idCategoria = idCategoria;
-        this.descripcion = descripcion;
-        this.estado = estado;
+        this.nomCategoria = nomCategoria;
     }
 
     public int getIdCategoria() {
@@ -30,20 +24,13 @@ public class Categoria {
         this.idCategoria = idCategoria;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getNomCategoria() {
+        return nomCategoria;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setNomCategoria(String nomCategoria) {
+        this.nomCategoria = nomCategoria;
     }
-
-    public int getEstado() {
-        return estado;
-    }
-
-    public void setEstado(int estado) {
-        this.estado = estado;
-    }
-
+    
+    
 }
