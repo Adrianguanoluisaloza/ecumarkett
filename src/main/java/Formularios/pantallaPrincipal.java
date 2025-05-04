@@ -123,7 +123,7 @@ this.add(panelCentral); // añades todo al JFrame
                 btnInicioActionPerformed(evt);
             }
         });
-        jpanelRound2.add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+        jpanelRound2.add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 210, -1));
 
         btnCategorias.setBackground(new java.awt.Color(51, 204, 255));
         btnCategorias.setText("Categorias");
@@ -135,7 +135,7 @@ this.add(panelCentral); // añades todo al JFrame
                 btnCategoriasActionPerformed(evt);
             }
         });
-        jpanelRound2.add(btnCategorias, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
+        jpanelRound2.add(btnCategorias, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 210, -1));
 
         btnClientes.setBackground(new java.awt.Color(51, 204, 255));
         btnClientes.setText("Clientes");
@@ -147,7 +147,7 @@ this.add(panelCentral); // añades todo al JFrame
                 btnClientesActionPerformed(evt);
             }
         });
-        jpanelRound2.add(btnClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
+        jpanelRound2.add(btnClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 210, -1));
 
         btnProveedor.setBackground(new java.awt.Color(51, 204, 255));
         btnProveedor.setText("Proveedor");
@@ -159,7 +159,7 @@ this.add(panelCentral); // añades todo al JFrame
                 btnProveedorActionPerformed(evt);
             }
         });
-        jpanelRound2.add(btnProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
+        jpanelRound2.add(btnProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 210, -1));
 
         l.setBackground(new java.awt.Color(51, 204, 255));
         l.setText("Usuario");
@@ -171,7 +171,7 @@ this.add(panelCentral); // añades todo al JFrame
                 lActionPerformed(evt);
             }
         });
-        jpanelRound2.add(l, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, -1, -1));
+        jpanelRound2.add(l, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 210, -1));
 
         btnEntradas.setBackground(new java.awt.Color(0, 204, 255));
         btnEntradas.setText("Entrada De Productos");
@@ -182,7 +182,7 @@ this.add(panelCentral); // añades todo al JFrame
                 btnEntradasActionPerformed(evt);
             }
         });
-        jpanelRound2.add(btnEntradas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, -1, -1));
+        jpanelRound2.add(btnEntradas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 210, -1));
 
         btnProductos.setBackground(new java.awt.Color(0, 204, 255));
         btnProductos.setText("Productos");
@@ -193,7 +193,7 @@ this.add(panelCentral); // añades todo al JFrame
                 btnProductosActionPerformed(evt);
             }
         });
-        jpanelRound2.add(btnProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, -1, -1));
+        jpanelRound2.add(btnProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 210, -1));
 
         btnSalidas.setBackground(new java.awt.Color(0, 204, 255));
         btnSalidas.setText("Gestion De Pedidos");
@@ -204,7 +204,7 @@ this.add(panelCentral); // añades todo al JFrame
                 btnSalidasActionPerformed(evt);
             }
         });
-        jpanelRound2.add(btnSalidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, -1, -1));
+        jpanelRound2.add(btnSalidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 210, -1));
 
         btnSalida.setBackground(new java.awt.Color(0, 204, 255));
         btnSalida.setText("Pedidos");
@@ -215,7 +215,7 @@ this.add(panelCentral); // añades todo al JFrame
                 btnSalidaActionPerformed(evt);
             }
         });
-        jpanelRound2.add(btnSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 600, -1, -1));
+        jpanelRound2.add(btnSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 600, 210, -1));
 
         btnSalir.setBackground(new java.awt.Color(0, 204, 255));
         btnSalir.setText("Salir");
@@ -226,7 +226,7 @@ this.add(panelCentral); // añades todo al JFrame
                 btnSalirActionPerformed(evt);
             }
         });
-        jpanelRound2.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 730, -1, -1));
+        jpanelRound2.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 730, 110, -1));
 
         txtiduser.setText("1");
         jpanelRound2.add(txtiduser, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 6, -1, -1));
@@ -299,7 +299,7 @@ this.add(panelCentral); // añades todo al JFrame
     }//GEN-LAST:event_btnCategoriasActionPerformed
 
     private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
-/*
+
         btnCategorias.setSelected(false);
         btnClientes.setSelected(true);
         btnEntradas.setSelected(false);
@@ -315,7 +315,7 @@ this.add(panelCentral); // añades todo al JFrame
         contenedor.removeAll();
         contenedor.add(CL,BorderLayout.CENTER);
         contenedor.revalidate();
-        contenedor.repaint();*/
+        contenedor.repaint();
        
     }//GEN-LAST:event_btnClientesActionPerformed
 
@@ -358,7 +358,7 @@ this.add(panelCentral); // añades todo al JFrame
     }//GEN-LAST:event_btnProductosActionPerformed
 
     private void btnSalidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalidasActionPerformed
-     /*   btnCategorias.setSelected(false);
+        btnCategorias.setSelected(false);
 
         btnClientes.setSelected(false);
         btnEntradas.setSelected(false);
@@ -374,7 +374,7 @@ this.add(panelCentral); // añades todo al JFrame
         contenedor.removeAll();
         contenedor.add(LS,BorderLayout.CENTER);
         contenedor.revalidate();
-        contenedor.repaint();*/
+        contenedor.repaint();
     }//GEN-LAST:event_btnSalidasActionPerformed
 
     private void btnProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProveedorActionPerformed

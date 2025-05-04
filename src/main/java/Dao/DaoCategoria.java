@@ -10,6 +10,6 @@ package Dao;
  *
  * @author Adrian
  */
-public class DaoCategorias {
+public class DaoCategoria {
 }
     
