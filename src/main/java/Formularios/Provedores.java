@@ -35,7 +35,7 @@ proveedor p=new proveedor();
             ob[1]=lista.get(i).getNombre();
             ob[2]=lista.get(i).getApellido();
             ob[3]=lista.get(i).getDocumento();
-            ob[4]=lista.get(i).getRsocial();
+            ob[4]=lista.get(i).getActivadad_comercial();
             ob[5]=lista.get(i).getDireccion();
             ob[6]=lista.get(i).getTelefono();
             ob[7]=lista.get(i).getCorreo();
@@ -69,7 +69,6 @@ proveedor p=new proveedor();
         txtRsocial = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         txtdocumento = new javax.swing.JTextField();
-        btnBuscar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         txtapellido = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -77,17 +76,24 @@ proveedor p=new proveedor();
         jLabel3 = new javax.swing.JLabel();
         txtid = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        btnBuscar = new RSMaterialComponent.RSButtonMaterialIconDos();
         rSLabelBorderRound1 = new rojeru_san.rslabel.RSLabelBorderRound();
 
         setPreferredSize(new java.awt.Dimension(1007, 775));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jpanelRound1.setBackground(new java.awt.Color(204, 204, 204));
+        jpanelRound1.setRoundBottomLeft(30);
+        jpanelRound1.setRoundBottomRight(30);
+        jpanelRound1.setRoundTopLeft(30);
+        jpanelRound1.setRoundTopRight(30);
 
         tablaproveedores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Nombre", "Apellido", "Docuento", "R.Social", "Direccion", "Telefono", "Correo"
+                "ID", "Nombre", "Apellido", "Docuento", "Activadad comercial", "Direccion", "Telefono", "Correo"
             }
         ));
         tablaproveedores.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -101,21 +107,26 @@ proveedor p=new proveedor();
         jpanelRound1.setLayout(jpanelRound1Layout);
         jpanelRound1Layout.setHorizontalGroup(
             jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelRound1Layout.createSequentialGroup()
+            .addGroup(jpanelRound1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 918, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 948, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jpanelRound1Layout.setVerticalGroup(
             jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelRound1Layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+            .addGroup(jpanelRound1Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 930, 280));
+        add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 960, 290));
 
+        jpanelRound2.setBackground(new java.awt.Color(204, 204, 204));
+        jpanelRound2.setRoundBottomLeft(30);
+        jpanelRound2.setRoundBottomRight(30);
+        jpanelRound2.setRoundTopLeft(30);
+        jpanelRound2.setRoundTopRight(30);
         jpanelRound2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnEliminar.setText("Eliminar");
@@ -124,7 +135,7 @@ proveedor p=new proveedor();
                 btnEliminarActionPerformed(evt);
             }
         });
-        jpanelRound2.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 240, 130, -1));
+        jpanelRound2.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 270, 130, -1));
 
         btnEditar.setText("Actualizar ");
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
@@ -132,7 +143,7 @@ proveedor p=new proveedor();
                 btnEditarActionPerformed(evt);
             }
         });
-        jpanelRound2.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, 120, -1));
+        jpanelRound2.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 270, 120, -1));
 
         btnGuardar.setText("Registrar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -140,61 +151,64 @@ proveedor p=new proveedor();
                 btnGuardarActionPerformed(evt);
             }
         });
-        jpanelRound2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 110, -1));
-        jpanelRound2.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 110, 190, -1));
+        jpanelRound2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 110, -1));
+        jpanelRound2.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 200, 190, -1));
 
         jLabel11.setText("Correo");
-        jpanelRound2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 80, -1, -1));
-        jpanelRound2.add(txttelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 50, 190, -1));
+        jpanelRound2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, -1, -1));
+        jpanelRound2.add(txttelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, 190, -1));
 
         jLabel10.setText("Telefono");
-        jpanelRound2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 20, -1, -1));
-        jpanelRound2.add(txtdireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 190, -1));
+        jpanelRound2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 100, -1, -1));
+        jpanelRound2.add(txtdireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 190, -1));
 
         jLabel8.setText("Direccion");
-        jpanelRound2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, -1, -1));
+        jpanelRound2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, -1, -1));
 
         txtRsocial.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtRsocialKeyReleased(evt);
             }
         });
-        jpanelRound2.add(txtRsocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 190, -1));
+        jpanelRound2.add(txtRsocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 190, -1));
 
-        jLabel7.setText("Razon Social");
-        jpanelRound2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, -1, -1));
-        jpanelRound2.add(txtdocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 190, -1));
+        jLabel7.setText("Activadad comercial");
+        jpanelRound2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, -1, -1));
+        jpanelRound2.add(txtdocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 190, -1));
 
-        btnBuscar.setText("Buscar");
+        jLabel6.setText("Cedula");
+        jpanelRound2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 30, -1, -1));
+        jpanelRound2.add(txtapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 190, -1));
+
+        jLabel5.setText("Apellido");
+        jpanelRound2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
+        jpanelRound2.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 190, -1));
+
+        jLabel3.setText("Nombre");
+        jpanelRound2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+        jpanelRound2.add(txtid, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 190, -1));
+
+        jLabel2.setText("ID");
+        jpanelRound2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+
+        btnBuscar.setText("Buscar Cedula");
+        btnBuscar.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarActionPerformed(evt);
             }
         });
-        jpanelRound2.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 50, -1, -1));
+        jpanelRound2.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, 150, 30));
 
-        jLabel6.setText("Cedula");
-        jpanelRound2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, -1, -1));
-        jpanelRound2.add(txtapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 190, -1));
-
-        jLabel5.setText("Apellido");
-        jpanelRound2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
-        jpanelRound2.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 190, -1));
-
-        jLabel3.setText("Nombre");
-        jpanelRound2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
-        jpanelRound2.add(txtid, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 190, -1));
-
-        jLabel2.setText("ID");
-        jpanelRound2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
-
-        add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 760, 330));
+        add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 760, 320));
 
         rSLabelBorderRound1.setForeground(new java.awt.Color(0, 0, 0));
         rSLabelBorderRound1.setText("Gestion de Proveedores");
-        rSLabelBorderRound1.setBgBorde(new java.awt.Color(153, 255, 204));
+        rSLabelBorderRound1.setAlignmentX(0.5F);
+        rSLabelBorderRound1.setBgBorde(new java.awt.Color(204, 204, 204));
         rSLabelBorderRound1.setFont(new java.awt.Font("Roboto Bold", 1, 36)); // NOI18N
-        add(rSLabelBorderRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 547, 61));
+        rSLabelBorderRound1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        add(rSLabelBorderRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 420, 61));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtRsocialKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRsocialKeyReleased
@@ -216,86 +230,164 @@ proveedor p=new proveedor();
     }//GEN-LAST:event_tablaproveedoresMouseClicked
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-         p.setNombre(txtnombre.getText());
-        p.setApellido(txtapellido.getText());
-        p.setDocumento(txtdocumento.getText());
-        p.setRsocial(txtRsocial.getText());
-        p.setDireccion(txtdireccion.getText());
-        p.setTelefono(txttelefono.getText());
-        p.setCorreo(txtcorreo.getText());
-        if(dao.insertar(p)){
-           // MenuPrincipal m=new MenuPrincipal();
-           // m.exito("Proveedor Registrado Con Exito");
-            limpiarCampos();
-            limpiarTablaProveedor();
-            listarProveedor();
-        }else{
-          //  MenuPrincipal m=new MenuPrincipal();
-           // m.error("No se pudo registrar el Proveedor");
-        }
+     String nombre = txtnombre.getText().trim();
+    String apellido = txtapellido.getText().trim();
+    String documento = txtdocumento.getText().trim();
+    String Activadad_comercial = txtRsocial.getText().trim();
+    String direccion = txtdireccion.getText().trim();
+    String telefono = txttelefono.getText().trim();
+    String correo = txtcorreo.getText().trim();
+
+ 
+    if (nombre.isEmpty() || apellido.isEmpty() || documento.isEmpty() || Activadad_comercial.isEmpty()
+        || direccion.isEmpty() || telefono.isEmpty() || correo.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos.");
+        return;
+    }
+
+  
+    if (!documento.matches("\\d+") || !telefono.matches("\\d+")) {
+        JOptionPane.showMessageDialog(null, "Documento y Teléfono deben contener solo números.");
+        return;
+    }
+
+    
+    if (!correo.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
+        JOptionPane.showMessageDialog(null, "Correo electrónico no válido.");
+        return;
+    }
+
+   
+    p.setNombre(nombre);
+    p.setApellido(apellido);
+    p.setDocumento(documento);
+    p.setActivadad_comercial(Activadad_comercial);
+    p.setDireccion(direccion);
+    p.setTelefono(telefono);
+    p.setCorreo(correo);
+
+    if (dao.insertar(p)) {
+        JOptionPane.showMessageDialog(null, "Proveedor registrado con éxito.");
+        limpiarCampos();
+        limpiarTablaProveedor();
+        listarProveedor();
+    } else {
+        JOptionPane.showMessageDialog(null, "No se pudo registrar el proveedor.");
+    }
+
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-       int fila=tablaproveedores.getSelectedRow();
-        if(fila==-1&&txtid.getText().isEmpty()){
-          //  MenuPrincipal m=new MenuPrincipal();
-           // m.advertencia("Seleccione un Proveedor");
-        }else{
-            p.setIdProveedor(Integer.parseInt(txtid.getText()));
-            p.setNombre(txtnombre.getText());
-            p.setApellido(txtapellido.getText());
-            p.setDocumento(txtdocumento.getText());
-            p.setRsocial(txtRsocial.getText());
-            p.setDireccion(txtdireccion.getText());
-            p.setTelefono(txttelefono.getText());
-            p.setCorreo(txtcorreo.getText());
-            if(dao.editar(p)){
-                //MenuPrincipal m=new MenuPrincipal();
-             //   m.exito("Se modifico con exito");
-                limpiarCampos();
-                limpiarTablaProveedor();
-                listarProveedor();
-            }else{
-              //  MenuPrincipal m=new MenuPrincipal();
-               // m.error("Erorr al modificar el Proveedor");
-            }
-        }
+        int fila = tablaproveedores.getSelectedRow();
+
+    if (fila == -1 && txtid.getText().isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Seleccione un proveedor para editar.");
+        return;
+    }
+
+    String idTexto = txtid.getText().trim();
+    String nombre = txtnombre.getText().trim();
+    String apellido = txtapellido.getText().trim();
+    String documento = txtdocumento.getText().trim();
+    String Activadad_comercial = txtRsocial.getText().trim();
+    String direccion = txtdireccion.getText().trim();
+    String telefono = txttelefono.getText().trim();
+    String correo = txtcorreo.getText().trim();
+
+    
+    if (nombre.isEmpty() || apellido.isEmpty() || documento.isEmpty() || Activadad_comercial.isEmpty()
+        || direccion.isEmpty() || telefono.isEmpty() || correo.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos.");
+        return;
+    }
+
+    
+    if (!documento.matches("\\d+") || !telefono.matches("\\d+")) {
+        JOptionPane.showMessageDialog(null, "Documento y teléfono deben contener solo números.");
+        return;
+    }
+
+    if (!correo.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
+        JOptionPane.showMessageDialog(null, "Correo electrónico no válido.");
+        return;
+    }
+
+
+    p.setIdProveedor(Integer.parseInt(idTexto));
+    p.setNombre(nombre);
+    p.setApellido(apellido);
+    p.setDocumento(documento);
+    p.setActivadad_comercial(Activadad_comercial);
+    p.setDireccion(direccion);
+    p.setTelefono(telefono);
+    p.setCorreo(correo);
+
+    if (dao.editar(p)) {
+        JOptionPane.showMessageDialog(null, "Se modificó el proveedor con éxito.");
+        limpiarCampos();
+        limpiarTablaProveedor();
+        listarProveedor();
+    } else {
+        JOptionPane.showMessageDialog(null, "Error al modificar el proveedor.");
+    }
+
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-       if(!txtid.getText().isEmpty()){
-            int confirmacion=JOptionPane.showConfirmDialog(null, "¿Es tas seguro de eliminar el Proveedor?","Confirmar",2);
-            if(confirmacion==0){
-                p.setIdProveedor(Integer.parseInt(txtid.getText()));
-                dao.eliminar(p);
-             //   limpiarCampos();
-             //   limpiarTablaProveedor();
-                listarProveedor();
-          //      MenuPrincipal m=new MenuPrincipal();
-              //  m.exito("Se Elimino con exito el Proveedor");
-            }
-        }else{
-         //   MenuPrincipal m=new MenuPrincipal();
-        //    m.advertencia("Seleccione un Proveedor");
-        }        
+  if (!txtid.getText().trim().isEmpty()) {
+   
+    if (!txtid.getText().matches("\\d+")) {
+        JOptionPane.showMessageDialog(null, "El ID del proveedor no es válido.");
+        return;
+    }
+
+    int confirmacion = JOptionPane.showConfirmDialog(
+        null,
+        "¿Estás seguro de eliminar el proveedor?",
+        "Confirmar",
+        JOptionPane.YES_NO_OPTION
+    );
+
+    if (confirmacion == JOptionPane.YES_OPTION) {
+        p.setIdProveedor(Integer.parseInt(txtid.getText().trim()));
+        if (dao.eliminar(p)) {
+            JOptionPane.showMessageDialog(null, "Proveedor eliminado con éxito.");
+            limpiarCampos();
+            limpiarTablaProveedor();
+            listarProveedor();
+        } else {
+            JOptionPane.showMessageDialog(null, "No se pudo eliminar el proveedor.");
+        }
+    }
+
+} else {
+    JOptionPane.showMessageDialog(null, "Seleccione un proveedor para eliminar.");
+}
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-          p.setDocumento(txtdocumento.getText());
-        if(dao.buscarDocumento(p)){
-            txtid.setText(p.getIdProveedor()+"");
-            txtnombre.setText(p.getNombre());
-            txtapellido.setText(p.getApellido());
-            txtdocumento.setText(p.getDocumento());
-            txtRsocial.setText(p.getRsocial());
-            txtdireccion.setText(p.getDireccion());
-            txttelefono.setText(p.getTelefono());
-            txtcorreo.setText(p.getCorreo());
-        }else{
-          //  MenuPrincipal m=new MenuPrincipal();
-            //m.advertencia("El Proveedor No Existe");
-            limpiarCampos();
-        }
+          p.setDocumento(txtdocumento.getText().trim());
+
+if (p.getDocumento().isEmpty()) {
+    JOptionPane.showMessageDialog(null, "Por favor, ingrese un documento válido.");
+    return;
+}
+
+if (dao.buscarDocumento(p)) {
+    
+    txtid.setText(String.valueOf(p.getIdProveedor()));
+    txtnombre.setText(p.getNombre());
+    txtapellido.setText(p.getApellido());
+    txtdocumento.setText(p.getDocumento());
+    txtRsocial.setText(p.getActivadad_comercial());
+    txtdireccion.setText(p.getDireccion());
+    txttelefono.setText(p.getTelefono());
+    txtcorreo.setText(p.getCorreo());
+} else {
+    
+    JOptionPane.showMessageDialog(null, "El proveedor no existe.");
+    limpiarCampos();
+}
     }//GEN-LAST:event_btnBuscarActionPerformed
 
 void limpiarCampos(){
@@ -316,7 +408,7 @@ void limpiarCampos(){
         }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBuscar;
+    private RSMaterialComponent.RSButtonMaterialIconDos btnBuscar;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;

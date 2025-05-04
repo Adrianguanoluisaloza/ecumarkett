@@ -119,6 +119,7 @@ entradas e=new entradas();
         btnGuardar = new javax.swing.JButton();
         btnActualizar = new javax.swing.JButton();
         btnElimnar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         rSButtonMaterialIconDos1.setText("rSButtonMaterialIconDos1");
 
@@ -128,6 +129,10 @@ entradas e=new entradas();
         jpanelRound1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jpanelRound2.setBackground(new java.awt.Color(204, 204, 204));
+        jpanelRound2.setRoundBottomLeft(25);
+        jpanelRound2.setRoundBottomRight(25);
+        jpanelRound2.setRoundTopLeft(25);
+        jpanelRound2.setRoundTopRight(25);
         jpanelRound2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jpanelRound2.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 398, 190, -1));
 
@@ -170,9 +175,13 @@ entradas e=new entradas();
         jpanelRound2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 40, -1, -1));
         jpanelRound2.add(dateFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 190, -1));
 
-        jpanelRound1.add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 250, 430));
+        jpanelRound1.add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 250, 430));
 
         jpanelRound3.setBackground(new java.awt.Color(204, 204, 204));
+        jpanelRound3.setRoundBottomLeft(25);
+        jpanelRound3.setRoundBottomRight(25);
+        jpanelRound3.setRoundTopLeft(25);
+        jpanelRound3.setRoundTopRight(25);
 
         jLabel11.setText("ID Producto");
 
@@ -192,7 +201,7 @@ entradas e=new entradas();
         jpanelRound3Layout.setHorizontalGroup(
             jpanelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpanelRound3Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(18, 18, 18)
                 .addGroup(jpanelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpanelRound3Layout.createSequentialGroup()
                         .addComponent(txtidProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -200,11 +209,12 @@ entradas e=new entradas();
                         .addComponent(jButton1))
                     .addComponent(jLabel18)
                     .addComponent(jLabel11))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         jpanelRound3Layout.setVerticalGroup(
             jpanelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpanelRound3Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
                 .addComponent(jLabel18)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel11)
@@ -212,12 +222,16 @@ entradas e=new entradas();
                 .addGroup(jpanelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtidProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1))
-                .addGap(0, 45, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
-        jpanelRound1.add(jpanelRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 240, 140));
+        jpanelRound1.add(jpanelRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 240, 140));
 
         jpanelRound4.setBackground(new java.awt.Color(204, 204, 204));
+        jpanelRound4.setRoundBottomLeft(25);
+        jpanelRound4.setRoundBottomRight(25);
+        jpanelRound4.setRoundTopLeft(25);
+        jpanelRound4.setRoundTopRight(25);
 
         jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(238, 173, 61));
@@ -275,12 +289,16 @@ entradas e=new entradas();
                     .addComponent(jButton2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtproveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 23, Short.MAX_VALUE))
+                .addGap(0, 13, Short.MAX_VALUE))
         );
 
-        jpanelRound1.add(jpanelRound4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 40, 270, 150));
+        jpanelRound1.add(jpanelRound4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 140, 270, 140));
 
         jpanelRound5.setBackground(new java.awt.Color(204, 204, 204));
+        jpanelRound5.setRoundBottomLeft(25);
+        jpanelRound5.setRoundBottomRight(25);
+        jpanelRound5.setRoundTopLeft(25);
+        jpanelRound5.setRoundTopRight(25);
 
         tablaEntradas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -301,7 +319,7 @@ entradas e=new entradas();
         jpanelRound5.setLayout(jpanelRound5Layout);
         jpanelRound5Layout.setHorizontalGroup(
             jpanelRound5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpanelRound5Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelRound5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE)
                 .addContainerGap())
@@ -314,7 +332,7 @@ entradas e=new entradas();
                 .addGap(14, 14, 14))
         );
 
-        jpanelRound1.add(jpanelRound5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, 550, 340));
+        jpanelRound1.add(jpanelRound5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 550, 340));
 
         btnGuardar.setText("Registrar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -322,7 +340,7 @@ entradas e=new entradas();
                 btnGuardarActionPerformed(evt);
             }
         });
-        jpanelRound1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, -1, -1));
+        jpanelRound1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 600, -1, -1));
 
         btnActualizar.setText("Actualizar");
         btnActualizar.addActionListener(new java.awt.event.ActionListener() {
@@ -330,7 +348,7 @@ entradas e=new entradas();
                 btnActualizarActionPerformed(evt);
             }
         });
-        jpanelRound1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 510, -1, -1));
+        jpanelRound1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 600, -1, -1));
 
         btnElimnar.setText("Eliminar");
         btnElimnar.addActionListener(new java.awt.event.ActionListener() {
@@ -338,9 +356,12 @@ entradas e=new entradas();
                 btnElimnarActionPerformed(evt);
             }
         });
-        jpanelRound1.add(btnElimnar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 510, -1, -1));
+        jpanelRound1.add(btnElimnar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 600, -1, -1));
 
-        add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 590));
+        jLabel1.setText("Gestion De stovk");
+        jpanelRound1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 550, -1));
+
+        add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 650));
     }// </editor-fold>//GEN-END:initComponents
 
     private void tablaEntradasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaEntradasMouseClicked
@@ -536,6 +557,7 @@ entradas e=new entradas();
     private com.toedter.calendar.JDateChooser dateFecha;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel18;

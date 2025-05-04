@@ -13,7 +13,7 @@ public class proveedor {
    String nombre;
    String apellido;
    String documento;
-   String Rsocial;
+   String Activadad_comercial;
    String direccion;
    String telefono;
    String correo;
@@ -21,12 +21,12 @@ public class proveedor {
     public proveedor() {
     }
 
-    public proveedor(int idProveedor, String nombre, String apellido, String documento, String Rsocial, String direccion, String telefono, String correo) {
+    public proveedor(int idProveedor, String nombre, String apellido, String documento, String Activadad_comercial, String direccion, String telefono, String correo) {
         this.idProveedor = idProveedor;
         this.nombre = nombre;
         this.apellido = apellido;
         this.documento = documento;
-        this.Rsocial = Rsocial;
+        this.Activadad_comercial = Activadad_comercial;
         this.direccion = direccion;
         this.telefono = telefono;
         this.correo = correo;
@@ -64,12 +64,12 @@ public class proveedor {
         this.documento = documento;
     }
 
-    public String getRsocial() {
-        return Rsocial;
+    public String getActivadad_comercial() {
+        return Activadad_comercial;
     }
 
-    public void setRsocial(String Rsocial) {
-        this.Rsocial = Rsocial;
+    public void setActivadad_comercial(String Activadad_comercial) {
+        this.Activadad_comercial = Activadad_comercial;
     }
 
     public String getDireccion() {

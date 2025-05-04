@@ -50,8 +50,8 @@ private void listarClientes(){
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jpanelRound1 = new Modelo.JpanelRound();
-        jpanelRound2 = new Modelo.JpanelRound();
+        jpanelRound4 = new Modelo.JpanelRound();
+        jLabel2 = new javax.swing.JLabel();
         txtidcliente = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtnombre = new javax.swing.JTextField();
@@ -65,113 +65,94 @@ private void listarClientes(){
         txttelefono = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         txtcorreo = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        btnBuscar = new javax.swing.JButton();
-        jpanelRound3 = new Modelo.JpanelRound();
+        btnEliminar = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
+        btnBuscar = new RSMaterialComponent.RSButtonMaterialIconDos();
+        jpanelRound5 = new Modelo.JpanelRound();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaclientes = new javax.swing.JTable();
-        btnEditar = new javax.swing.JButton();
-        btnEliminar = new javax.swing.JButton();
-        btnGuardar = new javax.swing.JButton();
+        lblGestionClientes = new rojeru_san.rslabel.RSLabelBorderRound();
 
-        jpanelRound1.setBackground(new java.awt.Color(102, 204, 255));
-        jpanelRound1.setPreferredSize(new java.awt.Dimension(982, 775));
-        jpanelRound1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jpanelRound2.setBackground(new java.awt.Color(204, 204, 204));
-
-        jLabel3.setText("Nombre");
-
-        jLabel5.setText("Apellido");
-
-        jLabel6.setText("Cedula");
-
-        jLabel7.setText("Direccion");
-
-        jLabel8.setText("Telefono");
-
-        jLabel9.setText("Correo");
+        jpanelRound4.setBackground(new java.awt.Color(204, 204, 204));
+        jpanelRound4.setRoundBottomLeft(35);
+        jpanelRound4.setRoundBottomRight(35);
+        jpanelRound4.setRoundTopLeft(35);
+        jpanelRound4.setRoundTopRight(35);
+        jpanelRound4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setText("ID");
+        jpanelRound4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, -1, -1));
+        jpanelRound4.add(txtidcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 22, 246, -1));
 
-        btnBuscar.setBackground(new java.awt.Color(255, 204, 204));
-        btnBuscar.setText("Buscar ");
+        jLabel3.setText("Nombre");
+        jpanelRound4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 56, -1, -1));
+        jpanelRound4.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 78, 246, -1));
+
+        jLabel5.setText("Apellido");
+        jpanelRound4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 112, -1, -1));
+        jpanelRound4.add(txtapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 134, 246, -1));
+
+        jLabel6.setText("Cedula");
+        jpanelRound4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 168, -1, -1));
+        jpanelRound4.add(txtdocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 196, 162, -1));
+
+        jLabel7.setText("Direccion");
+        jpanelRound4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
+        jpanelRound4.add(txtdireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 246, -1));
+
+        jLabel8.setText("Telefono");
+        jpanelRound4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
+        jpanelRound4.add(txttelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 246, -1));
+
+        jLabel9.setText("Correo");
+        jpanelRound4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, -1, -1));
+        jpanelRound4.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 246, -1));
+
+        btnEliminar.setBackground(new java.awt.Color(204, 255, 204));
+        btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+        jpanelRound4.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 470, -1, 30));
+
+        btnEditar.setBackground(new java.awt.Color(204, 255, 204));
+        btnEditar.setText("Actualizar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
+        jpanelRound4.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 470, -1, 30));
+
+        btnGuardar.setBackground(new java.awt.Color(204, 255, 204));
+        btnGuardar.setText("Registrar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
+        jpanelRound4.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, -1, 30));
+
+        btnBuscar.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarActionPerformed(evt);
             }
         });
+        jpanelRound4.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 40, 40));
 
-        javax.swing.GroupLayout jpanelRound2Layout = new javax.swing.GroupLayout(jpanelRound2);
-        jpanelRound2.setLayout(jpanelRound2Layout);
-        jpanelRound2Layout.setHorizontalGroup(
-            jpanelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpanelRound2Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(jpanelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9)
-                    .addComponent(txtcorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8)
-                    .addComponent(txttelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7)
-                    .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jpanelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(jpanelRound2Layout.createSequentialGroup()
-                            .addComponent(txtdocumento)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(btnBuscar))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpanelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jpanelRound2Layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(209, 209, 209))
-                            .addGroup(jpanelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel5)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel2)
-                                .addComponent(txtidcliente)
-                                .addComponent(txtnombre)
-                                .addComponent(txtapellido, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)))))
-                .addContainerGap(23, Short.MAX_VALUE))
-        );
-        jpanelRound2Layout.setVerticalGroup(
-            jpanelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpanelRound2Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtidcliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtapellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel6)
-                .addGap(12, 12, 12)
-                .addGroup(jpanelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnBuscar)
-                    .addComponent(txtdocumento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                .addComponent(jLabel7)
-                .addGap(18, 18, 18)
-                .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel8)
-                .addGap(18, 18, 18)
-                .addComponent(txttelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txtcorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31))
-        );
+        add(jpanelRound4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 280, 540));
 
-        jpanelRound1.add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 86, -1, 500));
-
-        jpanelRound3.setBackground(new java.awt.Color(204, 204, 204));
+        jpanelRound5.setBackground(new java.awt.Color(204, 204, 204));
+        jpanelRound5.setRoundBottomLeft(35);
+        jpanelRound5.setRoundBottomRight(35);
+        jpanelRound5.setRoundTopLeft(35);
+        jpanelRound5.setRoundTopRight(35);
 
         tablaclientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -188,58 +169,34 @@ private void listarClientes(){
         });
         jScrollPane1.setViewportView(tablaclientes);
 
-        javax.swing.GroupLayout jpanelRound3Layout = new javax.swing.GroupLayout(jpanelRound3);
-        jpanelRound3.setLayout(jpanelRound3Layout);
-        jpanelRound3Layout.setHorizontalGroup(
-            jpanelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpanelRound3Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 591, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+        javax.swing.GroupLayout jpanelRound5Layout = new javax.swing.GroupLayout(jpanelRound5);
+        jpanelRound5.setLayout(jpanelRound5Layout);
+        jpanelRound5Layout.setHorizontalGroup(
+            jpanelRound5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanelRound5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE)
+                .addContainerGap())
         );
-        jpanelRound3Layout.setVerticalGroup(
-            jpanelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelRound3Layout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 454, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
+        jpanelRound5Layout.setVerticalGroup(
+            jpanelRound5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanelRound5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        jpanelRound1.add(jpanelRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, 620, 500));
+        add(jpanelRound5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 550, 510));
 
-        btnEditar.setBackground(new java.awt.Color(204, 255, 204));
-        btnEditar.setText("Actualizar");
-        btnEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarActionPerformed(evt);
-            }
-        });
-        jpanelRound1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 610, -1, 30));
-
-        btnEliminar.setBackground(new java.awt.Color(204, 255, 204));
-        btnEliminar.setText("Eliminar");
-        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarActionPerformed(evt);
-            }
-        });
-        jpanelRound1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 610, -1, 30));
-
-        btnGuardar.setBackground(new java.awt.Color(204, 255, 204));
-        btnGuardar.setText("Registrar");
-        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarActionPerformed(evt);
-            }
-        });
-        jpanelRound1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 610, -1, 30));
-
-        add(jpanelRound1);
+        lblGestionClientes.setText("Gestion De Clientes");
+        lblGestionClientes.setFont(new java.awt.Font("Bookman Old Style", 3, 48)); // NOI18N
+        add(lblGestionClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 650, 100));
     }// </editor-fold>//GEN-END:initComponents
 
     private void tablaclientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaclientesMouseClicked
         // TODO add your handling code here:
-        int fila=tablaclientes.getSelectedRow();
+        int fila = tablaclientes.getSelectedRow();
+        if (fila != -1) { 
         txtidcliente.setText(tablaclientes.getValueAt(fila, 0).toString());
         txtnombre.setText(tablaclientes.getValueAt(fila, 1).toString());
         txtapellido.setText(tablaclientes.getValueAt(fila, 2).toString());
@@ -247,92 +204,158 @@ private void listarClientes(){
         txtdireccion.setText(tablaclientes.getValueAt(fila, 4).toString());
         txttelefono.setText(tablaclientes.getValueAt(fila, 5).toString());
         txtcorreo.setText(tablaclientes.getValueAt(fila, 6).toString());
+    } else {
+        JOptionPane.showMessageDialog(null, "No se seleccionó ninguna fila.");
+    }
+
+
     }//GEN-LAST:event_tablaclientesMouseClicked
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        c.setNombre(txtnombre.getText());
-        c.setApellido(txtapellido.getText());
-        c.setDocumento(txtdocumento.getText());
-        c.setDireccion(txtdireccion.getText());
-        c.setTelefono(txttelefono.getText());
-        c.setCorreo(txtcorreo.getText());
-        if(dao.insertar(c)){
-            JOptionPane.showMessageDialog(null, "Cliente Registrado Con Exito");
-         //   MenuPrincipal m=new MenuPrincipal();
-           // m.exito("Cliente Registrado Con Exito");
-            limpiarCampos();
-            limpiarTablaCLientes();
-            listarClientes();
-        }else{
-            JOptionPane.showMessageDialog(null, "No se pudo registrar el Cliente");
-           // MenuPrincipal m=new MenuPrincipal();
-           // m.error("No se pudo registrar el Cliente");
-        }
+       if (txtnombre.getText().trim().isEmpty() ||
+        txtapellido.getText().trim().isEmpty() ||
+        txtdocumento.getText().trim().isEmpty() ||
+        txtdireccion.getText().trim().isEmpty() ||
+        txttelefono.getText().trim().isEmpty() ||
+        txtcorreo.getText().trim().isEmpty()) {
+        
+        JOptionPane.showMessageDialog(null, "Todos los campos deben estar llenos.");
+        return;
+    }
+
+    
+    if (!txtcorreo.getText().trim().matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
+        JOptionPane.showMessageDialog(null, "Correo no válido.");
+        return;
+    }
+
+    
+    if (!txttelefono.getText().trim().matches("\\d+")) {
+        JOptionPane.showMessageDialog(null, "El teléfono debe contener solo números.");
+        return;
+    }
+
+    
+    c.setNombre(txtnombre.getText().trim());
+    c.setApellido(txtapellido.getText().trim());
+    c.setDocumento(txtdocumento.getText().trim());
+    c.setDireccion(txtdireccion.getText().trim());
+    c.setTelefono(txttelefono.getText().trim());
+    c.setCorreo(txtcorreo.getText().trim());
+
+   
+    if (dao.insertar(c)) {
+        JOptionPane.showMessageDialog(null, "Cliente registrado con éxito.");
+        limpiarCampos();
+        limpiarTablaCLientes();
+        listarClientes();
+    } else {
+        JOptionPane.showMessageDialog(null, "No se pudo registrar el cliente.");
+    }
+
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-         int fila=tablaclientes.getSelectedRow();
-        if(fila==-1&&txtidcliente.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null, "Seleccione un Cliente");
-         //   MenuPrincipal m=new MenuPrincipal();
-         //   m.advertencia("Seleccione un Cliente");
-        }else{
-            c.setIdCliente(Integer.parseInt(txtidcliente.getText()));
-            c.setNombre(txtnombre.getText());
-            c.setApellido(txtapellido.getText());
-            c.setDocumento(txtdocumento.getText());
-            c.setDireccion(txtdireccion.getText());
-            c.setTelefono(txttelefono.getText());
-            c.setCorreo(txtcorreo.getText());
-            if(dao.editar(c)){
-                JOptionPane.showMessageDialog(null, "Se modifico con exito");
-              //  MenuPrincipal m=new MenuPrincipal();
-               // m.exito("Se modifico con exito");
-                limpiarTablaCLientes();
-                listarClientes();
-                limpiarCampos();
-            }else{
-               // MenuPrincipal m=new MenuPrincipal();
-               // m.error("Erorr al modificar el cliente");
-            }
-        }
+     int fila = tablaclientes.getSelectedRow();
+if (fila == -1 && txtidcliente.getText().trim().isEmpty()) {
+    JOptionPane.showMessageDialog(null, "Seleccione un cliente de la tabla o ingrese un ID válido.");
+    return;
+}
+if (txtnombre.getText().trim().isEmpty() ||
+    txtapellido.getText().trim().isEmpty() ||
+    txtdocumento.getText().trim().isEmpty() ||
+    txtdireccion.getText().trim().isEmpty() ||
+    txttelefono.getText().trim().isEmpty() ||
+    txtcorreo.getText().trim().isEmpty()) {
+
+    JOptionPane.showMessageDialog(null, "Todos los campos deben estar llenos.");
+    return;
+}
+if (!txtcorreo.getText().trim().matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
+    JOptionPane.showMessageDialog(null, "Correo no válido.");
+    return;
+}
+try {
+    c.setIdCliente(Integer.parseInt(txtidcliente.getText().trim()));
+    c.setNombre(txtnombre.getText().trim());
+    c.setApellido(txtapellido.getText().trim());
+    c.setDocumento(txtdocumento.getText().trim());
+    c.setDireccion(txtdireccion.getText().trim());
+    c.setTelefono(txttelefono.getText().trim());
+    c.setCorreo(txtcorreo.getText().trim());
+
+    if (dao.editar(c)) {
+        JOptionPane.showMessageDialog(null, "Cliente modificado con éxito.");
+        limpiarTablaCLientes();
+        listarClientes();
+        limpiarCampos();
+    } else {
+        JOptionPane.showMessageDialog(null, "No se pudo modificar el cliente.");
+    }
+} catch (NumberFormatException e) {
+    JOptionPane.showMessageDialog(null, "El ID debe ser un número válido.");
+}
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-         if(!txtidcliente.getText().isEmpty()){
-            int confirmacion=JOptionPane.showConfirmDialog(null, "¿Es tas seguro de eliminar el cliente?","Confirmar",2);
-            if(confirmacion==0){
-                c.setIdCliente(Integer.parseInt(txtidcliente.getText()));
-                dao.eliminar(c);
+         if (!txtidcliente.getText().trim().isEmpty()) {
+    try {
+        int confirmacion = JOptionPane.showConfirmDialog(
+            null,
+            "¿Estás seguro de eliminar el cliente?",
+            "Confirmar",
+            JOptionPane.YES_NO_OPTION
+        );
+
+        if (confirmacion == JOptionPane.YES_OPTION) {
+            c.setIdCliente(Integer.parseInt(txtidcliente.getText().trim()));
+            
+            if (dao.eliminar(c)) {
                 limpiarTablaCLientes();
                 listarClientes();
                 limpiarCampos();
-                JOptionPane.showMessageDialog(null, "Se Elimino con exito el Cliente");
-              // pantallaPrincipal m=new pantallaPrincipal();
-             //   m.exito("Se Elimino con exito el Cliente");
+                JOptionPane.showMessageDialog(null, "Cliente eliminado con éxito.");
+            } else {
+                JOptionPane.showMessageDialog(null, "No se pudo eliminar el cliente.");
             }
-        }else{
-           // MenuPrincipal m=new MenuPrincipal();
-           // m.advertencia("Seleccione un cliente");
         }
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(null, "El ID del cliente debe ser un número válido.");
+    }
+} else {
+    JOptionPane.showMessageDialog(null, "Seleccione un cliente primero.");
+}
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        c.setDocumento(txtdocumento.getText());
-        if(dao.buscar(c)){
-            txtidcliente.setText(c.getIdCliente()+"");
-            txtnombre.setText(c.getNombre());
-            txtapellido.setText(c.getApellido());
-            txtdocumento.setText(c.getDocumento());
-            txtdireccion.setText(c.getDireccion());
-            txttelefono.setText(c.getTelefono());
-            txtcorreo.setText(c.getCorreo());
-        }else{
-            JOptionPane.showMessageDialog(null, "El Cliente No Existe");
-          ///  pantallaPrincipal m=new pantallaPrincipal();
-          //  m.advertencia("El Cliente No Existe");
-            limpiarCampos();
-        }
+        String documento = txtdocumento.getText().trim();
+
+if (documento.isEmpty()) {
+    JOptionPane.showMessageDialog(null, "Ingrese el número de documento.");
+    return;
+}
+
+
+if (!documento.matches("\\d+")) {
+    JOptionPane.showMessageDialog(null, "El documento debe contener solo números.");
+    return;
+}
+
+c.setDocumento(documento);
+
+if (dao.buscar(c)) {
+    txtidcliente.setText(String.valueOf(c.getIdCliente()));
+    txtnombre.setText(c.getNombre());
+    txtapellido.setText(c.getApellido());
+    txtdocumento.setText(c.getDocumento());
+    txtdireccion.setText(c.getDireccion());
+    txttelefono.setText(c.getTelefono());
+    txtcorreo.setText(c.getCorreo());
+} else {
+    JOptionPane.showMessageDialog(null, "El cliente no existe.");
+    limpiarCampos();
+}
+
     }//GEN-LAST:event_btnBuscarActionPerformed
 void limpiarCampos(){
         txtidcliente.setText("");
@@ -352,7 +375,7 @@ void limpiarCampos(){
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBuscar;
+    private RSMaterialComponent.RSButtonMaterialIconDos btnBuscar;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
@@ -364,9 +387,9 @@ void limpiarCampos(){
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private Modelo.JpanelRound jpanelRound1;
-    private Modelo.JpanelRound jpanelRound2;
-    private Modelo.JpanelRound jpanelRound3;
+    private Modelo.JpanelRound jpanelRound4;
+    private Modelo.JpanelRound jpanelRound5;
+    private rojeru_san.rslabel.RSLabelBorderRound lblGestionClientes;
     private javax.swing.JTable tablaclientes;
     private javax.swing.JTextField txtapellido;
     private javax.swing.JTextField txtcorreo;

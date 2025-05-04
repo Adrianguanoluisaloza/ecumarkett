@@ -23,14 +23,14 @@ public class DaoProveedor {
     ResultSet rs;
     
     public boolean insertar(proveedor p){
-        String SQL="insert into proveedor (nombre,apellido,documento,Rsocial,direccion,telefono,correo) VALUES (?,?,?,?,?,?,?)";
+        String SQL="insert into proveedor (nombre,apellido,documento,Activadad_comercial,direccion,telefono,correo) VALUES (?,?,?,?,?,?,?)";
         try{
             con=cn.conectar();
             ps=con.prepareStatement(SQL);
             ps.setString(1, p.getNombre());
             ps.setString(2, p.getApellido());
             ps.setString(3, p.getDocumento());
-            ps.setString(4, p.getRsocial());
+            ps.setString(4, p.getActivadad_comercial());
             ps.setString(5, p.getDireccion());
             ps.setString(6, p.getTelefono());
             ps.setString(7, p.getCorreo());
@@ -59,7 +59,7 @@ public class DaoProveedor {
                 c.setNombre(rs.getString(2));
                 c.setApellido(rs.getString(3));
                 c.setDocumento(rs.getString(4));
-                c.setRsocial(rs.getString(5));
+                c.setActivadad_comercial(rs.getString(5));
                 c.setDireccion(rs.getString(6));
                 c.setTelefono(rs.getString(7));
                 c.setCorreo(rs.getString(8));
@@ -83,7 +83,7 @@ public class DaoProveedor {
                 c.setNombre(rs.getString(2));
                 c.setApellido(rs.getString(3));
                 c.setDocumento(rs.getString(4));
-                c.setRsocial(rs.getString(5));
+                c.setActivadad_comercial(rs.getString(5));
                 c.setDireccion(rs.getString(6));
                 c.setTelefono(rs.getString(7));
                 c.setCorreo(rs.getString(8));
@@ -99,14 +99,14 @@ public class DaoProveedor {
 
     public boolean editar(proveedor c){
         String SQL="update proveedor set nombre=?,apellido=?,documento=?,"
-            + "Rsocial=?,direccion=?,telefono=?,correo=? where idproveedor=?";
+            + "Activadad_comercial=?,direccion=?,telefono=?,correo=? where idproveedor=?";
         try{
             con=cn.conectar();
             ps=con.prepareStatement(SQL);
             ps.setString(1, c.getNombre());
             ps.setString(2, c.getApellido());
             ps.setString(3, c.getDocumento());
-            ps.setString(4, c.getRsocial());
+            ps.setString(4, c.getActivadad_comercial());
             ps.setString(5, c.getDireccion());
             ps.setString(6, c.getTelefono());
             ps.setString(7, c.getCorreo());
@@ -153,7 +153,7 @@ public class DaoProveedor {
                 c.setNombre(rs.getString(2));
                 c.setApellido(rs.getString(3));
                 c.setDocumento(rs.getString(4));
-                c.setRsocial(rs.getString(5));
+                c.setActivadad_comercial(rs.getString(5));
                 c.setDireccion(rs.getString(6));
                 c.setTelefono(rs.getString(7));
                 c.setCorreo(rs.getString(8));
