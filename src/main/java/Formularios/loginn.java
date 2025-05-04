@@ -8,8 +8,14 @@ import Dao.DaoUsuario;
 import Modelo.usuarios;
 
 import java.awt.Color;
+import java.awt.Font;
+import javax.swing.BorderFactory;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JWindow;
 
 
 /**
@@ -17,19 +23,15 @@ import javax.swing.JOptionPane;
  * @author Adrian
  */
 public class loginn extends javax.swing.JPanel {
+    DaoUsuario daoU = new DaoUsuario();
+    usuarios us = new usuarios();
    
-       DaoUsuario daoU=new DaoUsuario();
-    usuarios us=new usuarios();
-    
 
-    /**
-     * Creates new form loginn
-     */
     public loginn() {
-        initComponents();       
-     btnRegistrar.setText("<html><u>Registrate!</u></html>");
+        initComponents();
+        btnRegistrar.setText("<html><u>Registrate!</u></html>");
+       
     }
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -235,40 +237,51 @@ txtcorreo.setForeground(Color.black);}
     }//GEN-LAST:event_txtcontraseMousePressed
 
     private void btnentrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnentrarActionPerformed
-     us=daoU.login(txtcorreo.getText(), txtcontrase.getText());
-        if(us.getIdusuario() != 0){ // Verificamos si el ID de usuario es diferente de 0
-            pantallaPrincipal m=new pantallaPrincipal();
-//Administrador Vendedor Almacenero
-           if(us.getTipoUsuario().equals("Vendedor")){
-               pantallaPrincipal.btnSalidas.setEnabled(true);
-               pantallaPrincipal.btnCategorias.setVisible(false);
-               pantallaPrincipal.btnClientes.setEnabled(true);
-               pantallaPrincipal.btnEntradas.setVisible(false);
-               pantallaPrincipal.btnProveedor.setVisible(false);
-              // pantallaPrincipal.btnUsuarios.setVisible(false);
-                pantallaPrincipal.btnProductos.setVisible(false);
-            }else if(us.getTipoUsuario().equals("Almacenero")){
-                pantallaPrincipal.btnSalidas.setVisible(false);
-                pantallaPrincipal.btnCategorias.setEnabled(true);
-                pantallaPrincipal.btnClientes.setVisible(false);
-                pantallaPrincipal.btnEntradas.setEnabled(true);
-                pantallaPrincipal.btnProveedor.setEnabled(true);
-              //  pantallaPrincipal.btnUsuarios.setVisible(false);
-                pantallaPrincipal.btnProductos.setVisible(true);
-            }
-            pantallaPrincipal.txtiduser.setText(us.getIdusuario()+"");
-            pantallaPrincipal.txtuser.setText(us.getUsuario());
-            // Categorias.iduser=us.getIdusuario();
-            //Notification panel = new Notification(this, Notification.Type.SUCCESS, Notification.Location.TOP_RIGHT, "Bienvenido");
-            //panel.showNotification();
-            m.setVisible(true);
-            dispose();
-        }else{
-            JOptionPane.showMessageDialog(null, "Acceso denegado");
-            //Notification panel = new Notification(this, Notification.Type.ERROR, Notification.Location.TOP_RIGHT, "Aceso denegado");
-            //panel.showNotification();
-        }
+   us = daoU.login(txtcorreo.getText(), txtcontrase.getText());
+if(us.getIdusuario() != 0){
+    pantallaPrincipal m = new pantallaPrincipal();
+    mostrarToast(m, "¡Bienvenido, " + us.getTipoUsuario().toUpperCase() + "!");
 
+   
+    String tipo = us.getTipoUsuario();
+    switch(tipo){
+        case "Vendedor" -> {
+            pantallaPrincipal.btnSalidas.setEnabled(true);
+            pantallaPrincipal.btnCategorias.setEnabled(false);
+            pantallaPrincipal.btnClientes.setEnabled(true);
+            pantallaPrincipal.btnEntradas.setEnabled(false);
+            pantallaPrincipal.btnProveedor.setEnabled(false);
+            pantallaPrincipal.btnProductos.setEnabled(false);
+        }
+        case "Almacenero" -> {
+            pantallaPrincipal.btnSalidas.setEnabled(false);
+            pantallaPrincipal.btnCategorias.setEnabled(true);
+            pantallaPrincipal.btnClientes.setEnabled(false);
+            pantallaPrincipal.btnEntradas.setEnabled(true);
+            pantallaPrincipal.btnProveedor.setEnabled(true);
+            pantallaPrincipal.btnProductos.setEnabled(true);
+        }
+        case "Administrador" -> {
+            pantallaPrincipal.btnSalidas.setEnabled(true);
+            pantallaPrincipal.btnCategorias.setEnabled(true);
+            pantallaPrincipal.btnClientes.setEnabled(true);
+            pantallaPrincipal.btnEntradas.setEnabled(true);
+            pantallaPrincipal.btnProveedor.setEnabled(true);
+            pantallaPrincipal.btnProductos.setEnabled(true);
+
+          
+        }
+        default -> mostrarToast(m, "⚠ Usuario sin rol válido.");
+    }
+  
+    pantallaPrincipal.txtiduser.setText(us.getIdusuario() + "");
+    pantallaPrincipal.txtuser.setText(us.getUsuario());
+
+    m.setVisible(true);
+    dispose();
+} else {
+    mostrarToast(null, "❌ Acceso denegado");
+}
     }//GEN-LAST:event_btnentrarActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
@@ -298,11 +311,34 @@ txtcorreo.setForeground(Color.black);}
         JOptionPane.QUESTION_MESSAGE);
 
 if (opcion == JOptionPane.YES_OPTION) {
-    System.exit(0); // Cierre normal, sin errores
+    System.exit(0); 
 }
 
     }//GEN-LAST:event_btnSalirActionPerformed
+public void mostrarToast(JFrame parent, String mensaje) {
+    JWindow toast = new JWindow(parent);
+    JPanel panel = new JPanel();
+    panel.setBackground(new Color(30, 30, 30)); // fondo oscuro
+    panel.setBorder(BorderFactory.createLineBorder(Color.ORANGE, 2)); // borde llamativo
 
+    JLabel label = new JLabel(mensaje);
+    label.setForeground(Color.WHITE);
+    label.setFont(new Font("Segoe UI", Font.BOLD, 14));
+    label.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+    panel.add(label);
+
+    toast.add(panel);
+    toast.pack();
+
+    int x = parent.getX() + parent.getWidth() - toast.getWidth() - 20;
+    int y = parent.getY() + 20;
+    toast.setLocation(x, y);
+
+    toast.setAlwaysOnTop(true);
+    toast.setVisible(true);
+
+    new javax.swing.Timer(3000, e -> toast.dispose()).start();
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegistrar;
