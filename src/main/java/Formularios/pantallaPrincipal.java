@@ -294,7 +294,7 @@ public class pantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalidasActionPerformed
 
     private void btnProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductosActionPerformed
-    /*  btnInicio.setSelected(false);      
+      btnInicio.setSelected(false);      
         btnCategorias.setSelected(false);
         btnClientes.setSelected(false);
         btnEntradas.setSelected(false);
@@ -303,13 +303,16 @@ public class pantallaPrincipal extends javax.swing.JFrame {
         btnProductos.setSelected(true);
         btnSalir.setSelected(false);
         btnSalida.setSelected(false);
+        
+        
+        Producto PR = new Producto();
         PR.setSize(982,740);
         PR.setLocation(0,0);
 
         contenedor.removeAll();
         contenedor.add(PR,BorderLayout.CENTER);
         contenedor.revalidate();
-        contenedor.repaint();*/
+        contenedor.repaint();
     }//GEN-LAST:event_btnProductosActionPerformed
 
     private void btnEntradasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntradasActionPerformed
@@ -396,7 +399,7 @@ public class pantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnClientesActionPerformed
 
     private void btnCategoriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategoriasActionPerformed
-        /*  btnInicio.setSelected(false);     
+          btnInicio.setSelected(false);     
         btnCategorias.setSelected(true);
         btnClientes.setSelected(false);
         btnEntradas.setSelected(false);
@@ -412,7 +415,7 @@ public class pantallaPrincipal extends javax.swing.JFrame {
         contenedor.removeAll();
         contenedor.add(C,BorderLayout.CENTER);
         contenedor.revalidate();
-        contenedor.repaint();*/
+        contenedor.repaint();
     }//GEN-LAST:event_btnCategoriasActionPerformed
 
     private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
