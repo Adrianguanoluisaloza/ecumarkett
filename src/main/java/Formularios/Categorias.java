@@ -63,75 +63,69 @@ private void listarCategorias(){
         jScrollPane1 = new javax.swing.JScrollPane();
         tblcategorias = new javax.swing.JTable();
 
-        jpanelRound2.setBackground(new java.awt.Color(102, 204, 255));
+        jpanelRound2.setBackground(new java.awt.Color(255, 255, 153));
         jpanelRound2.setPreferredSize(new java.awt.Dimension(982, 775));
+        jpanelRound2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        txtidcategoria.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jPanel2.add(txtidcategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 46, 229, -1));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("Id");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 14, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("Nombre:");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 92, -1, -1));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(jLabel3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(txtnomCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtidcategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(600, 600, 600))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jLabel2)
-                .addGap(16, 16, 16)
-                .addComponent(txtidcategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addComponent(txtnomCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
+        txtnomCategoria.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jPanel2.add(txtnomCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 114, 229, -1));
 
+        jpanelRound2.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 36, 250, 160));
+
+        btnEditar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnEditar.setText("Actualizar");
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarActionPerformed(evt);
             }
         });
+        jpanelRound2.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, -1, -1));
 
+        btnElimar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnElimar.setText("Eliminar");
         btnElimar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnElimarActionPerformed(evt);
             }
         });
+        jpanelRound2.add(btnElimar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 360, 90, -1));
 
+        btnGuardar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnGuardar.setText("Registrar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarActionPerformed(evt);
             }
         });
+        jpanelRound2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
 
+        btnBuscar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarActionPerformed(evt);
             }
         });
+        jpanelRound2.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, -1, -1));
 
         jpanelRound1.setBackground(new java.awt.Color(204, 204, 204));
+        jpanelRound1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tblcategorias.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         tblcategorias.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -139,7 +133,15 @@ private void listarCategorias(){
             new String [] {
                 "ID", "Cetegoria"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tblcategorias.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblcategoriasMouseClicked(evt);
@@ -147,6 +149,7 @@ private void listarCategorias(){
         });
         jScrollPane1.setViewportView(tblcategorias);
 
+<<<<<<< HEAD
         javax.swing.GroupLayout jpanelRound1Layout = new javax.swing.GroupLayout(jpanelRound1);
         jpanelRound1.setLayout(jpanelRound1Layout);
         jpanelRound1Layout.setHorizontalGroup(
@@ -163,7 +166,11 @@ private void listarCategorias(){
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+=======
+        jpanelRound1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 410));
+>>>>>>> origin/main
 
+<<<<<<< HEAD
         javax.swing.GroupLayout jpanelRound2Layout = new javax.swing.GroupLayout(jpanelRound2);
         jpanelRound2.setLayout(jpanelRound2Layout);
         jpanelRound2Layout.setHorizontalGroup(
@@ -205,6 +212,9 @@ private void listarCategorias(){
                         .addComponent(btnElimar)))
                 .addContainerGap(156, Short.MAX_VALUE))
         );
+=======
+        jpanelRound2.add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, 330, 410));
+>>>>>>> origin/main
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

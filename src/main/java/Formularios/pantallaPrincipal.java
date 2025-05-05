@@ -25,6 +25,7 @@ private usuarios us;
     public pantallaPrincipal() {
         initComponents();
         setLocationRelativeTo(null);
+<<<<<<< HEAD
         bloquearComponentes();
         mostrarLogin(); 
       
@@ -72,6 +73,13 @@ private usuarios us;
     }
 
     
+=======
+        mostrarLogin();
+        //panelbotones.setVisible(false);
+        
+            
+}
+>>>>>>> origin/main
    /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -81,6 +89,7 @@ private usuarios us;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        contenedor = new javax.swing.JPanel();
         panelbotones = new Modelo.JpanelRound();
         btnInicio = new RSMaterialComponent.RSButtonMaterialIconShadow();
         btnCategorias = new RSMaterialComponent.RSButtonMaterialIconShadow();
@@ -93,17 +102,41 @@ private usuarios us;
         btnSalir = new RSMaterialComponent.RSButtonMaterialIconDos();
         txtiduser = new javax.swing.JLabel();
         rSLabelBorderRound1 = new rojeru_san.rslabel.RSLabelBorderRound();
+<<<<<<< HEAD
         txtuser = new RSMaterialComponent.RSLabelTextIcon();
         btnCerrarSesionn = new RSMaterialComponent.RSButtonMaterialIconDos();
         btnLogin = new RSMaterialComponent.RSButtonMaterialIconDos();
         contenedor = new javax.swing.JPanel();
+=======
+        iconusuario = new RSMaterialComponent.RSLabelTextIcon();
+>>>>>>> origin/main
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ecumarket");
+<<<<<<< HEAD
         setBackground(new java.awt.Color(255, 255, 255));
         setUndecorated(true);
+=======
+        setBackground(new java.awt.Color(102, 204, 255));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+>>>>>>> origin/main
 
-        panelbotones.setBackground(new java.awt.Color(204, 0, 204));
+        contenedor.setBackground(new java.awt.Color(102, 204, 255));
+
+        javax.swing.GroupLayout contenedorLayout = new javax.swing.GroupLayout(contenedor);
+        contenedor.setLayout(contenedorLayout);
+        contenedorLayout.setHorizontalGroup(
+            contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 990, Short.MAX_VALUE)
+        );
+        contenedorLayout.setVerticalGroup(
+            contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 790, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, 990, 790));
+
+        panelbotones.setBackground(new java.awt.Color(51, 153, 255));
         panelbotones.setRoundBottomLeft(50);
         panelbotones.setRoundBottomRight(50);
         panelbotones.setRoundTopLeft(50);
@@ -113,7 +146,7 @@ private usuarios us;
         btnInicio.setBackground(new java.awt.Color(51, 204, 255));
         btnInicio.setText("Inicio");
         btnInicio.setBackgroundHover(new java.awt.Color(153, 204, 0));
-        btnInicio.setFont(new java.awt.Font("Arial Narrow", 3, 18)); // NOI18N
+        btnInicio.setFont(new java.awt.Font("Arial Narrow", 3, 20)); // NOI18N
         btnInicio.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.HOME);
         btnInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,7 +158,7 @@ private usuarios us;
         btnCategorias.setBackground(new java.awt.Color(51, 204, 255));
         btnCategorias.setText("Categorias");
         btnCategorias.setBackgroundHover(new java.awt.Color(51, 255, 51));
-        btnCategorias.setFont(new java.awt.Font("Arial Narrow", 3, 18)); // NOI18N
+        btnCategorias.setFont(new java.awt.Font("Arial Narrow", 3, 20)); // NOI18N
         btnCategorias.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.LOOP);
         btnCategorias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,7 +170,7 @@ private usuarios us;
         btnClientes.setBackground(new java.awt.Color(51, 204, 255));
         btnClientes.setText("Clientes");
         btnClientes.setBackgroundHover(new java.awt.Color(204, 255, 204));
-        btnClientes.setFont(new java.awt.Font("Arial Narrow", 3, 18)); // NOI18N
+        btnClientes.setFont(new java.awt.Font("Arial Narrow", 3, 20)); // NOI18N
         btnClientes.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.LANGUAGE);
         btnClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,7 +182,7 @@ private usuarios us;
         btnProveedor.setBackground(new java.awt.Color(51, 204, 255));
         btnProveedor.setText("Proveedor");
         btnProveedor.setBackgroundHover(new java.awt.Color(102, 255, 102));
-        btnProveedor.setFont(new java.awt.Font("Arial Narrow", 3, 18)); // NOI18N
+        btnProveedor.setFont(new java.awt.Font("Arial Narrow", 3, 20)); // NOI18N
         btnProveedor.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.STORAGE);
         btnProveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,6 +191,21 @@ private usuarios us;
         });
         panelbotones.add(btnProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 210, -1));
 
+<<<<<<< HEAD
+=======
+        l.setBackground(new java.awt.Color(51, 204, 255));
+        l.setText("Usuario");
+        l.setBackgroundHover(new java.awt.Color(102, 255, 102));
+        l.setFont(new java.awt.Font("Arial Narrow", 3, 20)); // NOI18N
+        l.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.PERSON);
+        l.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lActionPerformed(evt);
+            }
+        });
+        panelbotones.add(l, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 210, -1));
+
+>>>>>>> origin/main
         btnEntradas.setBackground(new java.awt.Color(0, 204, 255));
         btnEntradas.setText("Entrada De Productos");
         btnEntradas.setFont(new java.awt.Font("Arial Narrow", 3, 18)); // NOI18N
@@ -214,20 +262,24 @@ private usuarios us;
         });
         panelbotones.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 730, 120, -1));
 
-        txtiduser.setText("1");
-        panelbotones.add(txtiduser, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 6, -1, -1));
+        txtiduser.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtiduser.setForeground(new java.awt.Color(255, 255, 255));
+        panelbotones.add(txtiduser, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 40, 20));
 
         rSLabelBorderRound1.setBackground(new java.awt.Color(0, 153, 255));
         rSLabelBorderRound1.setForeground(new java.awt.Color(255, 255, 255));
+        rSLabelBorderRound1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         rSLabelBorderRound1.setText("Ecumarket");
-        rSLabelBorderRound1.setBgBorde(new java.awt.Color(0, 204, 255));
-        rSLabelBorderRound1.setFont(new java.awt.Font("Roboto Bold", 3, 18)); // NOI18N
-        panelbotones.add(rSLabelBorderRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 103, -1));
+        rSLabelBorderRound1.setBgBorde(new java.awt.Color(255, 255, 255));
+        rSLabelBorderRound1.setFont(new java.awt.Font("Roboto Bold", 3, 24)); // NOI18N
+        panelbotones.add(rSLabelBorderRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 150, -1));
 
-        txtuser.setForeground(new java.awt.Color(204, 255, 102));
-        txtuser.setColorIcon(new java.awt.Color(255, 255, 255));
-        panelbotones.add(txtuser, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 190, -1));
+        iconusuario.setForeground(new java.awt.Color(255, 255, 255));
+        iconusuario.setColorIcon(new java.awt.Color(255, 255, 255));
+        iconusuario.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        panelbotones.add(iconusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 190, -1));
 
+<<<<<<< HEAD
         btnCerrarSesionn.setBackground(new java.awt.Color(0, 204, 255));
         btnCerrarSesionn.setText("Cerrar Sesion");
         btnCerrarSesionn.setBackgroundHover(new java.awt.Color(204, 204, 0));
@@ -282,11 +334,27 @@ private usuarios us;
                 .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
+=======
+        getContentPane().add(panelbotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 0, 250, 790));
+>>>>>>> origin/main
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+<<<<<<< HEAD
 
+=======
+Registro R = new Registro(this);
+        R.setSize(1270, 790);
+        R.setLocation(0, 0);
+        contenedor.removeAll();
+        contenedor.add(R, BorderLayout.CENTER);
+        contenedor.revalidate();
+        contenedor.repaint(); 
+}
+
+private String usuarioActual; 
+>>>>>>> origin/main
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         btnInicio.setSelected(false);
         btnCategorias.setSelected(false);
@@ -667,10 +735,14 @@ public void cerrarSesion() {
     public static RSMaterialComponent.RSButtonMaterialIconDos btnSalidas;
     public static RSMaterialComponent.RSButtonMaterialIconDos btnSalir;
     private javax.swing.JPanel contenedor;
+<<<<<<< HEAD
+=======
+    public static RSMaterialComponent.RSLabelTextIcon iconusuario;
+    public static RSMaterialComponent.RSButtonMaterialIconDos l;
+>>>>>>> origin/main
     public static Modelo.JpanelRound panelbotones;
     private rojeru_san.rslabel.RSLabelBorderRound rSLabelBorderRound1;
     public static javax.swing.JLabel txtiduser;
-    public static RSMaterialComponent.RSLabelTextIcon txtuser;
     // End of variables declaration//GEN-END:variables
 
  

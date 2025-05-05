@@ -129,56 +129,76 @@ entradas e=new entradas();
         jpanelRound1.setBackground(new java.awt.Color(102, 204, 255));
         jpanelRound1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jpanelRound2.setBackground(new java.awt.Color(204, 204, 204));
+        jpanelRound2.setBackground(new java.awt.Color(255, 255, 255));
         jpanelRound2.setRoundBottomLeft(25);
         jpanelRound2.setRoundBottomRight(25);
         jpanelRound2.setRoundTopLeft(25);
         jpanelRound2.setRoundTopRight(25);
         jpanelRound2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jpanelRound2.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 398, 190, -1));
 
+        txtTotal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jpanelRound2.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 190, -1));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel10.setText("Total");
-        jpanelRound2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 370, -1, -1));
-        jpanelRound2.add(txtprecioV, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 330, 190, -1));
+        jpanelRound2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, -1, -1));
 
+        txtprecioV.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jpanelRound2.add(txtprecioV, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 190, -1));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel8.setText("Precio Venta");
-        jpanelRound2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 308, -1, -1));
+        jpanelRound2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
 
+        txtprecioE.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtprecioE.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtprecioEKeyReleased(evt);
             }
         });
-        jpanelRound2.add(txtprecioE, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 274, 190, -1));
+        jpanelRound2.add(txtprecioE, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 190, -1));
 
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel7.setText("Precio Entrada.");
-        jpanelRound2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 252, -1, -1));
+        jpanelRound2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel6.setText("Fecha");
-        jpanelRound2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 202, -1, -1));
+        jpanelRound2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
+        txtstock.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtstock.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtstockKeyReleased(evt);
             }
         });
-        jpanelRound2.add(txtstock, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 174, 190, -1));
+        jpanelRound2.add(txtstock, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 190, -1));
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel5.setText("Stock");
-        jpanelRound2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 152, -1, -1));
-        jpanelRound2.add(txtnombreP, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 118, 190, -1));
+        jpanelRound2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
+        txtnombreP.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jpanelRound2.add(txtnombreP, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 190, -1));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel3.setText("Nombre Producto");
-        jpanelRound2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 96, -1, -1));
-        jpanelRound2.add(txtidentrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 62, 190, -1));
+        jpanelRound2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
+        txtidentrada.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jpanelRound2.add(txtidentrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 190, -1));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel2.setText("ID Entrada");
-        jpanelRound2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 40, -1, -1));
-        jpanelRound2.add(dateFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 190, -1));
+        jpanelRound2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
-        jpanelRound1.add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 250, 430));
+        dateFecha.setFocusable(false);
+        dateFecha.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jpanelRound2.add(dateFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 190, -1));
 
-        jpanelRound3.setBackground(new java.awt.Color(204, 204, 204));
+        jpanelRound1.add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 270, 430));
+
+        jpanelRound3.setBackground(new java.awt.Color(255, 255, 255));
         jpanelRound3.setRoundBottomLeft(25);
         jpanelRound3.setRoundBottomRight(25);
         jpanelRound3.setRoundTopLeft(25);
@@ -226,9 +246,9 @@ entradas e=new entradas();
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
-        jpanelRound1.add(jpanelRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 240, 140));
+        jpanelRound1.add(jpanelRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 240, 140));
 
-        jpanelRound4.setBackground(new java.awt.Color(204, 204, 204));
+        jpanelRound4.setBackground(new java.awt.Color(255, 255, 255));
         jpanelRound4.setRoundBottomLeft(25);
         jpanelRound4.setRoundBottomRight(25);
         jpanelRound4.setRoundTopLeft(25);
@@ -293,7 +313,7 @@ entradas e=new entradas();
                 .addGap(0, 13, Short.MAX_VALUE))
         );
 
-        jpanelRound1.add(jpanelRound4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 140, 270, 140));
+        jpanelRound1.add(jpanelRound4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 140, 270, 140));
 
         jpanelRound5.setBackground(new java.awt.Color(204, 204, 204));
         jpanelRound5.setRoundBottomLeft(25);
@@ -320,7 +340,7 @@ entradas e=new entradas();
         jpanelRound5.setLayout(jpanelRound5Layout);
         jpanelRound5Layout.setHorizontalGroup(
             jpanelRound5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelRound5Layout.createSequentialGroup()
+            .addGroup(jpanelRound5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE)
                 .addContainerGap())
@@ -333,8 +353,9 @@ entradas e=new entradas();
                 .addGap(14, 14, 14))
         );
 
-        jpanelRound1.add(jpanelRound5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 550, 340));
+        jpanelRound1.add(jpanelRound5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 300, 550, 340));
 
+        btnGuardar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnGuardar.setText("Registrar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -343,26 +364,30 @@ entradas e=new entradas();
         });
         jpanelRound1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 600, -1, -1));
 
+        btnActualizar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnActualizar.setText("Actualizar");
         btnActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnActualizarActionPerformed(evt);
             }
         });
-        jpanelRound1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 600, -1, -1));
+        jpanelRound1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 600, -1, -1));
 
+        btnElimnar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnElimnar.setText("Eliminar");
         btnElimnar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnElimnarActionPerformed(evt);
             }
         });
-        jpanelRound1.add(btnElimnar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 600, -1, -1));
+        jpanelRound1.add(btnElimnar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 600, -1, -1));
 
-        jLabel1.setText("Gestion De stovk");
-        jpanelRound1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 550, -1));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 56)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Gestion De stock");
+        jpanelRound1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, 460, 50));
 
-        add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 650));
+        add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 650));
     }// </editor-fold>//GEN-END:initComponents
 
     private void tablaEntradasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaEntradasMouseClicked

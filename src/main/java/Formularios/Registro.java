@@ -86,32 +86,32 @@ public class Registro extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 153, 255));
         jLabel1.setText("Ingresa tus datos personales");
-        jpanelRound2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 0, -1, -1));
+        jpanelRound2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 153, 255));
         jLabel7.setText("IdUsuario");
-        jpanelRound2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+        jpanelRound2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 153, 255));
         jLabel5.setText("tipoUsuario");
-        jpanelRound2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, -1, -1));
+        jpanelRound2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 153, 255));
         jLabel3.setText("Correo");
-        jpanelRound2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
+        jpanelRound2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 153, 255));
         jLabel2.setText("Contraseña");
-        jpanelRound2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, -1, -1));
+        jpanelRound2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 153, 255));
         jLabel4.setText("Telefono");
-        jpanelRound2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
+        jpanelRound2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -120,12 +120,12 @@ public class Registro extends javax.swing.JPanel {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 153, 255));
         jLabel6.setText("Ciudad");
-        jpanelRound2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, -1, -1));
+        jpanelRound2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, -1, -1));
 
-        cmbciudad.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        cmbciudad.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         cmbciudad.setForeground(new java.awt.Color(0, 153, 255));
         cmbciudad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Azuay", "Bolívar", "Cañar", "Carchi", "Chimborazo", "Cotopaxi", "El Oro", "Esmeraldas", "Galápagos", "Guayas", "Imbabura", "Loja", "Los Ríos", "Manabí", "Morona Santiago", "Napo", "Orellana", "Pastaza", "Pichincha", "Santa Elena", "Santo Domingo de los tsáchilas", "Sucumbíos", "Tungurahua", "Zamora Chinchipe" }));
-        jpanelRound2.add(cmbciudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 480, 200, -1));
+        jpanelRound2.add(cmbciudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 510, 200, -1));
 
         btnActualizar.setBackground(new java.awt.Color(0, 153, 255));
         btnActualizar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -138,66 +138,79 @@ public class Registro extends javax.swing.JPanel {
                 btnActualizarActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
         jpanelRound2.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 620, 150, 40));
+=======
+        jpanelRound2.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 630, -1, 40));
+>>>>>>> origin/main
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 153, 255));
         jLabel9.setText("Cedula");
-        jpanelRound2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
+        jpanelRound2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 153, 255));
         jLabel10.setText("Dirreccion");
-        jpanelRound2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
+        jpanelRound2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 153, 255));
         jLabel11.setText("Usuario");
-        jpanelRound2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, -1));
+        jpanelRound2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(0, 153, 255));
         jLabel12.setText("Nombre ");
-        jpanelRound2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+        jpanelRound2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(0, 153, 255));
         jLabel13.setText("Apellido");
-        jpanelRound2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+        jpanelRound2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
         txtidusuarios.setEditable(false);
+        txtidusuarios.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtidusuarios.setForeground(new java.awt.Color(0, 153, 255));
         txtidusuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtidusuariosActionPerformed(evt);
             }
         });
-        jpanelRound2.add(txtidusuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 50, -1));
+        jpanelRound2.add(txtidusuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 50, -1));
 
+        txtnombre.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtnombre.setForeground(new java.awt.Color(0, 153, 255));
-        jpanelRound2.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 200, -1));
+        jpanelRound2.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 200, -1));
 
+        txtapellido.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtapellido.setForeground(new java.awt.Color(0, 153, 255));
-        jpanelRound2.add(txtapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 200, -1));
+        jpanelRound2.add(txtapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 200, -1));
 
+        txtdocumento.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtdocumento.setForeground(new java.awt.Color(0, 153, 255));
-        jpanelRound2.add(txtdocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 200, -1));
+        jpanelRound2.add(txtdocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 200, -1));
 
+        txtdireccion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtdireccion.setForeground(new java.awt.Color(0, 153, 255));
-        jpanelRound2.add(txtdireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 200, -1));
+        jpanelRound2.add(txtdireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 200, -1));
 
+        txttelefono.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txttelefono.setForeground(new java.awt.Color(0, 153, 255));
-        jpanelRound2.add(txttelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 200, -1));
+        jpanelRound2.add(txttelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 200, -1));
 
+        txtcorreo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtcorreo.setForeground(new java.awt.Color(0, 153, 255));
-        jpanelRound2.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, 200, -1));
+        jpanelRound2.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 350, 200, -1));
 
+        cmbTipoUsuario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         cmbTipoUsuario.setForeground(new java.awt.Color(0, 153, 255));
         cmbTipoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Vendedor", "Almacenero" }));
-        jpanelRound2.add(cmbTipoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, 200, -1));
+        jpanelRound2.add(cmbTipoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 200, -1));
 
+        txtusuario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtusuario.setForeground(new java.awt.Color(0, 153, 255));
-        jpanelRound2.add(txtusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 400, 200, -1));
+        jpanelRound2.add(txtusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 430, 200, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -216,7 +229,11 @@ public class Registro extends javax.swing.JPanel {
                 btnRegistrarse1ActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
         jpanelRound2.add(btnRegistrarse1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 550, 150, 40));
+=======
+        jpanelRound2.add(btnRegistrarse1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 570, 130, 40));
+>>>>>>> origin/main
 
         btnEliminar.setBackground(new java.awt.Color(0, 153, 255));
         btnEliminar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -229,7 +246,11 @@ public class Registro extends javax.swing.JPanel {
                 btnEliminarActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
         jpanelRound2.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 550, 130, 40));
+=======
+        jpanelRound2.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 570, 110, 40));
+>>>>>>> origin/main
 
         btnBuscar.setBackground(new java.awt.Color(0, 153, 255));
         btnBuscar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -242,8 +263,15 @@ public class Registro extends javax.swing.JPanel {
                 btnBuscarActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
         jpanelRound2.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 620, 100, 40));
         jpanelRound2.add(txtpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 440, 200, -1));
+=======
+        jpanelRound2.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 570, 90, 40));
+
+        txtpass.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jpanelRound2.add(txtpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 470, 200, -1));
+>>>>>>> origin/main
 
         tablaUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -260,7 +288,7 @@ public class Registro extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tablaUsuarios);
 
-        jpanelRound2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, 560, 614));
+        jpanelRound2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 80, 560, 614));
 
         btnRegresar.setBackground(new java.awt.Color(0, 153, 255));
         btnRegresar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -271,7 +299,11 @@ public class Registro extends javax.swing.JPanel {
                 btnRegresarActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
         jpanelRound2.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 680, 130, 40));
+=======
+        jpanelRound2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 630, 110, 40));
+>>>>>>> origin/main
 
         add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1270, 790));
     }// </editor-fold>//GEN-END:initComponents
