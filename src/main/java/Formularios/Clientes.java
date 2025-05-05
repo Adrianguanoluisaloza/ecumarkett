@@ -6,6 +6,7 @@ package Formularios;
 
 import Dao.DaoClientes;
 import Modelo.clientes;
+import java.awt.Toolkit;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -114,6 +115,11 @@ private void listarClientes(){
         jpanelRound4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
         txtdocumento.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtdocumento.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtdocumentoKeyTyped(evt);
+            }
+        });
         jpanelRound4.add(txtdocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 162, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
@@ -138,6 +144,11 @@ private void listarClientes(){
         jpanelRound4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, -1, -1));
 
         txtcorreo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtcorreo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtcorreoFocusLost(evt);
+            }
+        });
         jpanelRound4.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 246, -1));
 
         btnEliminar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -388,6 +399,21 @@ if (dao.buscar(c)) {
 }
 
     }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void txtcorreoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtcorreoFocusLost
+          String correo = txtcorreo.getText().trim();
+        if (!correo.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
+             JOptionPane.showMessageDialog(null, "⚠ Correo no válido. Ejemplo: ejemplo@dominio.com");
+            txtcorreo.requestFocus(); // Vuelve al campo
+        }
+    }//GEN-LAST:event_txtcorreoFocusLost
+
+    private void txtdocumentoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtdocumentoKeyTyped
+       char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            evt.consume(); // 
+            Toolkit.getDefaultToolkit().beep();}
+    }//GEN-LAST:event_txtdocumentoKeyTyped
 void limpiarCampos(){
         txtidcliente.setText("");
         txtnombre.setText("");

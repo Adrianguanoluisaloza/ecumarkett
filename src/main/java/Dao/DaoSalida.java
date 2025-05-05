@@ -170,4 +170,26 @@ public class DaoSalida {
         }
         return total;
     }
+    public boolean aprobarSalida(salidas c) {
+    String SQL = "UPDATE salidas SET estado = ? WHERE idSalida = ?";
+    try {
+        con = cn.conectar();
+        if (con == null) {
+            JOptionPane.showMessageDialog(null, "Error de conexión");
+            return false;
+        }
+
+        ps = con.prepareStatement(SQL);
+        ps.setString(1, c.getEstado()); // será "Aprobada"
+        ps.setInt(2, c.getIdSalida());
+
+        int n = ps.executeUpdate();
+        return n != 0;
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, "Error al aprobar: " + e.getMessage());
+        return false;
+    }
 }
+    
+}
+

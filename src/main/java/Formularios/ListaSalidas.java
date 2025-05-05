@@ -182,7 +182,7 @@ DaoProductos daoP=new DaoProductos();
         jPanel3.add(txtidSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 170, -1));
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jButton1.setText("Aprobar Pedido");
+        jButton1.setText("Aprobar Pedio");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -289,15 +289,15 @@ DaoProductos daoP=new DaoProductos();
     }//GEN-LAST:event_tablaDetalleMouseClicked
 
     private void btnBuscarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarPedidoActionPerformed
-      /* limpiarTabla();
+       limpiarTabla();
         
         String fecha1=obtenerFechas(fechainicial)+"";
         String fecha2=obtenerFechas(fechafinal)+"";
-        listarSalidasPorFecha(fecha1,fecha2);*/
+        listarSalidasPorFecha(fecha1,fecha2);
     }//GEN-LAST:event_btnBuscarPedidoActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-  /*       int fila = tablaSalidas.getSelectedRow();
+     int fila = tablaSalidas.getSelectedRow();
     if (fila == -1 && txtnumSalida.getText().isEmpty()) {
         JOptionPane.showMessageDialog(null, "Seleccione una salida de la tabla o ingrese un número de salida");
     } else {
@@ -320,18 +320,18 @@ DaoProductos daoP=new DaoProductos();
             JOptionPane.showMessageDialog(null, "Error al procesar: " + e.getMessage());
         }
     }
-*/
+
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    /*    int fila = tablaSalidas.getSelectedRow();
+        int fila = tablaSalidas.getSelectedRow();
     if (fila == -1 && txtnumSalida.getText().isEmpty()) {
         JOptionPane.showMessageDialog(null, "Seleccione una salida o ingrese el número de salida");
     } else {
         try {
             int idSalida = getSelectedSalidaId(); // Método compartido
             s.setIdSalida(idSalida);
-            s.setEstado("Aprobada");
+            s.setEstado("Pagada");
 
             if (dao.aprobarSalida(s)) {
                 limpiarTabla();
@@ -346,7 +346,7 @@ DaoProductos daoP=new DaoProductos();
             JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
         }
     
-}*/
+}
     }//GEN-LAST:event_jButton1ActionPerformed
 
    void limpiarTabla(){
@@ -371,14 +371,14 @@ DaoProductos daoP=new DaoProductos();
         a=cal.get(Calendar.YEAR)-1900;
         return new Date(a,m,d);
 }
-/*
+
     void sumarStock(){
         for(int i=0;i<tablaDetalle.getRowCount();i++){
         int idProducto=Integer.parseInt(tablaDetalle.getValueAt(i, 0).toString());
         int cant=Integer.parseInt(tablaDetalle.getValueAt(i, 1).toString());
         daoP.sumarStock(idProducto, cant);
         }
-    }*/
+    }
 
     private void limpiarCampos() {
         txtnumSalida.setText("");

@@ -231,7 +231,7 @@ DaoUsuario daoU = new DaoUsuario();
     }//GEN-LAST:event_txtcontraseMousePressed
 
     private void btnentrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnentrarActionPerformed
-        /* us = daoU.login(txtcorreo.getText(), txtcontrase.getText());
+         us = daoU.login(txtcorreo.getText(), txtcontrase.getText());
         if(us.getIdusuario() != 0){
 
             pantallaPrincipal m = new pantallaPrincipal(us);
@@ -272,34 +272,16 @@ DaoUsuario daoU = new DaoUsuario();
             }
 
             pantallaPrincipal.txtiduser.setText(us.getIdusuario() + "");
-            pantallaPrincipal.txtuser.setText(us.getUsuario());
+           // pantallaPrincipal.txtuser.setText(us.getUsuario());
             m.setVisible(true);
 
             dispose();
         } else {
             Utilidades.mostrarToast(null, "❌ Acceso denegado");
         }
-        */
+        
 
-        us = daoU.login(txtcorreo.getText(), txtcontrase.getText());
-        if (us.getIdusuario() != 0) {
-
-            pantallaPrincipal m = new pantallaPrincipal(us);
-            m.setVisible(true);
-
-            Inicio h = new Inicio();
-
-            // Mostrar mensaje de bienvenida
-            Utilidades.mostrarToast(m, "¡Bienvenido, " + us.getTipoUsuario().toUpperCase() + "!");
-
-            // Actualizar los campos de usuario en la pantalla principal
-            Formularios.pantallaPrincipal.txtiduser.setText(String.valueOf(us.getIdusuario()));
-            Formularios.pantallaPrincipal.txtuser.setText(us.getUsuario());
-
-            dispose();
-        } else {
-            Utilidades.mostrarToast(null, "❌ Acceso denegado");
-        }
+    
 
         /*    us = daoU.login(txtcorreo.getText(), txtcontrase.getText());
         if(us.getIdusuario() != 0){
@@ -351,7 +333,7 @@ DaoUsuario daoU = new DaoUsuario();
     }//GEN-LAST:event_btnentrarActionPerformed
 
     private void lblregistrarseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblregistrarseMouseClicked
-        pP.mostrarRegistro();
+//    pP.mostrarRegistro();
     }//GEN-LAST:event_lblregistrarseMouseClicked
 
     private void lblregistrarseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblregistrarseMouseEntered

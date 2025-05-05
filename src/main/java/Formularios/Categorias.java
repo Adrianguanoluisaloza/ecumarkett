@@ -26,7 +26,7 @@ Categoria ct=new Categoria();
     public Categorias() {
         initComponents();
         listarCategorias();
-       // txtidcategoria.
+       //txtidcategoria.
         
     }
 private void listarCategorias(){
@@ -149,72 +149,9 @@ private void listarCategorias(){
         });
         jScrollPane1.setViewportView(tblcategorias);
 
-<<<<<<< HEAD
-        javax.swing.GroupLayout jpanelRound1Layout = new javax.swing.GroupLayout(jpanelRound1);
-        jpanelRound1.setLayout(jpanelRound1Layout);
-        jpanelRound1Layout.setHorizontalGroup(
-            jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelRound1Layout.createSequentialGroup()
-                .addContainerGap(30, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35))
-        );
-        jpanelRound1Layout.setVerticalGroup(
-            jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpanelRound1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-=======
         jpanelRound1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 410));
->>>>>>> origin/main
 
-<<<<<<< HEAD
-        javax.swing.GroupLayout jpanelRound2Layout = new javax.swing.GroupLayout(jpanelRound2);
-        jpanelRound2.setLayout(jpanelRound2Layout);
-        jpanelRound2Layout.setHorizontalGroup(
-            jpanelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpanelRound2Layout.createSequentialGroup()
-                .addGroup(jpanelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpanelRound2Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(jpanelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jpanelRound2Layout.createSequentialGroup()
-                                .addComponent(btnGuardar)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnBuscar))
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jpanelRound2Layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addGroup(jpanelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnEditar)
-                            .addComponent(btnElimar))))
-                .addGap(18, 18, 18)
-                .addComponent(jpanelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(74, Short.MAX_VALUE))
-        );
-        jpanelRound2Layout.setVerticalGroup(
-            jpanelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpanelRound2Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(jpanelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jpanelRound2Layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jpanelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnGuardar)
-                            .addComponent(btnBuscar))
-                        .addGap(26, 26, 26)
-                        .addComponent(btnEditar)
-                        .addGap(45, 45, 45)
-                        .addComponent(btnElimar)))
-                .addContainerGap(156, Short.MAX_VALUE))
-        );
-=======
         jpanelRound2.add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, 330, 410));
->>>>>>> origin/main
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -239,32 +176,32 @@ private void listarCategorias(){
      ct.setNomCategoria(txtnomCategoria.getText());
         if(daoCt.insertar(ct)){
             JOptionPane.showMessageDialog(null, "Categoria Registrada Con Exito");
-       //     m.exito("Categoria Registrada Con Exito");
+       
        }else{
             JOptionPane.showMessageDialog(null, "No se pudo registrar la Categoria");
-        //    m.error("No se pudo registrar la Categoria");
+        
         }
         limpiarTablaCategoria();
         listarCategorias();
         limpiarCampos();
-       //registraAuditoria("Registro");
+       
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         int fila=tblcategorias.getSelectedRow();
         if(fila==-1&&txtidcategoria.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "Seleccione una categoria");
-          //  m.advertencia("Seleccione una categoria");
+          
         }else{
             ct.setIdCategoria(Integer.parseInt(txtidcategoria.getText()));
             ct.setNomCategoria(txtnomCategoria.getText());
             if(daoCt.editar(ct)){
                 JOptionPane.showMessageDialog(null, "Se modifico con exito");
-               // m.exito("Se modifico con exito");
+              
                 limpiarTablaCategoria();
                 listarCategorias();
                 limpiarCampos();
-               // registraAuditoria("Modificacion");
+           
             }
         }
     }//GEN-LAST:event_btnEditarActionPerformed
@@ -279,12 +216,11 @@ private void listarCategorias(){
                 listarCategorias();
                 limpiarCampos();
                 JOptionPane.showMessageDialog(null, "Se Elimino con exito la cetegoria");
-             //   m.exito("Se Elimino con exito la cetegoria");
-             //   registraAuditoria("Eliminacion");
+             
             }
         }else{
             JOptionPane.showMessageDialog(null, "Seleccione una categoria");
-            //m.advertencia("Seleccione una categoria");
+            
         }
     }//GEN-LAST:event_btnElimarActionPerformed
 
@@ -295,7 +231,7 @@ private void listarCategorias(){
             txtnomCategoria.setText(ct.getNomCategoria());
         }else{
             JOptionPane.showMessageDialog(null, "La Categoria No Existe");
-           // m.error("La Categoria No Existe");
+          
             limpiarCampos();
         }
     }//GEN-LAST:event_btnBuscarActionPerformed

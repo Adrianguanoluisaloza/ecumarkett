@@ -13,6 +13,7 @@ import Dao.DaoSalida;
 import Modelo.clientes;
 import Modelo.entradas;
 import Modelo.salidas;
+import java.awt.Toolkit;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -431,6 +432,12 @@ int filaSeleccionada;
 
         jLabel2.setText("Documento");
         jpanelRound2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, -1, -1));
+
+        txtdocumento.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtdocumentoKeyTyped(evt);
+            }
+        });
         jpanelRound2.add(txtdocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 170, -1));
 
         add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 340));
@@ -589,6 +596,14 @@ int filaSeleccionada;
         BuscaProductos m=new BuscaProductos();
         m.setVisible(true);
     }//GEN-LAST:event_btnBuscarClientesActionPerformed
+
+    private void txtdocumentoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtdocumentoKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            evt.consume(); // Bloquea la tecla
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_txtdocumentoKeyTyped
 private void agregaEntrada(){
         double precio,total,importe;
         modelo=(DefaultTableModel) tablaSalidas.getModel();

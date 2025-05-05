@@ -5,11 +5,17 @@
 package Formularios;
 
 
+import Formularios.Clientes;
+import Formularios.Entradas;
+import Formularios.Inicio;
+import Formularios.ListaSalidas;
+import Formularios.Login;
+import Formularios.Provedores;
+import Formularios.Salidas;
 import Formularios.Utilidades;
 import Formularios.loginn;
 import Modelo.usuarios;
 import java.awt.BorderLayout;
-import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -20,33 +26,30 @@ import javax.swing.JPanel;
  */
 public final class pantallaPrincipal extends javax.swing.JFrame {
 private usuarios us;
+    
 
-   
+
     public pantallaPrincipal() {
         initComponents();
         setLocationRelativeTo(null);
-<<<<<<< HEAD
-        bloquearComponentes();
-        mostrarLogin(); 
-      
+         bloquearComponentes();
+        mostrarLogin();
+       
         
-    }
-
+            
+}
+    
     public pantallaPrincipal(usuarios usuarioLogueado) {
         initComponents();
+        btnLogin.setVisible(false);
         setLocationRelativeTo(null);
         this.us = usuarioLogueado; 
        configurarPorRol();
        activarComponentes();
         txtiduser.setText(String.valueOf(us.getIdusuario())); 
-        txtuser.setText(us.getUsuario());
+        iconusuario.setText(us.getUsuario());
         Utilidades.mostrarToast(this, "¡Bienvenido, " + us.getTipoUsuario().toUpperCase() + "!"); // Muestra un mensaje de bienvenida
         
-        getContentPane().add(contenedor);
-    }
-
-   public JPanel getContenedor() {
-        return contenedor;
     }
     public void mostrarLogin() {
         loginn L = new loginn(this); 
@@ -70,16 +73,12 @@ private usuarios us;
         contenedor.add(R, BorderLayout.CENTER); 
         contenedor.revalidate();
         contenedor.repaint(); 
-    }
-
     
-=======
-        mostrarLogin();
-        //panelbotones.setVisible(false);
-        
-            
+                                        
+    }
+    public void mostrarBotonLogin(boolean visible) {
+    btnLogin.setVisible(visible);
 }
->>>>>>> origin/main
    /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -102,24 +101,14 @@ private usuarios us;
         btnSalir = new RSMaterialComponent.RSButtonMaterialIconDos();
         txtiduser = new javax.swing.JLabel();
         rSLabelBorderRound1 = new rojeru_san.rslabel.RSLabelBorderRound();
-<<<<<<< HEAD
-        txtuser = new RSMaterialComponent.RSLabelTextIcon();
+        iconusuario = new RSMaterialComponent.RSLabelTextIcon();
         btnCerrarSesionn = new RSMaterialComponent.RSButtonMaterialIconDos();
         btnLogin = new RSMaterialComponent.RSButtonMaterialIconDos();
-        contenedor = new javax.swing.JPanel();
-=======
-        iconusuario = new RSMaterialComponent.RSLabelTextIcon();
->>>>>>> origin/main
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ecumarket");
-<<<<<<< HEAD
-        setBackground(new java.awt.Color(255, 255, 255));
-        setUndecorated(true);
-=======
         setBackground(new java.awt.Color(102, 204, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
->>>>>>> origin/main
 
         contenedor.setBackground(new java.awt.Color(102, 204, 255));
 
@@ -191,21 +180,6 @@ private usuarios us;
         });
         panelbotones.add(btnProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 210, -1));
 
-<<<<<<< HEAD
-=======
-        l.setBackground(new java.awt.Color(51, 204, 255));
-        l.setText("Usuario");
-        l.setBackgroundHover(new java.awt.Color(102, 255, 102));
-        l.setFont(new java.awt.Font("Arial Narrow", 3, 20)); // NOI18N
-        l.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.PERSON);
-        l.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lActionPerformed(evt);
-            }
-        });
-        panelbotones.add(l, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 210, -1));
-
->>>>>>> origin/main
         btnEntradas.setBackground(new java.awt.Color(0, 204, 255));
         btnEntradas.setText("Entrada De Productos");
         btnEntradas.setFont(new java.awt.Font("Arial Narrow", 3, 18)); // NOI18N
@@ -215,7 +189,7 @@ private usuarios us;
                 btnEntradasActionPerformed(evt);
             }
         });
-        panelbotones.add(btnEntradas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 210, -1));
+        panelbotones.add(btnEntradas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 210, -1));
 
         btnProductos.setBackground(new java.awt.Color(0, 204, 255));
         btnProductos.setText("Productos");
@@ -226,7 +200,7 @@ private usuarios us;
                 btnProductosActionPerformed(evt);
             }
         });
-        panelbotones.add(btnProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 210, -1));
+        panelbotones.add(btnProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 210, -1));
 
         btnSalidas.setBackground(new java.awt.Color(0, 204, 255));
         btnSalidas.setText("Gestion De Pedidos");
@@ -237,7 +211,7 @@ private usuarios us;
                 btnSalidasActionPerformed(evt);
             }
         });
-        panelbotones.add(btnSalidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 210, -1));
+        panelbotones.add(btnSalidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 210, -1));
 
         btnSalida.setBackground(new java.awt.Color(0, 204, 255));
         btnSalida.setText("Pedidos");
@@ -248,7 +222,7 @@ private usuarios us;
                 btnSalidaActionPerformed(evt);
             }
         });
-        panelbotones.add(btnSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 600, 210, -1));
+        panelbotones.add(btnSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 210, -1));
 
         btnSalir.setBackground(new java.awt.Color(0, 204, 255));
         btnSalir.setText("Salir");
@@ -260,7 +234,7 @@ private usuarios us;
                 btnSalirActionPerformed(evt);
             }
         });
-        panelbotones.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 730, 120, -1));
+        panelbotones.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 730, 110, -1));
 
         txtiduser.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtiduser.setForeground(new java.awt.Color(255, 255, 255));
@@ -279,18 +253,16 @@ private usuarios us;
         iconusuario.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         panelbotones.add(iconusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 190, -1));
 
-<<<<<<< HEAD
         btnCerrarSesionn.setBackground(new java.awt.Color(0, 204, 255));
         btnCerrarSesionn.setText("Cerrar Sesion");
-        btnCerrarSesionn.setBackgroundHover(new java.awt.Color(204, 204, 0));
         btnCerrarSesionn.setFont(new java.awt.Font("Arial Narrow", 3, 18)); // NOI18N
-        btnCerrarSesionn.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SD_CARD);
+        btnCerrarSesionn.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.PERM_CONTACT_CALENDAR);
         btnCerrarSesionn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarSesionnActionPerformed(evt);
             }
         });
-        panelbotones.add(btnCerrarSesionn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 660, 210, -1));
+        panelbotones.add(btnCerrarSesionn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 600, 210, -1));
 
         btnLogin.setBackground(new java.awt.Color(0, 204, 255));
         btnLogin.setText("Login");
@@ -300,62 +272,16 @@ private usuarios us;
                 btnLoginActionPerformed(evt);
             }
         });
-        panelbotones.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, -1, -1));
+        panelbotones.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 660, 100, 40));
 
-        javax.swing.GroupLayout contenedorLayout = new javax.swing.GroupLayout(contenedor);
-        contenedor.setLayout(contenedorLayout);
-        contenedorLayout.setHorizontalGroup(
-            contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 996, Short.MAX_VALUE)
-        );
-        contenedorLayout.setVerticalGroup(
-            contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(panelbotones, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(panelbotones, javax.swing.GroupLayout.PREFERRED_SIZE, 790, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-=======
         getContentPane().add(panelbotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 0, 250, 790));
->>>>>>> origin/main
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+private usuarios usuarioActual;
 
-<<<<<<< HEAD
-
-=======
-Registro R = new Registro(this);
-        R.setSize(1270, 790);
-        R.setLocation(0, 0);
-        contenedor.removeAll();
-        contenedor.add(R, BorderLayout.CENTER);
-        contenedor.revalidate();
-        contenedor.repaint(); 
-}
-
-private String usuarioActual; 
->>>>>>> origin/main
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+         btnCerrarSesionn.setSelected(false);
         btnInicio.setSelected(false);
         btnCategorias.setSelected(false);
         btnClientes.setSelected(false);
@@ -365,7 +291,7 @@ private String usuarioActual;
         btnProductos.setSelected(false);
         btnSalir.setSelected(true);
         btnSalida.setSelected(false);
-        btnCerrarSesionn.setSelected(false);
+       
        
      
 int confirm = JOptionPane.showConfirmDialog(
@@ -379,10 +305,11 @@ int confirm = JOptionPane.showConfirmDialog(
     if (confirm == JOptionPane.YES_OPTION) {
         System.exit(0); 
     }
-
+     
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalidaActionPerformed
+         btnCerrarSesionn.setSelected(false);
         btnInicio.setSelected(false);      
         btnCategorias.setSelected(false);
         btnClientes.setSelected(false);
@@ -403,7 +330,8 @@ int confirm = JOptionPane.showConfirmDialog(
     }//GEN-LAST:event_btnSalidaActionPerformed
 
     private void btnSalidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalidasActionPerformed
-         btnInicio.setSelected(false);        
+         btnCerrarSesionn.setSelected(false);
+        btnInicio.setSelected(false);        
         btnCategorias.setSelected(false);
         btnClientes.setSelected(false);
         btnEntradas.setSelected(false);
@@ -423,7 +351,8 @@ int confirm = JOptionPane.showConfirmDialog(
     }//GEN-LAST:event_btnSalidasActionPerformed
 
     private void btnProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductosActionPerformed
-      btnInicio.setSelected(false);      
+      btnCerrarSesionn.setSelected(false);
+        btnInicio.setSelected(false);      
         btnCategorias.setSelected(false);
         btnClientes.setSelected(false);
         btnEntradas.setSelected(false);
@@ -445,6 +374,8 @@ int confirm = JOptionPane.showConfirmDialog(
     }//GEN-LAST:event_btnProductosActionPerformed
 
     private void btnEntradasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntradasActionPerformed
+        btnCerrarSesionn.setSelected(false);
+        
         btnInicio.setSelected(false);       
         btnCategorias.setSelected(false);
         btnClientes.setSelected(false);
@@ -465,6 +396,7 @@ int confirm = JOptionPane.showConfirmDialog(
     }//GEN-LAST:event_btnEntradasActionPerformed
 
     private void btnProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProveedorActionPerformed
+        btnCerrarSesionn.setSelected(false);
         btnInicio.setSelected(false);
         btnCategorias.setSelected(false);       
         btnClientes.setSelected(false);
@@ -475,7 +407,7 @@ int confirm = JOptionPane.showConfirmDialog(
         btnSalir.setSelected(false);
         btnSalida.setSelected(false);
         Provedores P=new Provedores();
-        P.setSize(1270, 790);
+        P.setSize(1007, 775);
         P.setLocation(0,0);
 
         contenedor.removeAll();
@@ -485,7 +417,7 @@ int confirm = JOptionPane.showConfirmDialog(
     }//GEN-LAST:event_btnProveedorActionPerformed
 
     private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
-
+        btnCerrarSesionn.setSelected(false);
         btnInicio.setSelected(false);
         btnCategorias.setSelected(false);
         btnClientes.setSelected(true);
@@ -496,7 +428,7 @@ int confirm = JOptionPane.showConfirmDialog(
         btnSalir.setSelected(false);
         btnSalida.setSelected(false);
         Clientes CL=new Clientes();
-        CL.setSize(1270, 790);
+        CL.setSize(982,740);
         CL.setLocation(0,0);
 
         contenedor.removeAll();
@@ -507,7 +439,8 @@ int confirm = JOptionPane.showConfirmDialog(
     }//GEN-LAST:event_btnClientesActionPerformed
 
     private void btnCategoriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategoriasActionPerformed
-          btnInicio.setSelected(false);     
+          btnCerrarSesionn.setSelected(false);
+        btnInicio.setSelected(false);     
         btnCategorias.setSelected(true);
         btnClientes.setSelected(false);
         btnEntradas.setSelected(false);
@@ -517,7 +450,7 @@ int confirm = JOptionPane.showConfirmDialog(
         btnSalir.setSelected(false);
         btnSalida.setSelected(false);
         Categorias C=new Categorias();
-        C.setSize(1270, 790);
+        C.setSize(982,740);
         C.setLocation(0,0);
 
         contenedor.removeAll();
@@ -527,6 +460,8 @@ int confirm = JOptionPane.showConfirmDialog(
     }//GEN-LAST:event_btnCategoriasActionPerformed
 
     private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
+       
+        btnCerrarSesionn.setSelected(false);
         btnInicio.setSelected(true);
         btnCategorias.setSelected(false);
         btnCategorias.setSelected(false);
@@ -538,7 +473,7 @@ int confirm = JOptionPane.showConfirmDialog(
         btnSalir.setSelected(false);
         btnSalida.setSelected(false);
         Inicio i=new Inicio();
-        i.setSize(1270, 790);
+        i.setSize(982,740);
         i.setLocation(0,0);
 
         contenedor.removeAll();
@@ -548,34 +483,19 @@ int confirm = JOptionPane.showConfirmDialog(
     }//GEN-LAST:event_btnInicioActionPerformed
 
     private void btnCerrarSesionnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionnActionPerformed
-btnCerrarSesionn.setSelected(true);
-btnInicio.setSelected(false);
-btnCategorias.setSelected(false);
-btnClientes.setSelected(false);
-btnEntradas.setSelected(false);
-btnProveedor.setSelected(false);
-btnSalidas.setSelected(false);
-btnProductos.setSelected(false);
-btnSalir.setSelected(false);
-btnSalida.setSelected(false);
-btnCerrarSesionn.setSelected(false); 
+ 
+bloquearComponentes();
+btnLogin.setVisible(false); 
+pantallaPrincipal.txtiduser.setText("");
+pantallaPrincipal.iconusuario.setText("");
+JOptionPane.showMessageDialog(null, "Sesión cerrada correctamente", "Cerrar sesión", JOptionPane.INFORMATION_MESSAGE);
 
-   cerrarSesion();
-
- /*loginn m=new loginn();
-        m.setVisible(true);
-        dispose();
-       pantallaPrincipal.txtiduser.setText("");    
- pantallaPrincipal.txtuser.setText("");
-    loginn ll = new loginn();
-    ll.setSize(982, 740);     
-    ll.setVisible(true);*/
-    // JOptionPane.showMessageDialog(null, "Sesión cerrada correctamente", "Cerrar sesión", JOptionPane.INFORMATION_MESSAGE);
-
+// Aquí cargas el login de nuevo dentro del contenedor principal
+mostrarLogin();
     }//GEN-LAST:event_btnCerrarSesionnActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-         
+       btnCerrarSesionn.setSelected(false);
 btnInicio.setSelected(false);
 btnCategorias.setSelected(false);
 btnClientes.setSelected(false);
@@ -586,35 +506,49 @@ btnProductos.setSelected(false);
 btnSalir.setSelected(false);
 btnSalida.setSelected(false);
 btnCerrarSesionn.setSelected(false); 
-btnLogin.setSelected(true);
-        
+        btnLogin.setSelected(true);
+        loginn L=new loginn();
+        L.setSize(982,740);
+        L.setLocation(0,0);
+
+        contenedor.removeAll();
+        contenedor.add(L,BorderLayout.CENTER);
+        contenedor.revalidate();
+        contenedor.repaint();
     }//GEN-LAST:event_btnLoginActionPerformed
 
-private void configurarPorRol() {
+    private void configurarPorRol() {
         String tipo = us.getTipoUsuario();
         switch (tipo) {
             case "Vendedor" -> {
                 // Configuración para Vendedor
+                pantallaPrincipal.btnInicio.setEnabled(true);
                 pantallaPrincipal.btnSalidas.setEnabled(true);
                 pantallaPrincipal.btnCategorias.setEnabled(false);
                 pantallaPrincipal.btnClientes.setEnabled(true);
                 pantallaPrincipal.btnEntradas.setEnabled(false);
                 pantallaPrincipal.btnProveedor.setEnabled(false);
                 pantallaPrincipal.btnProductos.setEnabled(false);
-                  pantallaPrincipal.btnSalir.setEnabled(true);
+                pantallaPrincipal.btnSalir.setEnabled(true);
+                pantallaPrincipal.btnCerrarSesionn.setEnabled(true);
+               
             }
             case "Almacenero" -> {
                 // Configuración para Almacenero
+                pantallaPrincipal.btnInicio.setEnabled(true);
                 pantallaPrincipal.btnSalidas.setEnabled(false);
                 pantallaPrincipal.btnCategorias.setEnabled(true);
                 pantallaPrincipal.btnClientes.setEnabled(false);
                 pantallaPrincipal.btnEntradas.setEnabled(true);
                 pantallaPrincipal.btnProveedor.setEnabled(true);
                 pantallaPrincipal.btnProductos.setEnabled(true);
-                  pantallaPrincipal.btnSalir.setEnabled(true);
+                pantallaPrincipal.btnSalir.setEnabled(true);
+                pantallaPrincipal.btnCerrarSesionn.setEnabled(true);
+              
             }
             case "Administrador" -> {
                 // Configuración para Administrador
+                pantallaPrincipal.btnInicio.setEnabled(true);
                 pantallaPrincipal.btnSalidas.setEnabled(true);
                 pantallaPrincipal.btnCategorias.setEnabled(true);
                 pantallaPrincipal.btnClientes.setEnabled(true);
@@ -622,12 +556,15 @@ private void configurarPorRol() {
                 pantallaPrincipal.btnProveedor.setEnabled(true);
                 pantallaPrincipal.btnProductos.setEnabled(true);
                 pantallaPrincipal.btnSalir.setEnabled(true);
+                pantallaPrincipal.btnCerrarSesionn.setEnabled(true);
+           
             }
-            default -> Utilidades.mostrarToast(this, "⚠ Usuario sin rol válido.");
+            default ->   JOptionPane.showMessageDialog(null, "⚠ Usuario sin rol válido.");
         }
     }
-
-private void bloquearComponentes() {
+    
+    
+    private void bloquearComponentes() {
     btnInicio.setEnabled(false);
     btnCategorias.setEnabled(false);
     btnClientes.setEnabled(false);
@@ -638,9 +575,10 @@ private void bloquearComponentes() {
     btnCerrarSesionn.setEnabled(false);
     btnSalida.setEnabled(false);
     btnSalir.setEnabled(true);
-    btnLogin.setEnabled(false);
+    btnLogin.setVisible(false);
+    
 }
-private void activarComponentes() {
+    private void activarComponentes() {
     btnInicio.setEnabled(true);
     btnCategorias.setEnabled(true);
     btnClientes.setEnabled(true);
@@ -648,45 +586,26 @@ private void activarComponentes() {
     btnProveedor.setEnabled(true);
     btnSalidas.setEnabled(true);
     btnProductos.setEnabled(true);
-    btnCerrarSesionn.setEnabled(true);
+   btnCerrarSesionn.setEnabled(true);
     btnSalida.setEnabled(true);
-    btnSalir.setEnabled(true);  
-    //panelbotones.setVisible(true);
-    btnLogin.setEnabled(true);
+    btnSalir.setEnabled(true); 
+    //btnLogin.setVisible(true);
+   //panelbotones.setVisible(true);
+    }
+    
+ public void setUsuario(usuarios usuario) {
+    this.usuarioActual = usuario;
 }
-public void cerrarSesion() {
-    txtiduser.setText(""); 
-    txtiduser.setText(""); 
 
-    
-     Login m=new Login();
-        m.setVisible(true);
-        dispose();
 
-    
-    pantallaPrincipal.txtiduser.setText("");  
-    pantallaPrincipal.txtuser.setText("");   
-    
-    JOptionPane.showMessageDialog(null, "Sesión cerrada correctamente", "Cerrar sesión", JOptionPane.INFORMATION_MESSAGE);
-
-   
-    dispose(); 
+public usuarios getUsuario() {
+    return this.usuarioActual;  // Devuelve la variable usuarioActual
 }
-/*private void bloquearComponentes() {
-    
-     //panelbotones.setVisible(false);
-    btnInicio.setVisible(false);
-    btnCategorias.setVisible(false);
-    btnClientes.setVisible(false);
-    btnEntradas.setVisible(false);
-    btnProveedor.setVisible(false);
-    btnSalidas.setVisible(false);
-    btnProductos.setVisible(false);
-    btnCerrarSesionn.setVisible(false);
-    btnSalida.setVisible(false);
-    btnSalir.setVisible(true);
-}*/
-    /**
+ 
+public JPanel getContenedor() {
+    return contenedor;
+}
+    /*
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -713,6 +632,8 @@ public void cerrarSesion() {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -728,27 +649,17 @@ public void cerrarSesion() {
     public static RSMaterialComponent.RSButtonMaterialIconDos btnClientes;
     public static RSMaterialComponent.RSButtonMaterialIconDos btnEntradas;
     public static RSMaterialComponent.RSButtonMaterialIconShadow btnInicio;
-    private RSMaterialComponent.RSButtonMaterialIconDos btnLogin;
+    public static RSMaterialComponent.RSButtonMaterialIconDos btnLogin;
     public static RSMaterialComponent.RSButtonMaterialIconDos btnProductos;
     public static RSMaterialComponent.RSButtonMaterialIconShadow btnProveedor;
     public static RSMaterialComponent.RSButtonMaterialIconDos btnSalida;
     public static RSMaterialComponent.RSButtonMaterialIconDos btnSalidas;
     public static RSMaterialComponent.RSButtonMaterialIconDos btnSalir;
     private javax.swing.JPanel contenedor;
-<<<<<<< HEAD
-=======
     public static RSMaterialComponent.RSLabelTextIcon iconusuario;
-    public static RSMaterialComponent.RSButtonMaterialIconDos l;
->>>>>>> origin/main
     public static Modelo.JpanelRound panelbotones;
     private rojeru_san.rslabel.RSLabelBorderRound rSLabelBorderRound1;
     public static javax.swing.JLabel txtiduser;
     // End of variables declaration//GEN-END:variables
-
- 
-
-        
-    
-
-    
+  
 }

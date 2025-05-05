@@ -35,7 +35,7 @@ public class BuscarDato extends javax.swing.JFrame {
         this.setBackground(new Color(0,0,0,0));
         cabezeras();
         if(tipo==true){
-        // listarCategorias();
+         listarCategorias();
         }else{
             listarProveedor();
         }
@@ -48,7 +48,7 @@ public class BuscarDato extends javax.swing.JFrame {
         tabla.setModel(modelo);
     }
 
-  /*  private void listarCategorias(){
+    private void listarCategorias(){
             List<Categoria> lista=daoCt.Listar();
             modelo=(DefaultTableModel) tabla.getModel();
             Object[] ob=new Object[2];
@@ -59,7 +59,7 @@ public class BuscarDato extends javax.swing.JFrame {
             }
            tabla.setModel(modelo);
         }
-*/
+
 
     private void listarProveedor(){
         List<proveedor> lista=daoP.Listar();
@@ -153,25 +153,24 @@ public class BuscarDato extends javax.swing.JFrame {
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
         // TODO add your handling code here:
-       // dispose();
+        dispose();
     }//GEN-LAST:event_btnCerrarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        // TODO add your handling code here:
-/*
-           if(tipo==true){ 
-            if(entrada==true){
-                //Entradas.txtidcategoria.setText(txtID.getText());
-                //Entradas.txtcategoria.setText(txtnombre.getText());
-            }else{
-                Producto.txtNomCategoria.setText(txtnombre.getText());
-                Producto.txtidCategoria.setText(txtID.getText());
-            }
-        }else{
-            Entradas.txtidproveedor.setText(txtID.getText());
-            Entradas.txtproveedor.setText(txtnombre.getText());
-        }
-        dispose();*/
+    
+
+           if (tipo == true) { 
+    if (entrada == false) {
+       
+        Producto.txtNomCategoria.setText(txtnombre.getText());
+        Producto.txtidCategoria.setText(txtID.getText());
+    }
+} else { 
+    Entradas.txtidproveedor.setText(txtID.getText());
+    Entradas.txtproveedor.setText(txtnombre.getText());
+}
+
+dispose(); 
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void tablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaMouseClicked

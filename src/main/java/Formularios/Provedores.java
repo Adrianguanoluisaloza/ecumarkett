@@ -6,7 +6,9 @@ package Formularios;
 
 import Dao.DaoProveedor;
 import Modelo.proveedor;
+import java.awt.Toolkit;
 import java.util.List;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -15,13 +17,17 @@ import javax.swing.table.DefaultTableModel;
  * @author Adrian
  */
 public class Provedores extends javax.swing.JPanel {
+
 proveedor p=new proveedor();
+
+
     DaoProveedor dao=new DaoProveedor();
     DefaultTableModel modelo=new DefaultTableModel();
     /**
      * Creates new form Provedores
      */
     public Provedores() {
+    
         initComponents();
      listarProveedor();
     }
@@ -153,6 +159,11 @@ proveedor p=new proveedor();
         jpanelRound2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 110, -1));
 
         txtcorreo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtcorreo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtcorreoFocusLost(evt);
+            }
+        });
         jpanelRound2.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 200, 190, -1));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -186,6 +197,16 @@ proveedor p=new proveedor();
         jpanelRound2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, -1, -1));
 
         txtdocumento.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtdocumento.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtdocumentoFocusLost(evt);
+            }
+        });
+        txtdocumento.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtdocumentoKeyTyped(evt);
+            }
+        });
         jpanelRound2.add(txtdocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 190, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -225,7 +246,6 @@ proveedor p=new proveedor();
 
         add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 760, 320));
 
-        rSLabelBorderRound1.setBorder(null);
         rSLabelBorderRound1.setForeground(new java.awt.Color(0, 0, 0));
         rSLabelBorderRound1.setText("Gestion de Proveedores");
         rSLabelBorderRound1.setAlignmentX(0.5F);
@@ -254,139 +274,74 @@ proveedor p=new proveedor();
     }//GEN-LAST:event_tablaproveedoresMouseClicked
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-     String nombre = txtnombre.getText().trim();
-    String apellido = txtapellido.getText().trim();
-    String documento = txtdocumento.getText().trim();
-    String Activadad_comercial = txtRsocial.getText().trim();
-    String direccion = txtdireccion.getText().trim();
-    String telefono = txttelefono.getText().trim();
-    String correo = txtcorreo.getText().trim();
-
- 
-    if (nombre.isEmpty() || apellido.isEmpty() || documento.isEmpty() || Activadad_comercial.isEmpty()
-        || direccion.isEmpty() || telefono.isEmpty() || correo.isEmpty()) {
-        JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos.");
-        return;
-    }
-
-  
-    if (!documento.matches("\\d+") || !telefono.matches("\\d+")) {
-        JOptionPane.showMessageDialog(null, "Documento y Teléfono deben contener solo números.");
-        return;
-    }
-
-    
-    if (!correo.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
-        JOptionPane.showMessageDialog(null, "Correo electrónico no válido.");
-        return;
-    }
-
-   
-    p.setNombre(nombre);
-    p.setApellido(apellido);
-    p.setDocumento(documento);
-    p.setActivadad_comercial(Activadad_comercial);
-    p.setDireccion(direccion);
-    p.setTelefono(telefono);
-    p.setCorreo(correo);
-
-    if (dao.insertar(p)) {
-        JOptionPane.showMessageDialog(null, "Proveedor registrado con éxito.");
-        limpiarCampos();
-        limpiarTablaProveedor();
-        listarProveedor();
-    } else {
-        JOptionPane.showMessageDialog(null, "No se pudo registrar el proveedor.");
-    }
-
+      int fila=tablaproveedores.getSelectedRow();
+        if(fila==-1&&txtid.getText().isEmpty()){
+         JOptionPane.showMessageDialog(null,"Seleccione un Proveedor");
+        }else{
+            p.setIdProveedor(Integer.parseInt(txtid.getText()));
+            p.setNombre(txtnombre.getText());
+            p.setApellido(txtapellido.getText());
+            p.setDocumento(txtdocumento.getText());
+            p.setActivadad_comercial(txtRsocial.getText());
+            p.setDireccion(txtdireccion.getText());
+            p.setTelefono(txttelefono.getText());
+            p.setCorreo(txtcorreo.getText());
+            if(dao.editar(p)){
+                
+             JOptionPane.showMessageDialog(null,"Se modifico con exito");
+                limpiarCampos();
+                limpiarTablaProveedor();
+                listarProveedor();
+            }else{
+              
+                JOptionPane.showMessageDialog(null,"Erorr al modificar el Proveedor");
+            }
+        }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        int fila = tablaproveedores.getSelectedRow();
-
-    if (fila == -1 && txtid.getText().isEmpty()) {
-        JOptionPane.showMessageDialog(null, "Seleccione un proveedor para editar.");
-        return;
-    }
-
-    String idTexto = txtid.getText().trim();
-    String nombre = txtnombre.getText().trim();
-    String apellido = txtapellido.getText().trim();
-    String documento = txtdocumento.getText().trim();
-    String Activadad_comercial = txtRsocial.getText().trim();
-    String direccion = txtdireccion.getText().trim();
-    String telefono = txttelefono.getText().trim();
-    String correo = txtcorreo.getText().trim();
-
-    
-    if (nombre.isEmpty() || apellido.isEmpty() || documento.isEmpty() || Activadad_comercial.isEmpty()
-        || direccion.isEmpty() || telefono.isEmpty() || correo.isEmpty()) {
-        JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos.");
-        return;
-    }
-
-    
-    if (!documento.matches("\\d+") || !telefono.matches("\\d+")) {
-        JOptionPane.showMessageDialog(null, "Documento y teléfono deben contener solo números.");
-        return;
-    }
-
-    if (!correo.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
-        JOptionPane.showMessageDialog(null, "Correo electrónico no válido.");
-        return;
-    }
-
-
-    p.setIdProveedor(Integer.parseInt(idTexto));
-    p.setNombre(nombre);
-    p.setApellido(apellido);
-    p.setDocumento(documento);
-    p.setActivadad_comercial(Activadad_comercial);
-    p.setDireccion(direccion);
-    p.setTelefono(telefono);
-    p.setCorreo(correo);
-
-    if (dao.editar(p)) {
-        JOptionPane.showMessageDialog(null, "Se modificó el proveedor con éxito.");
-        limpiarCampos();
-        limpiarTablaProveedor();
-        listarProveedor();
-    } else {
-        JOptionPane.showMessageDialog(null, "Error al modificar el proveedor.");
-    }
-
+       int fila=tablaproveedores.getSelectedRow();
+        if(fila==-1&&txtid.getText().isEmpty()){
+       
+        JOptionPane.showMessageDialog(null,"Seleccione un Proveedor");
+        }else{
+            p.setIdProveedor(Integer.parseInt(txtid.getText()));
+            p.setNombre(txtnombre.getText());
+            p.setApellido(txtapellido.getText());
+            p.setDocumento(txtdocumento.getText());
+            p.setActivadad_comercial(txtRsocial.getText());
+            p.setDireccion(txtdireccion.getText());
+            p.setTelefono(txttelefono.getText());
+            p.setCorreo(txtcorreo.getText());
+            if(dao.editar(p)){
+               
+             JOptionPane.showMessageDialog(null,"Se modifico con exito");
+                limpiarCampos();
+                limpiarTablaProveedor();
+                listarProveedor();
+            }else{
+             
+            JOptionPane.showMessageDialog(null,"Erorr al modificar el Proveedor");
+            }
+        }
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-  if (!txtid.getText().trim().isEmpty()) {
-   
-    if (!txtid.getText().matches("\\d+")) {
-        JOptionPane.showMessageDialog(null, "El ID del proveedor no es válido.");
-        return;
-    }
+   if(!txtid.getText().isEmpty()){
+            int confirmacion=JOptionPane.showConfirmDialog(null, "¿Es tas seguro de eliminar el Proveedor?","Confirmar",2);
+            if(confirmacion==0){
+                p.setIdProveedor(Integer.parseInt(txtid.getText()));
+                dao.eliminar(p);
+              limpiarCampos();
+               limpiarTablaProveedor();
+                listarProveedor();
+       
+              JOptionPane.showMessageDialog(null,"Se Elimino con exito el Proveedor");
+            }
+        }else{
 
-    int confirmacion = JOptionPane.showConfirmDialog(
-        null,
-        "¿Estás seguro de eliminar el proveedor?",
-        "Confirmar",
-        JOptionPane.YES_NO_OPTION
-    );
-
-    if (confirmacion == JOptionPane.YES_OPTION) {
-        p.setIdProveedor(Integer.parseInt(txtid.getText().trim()));
-        if (dao.eliminar(p)) {
-            JOptionPane.showMessageDialog(null, "Proveedor eliminado con éxito.");
-            limpiarCampos();
-            limpiarTablaProveedor();
-            listarProveedor();
-        } else {
-            JOptionPane.showMessageDialog(null, "No se pudo eliminar el proveedor.");
-        }
-    }
-
-} else {
-    JOptionPane.showMessageDialog(null, "Seleccione un proveedor para eliminar.");
-}
+        JOptionPane.showMessageDialog(null,"Seleccione un Proveedor");
+        }        
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
@@ -413,6 +368,30 @@ if (dao.buscarDocumento(p)) {
     limpiarCampos();
 }
     }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void txtcorreoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtcorreoFocusLost
+         String correo = txtcorreo.getText().trim();
+        if (!correo.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
+             JOptionPane.showMessageDialog(null, "⚠ Correo no válido. Ejemplo: ejemplo@dominio.com");
+            txtcorreo.requestFocus(); // Vuelve al campo
+        }
+    }//GEN-LAST:event_txtcorreoFocusLost
+
+    private void txtdocumentoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtdocumentoFocusLost
+         String documento = txtdocumento.getText().trim();
+        if (!documento.matches("\\d+")) {
+             JOptionPane.showMessageDialog(null, "⚠ El documento debe contener solo números.");
+            txtdocumento.requestFocus(); 
+        }
+    }//GEN-LAST:event_txtdocumentoFocusLost
+
+    private void txtdocumentoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtdocumentoKeyTyped
+       char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            evt.consume(); 
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_txtdocumentoKeyTyped
 
 void limpiarCampos(){
         txtid.setText("");

@@ -113,7 +113,7 @@ entradas e=new entradas();
         txtidproveedor = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         txtproveedor = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        btnBuscarProvedorr = new javax.swing.JButton();
         jpanelRound5 = new Modelo.JpanelRound();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaEntradas = new javax.swing.JTable();
@@ -262,10 +262,10 @@ entradas e=new entradas();
 
         jLabel19.setText("Nombre");
 
-        jButton2.setText("Buscar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscarProvedorr.setText("Buscar");
+        btnBuscarProvedorr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnBuscarProvedorrActionPerformed(evt);
             }
         });
 
@@ -293,7 +293,7 @@ entradas e=new entradas();
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(txtproveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(16, 16, 16)
-                        .addComponent(jButton2)
+                        .addComponent(btnBuscarProvedorr)
                         .addGap(15, 15, 15))))
         );
         jpanelRound4Layout.setVerticalGroup(
@@ -307,7 +307,7 @@ entradas e=new entradas();
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpanelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
-                    .addComponent(jButton2))
+                    .addComponent(btnBuscarProvedorr))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtproveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 13, Short.MAX_VALUE))
@@ -550,11 +550,11 @@ entradas e=new entradas();
      m.setVisible(true);
     }//GEN-LAST:event_btnBuscarProductoActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnBuscarProvedorrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarProvedorrActionPerformed
       BuscarDato.tipo=false;
        BuscarDato m=new BuscarDato();
        m.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnBuscarProvedorrActionPerformed
 
  void limpiarCampos(){
         txtidentrada.setText("");
@@ -579,10 +579,10 @@ entradas e=new entradas();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnBuscarProducto;
+    private javax.swing.JButton btnBuscarProvedorr;
     private javax.swing.JButton btnElimnar;
     private javax.swing.JButton btnGuardar;
     private com.toedter.calendar.JDateChooser dateFecha;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
