@@ -6,6 +6,7 @@ package Formularios;
 
 //import Dao.DaoCategoria;
 
+import Dao.DaoCategoria;
 import Dao.DaoEntradas;
 import Dao.DaoProductos;
 import Dao.DaoProveedor;
@@ -30,7 +31,7 @@ entradas e=new entradas();
     productos p=new productos();
     DaoProductos daoPr=new DaoProductos();
     DaoEntradas dao=new DaoEntradas();
-   // DaoCategoria daoC=new DaoCategoria();
+    DaoCategoria daoC=new DaoCategoria();
     DaoProveedor daoP=new DaoProveedor();
     DefaultTableModel modelo=new DefaultTableModel();
     public static int idpNuevo;
@@ -64,16 +65,16 @@ entradas e=new entradas();
        tablaEntradas.setModel(modelo);
     }
 
-   // void numProducto(){
-       // int numero=daoPr.numProducto();
-      //  if(numero==0){
-       // txtidProducto.setText("1");
-      //  }else{
-      //  int i=numero;
-      //  i=i+1;
-      //  txtidProducto.setText(i+"");
+   void numProducto(){
+        int numero=daoPr.numProducto();
+        if(numero==0){
+        txtidProducto.setText("1");
+       }else{
+       int i=numero;
+        i=i+1;
+       txtidProducto.setText(i+"");
         
-   // }
+    }}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -105,7 +106,7 @@ entradas e=new entradas();
         jLabel11 = new javax.swing.JLabel();
         txtidProducto = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnBuscarProducto = new javax.swing.JButton();
         jpanelRound4 = new Modelo.JpanelRound();
         jLabel21 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
@@ -189,10 +190,10 @@ entradas e=new entradas();
         jLabel18.setForeground(new java.awt.Color(0, 43, 153));
         jLabel18.setText("Bucar Producto");
 
-        jButton1.setText("Buscar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscarProducto.setText("Buscar");
+        btnBuscarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnBuscarProductoActionPerformed(evt);
             }
         });
 
@@ -206,7 +207,7 @@ entradas e=new entradas();
                     .addGroup(jpanelRound3Layout.createSequentialGroup()
                         .addComponent(txtidProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
-                        .addComponent(jButton1))
+                        .addComponent(btnBuscarProducto))
                     .addComponent(jLabel18)
                     .addComponent(jLabel11))
                 .addContainerGap(29, Short.MAX_VALUE))
@@ -221,7 +222,7 @@ entradas e=new entradas();
                 .addGap(18, 18, 18)
                 .addGroup(jpanelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtidProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(btnBuscarProducto))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
@@ -365,7 +366,7 @@ entradas e=new entradas();
     }// </editor-fold>//GEN-END:initComponents
 
     private void tablaEntradasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaEntradasMouseClicked
-    /*  int fila=tablaEntradas.getSelectedRow();
+     int fila=tablaEntradas.getSelectedRow();
         txtidentrada.setText(tablaEntradas.getValueAt(fila, 0).toString());
         txtidProducto.setText(tablaEntradas.getValueAt(fila, 1).toString());
         txtstock.setText(tablaEntradas.getValueAt(fila, 2).toString());
@@ -378,7 +379,7 @@ entradas e=new entradas();
         
         pr.setIdProveedor(Integer.parseInt(txtidproveedor.getText()));
         if(daoP.buscar(pr)){
-            txtproveedor.setText(pr.getRsocial() );
+            txtproveedor.setText(pr.getActivadad_comercial() );
         }else{
             txtproveedor.setText("Error");
         }
@@ -390,7 +391,7 @@ entradas e=new entradas();
         }
         idpOld=Integer.parseInt(txtidProducto.getText());
         cant=Integer.parseInt(txtstock.getText());
-        idpNuevo=Integer.parseInt(txtidProducto.getText());*/
+        idpNuevo=Integer.parseInt(txtidProducto.getText());
     }//GEN-LAST:event_tablaEntradasMouseClicked
 
     private void txtprecioEKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtprecioEKeyReleased
@@ -416,7 +417,7 @@ entradas e=new entradas();
     }//GEN-LAST:event_txtstockKeyReleased
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-/*
+
     Calendar cal;
             int d,m,a;
             cal=dateFecha.getCalendar();
@@ -433,23 +434,23 @@ entradas e=new entradas();
             p.setIdproducto(Integer.parseInt(txtidProducto.getText()));
             p.setPrecioV(Double.parseDouble(txtprecioV.getText()));
             if(dao.insertar(e)&&daoPr.sumarStock(Integer.parseInt(txtidProducto.getText()), Integer.parseInt(txtstock.getText()))&&daoPr.editarPrecioV(p)){
-              //  MenuPrincipal menu=new MenuPrincipal();
-                //menu.exito("Entrada Registrada Con Exito");
+              
+               JOptionPane.showMessageDialog(null,"Entrada Registrada Con Exito");
             }else{
-                //MenuPrincipal menu=new MenuPrincipal();
-                //menu.error("No se pudo registrar la entrada");
+              
+             JOptionPane.showMessageDialog(null,"No se pudo registrar la entrada");
             }
             limpiarCampos();
         limpiarTablaEntradas();
         listarEntradas();
-        numProducto();*/
+        numProducto();
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-   /*  int fila=tablaEntradas.getSelectedRow();
+     int fila=tablaEntradas.getSelectedRow();
         if(fila==-1&&txtidentrada.getText().isEmpty()){
-           // MenuPrincipal m=new MenuPrincipal();
-           // m.advertencia("Seleccione una Entrada");
+          
+          JOptionPane.showMessageDialog(null,"Seleccione una Entrada");
         }else{
             int cantNueva;
             cantNueva=Integer.parseInt(txtstock.getText()); 
@@ -484,20 +485,20 @@ entradas e=new entradas();
                 daoPro.restarStock(idpOld, cant);
                 daoPro.sumarStock(idpNuevo, Integer.parseInt(txtstock.getText()));
                 }
-               // MenuPrincipal m1=new MenuPrincipal();
-               // m1.exito("Se modifico con exito");
+               
+               JOptionPane.showMessageDialog(null,"Se modifico con exito");
                 limpiarCampos();
                 limpiarTablaEntradas();
                 listarEntradas();
             }else{
-                //MenuPrincipal m2=new MenuPrincipal();
-                //m2.error("Erorr al modificar la entrada");
+              
+                JOptionPane.showMessageDialog(null,"Erorr al modificar la entrada");
             }
-        }*/
+        }
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void btnElimnarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElimnarActionPerformed
-       /* if(!txtidentrada.getText().isEmpty()){
+        if(!txtidentrada.getText().isEmpty()){
             int confirmacion=JOptionPane.showConfirmDialog(null, "¿Es tas seguro de eliminar la entrada?","Confirmar",2);
             if(confirmacion==0){
                 e.setIdentrada(Integer.parseInt(txtidentrada.getText()));
@@ -509,25 +510,25 @@ entradas e=new entradas();
                 limpiarCampos();
                 limpiarTablaEntradas();
                 listarEntradas();
-               // MenuPrincipal m=new MenuPrincipal();
-               // m.exito("Se Elimino con exito La Entrada");
+              
+             JOptionPane.showMessageDialog(null,"Se Elimino con exito La Entrada");
             }
         }else{
-          //  MenuPrincipal m=new MenuPrincipal();
-           // m.advertencia("Seleccione una Entrada");
-        }*/
+          
+        JOptionPane.showMessageDialog(null,"Seleccione una Entrada");
+        }
     }//GEN-LAST:event_btnElimnarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-  /*     BuscaProductos.tipo=false;
+    private void btnBuscarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarProductoActionPerformed
+       BuscaProductos.tipo=false;
         BuscaProductos m=new BuscaProductos();
-     m.setVisible(true);*/
-    }//GEN-LAST:event_jButton1ActionPerformed
+     m.setVisible(true);
+    }//GEN-LAST:event_btnBuscarProductoActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-     /* BuscarDato.tipo=false;
+      BuscarDato.tipo=false;
        BuscarDato m=new BuscarDato();
-       m.setVisible(true);*/
+       m.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
  void limpiarCampos(){
@@ -552,10 +553,10 @@ entradas e=new entradas();
   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizar;
+    private javax.swing.JButton btnBuscarProducto;
     private javax.swing.JButton btnElimnar;
     private javax.swing.JButton btnGuardar;
     private com.toedter.calendar.JDateChooser dateFecha;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

@@ -4,6 +4,8 @@
  */
 package Formularios;
 
+
+
 /**
  *
  * @author Adrian
@@ -15,7 +17,7 @@ public class Inicio extends javax.swing.JPanel {
      */
     public Inicio() {
         initComponents();
-        
+     
     }
 
     /**

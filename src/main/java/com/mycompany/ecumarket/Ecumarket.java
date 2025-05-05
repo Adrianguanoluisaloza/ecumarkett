@@ -1,6 +1,7 @@
 package com.mycompany.ecumarket;
 
-import Formularios.pantallaPrincipal;
+import Formularios.Login;
+
 
 /**
  *
@@ -9,6 +10,6 @@ import Formularios.pantallaPrincipal;
 public class Ecumarket {
 
     public static void main(String[] args) {
-       new pantallaPrincipal().setVisible(true);
+       new Login().setVisible(true);
     }
 }

@@ -5,17 +5,11 @@
 package Formularios;
 
 import Dao.DaoUsuario;
+
 import Modelo.usuarios;
 
-import java.awt.Color;
-import java.awt.Font;
-import javax.swing.BorderFactory;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JWindow;
+import java.awt.Color;
 
 
 /**
@@ -23,7 +17,7 @@ import javax.swing.JWindow;
  * @author Adrian
  */
 public class loginn extends javax.swing.JPanel {
-    DaoUsuario daoU = new DaoUsuario();
+DaoUsuario daoU = new DaoUsuario();
     usuarios us = new usuarios();
    pantallaPrincipal pP;
     public loginn(pantallaPrincipal pP) {
@@ -38,6 +32,7 @@ public class loginn extends javax.swing.JPanel {
         
        
     }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -224,11 +219,71 @@ txtcorreo.setForeground(Color.black);}
     }//GEN-LAST:event_txtcontraseMousePressed
 
     private void btnentrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnentrarActionPerformed
-   us = daoU.login(txtcorreo.getText(), txtcontrase.getText());
+  us = daoU.login(txtcorreo.getText(), txtcontrase.getText());
+if(us.getIdusuario() != 0){          
+            
+    pantallaPrincipal m = new pantallaPrincipal(us);
+   Inicio h=new Inicio();
+        h.setSize(982,740);
+        h.setLocation(0,0);
+        
+        
+    // Mostrar toast de bienvenida
+    Utilidades.mostrarToast(m, "¡Bienvenido, " + us.getTipoUsuario().toUpperCase() + "!");
+
+    String tipo = us.getTipoUsuario();
+    switch(tipo){
+        case "Vendedor" -> {
+            pantallaPrincipal.btnSalidas.setEnabled(true);
+            pantallaPrincipal.btnCategorias.setEnabled(false);
+            pantallaPrincipal.btnClientes.setEnabled(true);
+            pantallaPrincipal.btnEntradas.setEnabled(false);
+            pantallaPrincipal.btnProveedor.setEnabled(false);
+            pantallaPrincipal.btnProductos.setEnabled(false);
+           }
+        case "Almacenero" -> {
+            pantallaPrincipal.btnSalidas.setEnabled(false);
+            pantallaPrincipal.btnCategorias.setEnabled(true);
+            pantallaPrincipal.btnClientes.setEnabled(false);
+            pantallaPrincipal.btnEntradas.setEnabled(true);
+            pantallaPrincipal.btnProveedor.setEnabled(true);
+            pantallaPrincipal.btnProductos.setEnabled(true);
+           }
+        case "Administrador" -> {
+            pantallaPrincipal.btnSalidas.setEnabled(true);
+            pantallaPrincipal.btnCategorias.setEnabled(true);
+            pantallaPrincipal.btnClientes.setEnabled(true);
+            pantallaPrincipal.btnEntradas.setEnabled(true);
+            pantallaPrincipal.btnProveedor.setEnabled(true);
+            pantallaPrincipal.btnProductos.setEnabled(true);
+           }
+        default -> Utilidades.mostrarToast(m, "⚠ Usuario sin rol válido.");
+    }
+
+    pantallaPrincipal.txtiduser.setText(us.getIdusuario() + "");
+    pantallaPrincipal.txtuser.setText(us.getUsuario());
+    m.setVisible(true);
+    
+    dispose();
+} else {
+    Utilidades.mostrarToast(null, "❌ Acceso denegado");
+}
+        
+        
+    
+        
+        
+        
+        
+        
+     /*    us = daoU.login(txtcorreo.getText(), txtcontrase.getText());
 if(us.getIdusuario() != 0){
     pantallaPrincipal m = new pantallaPrincipal();
-    mostrarToast(m, "¡Bienvenido, " + us.getTipoUsuario().toUpperCase() + "!");
-
+    Utilidades.mostrarToast(m, "¡Bienvenido, " + us.getTipoUsuario().toUpperCase() + "!");
+pantallaPrincipal.txtiduser.setText(us.getIdusuario() + "");
+pantallaPrincipal.txtuser.setText(us.getUsuario());
+m.setVisible(true);
+dispose();
    
     String tipo = us.getTipoUsuario();
     switch(tipo){
@@ -258,7 +313,7 @@ if(us.getIdusuario() != 0){
 
           
         }
-        default -> mostrarToast(m, "⚠ Usuario sin rol válido.");
+        default -> Utilidades.mostrarToast(m, "⚠ Usuario sin rol válido.");
     }
   
     pantallaPrincipal.txtiduser.setText(us.getIdusuario() + "");
@@ -267,8 +322,8 @@ if(us.getIdusuario() != 0){
     m.setVisible(true);
     dispose();
 } else {
-    mostrarToast(null, "❌ Acceso denegado");
-}
+    Utilidades.mostrarToast(null, "❌ Acceso denegado");
+}*/
     }//GEN-LAST:event_btnentrarActionPerformed
 
     private void txtcorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcorreoActionPerformed
@@ -286,31 +341,8 @@ if(us.getIdusuario() != 0){
     private void lblregistrarseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblregistrarseMouseExited
         lblregistrarse.setForeground(Color.gray);
     }//GEN-LAST:event_lblregistrarseMouseExited
-public void mostrarToast(JFrame parent, String mensaje) {
-    JWindow toast = new JWindow(parent);
-    JPanel panel = new JPanel();
-    panel.setBackground(new Color(30, 30, 30)); // fondo oscuro
-    panel.setBorder(BorderFactory.createLineBorder(Color.ORANGE, 2)); // borde llamativo
-
-    JLabel label = new JLabel(mensaje);
-    label.setForeground(Color.WHITE);
-    label.setFont(new Font("Segoe UI", Font.BOLD, 14));
-    label.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
-    panel.add(label);
-
-    toast.add(panel);
-    toast.pack();
-
-    int x = parent.getX() + parent.getWidth() - toast.getWidth() - 20;
-    int y = parent.getY() + 20;
-    toast.setLocation(x, y);
-
-    toast.setAlwaysOnTop(true);
-    toast.setVisible(true);
-
-    new javax.swing.Timer(3000, e -> toast.dispose()).start();
-}
-
+  
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnentrar;
     private javax.swing.JLabel jLabel10;

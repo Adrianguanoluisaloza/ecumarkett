@@ -33,8 +33,8 @@ clientes c=new clientes();
 DaoClientes daoC=new DaoClientes();
 DefaultTableModel modelo=new DefaultTableModel();
 
-entradas e=new entradas();
-DaoEntradas DaoE=new DaoEntradas();
+//entradas e=new entradas();
+//DaoEntradas DaoE=new DaoEntradas();
 DaoProductos daoPR=new DaoProductos();
 int filaSeleccionada;
     /**
@@ -42,7 +42,7 @@ int filaSeleccionada;
      */
     public Salidas() {
         initComponents();
-         numSalida();
+  //       numSalida();
     }
 
     void numSalida(){
@@ -92,7 +92,7 @@ int filaSeleccionada;
         txtTotal = new javax.swing.JTextField();
         txtigv = new javax.swing.JTextField();
         txtsubtotal = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        btnAgregar = new javax.swing.JButton();
         btnRecargar = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         btnGenerar = new javax.swing.JButton();
@@ -256,21 +256,21 @@ int filaSeleccionada;
 
         jLabel16.setText("Sub Total:");
 
-        jLabel19.setText("IGV:");
+        jLabel19.setText("Iva 12%");
 
         jLabel20.setText("Total:");
 
         txtsubtotal.setToolTipText("");
         txtsubtotal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jButton3.setText("Agregar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregar.setText("Agregar");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnAgregarActionPerformed(evt);
             }
         });
 
-        btnRecargar.setText("Recargar");
+        btnRecargar.setText("Editar ");
         btnRecargar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRecargarActionPerformed(evt);
@@ -325,7 +325,7 @@ int filaSeleccionada;
                                         .addGap(12, 12, 12)
                                         .addComponent(btnDelete)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jButton3)))
+                                        .addComponent(btnAgregar)))
                                 .addGap(10, 10, 10)))))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
@@ -335,7 +335,7 @@ int filaSeleccionada;
                 .addGroup(jpanelRound5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpanelRound5Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton3)
+                        .addComponent(btnAgregar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelRound5Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -437,7 +437,7 @@ int filaSeleccionada;
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarProductoActionPerformed
-       /*c.setDocumento(txtdocumento.getText());
+       c.setDocumento(txtdocumento.getText());
         if(daoC.buscar(c)){
             txtidcliente.setText(c.getIdCliente()+"");
             txtnombreCliente.setText(c.getNombre()+" "+c.getApellido());
@@ -446,37 +446,65 @@ int filaSeleccionada;
             txtcorreo.setText(c.getCorreo());
         }else{
            
-            //limpiarCampos();
-        }*/
+     JOptionPane.showMessageDialog(null,"No se encuentra el producto");
+        }
     }//GEN-LAST:event_btnBuscarProductoActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         for(int i=0;i<tablaSalidas.getRowCount();i++){
             if(tablaSalidas.getValueAt(i, 1).toString().equals(txtidProducto.getText())){
-             //   MenuPrincipal m=new MenuPrincipal();
-              //  m.advertencia("El Producto ya esta agregado");
+             
+               JOptionPane.showMessageDialog(null,"El Producto ya esta agregado");
                 modelo.removeRow(i);
             }
         }
         agregaEntrada();
         limpiarDatosPod();
         sumarTotal();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnRecargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecargarActionPerformed
-        // TODO add your handling code here: 
-        double precio,cant;
-        precio=Double.parseDouble(txtprecio.getText());
-        cant=Double.parseDouble(txtcantidad.getText());
-        modelo.setValueAt(txtcantidad.getText().trim(), filaSeleccionada, 4);
-        modelo.setValueAt((precio*cant)+"", filaSeleccionada, 5);
+        
+    if (filaSeleccionada < 0) {
+        JOptionPane.showMessageDialog(null, "Primero debes seleccionar una fila de la tabla.");
+        return;
+    }
+
+
+    if (txtprecio.getText().trim().isEmpty() || txtcantidad.getText().trim().isEmpty()) {
+        JOptionPane.showMessageDialog(null, "No dejes campos vacíos. Ingresa el precio y la cantidad.");
+        return;
+    }
+
+    double precio, cant;
+
+    try {
+        precio = Double.parseDouble(txtprecio.getText().trim());
+        cant = Double.parseDouble(txtcantidad.getText().trim());
+
+       
+        if (precio < 0 || cant <= 0) {
+            JOptionPane.showMessageDialog(null, "El precio y la cantidad deben ser mayores a cero.");
+            return;
+        }
+
+      
+        modelo.setValueAt(String.valueOf(cant), filaSeleccionada, 4); // cantidad
+        modelo.setValueAt(String.format("%.2f", (precio * cant)), filaSeleccionada, 5); // total
+
+        
         sumarTotal();
+
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(null, "Precio y cantidad deben ser valores numéricos válidos.");
+    }
+
     }//GEN-LAST:event_btnRecargarActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         if(filaSeleccionada==-1){
-            //MenuPrincipal m2=new MenuPrincipal();
-           // m2.error("Seleccione un producto de la tabla para eliminar");
+          
+         JOptionPane.showMessageDialog(null,"Seleccione un producto de la tabla para eliminar");
         }else{
             modelo.removeRow(filaSeleccionada);
             sumarTotal();
@@ -484,33 +512,72 @@ int filaSeleccionada;
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarActionPerformed
-         s.setNumSalida(txtnsalida.getText());
-        s.setIdCliente(Integer.parseInt(txtidcliente.getText()));
-        s.setSubtotal(Double.parseDouble(txtsubtotal.getText()));
-        s.setIgv(Double.parseDouble(txtigv.getText()));
-        s.setTotal(Double.parseDouble(txtTotal.getText()));
-        Calendar cal;
-        int d,m,a;
-        cal=jcFecha.getCalendar();
-        d=cal.get(Calendar.DAY_OF_MONTH);
-        m=cal.get(Calendar.MONTH);
-        a=cal.get(Calendar.YEAR)-1900;
-        s.setFecha(new Date(a,m,d));
-        if(daoS.insertar(s)){
-            guardarDetalle();
-           
-            restaStock();
-     
-            numSalida();
-            limpiarDatosPod();
-            limpaDatosCliente();
-            txtTotal.setText("");
-            txtsubtotal.setText("");
-            txtigv.setText("");
-            limpiarTablaSalida();
-        }else{
-          
-        }
+        try {
+   
+    if (txtnsalida.getText().isEmpty() || txtidcliente.getText().isEmpty() ||
+        txtsubtotal.getText().isEmpty() || txtigv.getText().isEmpty() ||
+        txtTotal.getText().isEmpty() || jcFecha.getDate() == null) {
+        
+        JOptionPane.showMessageDialog(null, "¡Todos los campos deben estar llenos!");
+        return;
+    }
+
+
+    int idCliente;
+    double subtotal, igv, total;
+
+    try {
+        idCliente = Integer.parseInt(txtidcliente.getText());
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(null, "El ID del cliente debe ser un número entero.");
+        return;
+    }
+
+    try {
+        subtotal = Double.parseDouble(txtsubtotal.getText());
+        igv = Double.parseDouble(txtigv.getText());
+        total = Double.parseDouble(txtTotal.getText());
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(null, "Subtotal, IGV y Total deben ser números válidos.");
+        return;
+    }
+
+   
+    s.setNumSalida(txtnsalida.getText());
+    s.setIdCliente(idCliente);
+    s.setSubtotal(subtotal);
+    s.setIgv(igv);
+    s.setTotal(total);
+
+    
+    Calendar cal = jcFecha.getCalendar();
+    if (cal == null) {
+        JOptionPane.showMessageDialog(null, "Debes seleccionar una fecha.");
+        return;
+    }
+    int d = cal.get(Calendar.DAY_OF_MONTH);
+    int m = cal.get(Calendar.MONTH);
+    int a = cal.get(Calendar.YEAR) - 1900;
+    s.setFecha(new Date(a, m, d));
+
+   
+    if (daoS.insertar(s)) {
+        guardarDetalle();
+        restaStock();
+        numSalida();
+        limpiarDatosPod();
+        limpaDatosCliente();
+        txtTotal.setText("");
+        txtsubtotal.setText("");
+        txtigv.setText("");
+        limpiarTablaSalida();
+    } else {
+        JOptionPane.showMessageDialog(null, "Error al guardar la salida. Intenta de nuevo.");
+    }
+
+} catch (Exception ex) {
+    JOptionPane.showMessageDialog(null, "Ocurrió un error: " + ex.getMessage());
+}
     }//GEN-LAST:event_btnGenerarActionPerformed
 
     private void tablaSalidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaSalidasMouseClicked
@@ -518,9 +585,9 @@ int filaSeleccionada;
     }//GEN-LAST:event_tablaSalidasMouseClicked
 
     private void btnBuscarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarClientesActionPerformed
-    /* BuscaProductos.tipo=true;
+    BuscaProductos.tipo=true;
         BuscaProductos m=new BuscaProductos();
-        m.setVisible(true);*/
+        m.setVisible(true);
     }//GEN-LAST:event_btnBuscarClientesActionPerformed
 private void agregaEntrada(){
         double precio,total,importe;
@@ -555,21 +622,21 @@ private void agregaEntrada(){
     }
 
     void guardarDetalle(){
-       /* for(int i=0;i<tablaSalidas.getRowCount();i++){
+        for(int i=0;i<tablaSalidas.getRowCount();i++){
         int idSalida=Integer.parseInt(tablaSalidas.getValueAt(i, 0).toString());
         int idEntrada=Integer.parseInt(tablaSalidas.getValueAt(i, 1).toString());
         int cant=Integer.parseInt(tablaSalidas.getValueAt(i, 4).toString());
         Double importe=Double.valueOf(tablaSalidas.getValueAt(i, 5).toString());
         daoDS.insertar(idSalida, idEntrada, cant, importe);
-        }*/
+        }
     }
 
     void restaStock(){
-       /* for(int i=0;i<tablaSalidas.getRowCount();i++){
+        for(int i=0;i<tablaSalidas.getRowCount();i++){
         int idEntrada=Integer.parseInt(tablaSalidas.getValueAt(i, 1).toString());
         int cant=Integer.parseInt(tablaSalidas.getValueAt(i, 4).toString());
         daoPR.restarStock(idEntrada, cant);
-        }*/
+        }
     }
 
     void sumarTotal(){
@@ -609,12 +676,12 @@ private void agregaEntrada(){
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregar;
     private RSMaterialComponent.RSButtonMaterialIconDos btnBuscarClientes;
     private javax.swing.JButton btnBuscarProducto;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnGenerar;
     private javax.swing.JButton btnRecargar;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

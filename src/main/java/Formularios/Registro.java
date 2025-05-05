@@ -72,7 +72,7 @@ public class Registro extends javax.swing.JPanel {
         txtpass = new javax.swing.JPasswordField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaUsuarios = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
 
         setMinimumSize(new java.awt.Dimension(1270, 790));
         setPreferredSize(new java.awt.Dimension(1270, 790));
@@ -138,7 +138,7 @@ public class Registro extends javax.swing.JPanel {
                 btnActualizarActionPerformed(evt);
             }
         });
-        jpanelRound2.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 620, -1, 40));
+        jpanelRound2.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 620, 150, 40));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 153, 255));
@@ -216,7 +216,7 @@ public class Registro extends javax.swing.JPanel {
                 btnRegistrarse1ActionPerformed(evt);
             }
         });
-        jpanelRound2.add(btnRegistrarse1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 550, 130, 40));
+        jpanelRound2.add(btnRegistrarse1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 550, 150, 40));
 
         btnEliminar.setBackground(new java.awt.Color(0, 153, 255));
         btnEliminar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -229,7 +229,7 @@ public class Registro extends javax.swing.JPanel {
                 btnEliminarActionPerformed(evt);
             }
         });
-        jpanelRound2.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 550, 100, 40));
+        jpanelRound2.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 550, 130, 40));
 
         btnBuscar.setBackground(new java.awt.Color(0, 153, 255));
         btnBuscar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -242,7 +242,7 @@ public class Registro extends javax.swing.JPanel {
                 btnBuscarActionPerformed(evt);
             }
         });
-        jpanelRound2.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 620, 90, 40));
+        jpanelRound2.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 620, 100, 40));
         jpanelRound2.add(txtpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 440, 200, -1));
 
         tablaUsuarios.setModel(new javax.swing.table.DefaultTableModel(
@@ -262,16 +262,16 @@ public class Registro extends javax.swing.JPanel {
 
         jpanelRound2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, 560, 614));
 
-        jButton1.setBackground(new java.awt.Color(0, 153, 255));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Regresar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnRegresar.setBackground(new java.awt.Color(0, 153, 255));
+        btnRegresar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnRegresar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegresar.setText("Regresar");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnRegresarActionPerformed(evt);
             }
         });
-        jpanelRound2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 680, 110, 40));
+        jpanelRound2.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 680, 130, 40));
 
         add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1270, 790));
     }// </editor-fold>//GEN-END:initComponents
@@ -289,8 +289,7 @@ private void listarUsuarios(){
             ob[6]=lista.get(i).getCorreo();
             ob[7]=lista.get(i).getTipoUsuario();
             ob[8]=lista.get(i).getUsuario();
-            ob[9]=lista.get(i).getPassword();
-            //ob[10]=lista.get(i).getCiudad();
+            ob[9]=lista.get(i).getPassword();        
             modelo.addRow(ob);
         }
        tablaUsuarios.setModel(modelo);
@@ -316,8 +315,8 @@ void limpiarCampos(){
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         int fila=tablaUsuarios.getSelectedRow();
         if(fila==-1&&txtidusuarios.getText().isEmpty()){
-            //MenuPrincipal m=new MenuPrincipal();
-            // m.advertencia("Seleccione un Usuario");
+       
+           JOptionPane.showMessageDialog(null,"Seleccione un Usuario");
         }else{
             u.setIdusuario(Integer.parseInt(txtidusuarios.getText()));
             u.setNombre(txtnombre.getText());
@@ -329,16 +328,16 @@ void limpiarCampos(){
             u.setTipoUsuario(cmbTipoUsuario.getSelectedItem().toString());
             u.setUsuario(txtusuario.getText());
             u.setPassword(txtpass.getText());
-            //u.setCiudad(cmbciudad.getSelectedItem().toString());
+         
             if(dao.editar(u.getNombre(),u.getApellido(),u.getDocumento(),u.getDireccion(),u.getTelefono(),u.getCorreo(),u.getTipoUsuario(),u.getUsuario(),u.getPassword(),u.getIdusuario())){
-                //MenuPrincipal m=new MenuPrincipal();
-                //  m.exito("Se modifico con exito");
+                
+                 JOptionPane.showMessageDialog(null,"Se modifico con exito");
                 limpiarCampos();
                 limpiarTablaUsuarios();
                 listarUsuarios();
             }else{
-                // MenuPrincipal m=new MenuPrincipal();
-                // m.error("Erorr al modificar el Usuario");
+                
+              JOptionPane.showMessageDialog(null,"Erorr al modificar el Usuario");
             }
         }
     }//GEN-LAST:event_btnActualizarActionPerformed
@@ -357,16 +356,16 @@ void limpiarCampos(){
         u.setTipoUsuario(cmbTipoUsuario.getSelectedItem().toString());
         u.setUsuario(txtusuario.getText());
         u.setPassword(txtpass.getText());
-        // u.setCiudad(cmbciudad.getSelectedItem().toString());
+       
         if(dao.insertar(u.getNombre(),u.getApellido(),u.getDocumento(),u.getDireccion(),u.getTelefono(),u.getCorreo(),u.getTipoUsuario(),u.getUsuario(),u.getPassword())){
-            //MenuPrincipal m=new MenuPrincipal();
-            //m.exito("Usuario Registrado Con Exito");
+         
+        JOptionPane.showMessageDialog(null,"Usuario Registrado Con Exito");
             limpiarCampos();
             limpiarTablaUsuarios();
             listarUsuarios();
         }else{
-            //MenuPrincipal m=new MenuPrincipal();
-            // m.error("No se pudo registrar el Usuario");
+           
+            JOptionPane.showMessageDialog(null,"No se pudo registrar el Usuario");
         }
     }//GEN-LAST:event_btnRegistrarse1ActionPerformed
 
@@ -379,12 +378,12 @@ void limpiarCampos(){
                 limpiarCampos();
                 limpiarTablaUsuarios();
                 listarUsuarios();
-                //   MenuPrincipal m=new MenuPrincipal();
-                //  m.exito("Se Elimino con exito el Usuario");
+             
+              JOptionPane.showMessageDialog(null,"Se Elimino con exito el Usuario");
             }
         }else{
-            // MenuPrincipal m=new MenuPrincipal();
-            //  m.advertencia("Seleccione un Usuario");
+           
+             JOptionPane.showMessageDialog(null,"Seleccione un Usuario");
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
@@ -402,8 +401,8 @@ void limpiarCampos(){
             txtpass.setText(u.getPassword());
             cmbTipoUsuario.setSelectedItem(u.getTipoUsuario());
         }else{
-            //MenuPrincipal m=new MenuPrincipal();
-            // m.advertencia("El Usuario No Existe");
+       
+          JOptionPane.showMessageDialog(null,"El Usuario No Existe");
             limpiarCampos();
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
@@ -418,17 +417,16 @@ void limpiarCampos(){
         txttelefono.setText(tablaUsuarios.getValueAt(fila, 5).toString());
         txtcorreo.setText(tablaUsuarios.getValueAt(fila, 6).toString());
         cmbTipoUsuario.setSelectedItem(tablaUsuarios.getValueAt(fila, 7).toString());
-        txtusuario.setText(tablaUsuarios.getValueAt(fila, 8).toString());
-        //  cmbciudad.setSelectedItem(tablaUsuarios.getValueAt(fila, 9).toString());
+        txtusuario.setText(tablaUsuarios.getValueAt(fila, 8).toString());      
         u.setDocumento(txtdocumento.getText());
         if(dao.buscar(u)){
             txtpass.setText(u.getPassword());
         }
     }//GEN-LAST:event_tablaUsuariosMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
        pP.mostrarLogin();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -436,9 +434,9 @@ void limpiarCampos(){
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnRegistrarse1;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JComboBox<String> cmbTipoUsuario;
     private javax.swing.JComboBox<String> cmbciudad;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
