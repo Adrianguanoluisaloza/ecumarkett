@@ -59,17 +59,17 @@ public class loginn extends javax.swing.JPanel {
         rSLabelBorderRound1 = new rojeru_san.rslabel.RSLabelBorderRound();
         lblregistrarse = new javax.swing.JLabel();
 
-        jpanelRound1.setBackground(new java.awt.Color(102, 204, 255));
+        jpanelRound1.setBackground(new java.awt.Color(255, 255, 255));
         jpanelRound1.setPreferredSize(new java.awt.Dimension(982, 740));
         jpanelRound1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setForeground(new java.awt.Color(102, 204, 255));
         jLabel5.setText("Inicia sesion");
         jpanelRound1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setForeground(new java.awt.Color(102, 204, 255));
         jLabel6.setText("Correo electronico");
         jpanelRound1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, -1, -1));
 
@@ -97,7 +97,7 @@ public class loginn extends javax.swing.JPanel {
         jpanelRound1.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 310, -1));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setForeground(new java.awt.Color(102, 204, 255));
         jLabel9.setText("Contraseña");
         jpanelRound1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, -1, -1));
 
@@ -122,12 +122,12 @@ public class loginn extends javax.swing.JPanel {
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setForeground(new java.awt.Color(102, 204, 255));
         jLabel10.setText("¿No tienes cuenta?");
         jpanelRound1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 540, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setForeground(new java.awt.Color(102, 204, 255));
         jLabel11.setText("ECUMARKET");
         jpanelRound1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 460, -1, -1));
 
@@ -146,7 +146,7 @@ public class loginn extends javax.swing.JPanel {
         rSLabelBorderRound1.setForeground(new java.awt.Color(255, 0, 0));
         rSLabelBorderRound1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lalaa.png"))); // NOI18N
         rSLabelBorderRound1.setText("Ecumarket");
-        rSLabelBorderRound1.setBgBorde(new java.awt.Color(102, 204, 255));
+        rSLabelBorderRound1.setBgBorde(new java.awt.Color(255, 255, 255));
         jpanelRound1.add(rSLabelBorderRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 210, 250, 230));
 
         lblregistrarse.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -184,14 +184,14 @@ public class loginn extends javax.swing.JPanel {
     private void txtcorreoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtcorreoFocusGained
            if (txtcorreo.getText().equals("alguien@example.com")) {
             txtcorreo.setText("");
-            txtcorreo.setForeground(Color.black);
+            txtcorreo.setForeground(Color.blue);
         }
     }//GEN-LAST:event_txtcorreoFocusGained
 
     private void txtcorreoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtcorreoFocusLost
-       if (String.valueOf(txtcontrase.getPassword()).isEmpty()) {
-            txtcontrase.setText("********");
-            txtcontrase.setForeground(Color.gray);
+      if (txtcorreo.getText().equals("")) {
+            txtcorreo.setText("alguien@example.com");
+            txtcorreo.setForeground(Color.gray);
         }
     }//GEN-LAST:event_txtcorreoFocusLost
 
@@ -202,13 +202,13 @@ txtcontrase.setForeground(Color.gray);
 }
 if(txtcorreo.getText().equals("alguien@example.com")){
 txtcorreo.setText("");
-txtcorreo.setForeground(Color.black);}
+txtcorreo.setForeground(Color.blue);}
     }//GEN-LAST:event_txtcorreoMousePressed
 
     private void txtcontraseFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtcontraseFocusGained
          if (String.valueOf(txtcontrase.getPassword()).equals("********")) {
             txtcontrase.setText("");
-            txtcontrase.setForeground(Color.black);
+            txtcontrase.setForeground(Color.blue);
         }
     }//GEN-LAST:event_txtcontraseFocusGained
 
@@ -262,9 +262,9 @@ if(us.getIdusuario() != 0){
     }
   
     pantallaPrincipal.txtiduser.setText(us.getIdusuario() + "");
-    pantallaPrincipal.txtuser.setText(us.getUsuario());
+    pantallaPrincipal.iconusuario.setText(us.getUsuario());
 
-    m.setVisible(true);
+    //m.setVisible(true);
     dispose();
 } else {
     mostrarToast(null, "❌ Acceso denegado");
