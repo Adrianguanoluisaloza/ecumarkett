@@ -25,11 +25,17 @@ import javax.swing.JWindow;
 public class loginn extends javax.swing.JPanel {
     DaoUsuario daoU = new DaoUsuario();
     usuarios us = new usuarios();
-   
+   pantallaPrincipal pP;
+    public loginn(pantallaPrincipal pP) {
+        
+        initComponents();
+        this.pP = pP;
+        lblregistrarse.setText("<html><u>Registrate!</u></html>");
+    }
 
     public loginn() {
         initComponents();
-        btnRegistrar.setText("<html><u>Registrate!</u></html>");
+        
        
     }
     /**
@@ -47,12 +53,11 @@ public class loginn extends javax.swing.JPanel {
         txtcorreo = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         txtcontrase = new javax.swing.JPasswordField();
-        btnRegistrar = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         btnentrar = new javax.swing.JButton();
-        btnSalir = new button.MyButton();
         rSLabelBorderRound1 = new rojeru_san.rslabel.RSLabelBorderRound();
+        lblregistrarse = new javax.swing.JLabel();
 
         jpanelRound1.setBackground(new java.awt.Color(102, 204, 255));
         jpanelRound1.setPreferredSize(new java.awt.Dimension(982, 740));
@@ -61,12 +66,12 @@ public class loginn extends javax.swing.JPanel {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Inicia sesion");
-        jpanelRound1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, -1, -1));
+        jpanelRound1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Correo electronico");
-        jpanelRound1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, -1, -1));
+        jpanelRound1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, -1, -1));
 
         txtcorreo.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         txtcorreo.setForeground(new java.awt.Color(204, 204, 204));
@@ -89,12 +94,12 @@ public class loginn extends javax.swing.JPanel {
                 txtcorreoActionPerformed(evt);
             }
         });
-        jpanelRound1.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 310, -1));
+        jpanelRound1.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 310, -1));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Contraseña");
-        jpanelRound1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, -1, -1));
+        jpanelRound1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, -1, -1));
 
         txtcontrase.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         txtcontrase.setForeground(new java.awt.Color(204, 204, 204));
@@ -113,38 +118,18 @@ public class loginn extends javax.swing.JPanel {
                 txtcontraseMousePressed(evt);
             }
         });
-        jpanelRound1.add(txtcontrase, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 310, -1));
-
-        btnRegistrar.setBackground(new java.awt.Color(51, 204, 255));
-        btnRegistrar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
-        btnRegistrar.setText("Registrar");
-        btnRegistrar.setBorder(null);
-        btnRegistrar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnRegistrarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnRegistrarMouseExited(evt);
-            }
-        });
-        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarActionPerformed(evt);
-            }
-        });
-        jpanelRound1.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, 110, 30));
+        jpanelRound1.add(txtcontrase, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, 310, -1));
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("¿No tienes cuenta?");
-        jpanelRound1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, -1, -1));
+        jpanelRound1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 540, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("ECUMARKET");
-        jpanelRound1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 290, -1, -1));
+        jpanelRound1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 460, -1, -1));
 
         btnentrar.setBackground(new java.awt.Color(0, 153, 255));
         btnentrar.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
@@ -155,41 +140,43 @@ public class loginn extends javax.swing.JPanel {
                 btnentrarActionPerformed(evt);
             }
         });
-        jpanelRound1.add(btnentrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 200, -1));
-
-        btnSalir.setForeground(new java.awt.Color(255, 255, 255));
-        btnSalir.setText("Cerrar");
-        btnSalir.setBorderColor(new java.awt.Color(204, 204, 204));
-        btnSalir.setColor(new java.awt.Color(51, 153, 255));
-        btnSalir.setColorClick(new java.awt.Color(153, 255, 255));
-        btnSalir.setColorOver(new java.awt.Color(0, 204, 51));
-        btnSalir.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        btnSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalirActionPerformed(evt);
-            }
-        });
-        jpanelRound1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 310, 90, 40));
+        jpanelRound1.add(btnentrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 480, 200, -1));
 
         rSLabelBorderRound1.setBackground(new java.awt.Color(255, 255, 255));
         rSLabelBorderRound1.setForeground(new java.awt.Color(255, 0, 0));
         rSLabelBorderRound1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lalaa.png"))); // NOI18N
         rSLabelBorderRound1.setText("Ecumarket");
-        rSLabelBorderRound1.setBgBorde(new java.awt.Color(0, 204, 255));
-        jpanelRound1.add(rSLabelBorderRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 40, 250, 230));
+        rSLabelBorderRound1.setBgBorde(new java.awt.Color(102, 204, 255));
+        jpanelRound1.add(rSLabelBorderRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 210, 250, 230));
+
+        lblregistrarse.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblregistrarse.setText("Registrate!");
+        lblregistrarse.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblregistrarseMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblregistrarseMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblregistrarseMouseExited(evt);
+            }
+        });
+        jpanelRound1.add(lblregistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 543, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, 1015, Short.MAX_VALUE)
+                .addComponent(jpanelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, 1270, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, 493, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, 784, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -284,37 +271,21 @@ if(us.getIdusuario() != 0){
 }
     }//GEN-LAST:event_btnentrarActionPerformed
 
-    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-       // Registrar Re=new Registrar();
-       // Re.setVisible(true);
-
-    }//GEN-LAST:event_btnRegistrarActionPerformed
-
-    private void btnRegistrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarMouseExited
-        btnRegistrar.setForeground(Color.gray);
-    }//GEN-LAST:event_btnRegistrarMouseExited
-
-    private void btnRegistrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarMouseEntered
-        btnRegistrar.setForeground(Color.black);
-    }//GEN-LAST:event_btnRegistrarMouseEntered
-
     private void txtcorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcorreoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtcorreoActionPerformed
 
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        //System.exit(0);
-     int opcion = JOptionPane.showConfirmDialog(null,
-        "¿Estás seguro de que quieres cerrar la aplicación?",
-        "Confirmar salida",
-        JOptionPane.YES_NO_OPTION,
-        JOptionPane.QUESTION_MESSAGE);
+    private void lblregistrarseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblregistrarseMouseClicked
+        pP.mostrarRegistro();
+    }//GEN-LAST:event_lblregistrarseMouseClicked
 
-if (opcion == JOptionPane.YES_OPTION) {
-    System.exit(0); 
-}
+    private void lblregistrarseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblregistrarseMouseEntered
+        lblregistrarse.setForeground(Color.black);
+    }//GEN-LAST:event_lblregistrarseMouseEntered
 
-    }//GEN-LAST:event_btnSalirActionPerformed
+    private void lblregistrarseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblregistrarseMouseExited
+        lblregistrarse.setForeground(Color.gray);
+    }//GEN-LAST:event_lblregistrarseMouseExited
 public void mostrarToast(JFrame parent, String mensaje) {
     JWindow toast = new JWindow(parent);
     JPanel panel = new JPanel();
@@ -341,8 +312,6 @@ public void mostrarToast(JFrame parent, String mensaje) {
 }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnRegistrar;
-    private button.MyButton btnSalir;
     private javax.swing.JButton btnentrar;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -350,6 +319,7 @@ public void mostrarToast(JFrame parent, String mensaje) {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private Modelo.JpanelRound jpanelRound1;
+    private javax.swing.JLabel lblregistrarse;
     private rojeru_san.rslabel.RSLabelBorderRound rSLabelBorderRound1;
     private javax.swing.JPasswordField txtcontrase;
     private javax.swing.JTextField txtcorreo;

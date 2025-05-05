@@ -21,13 +21,8 @@ public class pantallaPrincipal extends javax.swing.JFrame {
     public pantallaPrincipal() {
         initComponents();
         setLocationRelativeTo(null);
-        loginn L = new loginn();
-        L.setSize(1270, 790);
-        L.setLocation(0, 0);
-        contenedor.removeAll();
-        contenedor.add(L, BorderLayout.CENTER);
-        contenedor.revalidate();
-        contenedor.repaint();     
+        mostrarLogin();
+            
 }
    /**
      * This method is called from within the constructor to initialize the form.
@@ -230,7 +225,25 @@ public class pantallaPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+public void mostrarLogin() {
+loginn L = new loginn(this);
+        L.setSize(1270, 790);
+        L.setLocation(0, 0);
+        contenedor.removeAll();
+        contenedor.add(L, BorderLayout.CENTER);
+        contenedor.revalidate();
+        contenedor.repaint(); 
+}
+public void mostrarRegistro(){
 
+Registro R = new Registro(this);
+        R.setSize(1270, 790);
+        R.setLocation(0, 0);
+        contenedor.removeAll();
+        contenedor.add(R, BorderLayout.CENTER);
+        contenedor.revalidate();
+        contenedor.repaint(); 
+}
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         btnInicio.setSelected(false);
         btnCategorias.setSelected(false);
