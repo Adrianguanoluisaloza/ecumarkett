@@ -10,15 +10,26 @@ import Dao.DaoDetalleSalida;
 import Dao.DaoEntradas;
 import Dao.DaoProductos;
 import Dao.DaoSalida;
+import Dao.conexion;
 import Modelo.clientes;
 import Modelo.entradas;
 import Modelo.salidas;
 import java.awt.Toolkit;
+import java.io.File;
+import java.sql.Connection;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
 
 
 
@@ -34,8 +45,8 @@ clientes c=new clientes();
 DaoClientes daoC=new DaoClientes();
 DefaultTableModel modelo=new DefaultTableModel();
 
-//entradas e=new entradas();
-//DaoEntradas DaoE=new DaoEntradas();
+entradas e=new entradas();
+DaoEntradas DaoE=new DaoEntradas();
 DaoProductos daoPR=new DaoProductos();
 int filaSeleccionada;
     /**
@@ -43,7 +54,7 @@ int filaSeleccionada;
      */
     public Salidas() {
         initComponents();
-  //       numSalida();
+    numSalida();
     }
 
     void numSalida(){
@@ -458,10 +469,12 @@ int filaSeleccionada;
     }//GEN-LAST:event_btnBuscarProductoActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+
+
         for(int i=0;i<tablaSalidas.getRowCount();i++){
             if(tablaSalidas.getValueAt(i, 1).toString().equals(txtidProducto.getText())){
-             
-               JOptionPane.showMessageDialog(null,"El Producto ya esta agregado");
+      
+            JOptionPane.showMessageDialog(null,"El Producto ya esta agregado");
                 modelo.removeRow(i);
             }
         }
@@ -472,40 +485,12 @@ int filaSeleccionada;
 
     private void btnRecargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecargarActionPerformed
         
-    if (filaSeleccionada < 0) {
-        JOptionPane.showMessageDialog(null, "Primero debes seleccionar una fila de la tabla.");
-        return;
-    }
-
-
-    if (txtprecio.getText().trim().isEmpty() || txtcantidad.getText().trim().isEmpty()) {
-        JOptionPane.showMessageDialog(null, "No dejes campos vacíos. Ingresa el precio y la cantidad.");
-        return;
-    }
-
-    double precio, cant;
-
-    try {
-        precio = Double.parseDouble(txtprecio.getText().trim());
-        cant = Double.parseDouble(txtcantidad.getText().trim());
-
-       
-        if (precio < 0 || cant <= 0) {
-            JOptionPane.showMessageDialog(null, "El precio y la cantidad deben ser mayores a cero.");
-            return;
-        }
-
-      
-        modelo.setValueAt(String.valueOf(cant), filaSeleccionada, 4); // cantidad
-        modelo.setValueAt(String.format("%.2f", (precio * cant)), filaSeleccionada, 5); // total
-
-        
+   double precio,cant;
+        precio=Double.parseDouble(txtprecio.getText());
+        cant=Double.parseDouble(txtcantidad.getText());
+        modelo.setValueAt(txtcantidad.getText().trim(), filaSeleccionada, 4);
+        modelo.setValueAt((precio*cant)+"", filaSeleccionada, 5);
         sumarTotal();
-
-    } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(null, "Precio y cantidad deben ser valores numéricos válidos.");
-    }
-
     }//GEN-LAST:event_btnRecargarActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
@@ -519,72 +504,35 @@ int filaSeleccionada;
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarActionPerformed
-        try {
-   
-    if (txtnsalida.getText().isEmpty() || txtidcliente.getText().isEmpty() ||
-        txtsubtotal.getText().isEmpty() || txtigv.getText().isEmpty() ||
-        txtTotal.getText().isEmpty() || jcFecha.getDate() == null) {
-        
-        JOptionPane.showMessageDialog(null, "¡Todos los campos deben estar llenos!");
-        return;
-    }
-
-
-    int idCliente;
-    double subtotal, igv, total;
-
-    try {
-        idCliente = Integer.parseInt(txtidcliente.getText());
-    } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(null, "El ID del cliente debe ser un número entero.");
-        return;
-    }
-
-    try {
-        subtotal = Double.parseDouble(txtsubtotal.getText());
-        igv = Double.parseDouble(txtigv.getText());
-        total = Double.parseDouble(txtTotal.getText());
-    } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(null, "Subtotal, IGV y Total deben ser números válidos.");
-        return;
-    }
-
-   
     s.setNumSalida(txtnsalida.getText());
-    s.setIdCliente(idCliente);
-    s.setSubtotal(subtotal);
-    s.setIgv(igv);
-    s.setTotal(total);
-
-    
-    Calendar cal = jcFecha.getCalendar();
-    if (cal == null) {
-        JOptionPane.showMessageDialog(null, "Debes seleccionar una fecha.");
-        return;
-    }
-    int d = cal.get(Calendar.DAY_OF_MONTH);
-    int m = cal.get(Calendar.MONTH);
-    int a = cal.get(Calendar.YEAR) - 1900;
-    s.setFecha(new Date(a, m, d));
-
-   
-    if (daoS.insertar(s)) {
-        guardarDetalle();
-        restaStock();
-        numSalida();
-        limpiarDatosPod();
-        limpaDatosCliente();
-        txtTotal.setText("");
-        txtsubtotal.setText("");
-        txtigv.setText("");
-        limpiarTablaSalida();
-    } else {
-        JOptionPane.showMessageDialog(null, "Error al guardar la salida. Intenta de nuevo.");
-    }
-
-} catch (Exception ex) {
-    JOptionPane.showMessageDialog(null, "Ocurrió un error: " + ex.getMessage());
-}
+        s.setIdCliente(Integer.parseInt(txtidcliente.getText()));
+        s.setSubtotal(Double.parseDouble(txtsubtotal.getText()));
+        s.setIgv(Double.parseDouble(txtigv.getText()));
+        s.setTotal(Double.parseDouble(txtTotal.getText()));
+        Calendar cal;
+        int d,m,a;
+        cal=jcFecha.getCalendar();
+        d=cal.get(Calendar.DAY_OF_MONTH);
+        m=cal.get(Calendar.MONTH);
+        a=cal.get(Calendar.YEAR)-1900;
+        s.setFecha(new Date(a,m,d));
+        if(daoS.insertar(s)){
+            guardarDetalle();
+           
+           JOptionPane.showMessageDialog(null,"Salida Registrada Con Exito");
+            restaStock();
+            GenerarPDF(txtnsalida.getText());
+            numSalida();
+            limpiarDatosPod();
+            limpaDatosCliente();
+            txtTotal.setText("");
+            txtsubtotal.setText("");
+            txtigv.setText("");
+            limpiarTablaSalida();
+        }else{
+            
+           JOptionPane.showMessageDialog(null,"No se pudo registrar la Salida");
+        }
     }//GEN-LAST:event_btnGenerarActionPerformed
 
     private void tablaSalidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaSalidasMouseClicked
@@ -687,6 +635,24 @@ private void agregaEntrada(){
         for(int i=0;i<modelo.getRowCount();i++){
             modelo.removeRow(i);
             i=0-1;
+        }
+    }
+    private final Connection conection=new conexion().conectar();
+
+    void GenerarPDF(String numSalida){
+        Map p=new HashMap();
+        p.put("numSalida", numSalida);
+        JasperReport report;
+        JasperPrint print;
+
+        try{
+            report=JasperCompileManager.compileReport(new File("").getAbsolutePath()+"/src/reportes/Salida.jasper");
+            print=JasperFillManager.fillReport(report, p, conection);
+            JasperViewer view=new JasperViewer(print,false);
+            view.setTitle("Documento Salida N° "+numSalida);
+            view.setVisible(true);
+        }catch(JRException e){
+            e.printStackTrace();
         }
     }
 

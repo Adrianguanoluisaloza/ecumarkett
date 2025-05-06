@@ -6,10 +6,12 @@ package Dao;
 
 
 import Modelo.salidas;
+import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -41,7 +43,7 @@ public class DaoSalida {
             }else{
                 return false;
             }
-        }catch(Exception e){
+        }catch(SQLException e){
             JOptionPane.showConfirmDialog(null, e);
             return false;
         }
@@ -83,7 +85,7 @@ public class DaoSalida {
                 c.setEstado(rs.getString(8));
                 lista.add(c);
             }
-        }catch(Exception e){
+        }catch(SQLException e){
             JOptionPane.showConfirmDialog(null, e);
         }
         return lista;
@@ -108,7 +110,7 @@ public class DaoSalida {
                 c.setEstado(rs.getString(8));
                 lista.add(c);
             }
-        }catch(Exception e){
+        }catch(SQLException e){
             JOptionPane.showConfirmDialog(null, e);
         }
         return lista;
@@ -127,7 +129,7 @@ public class DaoSalida {
             }else{
                 return false;
             }
-        }catch(Exception e){
+        }catch(SQLException e){
             JOptionPane.showConfirmDialog(null, e);
             return false;
         }
@@ -145,7 +147,7 @@ public class DaoSalida {
             }else{
                cant=0; 
             }
-        }catch(Exception e){
+        }catch(SQLException e){
             JOptionPane.showConfirmDialog(null, e);
             
         }
@@ -164,7 +166,7 @@ public class DaoSalida {
             }else{
                total=0; 
             }
-        }catch(Exception e){
+        }catch(SQLException e){
             JOptionPane.showConfirmDialog(null, e);
             
         }
@@ -180,12 +182,12 @@ public class DaoSalida {
         }
 
         ps = con.prepareStatement(SQL);
-        ps.setString(1, c.getEstado()); // será "Aprobada"
+        ps.setString(1, c.getEstado());
         ps.setInt(2, c.getIdSalida());
 
         int n = ps.executeUpdate();
         return n != 0;
-    } catch (Exception e) {
+    } catch (HeadlessException | SQLException e) {
         JOptionPane.showMessageDialog(null, "Error al aprobar: " + e.getMessage());
         return false;
     }

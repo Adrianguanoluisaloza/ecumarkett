@@ -5,12 +5,26 @@
 package Formularios;
 
 import Dao.DaoClientes;
+import Dao.conexion;
 import Modelo.clientes;
 import java.awt.Toolkit;
+import java.io.File;
+import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
+/*import net.sf.jasperreports.engine.*;*/
 /**
  *
  * @author Adrian
@@ -70,6 +84,7 @@ private void listarClientes(){
         btnEditar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         btnBuscar = new RSMaterialComponent.RSButtonMaterialIconDos();
+        btnPdf = new RSMaterialComponent.RSButtonMaterialIconDos();
         jpanelRound5 = new Modelo.JpanelRound();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaclientes = new javax.swing.JTable();
@@ -185,6 +200,17 @@ private void listarClientes(){
             }
         });
         jpanelRound4.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 40, 40));
+
+        btnPdf.setBackground(new java.awt.Color(213, 137, 137));
+        btnPdf.setBackgroundHover(new java.awt.Color(14, 76, 117));
+        btnPdf.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.INSERT_DRIVE_FILE);
+        btnPdf.setRound(25);
+        btnPdf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPdfActionPerformed(evt);
+            }
+        });
+        jpanelRound4.add(btnPdf, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 50, -1));
 
         add(jpanelRound4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 310, 540));
 
@@ -414,7 +440,96 @@ if (dao.buscar(c)) {
             evt.consume(); // 
             Toolkit.getDefaultToolkit().beep();}
     }//GEN-LAST:event_txtdocumentoKeyTyped
-void limpiarCampos(){
+
+    private void btnPdfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPdfActionPerformed
+/*
+     String bd = "inventario2";
+    String url = "jdbc:mysql://localhost:3306/" + bd;
+    String user = "root";
+    String pass = "";
+
+    // Cargar el archivo jrxml como recurso desde el classpath
+    InputStream reportStream = getClass().getResourceAsStream("/reportes/reporteClientes.jrxml");
+
+    if (reportStream == null) {
+        JOptionPane.showMessageDialog(null, "No se encontró el archivo del reporte en el classpath.");
+        return;
+    }
+
+    try (Connection conn = DriverManager.getConnection(url, user, pass)) {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+
+        // Compilar el reporte desde el stream
+        JasperReport jr = JasperCompileManager.compileReport(reportStream);
+
+        // Si tienes parámetros, agrégalos aquí
+        Map<String, Object> parameters = new HashMap<>();
+
+        // Llenar el reporte con datos
+        JasperPrint jp = JasperFillManager.fillReport(jr, parameters, conn);
+
+        // Mostrar visor
+        JasperViewer.viewReport(jp, false);
+    } catch (ClassNotFoundException e) {
+        JOptionPane.showMessageDialog(null, "No se encontró el driver JDBC: " + e.getMessage());
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(null, "Error al conectar a la base de datos: " + e.getMessage());
+    } catch (JRException e) {
+        JOptionPane.showMessageDialog(null, "Error al generar el reporte: " + e.getMessage());
+    }
+*/
+// TODO add your handling code here:
+         GenerarPDF();
+      // JasperPrint reporteTodoProducto(); 
+
+    }//GEN-LAST:event_btnPdfActionPerformed
+/*
+  JasperPrint reporteTodoProducto() throws JRException, IOException{
+    Connection cone = new conexion().conectar();
+    File reporte = new File(getClass().getResource("/reporte/reporteClientes.jasper").getFile());
+    
+    if (!reporte.exists()) {
+        return null;
+    }
+    
+    try {
+        InputStream is = new BufferedInputStream(new FileInputStream(reporte.getCanonicalPath()));
+        JasperReport jr = (JasperReport) JRLoader.loadObject(is);
+        JasperPrint jp = JasperFillManager.fillReport(jr, null, cone);
+        return jp;
+    } catch (FileNotFoundException ex) {
+        Logger.getLogger(DaoClientes.class.getName()).log(Level.SEVERE,null, ex);
+} 
+     
+    return null;
+}}
+
+*/
+private final Connection conection=new conexion().conectar();
+    
+   void GenerarPDF() {
+    Map<String, Object> parametros = new HashMap<>();
+
+    try {
+        InputStream reportStream = getClass().getClassLoader().getResourceAsStream("target/reports/reporteClientes.jrxml");
+
+        if (reportStream == null) {
+            JOptionPane.showMessageDialog(null, "No se encontró el archivo .jrxml");
+            return;
+        }
+
+        JasperReport report = JasperCompileManager.compileReport(reportStream);
+        JasperPrint print = JasperFillManager.fillReport(report, parametros, conection);
+        JasperViewer viewer = new JasperViewer(print, false);
+        viewer.setTitle("Lista de Clientes");
+        viewer.setVisible(true);
+
+    } catch (JRException e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(null, "Error al generar el reporte: " + e.getMessage());
+    }
+}
+    void limpiarCampos(){
         txtidcliente.setText("");
         txtnombre.setText("");
         txtapellido.setText("");
@@ -430,12 +545,15 @@ void limpiarCampos(){
             i=0-1;
         }
     }
+    
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private RSMaterialComponent.RSButtonMaterialIconDos btnBuscar;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
+    private RSMaterialComponent.RSButtonMaterialIconDos btnPdf;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;

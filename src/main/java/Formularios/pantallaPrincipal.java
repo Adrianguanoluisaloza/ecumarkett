@@ -108,6 +108,7 @@ private usuarios us;
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ecumarket");
         setBackground(new java.awt.Color(102, 204, 255));
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         contenedor.setBackground(new java.awt.Color(102, 204, 255));

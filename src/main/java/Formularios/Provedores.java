@@ -5,12 +5,22 @@
 package Formularios;
 
 import Dao.DaoProveedor;
+import Dao.conexion;
 import Modelo.proveedor;
 import java.awt.Toolkit;
+import java.io.File;
+import java.sql.Connection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -83,6 +93,7 @@ proveedor p=new proveedor();
         txtid = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         btnBuscar = new RSMaterialComponent.RSButtonMaterialIconDos();
+        btnReporte = new RSMaterialComponent.RSButtonMaterialIconDos();
         rSLabelBorderRound1 = new rojeru_san.rslabel.RSLabelBorderRound();
 
         setBackground(new java.awt.Color(51, 153, 255));
@@ -244,6 +255,17 @@ proveedor p=new proveedor();
         });
         jpanelRound2.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, 150, 30));
 
+        btnReporte.setBackground(new java.awt.Color(213, 137, 137));
+        btnReporte.setBackgroundHover(new java.awt.Color(14, 76, 117));
+        btnReporte.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.INSERT_DRIVE_FILE);
+        btnReporte.setRound(25);
+        btnReporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReporteActionPerformed(evt);
+            }
+        });
+        jpanelRound2.add(btnReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 50, -1));
+
         add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 760, 320));
 
         rSLabelBorderRound1.setForeground(new java.awt.Color(0, 0, 0));
@@ -393,6 +415,11 @@ if (dao.buscarDocumento(p)) {
         }
     }//GEN-LAST:event_txtdocumentoKeyTyped
 
+    private void btnReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReporteActionPerformed
+        // TODO add your handling code here:
+        GenerarPDF();
+    }//GEN-LAST:event_btnReporteActionPerformed
+
 void limpiarCampos(){
         txtid.setText("");
         txtnombre.setText("");
@@ -410,11 +437,30 @@ void limpiarCampos(){
             i=0-1;
         }
     }
+    
+       private Connection conection=new conexion().conectar();
+
+    void GenerarPDF(){
+        Map p=new HashMap();
+        JasperReport report;
+        JasperPrint print;
+
+        try{
+            report=JasperCompileManager.compileReport(new File("").getAbsolutePath()+"/src/reportes/reporteProveedores.jrxml");
+            print=JasperFillManager.fillReport(report,p, conection);
+            JasperViewer view=new JasperViewer(print,false);
+            view.setTitle("Lista De Proveedore");
+            view.setVisible(true);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private RSMaterialComponent.RSButtonMaterialIconDos btnBuscar;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
+    private RSMaterialComponent.RSButtonMaterialIconDos btnReporte;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
