@@ -32,7 +32,7 @@ private usuarios us;
         initComponents();
         setLocationRelativeTo(null);
          bloquearComponentes();
-        mostrarLogin();
+        
        
         
             
@@ -40,8 +40,9 @@ private usuarios us;
     
     public pantallaPrincipal(usuarios usuarioLogueado) {
         initComponents();
-        btnLogin.setVisible(false);
+        btnRegistro.setVisible(false);
         setLocationRelativeTo(null);
+        mostrarInicio();
         this.us = usuarioLogueado; 
        configurarPorRol();
        activarComponentes();
@@ -49,6 +50,17 @@ private usuarios us;
         iconusuario.setText(us.getUsuario());
         Utilidades.mostrarToast(this, "¡Bienvenido, " + us.getTipoUsuario().toUpperCase() + "!"); // Muestra un mensaje de bienvenida
         
+    }
+    public void mostrarInicio() {
+        Inicio i=new Inicio();
+        i.setSize(990,790);
+        i.setLocation(0,0);
+
+        contenedor.removeAll();
+        contenedor.add(i,BorderLayout.CENTER);
+        contenedor.revalidate();
+        contenedor.repaint();
+      
     }
     public void mostrarLogin() {
         loginn L = new loginn(this); 
@@ -74,7 +86,7 @@ private usuarios us;
                                         
     }
     public void mostrarBotonLogin(boolean visible) {
-    btnLogin.setVisible(visible);
+    btnRegistro.setVisible(visible);
 }
    /**
      * This method is called from within the constructor to initialize the form.
@@ -100,7 +112,7 @@ private usuarios us;
         rSLabelBorderRound1 = new rojeru_san.rslabel.RSLabelBorderRound();
         iconusuario = new RSMaterialComponent.RSLabelTextIcon();
         btnCerrarSesionn = new RSMaterialComponent.RSButtonMaterialIconDos();
-        btnLogin = new RSMaterialComponent.RSButtonMaterialIconDos();
+        btnRegistro = new RSMaterialComponent.RSButtonMaterialIconDos();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ecumarket");
@@ -267,16 +279,16 @@ private usuarios us;
         });
         panelbotones.add(btnCerrarSesionn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 600, 210, -1));
 
-        btnLogin.setBackground(new java.awt.Color(102, 204, 255));
-        btnLogin.setText("Login");
-        btnLogin.setBackgroundHover(new java.awt.Color(153, 204, 0));
-        btnLogin.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SPA);
-        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+        btnRegistro.setBackground(new java.awt.Color(102, 204, 255));
+        btnRegistro.setText("Registrar");
+        btnRegistro.setBackgroundHover(new java.awt.Color(153, 204, 0));
+        btnRegistro.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SPA);
+        btnRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLoginActionPerformed(evt);
+                btnRegistroActionPerformed(evt);
             }
         });
-        panelbotones.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 660, 100, 40));
+        panelbotones.add(btnRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 660, 100, 40));
 
         getContentPane().add(panelbotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 0, 250, 790));
 
@@ -324,7 +336,7 @@ int confirm = JOptionPane.showConfirmDialog(
         btnSalir.setSelected(false);
         btnSalida.setSelected(true);
         Salidas Sal=new Salidas();
-        Sal.setSize(1270, 790);
+        Sal.setSize(990,790);
         Sal.setLocation(0,0);
 
         contenedor.removeAll();
@@ -345,7 +357,7 @@ int confirm = JOptionPane.showConfirmDialog(
         btnSalir.setSelected(false);
         btnSalida.setSelected(false);
         ListaSalidas LS=new ListaSalidas();
-        LS.setSize(982,740);
+        LS.setSize(990,790);
         LS.setLocation(0,0);
 
         contenedor.removeAll();
@@ -432,7 +444,7 @@ int confirm = JOptionPane.showConfirmDialog(
         btnSalir.setSelected(false);
         btnSalida.setSelected(false);
         Clientes CL=new Clientes();
-        CL.setSize(982,740);
+        CL.setSize(990,790);
         CL.setLocation(0,0);
 
         contenedor.removeAll();
@@ -489,7 +501,7 @@ int confirm = JOptionPane.showConfirmDialog(
     private void btnCerrarSesionnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionnActionPerformed
  
 bloquearComponentes();
-btnLogin.setVisible(false); 
+btnRegistro.setVisible(false); 
 pantallaPrincipal.txtiduser.setText("");
 pantallaPrincipal.iconusuario.setText("");
 JOptionPane.showMessageDialog(null, "Sesión cerrada correctamente", "Cerrar sesión", JOptionPane.INFORMATION_MESSAGE);
@@ -498,7 +510,7 @@ JOptionPane.showMessageDialog(null, "Sesión cerrada correctamente", "Cerrar ses
 mostrarLogin();
     }//GEN-LAST:event_btnCerrarSesionnActionPerformed
 
-    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+    private void btnRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroActionPerformed
        btnCerrarSesionn.setSelected(false);
 btnInicio.setSelected(false);
 btnCategorias.setSelected(false);
@@ -510,16 +522,16 @@ btnProductos.setSelected(false);
 btnSalir.setSelected(false);
 btnSalida.setSelected(false);
 btnCerrarSesionn.setSelected(false); 
-        btnLogin.setSelected(true);
-        loginn L=new loginn(this);
-        L.setSize(982,740);
-        L.setLocation(0,0);
+        btnRegistro.setSelected(true);
+        Registro R=new Registro();
+        R.setSize(990,790);
+        R.setLocation(0,0);
 
         contenedor.removeAll();
-        contenedor.add(L,BorderLayout.CENTER);
+        contenedor.add(R,BorderLayout.CENTER);
         contenedor.revalidate();
         contenedor.repaint();
-    }//GEN-LAST:event_btnLoginActionPerformed
+    }//GEN-LAST:event_btnRegistroActionPerformed
 
     private void configurarPorRol() {
         String tipo = us.getTipoUsuario();
@@ -579,7 +591,7 @@ btnCerrarSesionn.setSelected(false);
     btnCerrarSesionn.setEnabled(false);
     btnSalida.setEnabled(false);
     btnSalir.setEnabled(true);
-    btnLogin.setVisible(false);
+    btnRegistro.setVisible(false);
     
 }
     private void activarComponentes() {
@@ -653,9 +665,9 @@ public JPanel getContenedor() {
     public static RSMaterialComponent.RSButtonMaterialIconDos btnClientes;
     public static RSMaterialComponent.RSButtonMaterialIconDos btnEntradas;
     public static RSMaterialComponent.RSButtonMaterialIconShadow btnInicio;
-    public static RSMaterialComponent.RSButtonMaterialIconDos btnLogin;
     public static RSMaterialComponent.RSButtonMaterialIconDos btnProductos;
     public static RSMaterialComponent.RSButtonMaterialIconShadow btnProveedor;
+    public static RSMaterialComponent.RSButtonMaterialIconDos btnRegistro;
     public static RSMaterialComponent.RSButtonMaterialIconDos btnSalida;
     public static RSMaterialComponent.RSButtonMaterialIconDos btnSalidas;
     public static RSMaterialComponent.RSButtonMaterialIconDos btnSalir;

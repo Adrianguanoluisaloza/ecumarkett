@@ -249,11 +249,11 @@ if(us.getIdusuario() != 0){
     String tipo = us.getTipoUsuario();
      if (tipo.equalsIgnoreCase("Administrador")) {
         lblregistrarse.setVisible(true);
-        pantallaPrincipal.btnLogin.setVisible(tipo.equalsIgnoreCase("Administrador"));
+        pantallaPrincipal.btnRegistro.setVisible(tipo.equalsIgnoreCase("Administrador"));
     } else {
         lblregistrarse.setVisible(false);
         
-        pantallaPrincipal.btnLogin.setVisible(false);
+        pantallaPrincipal.btnRegistro.setVisible(false);
     }
    
 

@@ -107,7 +107,8 @@ NumberFormat formato = NumberFormat.getNumberInstance(Locale.US);
         selectmes = new com.toedter.calendar.JMonthChooser();
         btnProcesaar = new RSMaterialComponent.RSButtonMaterialIconDos();
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tablaClienteF.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -119,6 +120,8 @@ NumberFormat formato = NumberFormat.getNumberInstance(Locale.US);
         ));
         jScrollPane1.setViewportView(tablaClienteF);
 
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 692, 387, 92));
+
         tablaProductoF.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -128,6 +131,8 @@ NumberFormat formato = NumberFormat.getNumberInstance(Locale.US);
             }
         ));
         jScrollPane2.setViewportView(tablaProductoF);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(456, 692, 304, 92));
 
         javax.swing.GroupLayout panelClientesFLayout = new javax.swing.GroupLayout(panelClientesF);
         panelClientesF.setLayout(panelClientesFLayout);
@@ -140,6 +145,8 @@ NumberFormat formato = NumberFormat.getNumberInstance(Locale.US);
             .addGap(0, 314, Short.MAX_VALUE)
         );
 
+        jPanel1.add(panelClientesF, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 366, -1, -1));
+
         javax.swing.GroupLayout panelProdFLayout = new javax.swing.GroupLayout(panelProdF);
         panelProdF.setLayout(panelProdFLayout);
         panelProdFLayout.setHorizontalGroup(
@@ -151,19 +158,27 @@ NumberFormat formato = NumberFormat.getNumberInstance(Locale.US);
             .addGap(0, 314, Short.MAX_VALUE)
         );
 
+        jPanel1.add(panelProdF, new org.netbeans.lib.awtextra.AbsoluteConstraints(456, 366, -1, -1));
+
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setText("Entradas");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 322, -1, -1));
 
         txttotalEntradas.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         txttotalEntradas.setForeground(new java.awt.Color(255, 0, 51));
         txttotalEntradas.setText("100 $/.");
+        jPanel1.add(txttotalEntradas, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 316, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setText("Salidas");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 322, -1, -1));
 
         txttotalSalidas.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         txttotalSalidas.setForeground(new java.awt.Color(0, 153, 51));
         txttotalSalidas.setText("100 $/.");
+        jPanel1.add(txttotalSalidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(287, 316, -1, -1));
+        jPanel1.add(selectAño, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 326, -1, -1));
+        jPanel1.add(selectmes, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 326, -1, -1));
 
         btnProcesaar.setBackground(new java.awt.Color(0, 204, 255));
         btnProcesaar.setText("Calcular");
@@ -175,66 +190,7 @@ NumberFormat formato = NumberFormat.getNumberInstance(Locale.US);
                 btnProcesaarActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(panelClientesF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(42, 42, 42)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(panelProdF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addComponent(txttotalEntradas)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel6)
-                        .addGap(18, 18, 18)
-                        .addComponent(txttotalSalidas)
-                        .addGap(18, 18, 18)
-                        .addComponent(selectAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(selectmes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnProcesaar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(96, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(327, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txttotalEntradas)
-                            .addComponent(jLabel4)
-                            .addComponent(txttotalSalidas)
-                            .addComponent(jLabel6))
-                        .addComponent(selectAño, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(selectmes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnProcesaar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(panelClientesF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelProdF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
+        jPanel1.add(btnProcesaar, new org.netbeans.lib.awtextra.AbsoluteConstraints(611, 316, 120, 32));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

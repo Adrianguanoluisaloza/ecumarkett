@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Formularios;
-
+import javax.swing.JOptionPane;
 import Dao.DaoUsuario;
 import Modelo.usuarios;
 import java.awt.Color;
@@ -15,18 +15,26 @@ import java.awt.Color;
 public class Login extends javax.swing.JFrame {
 DaoUsuario daoU = new DaoUsuario();
     usuarios us = new usuarios();
+    
    pantallaPrincipal pP;
     public Login(pantallaPrincipal pP) {
         
+
         initComponents();
         this.pP = pP;
-        lblregistrarse.setText("<html><u>Registrate!</u></html>");
+        
+        
     }
     /**
      * Creates new form Login
      */
     public Login() {
+        setUndecorated(true);
+        
         initComponents();
+        setLocationRelativeTo(null);
+        
+        
     }
 
     /**
@@ -45,29 +53,33 @@ DaoUsuario daoU = new DaoUsuario();
         jLabel9 = new javax.swing.JLabel();
         txtcontrase = new javax.swing.JPasswordField();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         btnentrar = new javax.swing.JButton();
-        rSLabelBorderRound1 = new rojeru_san.rslabel.RSLabelBorderRound();
         lblregistrarse = new javax.swing.JLabel();
         btnVerPassword = new javax.swing.JCheckBox();
         btnSalir = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        rSLabelBorderRound1 = new rojeru_san.rslabel.RSLabelBorderRound();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setMinimumSize(new java.awt.Dimension(970, 587));
+        setPreferredSize(new java.awt.Dimension(970, 587));
         getContentPane().setLayout(new java.awt.CardLayout());
 
-        jpanelRound1.setBackground(new java.awt.Color(102, 204, 255));
+        jpanelRound1.setBackground(new java.awt.Color(255, 255, 255));
         jpanelRound1.setPreferredSize(new java.awt.Dimension(982, 740));
         jpanelRound1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setForeground(new java.awt.Color(102, 204, 255));
         jLabel5.setText("Inicia sesion");
-        jpanelRound1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, -1, -1));
+        jpanelRound1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setForeground(new java.awt.Color(102, 204, 255));
         jLabel6.setText("Correo electronico");
-        jpanelRound1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, -1, -1));
+        jpanelRound1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, -1, -1));
 
         txtcorreo.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         txtcorreo.setForeground(new java.awt.Color(204, 204, 204));
@@ -91,12 +103,12 @@ DaoUsuario daoU = new DaoUsuario();
                 txtcorreoActionPerformed(evt);
             }
         });
-        jpanelRound1.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, 310, -1));
+        jpanelRound1.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 310, -1));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setForeground(new java.awt.Color(102, 204, 255));
         jLabel9.setText("Contraseña");
-        jpanelRound1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, -1, -1));
+        jpanelRound1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, -1, -1));
 
         txtcontrase.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         txtcontrase.setForeground(new java.awt.Color(204, 204, 204));
@@ -116,18 +128,13 @@ DaoUsuario daoU = new DaoUsuario();
                 txtcontraseMousePressed(evt);
             }
         });
-        jpanelRound1.add(txtcontrase, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, 310, -1));
+        jpanelRound1.add(txtcontrase, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 340, 310, -1));
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("¿No tienes cuenta?");
-        jpanelRound1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 540, -1, -1));
-
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("ECUMARKET");
-        jpanelRound1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 410, -1, -1));
+        jpanelRound1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 520, -1, 20));
 
         btnentrar.setBackground(new java.awt.Color(0, 153, 255));
         btnentrar.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
@@ -138,16 +145,10 @@ DaoUsuario daoU = new DaoUsuario();
                 btnentrarActionPerformed(evt);
             }
         });
-        jpanelRound1.add(btnentrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 460, 200, -1));
-
-        rSLabelBorderRound1.setBackground(new java.awt.Color(255, 255, 255));
-        rSLabelBorderRound1.setForeground(new java.awt.Color(255, 0, 0));
-        rSLabelBorderRound1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lalaa.png"))); // NOI18N
-        rSLabelBorderRound1.setText("Ecumarket");
-        rSLabelBorderRound1.setBgBorde(new java.awt.Color(102, 204, 255));
-        jpanelRound1.add(rSLabelBorderRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 210, 250, 230));
+        jpanelRound1.add(btnentrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 200, -1));
 
         lblregistrarse.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblregistrarse.setForeground(new java.awt.Color(255, 255, 255));
         lblregistrarse.setText("Registrate!");
         lblregistrarse.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -160,17 +161,17 @@ DaoUsuario daoU = new DaoUsuario();
                 lblregistrarseMouseExited(evt);
             }
         });
-        jpanelRound1.add(lblregistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 543, -1, -1));
+        jpanelRound1.add(lblregistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 520, -1, -1));
 
         btnVerPassword.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnVerPassword.setForeground(new java.awt.Color(255, 255, 255));
+        btnVerPassword.setForeground(new java.awt.Color(102, 204, 255));
         btnVerPassword.setText("Ver Contraseña");
         btnVerPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVerPasswordActionPerformed(evt);
             }
         });
-        jpanelRound1.add(btnVerPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 420, 140, -1));
+        jpanelRound1.add(btnVerPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 390, 140, -1));
 
         btnSalir.setBackground(new java.awt.Color(0, 153, 255));
         btnSalir.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
@@ -181,7 +182,24 @@ DaoUsuario daoU = new DaoUsuario();
                 btnSalirActionPerformed(evt);
             }
         });
-        jpanelRound1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 460, 80, -1));
+        jpanelRound1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 430, 80, -1));
+
+        jPanel1.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        rSLabelBorderRound1.setBackground(new java.awt.Color(255, 255, 255));
+        rSLabelBorderRound1.setForeground(new java.awt.Color(255, 0, 0));
+        rSLabelBorderRound1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Loginregister/logoo.png"))); // NOI18N
+        rSLabelBorderRound1.setText("Ecumarket");
+        rSLabelBorderRound1.setBgBorde(new java.awt.Color(102, 204, 255));
+        jPanel1.add(rSLabelBorderRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 300, 230));
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("ECUMARKET");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, -1, -1));
+
+        jpanelRound1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 0, 360, 590));
 
         getContentPane().add(jpanelRound1, "card2");
 
@@ -271,6 +289,7 @@ DaoUsuario daoU = new DaoUsuario();
                     pantallaPrincipal.btnEntradas.setEnabled(true);
                     pantallaPrincipal.btnProveedor.setEnabled(true);
                     pantallaPrincipal.btnProductos.setEnabled(true);
+                    pantallaPrincipal.btnRegistro.setVisible(true);
                 }
                 default -> Utilidades.mostrarToast(m, "⚠ Usuario sin rol válido.");
             }
@@ -284,56 +303,6 @@ DaoUsuario daoU = new DaoUsuario();
             Utilidades.mostrarToast(null, "❌ Acceso denegado");
         }
         
-
-    
-
-        /*    us = daoU.login(txtcorreo.getText(), txtcontrase.getText());
-        if(us.getIdusuario() != 0){
-            pantallaPrincipal m = new pantallaPrincipal();
-            Utilidades.mostrarToast(m, "¡Bienvenido, " + us.getTipoUsuario().toUpperCase() + "!");
-            pantallaPrincipal.txtiduser.setText(us.getIdusuario() + "");
-            pantallaPrincipal.txtuser.setText(us.getUsuario());
-            m.setVisible(true);
-            dispose();
-
-            String tipo = us.getTipoUsuario();
-            switch(tipo){
-                case "Vendedor" -> {
-                    pantallaPrincipal.btnSalidas.setEnabled(true);
-                    pantallaPrincipal.btnCategorias.setEnabled(false);
-                    pantallaPrincipal.btnClientes.setEnabled(true);
-                    pantallaPrincipal.btnEntradas.setEnabled(false);
-                    pantallaPrincipal.btnProveedor.setEnabled(false);
-                    pantallaPrincipal.btnProductos.setEnabled(false);
-                }
-                case "Almacenero" -> {
-                    pantallaPrincipal.btnSalidas.setEnabled(false);
-                    pantallaPrincipal.btnCategorias.setEnabled(true);
-                    pantallaPrincipal.btnClientes.setEnabled(false);
-                    pantallaPrincipal.btnEntradas.setEnabled(true);
-                    pantallaPrincipal.btnProveedor.setEnabled(true);
-                    pantallaPrincipal.btnProductos.setEnabled(true);
-                }
-                case "Administrador" -> {
-                    pantallaPrincipal.btnSalidas.setEnabled(true);
-                    pantallaPrincipal.btnCategorias.setEnabled(true);
-                    pantallaPrincipal.btnClientes.setEnabled(true);
-                    pantallaPrincipal.btnEntradas.setEnabled(true);
-                    pantallaPrincipal.btnProveedor.setEnabled(true);
-                    pantallaPrincipal.btnProductos.setEnabled(true);
-
-                }
-                default -> Utilidades.mostrarToast(m, "⚠ Usuario sin rol válido.");
-            }
-
-            pantallaPrincipal.txtiduser.setText(us.getIdusuario() + "");
-            pantallaPrincipal.txtuser.setText(us.getUsuario());
-
-            m.setVisible(true);
-            dispose();
-        } else {
-            Utilidades.mostrarToast(null, "❌ Acceso denegado");
-        }*/
     }//GEN-LAST:event_btnentrarActionPerformed
 
     private void lblregistrarseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblregistrarseMouseClicked
@@ -357,7 +326,17 @@ DaoUsuario daoU = new DaoUsuario();
     }//GEN-LAST:event_btnVerPasswordActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        System.exit(0);
+      int confirm = JOptionPane.showConfirmDialog(
+        this,
+        "¿Estás seguro de que quieres cerrar la aplicación?",
+        "Confirmar salida",
+        JOptionPane.YES_NO_OPTION,
+        JOptionPane.QUESTION_MESSAGE
+    );
+
+    if (confirm == JOptionPane.YES_OPTION) {
+        System.exit(0); 
+    }
     }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
@@ -404,6 +383,7 @@ DaoUsuario daoU = new DaoUsuario();
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private Modelo.JpanelRound jpanelRound1;
     private javax.swing.JLabel lblregistrarse;
     private rojeru_san.rslabel.RSLabelBorderRound rSLabelBorderRound1;
