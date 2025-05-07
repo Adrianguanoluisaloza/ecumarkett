@@ -148,15 +148,15 @@ private void listarClientes(){
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Direccion");
-        jpanelRound4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
+        jLabel7.setText("Dirección");
+        jpanelRound4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
 
         txtdireccion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jpanelRound4.add(txtdireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 320, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Telefono");
+        jLabel8.setText("Teléfono");
         jpanelRound4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
 
         txttelefono.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -238,7 +238,7 @@ private void listarClientes(){
 
             },
             new String [] {
-                "ID", "Nombre", "Apellido", "Cedula", "Direccion", "Telefono", "Correo"
+                "ID", "Nombre", "Apellido", "Cedula", "Dirección ", "Teléfono ", "Correo"
             }
         ));
         tablaclientes.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -268,7 +268,7 @@ private void listarClientes(){
         add(jpanelRound5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, 550, 550));
 
         lblGestionClientes.setBorder(null);
-        lblGestionClientes.setText("Gestion De Clientes");
+        lblGestionClientes.setText("Gestión De Clientes");
         lblGestionClientes.setFont(new java.awt.Font("Microsoft Tai Le", 1, 48)); // NOI18N
         add(lblGestionClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, 510, 100));
     }// </editor-fold>//GEN-END:initComponents

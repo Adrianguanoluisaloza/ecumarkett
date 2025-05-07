@@ -111,7 +111,7 @@ productos p=new productos();
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Id categoria");
+        jLabel6.setText("Id categoría ");
         jpanelRound2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 201, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -146,7 +146,7 @@ productos p=new productos();
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Categoria");
+        jLabel7.setText("Categoría ");
         jpanelRound2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 266, -1, -1));
         jpanelRound2.add(txttprecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 350, 270, -1));
 

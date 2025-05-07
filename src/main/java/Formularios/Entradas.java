@@ -337,7 +337,7 @@ entradas e=new entradas();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 56)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Gestion De stock");
+        jLabel1.setText("Gestión De stock");
         jpanelRound1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 460, 50));
 
         add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1270, 790));

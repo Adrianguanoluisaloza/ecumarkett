@@ -12,7 +12,6 @@ import Formularios.ListaSalidas;
 import Formularios.Provedores;
 import Formularios.Salidas;
 import Formularios.Utilidades;
-import Formularios.loginn;
 import Modelo.usuarios;
 import java.awt.BorderLayout;
 import javax.swing.JOptionPane;
@@ -51,6 +50,10 @@ private usuarios us;
         Utilidades.mostrarToast(this, "¡Bienvenido, " + us.getTipoUsuario().toUpperCase() + "!"); // Muestra un mensaje de bienvenida
         
     }
+    public void cerrar(){
+    this.dispose();
+    Login L = new Login();
+    L.setVisible(true);}
     public void mostrarInicio() {
         Inicio i=new Inicio();
         i.setSize(990,790);
@@ -61,19 +64,7 @@ private usuarios us;
         contenedor.revalidate();
         contenedor.repaint();
       
-    }
-    public void mostrarLogin() {
-        loginn L = new loginn(this); 
-        L.setSize(990,790);
-        L.setLocation(0, 0); 
-        contenedor.removeAll(); 
-        contenedor.add(L, BorderLayout.CENTER); 
-        contenedor.revalidate(); 
-       contenedor.repaint(); 
-      
-    }
-
-  
+    } 
     public void mostrarRegistro() {
         Registro R = new Registro(this); 
         R.setSize(990,790); 
@@ -155,7 +146,7 @@ private usuarios us;
         panelbotones.add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 210, -1));
 
         btnCategorias.setBackground(new java.awt.Color(102, 204, 255));
-        btnCategorias.setText("Categorias");
+        btnCategorias.setText("Categorías");
         btnCategorias.setBackgroundHover(new java.awt.Color(51, 255, 51));
         btnCategorias.setFont(new java.awt.Font("Arial Narrow", 3, 20)); // NOI18N
         btnCategorias.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.LOOP);
@@ -215,7 +206,7 @@ private usuarios us;
         panelbotones.add(btnProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 210, -1));
 
         btnSalidas.setBackground(new java.awt.Color(102, 204, 255));
-        btnSalidas.setText("Gestion De Pedidos");
+        btnSalidas.setText("Gestión De Pedidos");
         btnSalidas.setBackgroundHover(new java.awt.Color(153, 204, 0));
         btnSalidas.setFont(new java.awt.Font("Arial Narrow", 3, 18)); // NOI18N
         btnSalidas.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.HISTORY);
@@ -268,7 +259,7 @@ private usuarios us;
         panelbotones.add(iconusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 190, -1));
 
         btnCerrarSesionn.setBackground(new java.awt.Color(102, 204, 255));
-        btnCerrarSesionn.setText("Cerrar Sesion");
+        btnCerrarSesionn.setText("Cerrar Sesión ");
         btnCerrarSesionn.setBackgroundHover(new java.awt.Color(153, 204, 0));
         btnCerrarSesionn.setFont(new java.awt.Font("Arial Narrow", 3, 18)); // NOI18N
         btnCerrarSesionn.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.PERM_CONTACT_CALENDAR);
@@ -505,9 +496,10 @@ btnRegistro.setVisible(false);
 pantallaPrincipal.txtiduser.setText("");
 pantallaPrincipal.iconusuario.setText("");
 JOptionPane.showMessageDialog(null, "Sesión cerrada correctamente", "Cerrar sesión", JOptionPane.INFORMATION_MESSAGE);
+    cerrar();
 
 
-mostrarLogin();
+
     }//GEN-LAST:event_btnCerrarSesionnActionPerformed
 
     private void btnRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroActionPerformed
@@ -523,7 +515,7 @@ btnSalir.setSelected(false);
 btnSalida.setSelected(false);
 btnCerrarSesionn.setSelected(false); 
         btnRegistro.setSelected(true);
-        Registro R=new Registro();
+        Registro R=new Registro(this);
         R.setSize(990,790);
         R.setLocation(0,0);
 
