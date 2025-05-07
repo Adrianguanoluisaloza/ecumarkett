@@ -206,7 +206,7 @@ int filaSeleccionada;
         });
         jpanelRound1.add(btnBuscarClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 171, -1));
 
-        add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 530, 340));
+        add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 530, 340));
 
         jpanelRound5.setBackground(new java.awt.Color(255, 255, 255));
         jpanelRound5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -278,7 +278,7 @@ int filaSeleccionada;
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Loginregister/logopequeño.png"))); // NOI18N
         jpanelRound5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 130, 80));
 
-        add(jpanelRound5, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 360, 270, 350));
+        add(jpanelRound5, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 390, 270, 350));
 
         jpanelRound4.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -308,7 +308,7 @@ int filaSeleccionada;
             .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
         );
 
-        add(jpanelRound4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 363, 650, 350));
+        add(jpanelRound4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 650, 350));
 
         jpanelRound2.setBackground(new java.awt.Color(255, 255, 255));
         jpanelRound2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -368,7 +368,7 @@ int filaSeleccionada;
         });
         jpanelRound2.add(txtdocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 170, -1));
 
-        add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 340));
+        add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 380, 340));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarProductoActionPerformed

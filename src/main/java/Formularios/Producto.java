@@ -92,6 +92,8 @@ productos p=new productos();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaProductos = new javax.swing.JTable();
 
+        setMinimumSize(new java.awt.Dimension(1970, 720));
+        setPreferredSize(new java.awt.Dimension(1970, 720));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jpanelRound1.setBackground(new java.awt.Color(255, 255, 255));
@@ -189,13 +191,15 @@ productos p=new productos();
         });
         jpanelRound2.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 400, 130, -1));
 
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LogoAplicacion/logopequeño.png"))); // NOI18N
-        jpanelRound2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, 200, 160));
+        jpanelRound2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, 200, 160));
 
-        jpanelRound1.add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 300, 730));
+        jpanelRound1.add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 300, 790));
 
         jpanelRound3.setBackground(new java.awt.Color(255, 255, 255));
         jpanelRound3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tabla Producto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe Print", 1, 12))); // NOI18N
+        jpanelRound3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tablaProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -212,20 +216,11 @@ productos p=new productos();
         });
         jScrollPane1.setViewportView(tablaProductos);
 
-        javax.swing.GroupLayout jpanelRound3Layout = new javax.swing.GroupLayout(jpanelRound3);
-        jpanelRound3.setLayout(jpanelRound3Layout);
-        jpanelRound3Layout.setHorizontalGroup(
-            jpanelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 770, Short.MAX_VALUE)
-        );
-        jpanelRound3Layout.setVerticalGroup(
-            jpanelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 711, Short.MAX_VALUE)
-        );
+        jpanelRound3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 650, 770));
 
-        jpanelRound1.add(jpanelRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, 780, 740));
+        jpanelRound1.add(jpanelRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 670, 790));
 
-        add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 870));
+        add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 870));
     }// </editor-fold>//GEN-END:initComponents
 
     private void tablaProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaProductosMouseClicked

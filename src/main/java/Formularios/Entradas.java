@@ -226,7 +226,7 @@ entradas e=new entradas();
         });
         jpanelRound2.add(btnElimnar, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 430, -1, -1));
 
-        jpanelRound1.add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 400, 490));
+        jpanelRound1.add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 400, 490));
 
         jpanelRound3.setBackground(new java.awt.Color(255, 255, 255));
         jpanelRound3.setRoundBottomLeft(25);
@@ -257,7 +257,7 @@ entradas e=new entradas();
         });
         jpanelRound3.add(btnBuscarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, -1));
 
-        jpanelRound1.add(jpanelRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 140, 240, 140));
+        jpanelRound1.add(jpanelRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, 240, 140));
 
         jpanelRound4.setBackground(new java.awt.Color(255, 255, 255));
         jpanelRound4.setRoundBottomLeft(25);
@@ -295,7 +295,7 @@ entradas e=new entradas();
         });
         jpanelRound4.add(btnBuscarProvedorr, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, -1, -1));
 
-        jpanelRound1.add(jpanelRound4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 140, 300, 140));
+        jpanelRound1.add(jpanelRound4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 190, 300, 140));
 
         jpanelRound5.setBackground(new java.awt.Color(204, 204, 204));
         jpanelRound5.setRoundBottomLeft(25);
@@ -335,14 +335,14 @@ entradas e=new entradas();
                 .addContainerGap())
         );
 
-        jpanelRound1.add(jpanelRound5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 300, 550, 340));
+        jpanelRound1.add(jpanelRound5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, 550, 340));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 56)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Gestion De stock");
-        jpanelRound1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, 460, 50));
+        jpanelRound1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 460, 50));
 
-        add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 650));
+        add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1270, 790));
     }// </editor-fold>//GEN-END:initComponents
 
     private void tablaEntradasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaEntradasMouseClicked

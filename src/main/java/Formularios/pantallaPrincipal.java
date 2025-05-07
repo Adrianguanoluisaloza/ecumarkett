@@ -53,7 +53,7 @@ private usuarios us;
     }
     public void mostrarLogin() {
         loginn L = new loginn(this); 
-        L.setSize(1270, 790);
+        L.setSize(990,790);
         L.setLocation(0, 0); 
         contenedor.removeAll(); 
         contenedor.add(L, BorderLayout.CENTER); 
@@ -67,7 +67,7 @@ private usuarios us;
   
     public void mostrarRegistro() {
         Registro R = new Registro(this); 
-        R.setSize(1270, 790); 
+        R.setSize(990,790); 
         R.setLocation(0, 0); 
         contenedor.removeAll();
         contenedor.add(R, BorderLayout.CENTER); 
@@ -365,7 +365,7 @@ int confirm = JOptionPane.showConfirmDialog(
         
         
         Producto PR = new Producto();
-        PR.setSize(982,740);
+        PR.setSize(990,790);
         PR.setLocation(0,0);
 
         contenedor.removeAll();
@@ -387,7 +387,7 @@ int confirm = JOptionPane.showConfirmDialog(
         btnSalir.setSelected(false);
         btnSalida.setSelected(false);
         Entradas En=new Entradas();
-        En.setSize(982,740);
+        En.setSize(990,790);
         En.setLocation(0,0);
 
         contenedor.removeAll();
@@ -408,7 +408,7 @@ int confirm = JOptionPane.showConfirmDialog(
         btnSalir.setSelected(false);
         btnSalida.setSelected(false);
         Provedores P=new Provedores();
-        P.setSize(1007, 775);
+        P.setSize(990,790);
         P.setLocation(0,0);
 
         contenedor.removeAll();
@@ -451,7 +451,7 @@ int confirm = JOptionPane.showConfirmDialog(
         btnSalir.setSelected(false);
         btnSalida.setSelected(false);
         Categorias C=new Categorias();
-        C.setSize(982,740);
+        C.setSize(990,790);
         C.setLocation(0,0);
 
         contenedor.removeAll();
@@ -474,7 +474,7 @@ int confirm = JOptionPane.showConfirmDialog(
         btnSalir.setSelected(false);
         btnSalida.setSelected(false);
         Inicio i=new Inicio();
-        i.setSize(982,740);
+        i.setSize(990,790);
         i.setLocation(0,0);
 
         contenedor.removeAll();

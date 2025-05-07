@@ -297,7 +297,7 @@ public class Registro extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tablaUsuarios);
 
-        jpanelRound2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, 560, 614));
+        jpanelRound2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, 510, 614));
 
         jButton1.setBackground(new java.awt.Color(0, 153, 255));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N

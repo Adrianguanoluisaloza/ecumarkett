@@ -63,7 +63,10 @@ private void listarCategorias(){
         jScrollPane1 = new javax.swing.JScrollPane();
         tblcategorias = new javax.swing.JTable();
 
-        jpanelRound2.setBackground(new java.awt.Color(255, 255, 153));
+        setBackground(new java.awt.Color(102, 204, 255));
+        setPreferredSize(new java.awt.Dimension(1270, 790));
+
+        jpanelRound2.setBackground(new java.awt.Color(102, 204, 255));
         jpanelRound2.setPreferredSize(new java.awt.Dimension(982, 775));
         jpanelRound2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -124,7 +127,7 @@ private void listarCategorias(){
         });
         jPanel2.add(btnElimar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 120, -1));
 
-        jpanelRound2.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 380, 260));
+        jpanelRound2.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 380, 260));
 
         jpanelRound1.setBackground(new java.awt.Color(204, 204, 204));
         jpanelRound1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -153,20 +156,20 @@ private void listarCategorias(){
         });
         jScrollPane1.setViewportView(tblcategorias);
 
-        jpanelRound1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 410));
+        jpanelRound1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 410));
 
-        jpanelRound2.add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 370, 410));
+        jpanelRound2.add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 180, 370, 410));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpanelRound2, javax.swing.GroupLayout.PREFERRED_SIZE, 808, Short.MAX_VALUE)
+            .addComponent(jpanelRound2, javax.swing.GroupLayout.DEFAULT_SIZE, 1270, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jpanelRound2, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jpanelRound2, javax.swing.GroupLayout.PREFERRED_SIZE, 790, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents

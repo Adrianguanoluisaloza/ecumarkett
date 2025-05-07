@@ -74,7 +74,7 @@ public static boolean tipo;
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jpanelRound2.setBackground(new java.awt.Color(51, 153, 255));
+        jpanelRound2.setBackground(new java.awt.Color(102, 204, 255));
         jpanelRound2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jpanelRound3.setBackground(new java.awt.Color(255, 255, 255));
@@ -112,7 +112,7 @@ public static boolean tipo;
         });
         jpanelRound3.add(btnEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 110, 30));
 
-        jpanelRound2.add(jpanelRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, 780, 270));
+        jpanelRound2.add(jpanelRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 780, 270));
 
         jpanelRound4.setBackground(new java.awt.Color(204, 204, 204));
         jpanelRound4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -134,9 +134,9 @@ public static boolean tipo;
 
         jpanelRound4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 310));
 
-        jpanelRound2.add(jpanelRound4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 390, 780, 310));
+        jpanelRound2.add(jpanelRound4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 520, 780, 310));
 
-        getContentPane().add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1270, 970));
+        getContentPane().add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -190, 1270, 970));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
