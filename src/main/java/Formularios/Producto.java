@@ -195,7 +195,7 @@ productos p=new productos();
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LogoAplicacion/logopequeño.png"))); // NOI18N
         jpanelRound2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, 200, 160));
 
-        jpanelRound1.add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 300, 790));
+        jpanelRound1.add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 300, 780));
 
         jpanelRound3.setBackground(new java.awt.Color(255, 255, 255));
         jpanelRound3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tabla Producto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe Print", 1, 12))); // NOI18N
@@ -216,9 +216,9 @@ productos p=new productos();
         });
         jScrollPane1.setViewportView(tablaProductos);
 
-        jpanelRound3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 650, 770));
+        jpanelRound3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 670, 760));
 
-        jpanelRound1.add(jpanelRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 670, 790));
+        jpanelRound1.add(jpanelRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 690, 790));
 
         add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 870));
     }// </editor-fold>//GEN-END:initComponents

@@ -216,7 +216,7 @@ private void listarClientes(){
         });
         jpanelRound4.add(btnPdf, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 50, -1));
 
-        add(jpanelRound4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 390, 540));
+        add(jpanelRound4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 390, 540));
 
         jpanelRound5.setBackground(new java.awt.Color(102, 204, 255));
         jpanelRound5.setRoundBottomLeft(35);
@@ -257,12 +257,12 @@ private void listarClientes(){
                 .addContainerGap())
         );
 
-        add(jpanelRound5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 120, 550, 550));
+        add(jpanelRound5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, 550, 550));
 
         lblGestionClientes.setBorder(null);
         lblGestionClientes.setText("Gestion De Clientes");
         lblGestionClientes.setFont(new java.awt.Font("Microsoft Tai Le", 1, 48)); // NOI18N
-        add(lblGestionClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, 510, 100));
+        add(lblGestionClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, 510, 100));
     }// </editor-fold>//GEN-END:initComponents
 
     private void tablaclientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaclientesMouseClicked
