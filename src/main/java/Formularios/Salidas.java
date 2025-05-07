@@ -108,6 +108,7 @@ int filaSeleccionada;
         btnRecargar = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         btnGenerar = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         jpanelRound4 = new Modelo.JpanelRound();
         jScrollPane3 = new javax.swing.JScrollPane();
         tablaSalidas = new javax.swing.JTable();
@@ -136,27 +137,63 @@ int filaSeleccionada;
         jLabel18.setText("IGV:");
         add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(1063, 1167, -1, -1));
 
-        jpanelRound1.setBackground(new java.awt.Color(204, 204, 204));
+        jpanelRound1.setBackground(new java.awt.Color(255, 255, 255));
+        jpanelRound1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(51, 153, 0));
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 204));
         jLabel11.setText("Datos de Entrada de Producto ");
+        jpanelRound1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel3.setText("ID");
+        jpanelRound1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
+        txtidcliente.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jpanelRound1.add(txtidcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 120, -1));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel5.setText("Nombre");
+        jpanelRound1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
 
+        txtnombreCliente.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jpanelRound1.add(txtnombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 150, -1));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel8.setText("Fecha Salida");
+        jpanelRound1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
 
+        jcFecha.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jpanelRound1.add(jcFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 202, -1));
+
+        txtprecio.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jpanelRound1.add(txtprecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 148, -1));
+
+        txtcantidad.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jpanelRound1.add(txtcantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 173, -1));
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel15.setText("Cantidad");
+        jpanelRound1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, -1, -1));
 
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel13.setText("Precio");
+        jpanelRound1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, -1, -1));
 
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel12.setText("Stock Disponible");
+        jpanelRound1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
-        txtnsalida.setText("NUmero");
+        txtstock.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jpanelRound1.add(txtstock, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 167, -1));
 
+        txtnsalida.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        txtnsalida.setForeground(new java.awt.Color(153, 153, 153));
+        jpanelRound1.add(txtnsalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 20, 60, 20));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setText("Numero de Pedidos");
+        jpanelRound1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, -1, -1));
 
         btnBuscarClientes.setText("Buscar Producto");
         btnBuscarClientes.setFocusPainted(false);
@@ -167,211 +204,81 @@ int filaSeleccionada;
                 btnBuscarClientesActionPerformed(evt);
             }
         });
+        jpanelRound1.add(btnBuscarClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 171, -1));
 
-        javax.swing.GroupLayout jpanelRound1Layout = new javax.swing.GroupLayout(jpanelRound1);
-        jpanelRound1.setLayout(jpanelRound1Layout);
-        jpanelRound1Layout.setHorizontalGroup(
-            jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpanelRound1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelRound1Layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addGap(43, 43, 43)
-                        .addComponent(txtnsalida)
-                        .addGap(47, 47, 47))
-                    .addGroup(jpanelRound1Layout.createSequentialGroup()
-                        .addGroup(jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jpanelRound1Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel3)
-                                .addGap(174, 174, 174)
-                                .addComponent(jLabel15))
-                            .addGroup(jpanelRound1Layout.createSequentialGroup()
-                                .addGroup(jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtidcliente, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jpanelRound1Layout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addComponent(jLabel5))
-                                    .addComponent(txtnombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jpanelRound1Layout.createSequentialGroup()
-                                        .addGap(53, 53, 53)
-                                        .addComponent(jLabel13))
-                                    .addGroup(jpanelRound1Layout.createSequentialGroup()
-                                        .addGap(31, 31, 31)
-                                        .addGroup(jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txtcantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtprecio, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelRound1Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jcFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(197, 197, 197))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelRound1Layout.createSequentialGroup()
-                        .addGroup(jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12)
-                            .addComponent(txtstock, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnBuscarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(73, 73, 73))))
-        );
-        jpanelRound1Layout.setVerticalGroup(
-            jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelRound1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtnsalida)
-                        .addComponent(jLabel1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel15))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtidcliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtcantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpanelRound1Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addGroup(jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtprecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtnombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jpanelRound1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel13))))
-                .addGap(18, 18, 18)
-                .addGroup(jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnBuscarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jpanelRound1Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtstock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addGroup(jpanelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jcFecha, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(62, 62, 62))
-        );
+        add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 530, 340));
 
-        add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 500, 340));
+        jpanelRound5.setBackground(new java.awt.Color(255, 255, 255));
+        jpanelRound5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jpanelRound5.setBackground(new java.awt.Color(204, 204, 204));
-
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel16.setText("Sub Total:");
+        jpanelRound5.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
 
+        jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel19.setText("Iva 12%");
+        jpanelRound5.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
 
+        jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel20.setText("Total:");
+        jpanelRound5.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
 
+        txtTotal.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jpanelRound5.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, 142, -1));
+
+        txtigv.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jpanelRound5.add(txtigv, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 142, -1));
+
+        txtsubtotal.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         txtsubtotal.setToolTipText("");
         txtsubtotal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jpanelRound5.add(txtsubtotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 142, -1));
 
+        btnAgregar.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Loginregister/1486564412-plus_81511 (1).png"))); // NOI18N
         btnAgregar.setText("Agregar");
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarActionPerformed(evt);
             }
         });
+        jpanelRound5.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
+        btnRecargar.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        btnRecargar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Loginregister/file-edit_114433 (1).png"))); // NOI18N
         btnRecargar.setText("Editar ");
         btnRecargar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRecargarActionPerformed(evt);
             }
         });
+        jpanelRound5.add(btnRecargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 120, -1));
 
+        btnDelete.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Loginregister/blue_exit_delete_delete_12417 (1).png"))); // NOI18N
         btnDelete.setText("Eliminar");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
             }
         });
+        jpanelRound5.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, -1, -1));
 
+        btnGenerar.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        btnGenerar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Loginregister/blue_upgrade_recyclearrows_arrow_azul_12426 (1).png"))); // NOI18N
         btnGenerar.setText("Generar");
         btnGenerar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGenerarActionPerformed(evt);
             }
         });
+        jpanelRound5.add(btnGenerar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, -1, -1));
 
-        javax.swing.GroupLayout jpanelRound5Layout = new javax.swing.GroupLayout(jpanelRound5);
-        jpanelRound5.setLayout(jpanelRound5Layout);
-        jpanelRound5Layout.setHorizontalGroup(
-            jpanelRound5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpanelRound5Layout.createSequentialGroup()
-                .addGroup(jpanelRound5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpanelRound5Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(jpanelRound5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jpanelRound5Layout.createSequentialGroup()
-                                .addComponent(jLabel19)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtigv, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jpanelRound5Layout.createSequentialGroup()
-                                .addComponent(jLabel20)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jpanelRound5Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jpanelRound5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jpanelRound5Layout.createSequentialGroup()
-                                .addComponent(jLabel16)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtsubtotal, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jpanelRound5Layout.createSequentialGroup()
-                                .addGroup(jpanelRound5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jpanelRound5Layout.createSequentialGroup()
-                                        .addComponent(btnRecargar)
-                                        .addGap(31, 31, 31)
-                                        .addComponent(btnGenerar))
-                                    .addGroup(jpanelRound5Layout.createSequentialGroup()
-                                        .addGap(12, 12, 12)
-                                        .addComponent(btnDelete)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(btnAgregar)))
-                                .addGap(10, 10, 10)))))
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-        jpanelRound5Layout.setVerticalGroup(
-            jpanelRound5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelRound5Layout.createSequentialGroup()
-                .addGroup(jpanelRound5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpanelRound5Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnAgregar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelRound5Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnDelete)
-                        .addGap(18, 18, 18)))
-                .addGroup(jpanelRound5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnRecargar, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnGenerar, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(33, 33, 33)
-                .addGroup(jpanelRound5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtsubtotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16))
-                .addGap(18, 18, 18)
-                .addGroup(jpanelRound5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtigv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel19))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jpanelRound5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel20))
-                .addGap(65, 65, 65))
-        );
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Loginregister/logopequeño.png"))); // NOI18N
+        jpanelRound5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 130, 80));
 
-        add(jpanelRound5, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 400, 240, 240));
+        add(jpanelRound5, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 360, 270, 350));
 
         jpanelRound4.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -394,62 +301,72 @@ int filaSeleccionada;
         jpanelRound4.setLayout(jpanelRound4Layout);
         jpanelRound4Layout.setHorizontalGroup(
             jpanelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpanelRound4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
         );
         jpanelRound4Layout.setVerticalGroup(
             jpanelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpanelRound4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
         );
 
-        add(jpanelRound4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 393, 650, 320));
+        add(jpanelRound4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 363, 650, 350));
 
-        jpanelRound2.setBackground(new java.awt.Color(204, 204, 204));
+        jpanelRound2.setBackground(new java.awt.Color(255, 255, 255));
         jpanelRound2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(238, 173, 61));
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 0, 204));
         jLabel14.setText("Datos del Cliente");
-        jpanelRound2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, -1, -1));
+        jpanelRound2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel9.setText("ID");
-        jpanelRound2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
-        jpanelRound2.add(txtidProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 110, -1));
+        jpanelRound2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
 
+        txtidProducto.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jpanelRound2.add(txtidProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 110, -1));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel10.setText("Nombre Del Producto");
-        jpanelRound2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
-        jpanelRound2.add(txtproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 167, -1));
+        jpanelRound2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
 
+        txtproducto.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jpanelRound2.add(txtproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 167, -1));
+
+        btnBuscarProducto.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        btnBuscarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Loginregister/t (1).png"))); // NOI18N
         btnBuscarProducto.setText("Buscar");
         btnBuscarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarProductoActionPerformed(evt);
             }
         });
-        jpanelRound2.add(btnBuscarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, -1, -1));
-        jpanelRound2.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 54, 123, -1));
+        jpanelRound2.add(btnBuscarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, -1, -1));
 
+        txtTelefono.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jpanelRound2.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 123, -1));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel6.setText("Telefono");
-        jpanelRound2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 32, -1, -1));
-        jpanelRound2.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 210, -1));
+        jpanelRound2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
+        txtcorreo.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jpanelRound2.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 210, -1));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel7.setText("Correo");
-        jpanelRound2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, -1, -1));
+        jpanelRound2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, -1, -1));
 
-        jLabel2.setText("Documento");
-        jpanelRound2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, -1, -1));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel2.setText("Cedula");
+        jpanelRound2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, -1, -1));
 
+        txtdocumento.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         txtdocumento.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtdocumentoKeyTyped(evt);
             }
         });
-        jpanelRound2.add(txtdocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 170, -1));
+        jpanelRound2.add(txtdocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 170, -1));
 
         add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 340));
     }// </editor-fold>//GEN-END:initComponents
@@ -677,6 +594,7 @@ private void agregaEntrada(){
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

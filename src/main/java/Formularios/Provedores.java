@@ -142,32 +142,35 @@ proveedor p=new proveedor();
         jpanelRound2.setRoundTopRight(30);
         jpanelRound2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnEliminar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnEliminar.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Loginregister/blue_exit_delete_delete_12417 (1).png"))); // NOI18N
         btnEliminar.setText("Eliminar");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarActionPerformed(evt);
             }
         });
-        jpanelRound2.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, 130, -1));
+        jpanelRound2.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 270, 130, -1));
 
-        btnEditar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnEditar.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Loginregister/blue_upgrade_recyclearrows_arrow_azul_12426 (1).png"))); // NOI18N
         btnEditar.setText("Actualizar ");
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarActionPerformed(evt);
             }
         });
-        jpanelRound2.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, 120, -1));
+        jpanelRound2.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, 150, -1));
 
-        btnGuardar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnGuardar.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Loginregister/1486564412-plus_81511 (1).png"))); // NOI18N
         btnGuardar.setText("Registrar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarActionPerformed(evt);
             }
         });
-        jpanelRound2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 110, -1));
+        jpanelRound2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 130, -1));
 
         txtcorreo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtcorreo.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -247,13 +250,14 @@ proveedor p=new proveedor();
 
         btnBuscar.setText("Buscar Cedula");
         btnBuscar.setFocusable(false);
+        btnBuscar.setFont(new java.awt.Font("Roboto Bold", 1, 16)); // NOI18N
         btnBuscar.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarActionPerformed(evt);
             }
         });
-        jpanelRound2.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, 150, 30));
+        jpanelRound2.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 50, 160, 40));
 
         btnReporte.setBackground(new java.awt.Color(213, 137, 137));
         btnReporte.setBackgroundHover(new java.awt.Color(14, 76, 117));
@@ -264,7 +268,7 @@ proveedor p=new proveedor();
                 btnReporteActionPerformed(evt);
             }
         });
-        jpanelRound2.add(btnReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 50, -1));
+        jpanelRound2.add(btnReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 50, -1));
 
         add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 760, 320));
 

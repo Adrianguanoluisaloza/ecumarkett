@@ -120,6 +120,7 @@ DaoProductos daoP=new DaoProductos();
         jpanelRound4 = new Modelo.JpanelRound();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaDetalle = new javax.swing.JTable();
+        jLabel4 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -190,7 +191,7 @@ DaoProductos daoP=new DaoProductos();
         });
         jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 150, -1));
 
-        jpanelRound1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 570, 202));
+        jpanelRound1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 570, 202));
 
         jpanelRound3.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -222,16 +223,15 @@ DaoProductos daoP=new DaoProductos();
             jpanelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpanelRound3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE))
         );
 
-        jpanelRound1.add(jpanelRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 268, -1, -1));
+        jpanelRound1.add(jpanelRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, 380));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Pedidos");
-        jpanelRound1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, -1, -1));
+        jpanelRound1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 240, -1));
 
         jpanelRound4.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -263,11 +263,13 @@ DaoProductos daoP=new DaoProductos();
             jpanelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpanelRound4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 366, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE))
         );
 
-        jpanelRound1.add(jpanelRound4, new org.netbeans.lib.awtextra.AbsoluteConstraints(708, 274, -1, -1));
+        jpanelRound1.add(jpanelRound4, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 370, -1, 380));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Loginregister/_8b4145b4-2936-42a6-8792-2d68b0d22fd6-removebg-preview (1).png"))); // NOI18N
+        jpanelRound1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 60, -1, -1));
 
         add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1010, 780));
     }// </editor-fold>//GEN-END:initComponents
@@ -404,6 +406,7 @@ private int getSelectedSalidaId() throws Exception {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;

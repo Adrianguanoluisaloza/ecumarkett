@@ -106,7 +106,7 @@ private void listarClientes(){
         jpanelRound4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         txtidcliente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jpanelRound4.add(txtidcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 246, -1));
+        jpanelRound4.add(txtidcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 320, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -114,7 +114,7 @@ private void listarClientes(){
         jpanelRound4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
         txtnombre.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jpanelRound4.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 246, -1));
+        jpanelRound4.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 320, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -122,7 +122,7 @@ private void listarClientes(){
         jpanelRound4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
 
         txtapellido.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jpanelRound4.add(txtapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 246, -1));
+        jpanelRound4.add(txtapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 320, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -135,28 +135,28 @@ private void listarClientes(){
                 txtdocumentoKeyTyped(evt);
             }
         });
-        jpanelRound4.add(txtdocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 162, -1));
+        jpanelRound4.add(txtdocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 230, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Direccion");
-        jpanelRound4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
+        jpanelRound4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
 
         txtdireccion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jpanelRound4.add(txtdireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 246, -1));
+        jpanelRound4.add(txtdireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 320, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Telefono");
-        jpanelRound4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
+        jpanelRound4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
 
         txttelefono.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jpanelRound4.add(txttelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 246, -1));
+        jpanelRound4.add(txttelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 320, -1));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Correo");
-        jpanelRound4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, -1, -1));
+        jpanelRound4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
 
         txtcorreo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtcorreo.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -164,34 +164,37 @@ private void listarClientes(){
                 txtcorreoFocusLost(evt);
             }
         });
-        jpanelRound4.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 246, -1));
+        jpanelRound4.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 320, -1));
 
         btnEliminar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Loginregister/blue_exit_delete_delete_12417 (1).png"))); // NOI18N
         btnEliminar.setText("Eliminar");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarActionPerformed(evt);
             }
         });
-        jpanelRound4.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 480, -1, 30));
+        jpanelRound4.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 480, -1, 30));
 
         btnEditar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Loginregister/blue_upgrade_recyclearrows_arrow_azul_12426 (1).png"))); // NOI18N
         btnEditar.setText("Actualizar");
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarActionPerformed(evt);
             }
         });
-        jpanelRound4.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 480, -1, 30));
+        jpanelRound4.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(136, 480, -1, 30));
 
         btnGuardar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Loginregister/1486564412-plus_81511 (1).png"))); // NOI18N
         btnGuardar.setText("Registrar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarActionPerformed(evt);
             }
         });
-        jpanelRound4.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, -1, 30));
+        jpanelRound4.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, -1, 30));
 
         btnBuscar.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -199,7 +202,7 @@ private void listarClientes(){
                 btnBuscarActionPerformed(evt);
             }
         });
-        jpanelRound4.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 40, 40));
+        jpanelRound4.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 40, 40));
 
         btnPdf.setBackground(new java.awt.Color(213, 137, 137));
         btnPdf.setBackgroundHover(new java.awt.Color(14, 76, 117));
@@ -210,9 +213,9 @@ private void listarClientes(){
                 btnPdfActionPerformed(evt);
             }
         });
-        jpanelRound4.add(btnPdf, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 50, -1));
+        jpanelRound4.add(btnPdf, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 50, -1));
 
-        add(jpanelRound4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 310, 540));
+        add(jpanelRound4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 390, 540));
 
         jpanelRound5.setBackground(new java.awt.Color(102, 204, 255));
         jpanelRound5.setRoundBottomLeft(35);
@@ -253,7 +256,7 @@ private void listarClientes(){
                 .addContainerGap())
         );
 
-        add(jpanelRound5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 550, 550));
+        add(jpanelRound5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, 550, 550));
 
         lblGestionClientes.setBorder(null);
         lblGestionClientes.setText("Gestion De Clientes");
