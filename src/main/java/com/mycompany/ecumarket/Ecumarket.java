@@ -1,6 +1,5 @@
 package com.mycompany.ecumarket;
 
-import Formularios.Login;
 import Formularios.pantallaPrincipal;
 
 

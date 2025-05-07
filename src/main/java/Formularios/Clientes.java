@@ -10,6 +10,8 @@ import Modelo.clientes;
 import java.awt.Toolkit;
 import java.io.InputStream;
 import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -443,14 +445,14 @@ if (dao.buscar(c)) {
     }//GEN-LAST:event_txtdocumentoKeyTyped
 
     private void btnPdfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPdfActionPerformed
-/*
+
      String bd = "inventario2";
     String url = "jdbc:mysql://localhost:3306/" + bd;
     String user = "root";
     String pass = "";
 
     // Cargar el archivo jrxml como recurso desde el classpath
-    InputStream reportStream = getClass().getResourceAsStream("/reportes/reporteClientes.jrxml");
+    var reportStream = getClass().getResourceAsStream("/reportes/Blank_A4.jrxml");
 
     if (reportStream == null) {
         JOptionPane.showMessageDialog(null, "No se encontró el archivo del reporte en el classpath.");
@@ -478,9 +480,8 @@ if (dao.buscar(c)) {
     } catch (JRException e) {
         JOptionPane.showMessageDialog(null, "Error al generar el reporte: " + e.getMessage());
     }
-*/
 // TODO add your handling code here:
-         GenerarPDF();
+      //   GenerarPDF();
       // JasperPrint reporteTodoProducto(); 
 
     }//GEN-LAST:event_btnPdfActionPerformed
@@ -506,13 +507,13 @@ if (dao.buscar(c)) {
 }}
 
 */
-private final Connection conection=new conexion().conectar();
+/*private final Connection conection=new conexion().conectar();
     
    void GenerarPDF() {
     Map<String, Object> parametros = new HashMap<>();
 
     try {
-        InputStream reportStream = getClass().getClassLoader().getResourceAsStream("target/reports/reporteClientes.jrxml");
+        InputStream reportStream = getClass().getClassLoader().getResourceAsStream("reportes/Blank_A4.jrxml");
 
         if (reportStream == null) {
             JOptionPane.showMessageDialog(null, "No se encontró el archivo .jrxml");
@@ -529,7 +530,7 @@ private final Connection conection=new conexion().conectar();
         e.printStackTrace();
         JOptionPane.showMessageDialog(null, "Error al generar el reporte: " + e.getMessage());
     }
-}
+} */
     void limpiarCampos(){
         txtidcliente.setText("");
         txtnombre.setText("");
@@ -546,7 +547,7 @@ private final Connection conection=new conexion().conectar();
             i=0-1;
         }
     }
-    
+   
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

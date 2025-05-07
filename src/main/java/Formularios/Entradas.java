@@ -6,11 +6,9 @@ package Formularios;
 
 //import Dao.DaoCategoria;
 
-import Dao.DaoCategoria;
 import Dao.DaoEntradas;
 import Dao.DaoProductos;
 import Dao.DaoProveedor;
-import Modelo.Categoria;
 import Modelo.entradas;
 import Modelo.productos;
 import Modelo.proveedor;
