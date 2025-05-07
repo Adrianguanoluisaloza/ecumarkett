@@ -494,7 +494,7 @@ pantallaPrincipal.txtiduser.setText("");
 pantallaPrincipal.iconusuario.setText("");
 JOptionPane.showMessageDialog(null, "Sesión cerrada correctamente", "Cerrar sesión", JOptionPane.INFORMATION_MESSAGE);
 
-// Aquí cargas el login de nuevo dentro del contenedor principal
+
 mostrarLogin();
     }//GEN-LAST:event_btnCerrarSesionnActionPerformed
 
@@ -525,7 +525,7 @@ btnCerrarSesionn.setSelected(false);
         String tipo = us.getTipoUsuario();
         switch (tipo) {
             case "Vendedor" -> {
-                // Configuración para Vendedor
+                
                 pantallaPrincipal.btnInicio.setEnabled(true);
                 pantallaPrincipal.btnSalidas.setEnabled(true);
                 pantallaPrincipal.btnCategorias.setEnabled(false);
@@ -538,7 +538,7 @@ btnCerrarSesionn.setSelected(false);
                
             }
             case "Almacenero" -> {
-                // Configuración para Almacenero
+              
                 pantallaPrincipal.btnInicio.setEnabled(true);
                 pantallaPrincipal.btnSalidas.setEnabled(false);
                 pantallaPrincipal.btnCategorias.setEnabled(true);
@@ -551,7 +551,7 @@ btnCerrarSesionn.setSelected(false);
               
             }
             case "Administrador" -> {
-                // Configuración para Administrador
+            
                 pantallaPrincipal.btnInicio.setEnabled(true);
                 pantallaPrincipal.btnSalidas.setEnabled(true);
                 pantallaPrincipal.btnCategorias.setEnabled(true);
@@ -603,7 +603,7 @@ btnCerrarSesionn.setSelected(false);
 
 
 public usuarios getUsuario() {
-    return this.usuarioActual;  // Devuelve la variable usuarioActual
+    return this.usuarioActual; 
 }
  
 public JPanel getContenedor() {

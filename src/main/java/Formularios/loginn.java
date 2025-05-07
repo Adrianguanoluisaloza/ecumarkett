@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Adrian
+ * @author LENOVO IDEAPAD
  */
 public class loginn extends javax.swing.JPanel {
 
@@ -238,110 +238,7 @@ txtcorreo.setForeground(Color.blue);}
     }//GEN-LAST:event_txtcontraseMousePressed
 
     private void btnentrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnentrarActionPerformed
-
-        
-        
-        
-        
-     /*   
-        
-        us = daoU.login(txtcorreo.getText(), txtcontrase.getText());
-
-    if (us.getIdusuario() != 0) {
-        // Guardar el usuario en la pantalla principal
-        pP.setUsuario(us);
-
-        String tipo = us.getTipoUsuario();
-
-        // Mostrar lblregistrarse solo si es administrador
-        lblregistrarse.setVisible(tipo.equalsIgnoreCase("Administrador"));
-
-        // Mostrar btnLogin solo si es administrador
-        pantallaPrincipal.btnLogin.setVisible(tipo.equalsIgnoreCase("Administrador"));
-
-        // Configurar botones según el tipo de usuario
-        switch (tipo) {
-            case "Vendedor" -> {
-                pantallaPrincipal.btnSalidas.setEnabled(true);
-                pantallaPrincipal.btnCategorias.setEnabled(false);
-                pantallaPrincipal.btnClientes.setEnabled(true);
-                pantallaPrincipal.btnEntradas.setEnabled(false);
-                pantallaPrincipal.btnProveedor.setEnabled(false);
-                pantallaPrincipal.btnProductos.setEnabled(false);
-                pantallaPrincipal.btnCerrarSesionn.setEnabled(true);
-            }
-            case "Almacenero" -> {
-                pantallaPrincipal.btnSalidas.setEnabled(false);
-                pantallaPrincipal.btnCategorias.setEnabled(true);
-                pantallaPrincipal.btnClientes.setEnabled(false);
-                pantallaPrincipal.btnEntradas.setEnabled(true);
-                pantallaPrincipal.btnProveedor.setEnabled(true);
-                pantallaPrincipal.btnProductos.setEnabled(true);
-                pantallaPrincipal.btnCerrarSesionn.setEnabled(true);
-            }
-            case "Administrador" -> {
-                pantallaPrincipal.btnSalidas.setEnabled(true);
-                pantallaPrincipal.btnCategorias.setEnabled(true);
-                pantallaPrincipal.btnClientes.setEnabled(true);
-                pantallaPrincipal.btnEntradas.setEnabled(true);
-                pantallaPrincipal.btnProveedor.setEnabled(true);
-                pantallaPrincipal.btnProductos.setEnabled(true);
-                pantallaPrincipal.btnSalida.setEnabled(true);
-                pantallaPrincipal.btnCerrarSesionn.setEnabled(true);
-            }
-            default -> {
-                JOptionPane.showMessageDialog(null, "⚠ Usuario sin rol válido.");
-                return;
-            }
-        }
-       
-        // Actualiza labels con la info del usuario logueado
-        pantallaPrincipal.txtiduser.setText(us.getIdusuario() + "");
-        pantallaPrincipal.iconusuario.setText(us.getUsuario());
-
-        // Mostrar el panel Inicio
-        Inicio panelInicio = new Inicio();
-        panelInicio.setSize(1270, 790);
-        panelInicio.setLocation(0, 0);
-
-        pP.getContenedor().removeAll();
-        pP.getContenedor().add(panelInicio, BorderLayout.CENTER);
-        pP.getContenedor().revalidate();
-        pP.getContenedor().repaint();
-
-        Utilidades.mostrarToast(pP, "¡Bienvenido, " + tipo.toUpperCase() + "!");
-
-    } else {
-        JOptionPane.showMessageDialog(null, "❌ Acceso denegado");
-    }
-        
-        */
-        
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+   
         us = daoU.login(txtcorreo.getText(), txtcontrase.getText());
 
 if(us.getIdusuario() != 0){          
@@ -391,10 +288,9 @@ if(us.getIdusuario() != 0){
             pantallaPrincipal.btnCerrarSesionn.setEnabled(true);
              
            }
-        default ->   JOptionPane.showMessageDialog(null, "⚠ Usuario sin rol válido.");
+        default ->   JOptionPane.showMessageDialog(null, " Usuario sin rol válido.");
     }
 
-    // Actualiza labels
     pantallaPrincipal.txtiduser.setText(us.getIdusuario() + "");
     pantallaPrincipal.iconusuario.setText(us.getUsuario());
 
@@ -410,7 +306,7 @@ if(us.getIdusuario() != 0){
 
     Utilidades.mostrarToast(pP, "¡Bienvenido, " + us.getTipoUsuario().toUpperCase() + "!");
 } else {
-      JOptionPane.showMessageDialog(null, "❌ Acceso denegado");
+      JOptionPane.showMessageDialog(null, " Acceso denegado");
 }
     }//GEN-LAST:event_btnentrarActionPerformed
 

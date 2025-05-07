@@ -111,7 +111,6 @@ DaoProductos daoP=new DaoProductos();
         fechainicial = new com.toedter.calendar.JDateChooser();
         fechafinal = new com.toedter.calendar.JDateChooser();
         txtidSalida = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
         jpanelRound3 = new Modelo.JpanelRound();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaSalidas = new javax.swing.JTable();
@@ -167,15 +166,6 @@ DaoProductos daoP=new DaoProductos();
         jPanel3.add(fechainicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 190, -1));
         jPanel3.add(fechafinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 190, -1));
         jPanel3.add(txtidSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 170, -1));
-
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jButton1.setText("Aprobar Pedio");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 150, -1));
 
         jpanelRound1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 570, 202));
 
@@ -303,32 +293,6 @@ DaoProductos daoP=new DaoProductos();
 
     }//GEN-LAST:event_btnCancelarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int fila = tablaSalidas.getSelectedRow();
-    if (fila == -1 && txtnumSalida.getText().isEmpty()) {
-        JOptionPane.showMessageDialog(null, "Seleccione una salida o ingrese el número de salida");
-    } else {
-        try {
-            int idSalida = getSelectedSalidaId(); // Método compartido
-            s.setIdSalida(idSalida);
-            s.setEstado("Pagada");
-
-            if (dao.aprobarSalida(s)) {
-                limpiarTabla();
-                listarSalidas();
-                limpiarCampos();
-                limpiarTablaDT();
-                JOptionPane.showMessageDialog(null, "✅ Salida aprobada con éxito.");
-            } else {
-                JOptionPane.showMessageDialog(null, "❌ No se pudo aprobar la salida.");
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
-        }
-    
-}
-    }//GEN-LAST:event_jButton1ActionPerformed
-
    void limpiarTabla(){
         for(int i=0;i<modelo.getRowCount();i++){
             modelo.removeRow(i);
@@ -380,7 +344,6 @@ private int getSelectedSalidaId() throws Exception {
     private javax.swing.JButton btnCancelar;
     private com.toedter.calendar.JDateChooser fechafinal;
     private com.toedter.calendar.JDateChooser fechainicial;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

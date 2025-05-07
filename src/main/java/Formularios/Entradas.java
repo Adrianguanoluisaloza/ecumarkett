@@ -26,12 +26,12 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Entradas extends javax.swing.JPanel {
 entradas e=new entradas();
-    Categoria ct=new Categoria();
+  
     proveedor pr=new proveedor();
     productos p=new productos();
     DaoProductos daoPr=new DaoProductos();
     DaoEntradas dao=new DaoEntradas();
-    DaoCategoria daoC=new DaoCategoria();
+   
     DaoProveedor daoP=new DaoProveedor();
     DefaultTableModel modelo=new DefaultTableModel();
     public static int idpNuevo;

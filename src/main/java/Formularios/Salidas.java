@@ -465,7 +465,7 @@ int filaSeleccionada;
     private void txtdocumentoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtdocumentoKeyTyped
         char c = evt.getKeyChar();
         if (!Character.isDigit(c)) {
-            evt.consume(); // Bloquea la tecla
+            evt.consume();
             Toolkit.getDefaultToolkit().beep();
         }
     }//GEN-LAST:event_txtdocumentoKeyTyped

@@ -30,7 +30,7 @@ productos p=new productos();
     public Producto() {
         initComponents();
       listarProductos();
-        numProducto();
+       // numProducto();
     }
 
     private void listarProductos(){

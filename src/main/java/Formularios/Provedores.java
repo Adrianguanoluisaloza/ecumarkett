@@ -13,7 +13,6 @@ import java.sql.Connection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import net.sf.jasperreports.engine.JasperCompileManager;
@@ -401,7 +400,7 @@ if (dao.buscarDocumento(p)) {
          String correo = txtcorreo.getText().trim();
         if (!correo.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
              JOptionPane.showMessageDialog(null, "⚠ Correo no válido. Ejemplo: ejemplo@dominio.com");
-            txtcorreo.requestFocus(); // Vuelve al campo
+            txtcorreo.requestFocus(); 
         }
     }//GEN-LAST:event_txtcorreoFocusLost
 
@@ -423,7 +422,7 @@ if (dao.buscarDocumento(p)) {
 
     private void btnReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReporteActionPerformed
         // TODO add your handling code here:
-        GenerarPDF();
+  
     }//GEN-LAST:event_btnReporteActionPerformed
 
 void limpiarCampos(){
@@ -442,25 +441,7 @@ void limpiarCampos(){
             modelo.removeRow(i);
             i=0-1;
         }
-    }
-    
-       private Connection conection=new conexion().conectar();
-
-    void GenerarPDF(){
-        Map p=new HashMap();
-        JasperReport report;
-        JasperPrint print;
-
-        try{
-            report=JasperCompileManager.compileReport(new File("").getAbsolutePath()+"/src/reportes/reporteProveedores.jrxml");
-            print=JasperFillManager.fillReport(report,p, conection);
-            JasperViewer view=new JasperViewer(print,false);
-            view.setTitle("Lista De Proveedore");
-            view.setVisible(true);
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-    }
+    }      
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private RSMaterialComponent.RSButtonMaterialIconDos btnBuscar;
     private javax.swing.JButton btnEditar;
