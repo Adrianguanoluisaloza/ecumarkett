@@ -54,7 +54,6 @@ DaoUsuario daoU = new DaoUsuario();
         txtcontrase = new javax.swing.JPasswordField();
         jLabel10 = new javax.swing.JLabel();
         btnentrar = new javax.swing.JButton();
-        lblregistrarse = new javax.swing.JLabel();
         btnVerPassword = new javax.swing.JCheckBox();
         btnSalir = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
@@ -146,22 +145,6 @@ DaoUsuario daoU = new DaoUsuario();
             }
         });
         jpanelRound1.add(btnentrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 200, -1));
-
-        lblregistrarse.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblregistrarse.setForeground(new java.awt.Color(255, 255, 255));
-        lblregistrarse.setText("Registrate!");
-        lblregistrarse.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblregistrarseMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblregistrarseMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblregistrarseMouseExited(evt);
-            }
-        });
-        jpanelRound1.add(lblregistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 520, -1, -1));
 
         btnVerPassword.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnVerPassword.setForeground(new java.awt.Color(102, 204, 255));
@@ -305,18 +288,6 @@ DaoUsuario daoU = new DaoUsuario();
         
     }//GEN-LAST:event_btnentrarActionPerformed
 
-    private void lblregistrarseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblregistrarseMouseClicked
-//    pP.mostrarRegistro();
-    }//GEN-LAST:event_lblregistrarseMouseClicked
-
-    private void lblregistrarseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblregistrarseMouseEntered
-        lblregistrarse.setForeground(Color.black);
-    }//GEN-LAST:event_lblregistrarseMouseEntered
-
-    private void lblregistrarseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblregistrarseMouseExited
-        lblregistrarse.setForeground(Color.gray);
-    }//GEN-LAST:event_lblregistrarseMouseExited
-
     private void btnVerPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPasswordActionPerformed
         if(btnVerPassword.isSelected()){
            txtcontrase.setEchoChar((char)0);
@@ -385,7 +356,6 @@ DaoUsuario daoU = new DaoUsuario();
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private Modelo.JpanelRound jpanelRound1;
-    private javax.swing.JLabel lblregistrarse;
     private rojeru_san.rslabel.RSLabelBorderRound rSLabelBorderRound1;
     private javax.swing.JPasswordField txtcontrase;
     private javax.swing.JTextField txtcorreo;
