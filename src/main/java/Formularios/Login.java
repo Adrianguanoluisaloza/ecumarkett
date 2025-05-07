@@ -72,6 +72,7 @@ DaoUsuario daoU = new DaoUsuario();
         txtcorreo.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         txtcorreo.setForeground(new java.awt.Color(204, 204, 204));
         txtcorreo.setText("alguien@example.com");
+        txtcorreo.setSelectionColor(new java.awt.Color(0, 0, 0));
         txtcorreo.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtcorreoFocusGained(evt);
@@ -101,6 +102,7 @@ DaoUsuario daoU = new DaoUsuario();
         txtcontrase.setForeground(new java.awt.Color(204, 204, 204));
         txtcontrase.setText("********");
         txtcontrase.setOpaque(true);
+        txtcontrase.setSelectionColor(new java.awt.Color(0, 0, 0));
         txtcontrase.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtcontraseFocusGained(evt);
@@ -125,7 +127,7 @@ DaoUsuario daoU = new DaoUsuario();
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("ECUMARKET");
-        jpanelRound1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 460, -1, -1));
+        jpanelRound1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 410, -1, -1));
 
         btnentrar.setBackground(new java.awt.Color(0, 153, 255));
         btnentrar.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
@@ -160,6 +162,8 @@ DaoUsuario daoU = new DaoUsuario();
         });
         jpanelRound1.add(lblregistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 543, -1, -1));
 
+        btnVerPassword.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnVerPassword.setForeground(new java.awt.Color(255, 255, 255));
         btnVerPassword.setText("Ver Contraseña");
         btnVerPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -76,6 +76,7 @@ public class loginn extends javax.swing.JPanel {
         txtcorreo.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         txtcorreo.setForeground(new java.awt.Color(204, 204, 204));
         txtcorreo.setText("alguien@example.com");
+        txtcorreo.setSelectionColor(new java.awt.Color(0, 0, 0));
         txtcorreo.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtcorreoFocusGained(evt);
@@ -189,7 +190,7 @@ public class loginn extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, 784, Short.MAX_VALUE)
+                .addComponent(jpanelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, 778, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents

@@ -87,17 +87,20 @@ productos p=new productos();
         btnGuradar = new javax.swing.JButton();
         btnElimar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jpanelRound3 = new Modelo.JpanelRound();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaProductos = new javax.swing.JTable();
 
+        setMinimumSize(new java.awt.Dimension(1970, 720));
+        setPreferredSize(new java.awt.Dimension(1970, 720));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jpanelRound1.setBackground(new java.awt.Color(255, 255, 255));
         jpanelRound1.setPreferredSize(new java.awt.Dimension(982, 740));
         jpanelRound1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jpanelRound2.setBackground(new java.awt.Color(255, 153, 153));
+        jpanelRound2.setBackground(new java.awt.Color(102, 204, 255));
         jpanelRound2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos Producto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe Print", 1, 12))); // NOI18N
         jpanelRound2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -115,25 +118,26 @@ productos p=new productos();
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Precio. V");
         jpanelRound2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 328, -1, -1));
-        jpanelRound2.add(txtidCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 229, 80, -1));
-        jpanelRound2.add(txtid, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 49, 230, -1));
-        jpanelRound2.add(txtNomCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 288, 230, -1));
+        jpanelRound2.add(txtidCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 229, 120, -1));
+        jpanelRound2.add(txtid, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 49, 270, -1));
+        jpanelRound2.add(txtNomCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 288, 270, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("ID");
         jpanelRound2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 24, -1, -1));
-        jpanelRound2.add(txtstock, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 158, 230, -1));
-        jpanelRound2.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 102, 230, -1));
+        jpanelRound2.add(txtstock, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 158, 270, -1));
+        jpanelRound2.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 102, 270, -1));
 
         btnBuscarIdCategiria.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnBuscarIdCategiria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Loginregister/t (1).png"))); // NOI18N
         btnBuscarIdCategiria.setText("Buscar");
         btnBuscarIdCategiria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarIdCategiriaActionPerformed(evt);
             }
         });
-        jpanelRound2.add(btnBuscarIdCategiria, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, -1, -1));
+        jpanelRound2.add(btnBuscarIdCategiria, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -144,48 +148,58 @@ productos p=new productos();
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Categoria");
         jpanelRound2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 266, -1, -1));
-        jpanelRound2.add(txttprecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 350, 230, -1));
+        jpanelRound2.add(txttprecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 350, 270, -1));
 
         btnEditar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Loginregister/blue_upgrade_recyclearrows_arrow_azul_12426 (1).png"))); // NOI18N
         btnEditar.setText("Actualizar");
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarActionPerformed(evt);
             }
         });
-        jpanelRound2.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 400, -1, -1));
+        jpanelRound2.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 440, 150, -1));
 
         btnGuradar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnGuradar.setText("Regisrar");
+        btnGuradar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Loginregister/1486564412-plus_81511 (1).png"))); // NOI18N
+        btnGuradar.setText("Registrar");
         btnGuradar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuradarActionPerformed(evt);
             }
         });
-        jpanelRound2.add(btnGuradar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, -1));
+        jpanelRound2.add(btnGuradar, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 400, 150, -1));
 
         btnElimar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnElimar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Loginregister/blue_exit_delete_delete_12417 (1).png"))); // NOI18N
         btnElimar.setText("Eliminar");
         btnElimar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnElimarActionPerformed(evt);
             }
         });
-        jpanelRound2.add(btnElimar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, -1, -1));
+        jpanelRound2.add(btnElimar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 440, -1, -1));
 
         btnBuscar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Loginregister/t (1).png"))); // NOI18N
         btnBuscar.setText("Buscar");
+        btnBuscar.setToolTipText("");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarActionPerformed(evt);
             }
         });
-        jpanelRound2.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 460, -1, -1));
+        jpanelRound2.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 400, 130, -1));
 
-        jpanelRound1.add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 260, 700));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LogoAplicacion/logopequeño.png"))); // NOI18N
+        jpanelRound2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, 200, 160));
+
+        jpanelRound1.add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 300, 780));
 
         jpanelRound3.setBackground(new java.awt.Color(255, 255, 255));
         jpanelRound3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tabla Producto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe Print", 1, 12))); // NOI18N
+        jpanelRound3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tablaProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -202,25 +216,11 @@ productos p=new productos();
         });
         jScrollPane1.setViewportView(tablaProductos);
 
-        javax.swing.GroupLayout jpanelRound3Layout = new javax.swing.GroupLayout(jpanelRound3);
-        jpanelRound3.setLayout(jpanelRound3Layout);
-        jpanelRound3Layout.setHorizontalGroup(
-            jpanelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpanelRound3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 734, Short.MAX_VALUE))
-        );
-        jpanelRound3Layout.setVerticalGroup(
-            jpanelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpanelRound3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 579, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jpanelRound3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 670, 760));
 
-        jpanelRound1.add(jpanelRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 750, 620));
+        jpanelRound1.add(jpanelRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 690, 790));
 
-        add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 870));
+        add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 870));
     }// </editor-fold>//GEN-END:initComponents
 
     private void tablaProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaProductosMouseClicked
@@ -338,6 +338,7 @@ txtidCategoria.setText("");
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnElimar;
     private javax.swing.JButton btnGuradar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;

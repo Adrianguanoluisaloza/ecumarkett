@@ -72,10 +72,9 @@ public static boolean tipo;
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1270, 970));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1270, 970));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jpanelRound2.setBackground(new java.awt.Color(255, 51, 102));
+        jpanelRound2.setBackground(new java.awt.Color(102, 204, 255));
         jpanelRound2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jpanelRound3.setBackground(new java.awt.Color(255, 255, 255));
@@ -94,24 +93,26 @@ public static boolean tipo;
         jpanelRound3.add(txtprecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, 200, -1));
 
         btnCerrar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Loginregister/blue_exit_delete_delete_12417 (1).png"))); // NOI18N
         btnCerrar.setText("Cerrar");
         btnCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarActionPerformed(evt);
             }
         });
-        jpanelRound3.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 210, 110, 40));
+        jpanelRound3.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, 110, 30));
 
         btnEnviar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnEnviar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Loginregister/ic_send_128_28719.png"))); // NOI18N
         btnEnviar.setText("Enviar");
         btnEnviar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEnviarActionPerformed(evt);
             }
         });
-        jpanelRound3.add(btnEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 110, 40));
+        jpanelRound3.add(btnEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 110, 30));
 
-        jpanelRound2.add(jpanelRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, 780, 270));
+        jpanelRound2.add(jpanelRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 780, 270));
 
         jpanelRound4.setBackground(new java.awt.Color(204, 204, 204));
         jpanelRound4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -133,9 +134,9 @@ public static boolean tipo;
 
         jpanelRound4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 310));
 
-        jpanelRound2.add(jpanelRound4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 390, 780, 310));
+        jpanelRound2.add(jpanelRound4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 520, 780, 310));
 
-        getContentPane().add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1270, 970));
+        getContentPane().add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -190, 1270, 970));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
