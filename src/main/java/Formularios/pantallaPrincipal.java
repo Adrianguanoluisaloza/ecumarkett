@@ -508,7 +508,7 @@ btnSalir.setSelected(false);
 btnSalida.setSelected(false);
 btnCerrarSesionn.setSelected(false); 
         btnLogin.setSelected(true);
-        loginn L=new loginn();
+        loginn L=new loginn(this);
         L.setSize(982,740);
         L.setLocation(0,0);
 
