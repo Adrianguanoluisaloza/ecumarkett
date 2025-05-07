@@ -26,7 +26,7 @@ Categoria ct=new Categoria();
     public Categorias() {
         initComponents();
         listarCategorias();
-       //txtidcategoria.
+      
         
     }
 private void listarCategorias(){

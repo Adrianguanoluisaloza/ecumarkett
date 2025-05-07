@@ -58,9 +58,7 @@ private usuarios us;
         contenedor.add(L, BorderLayout.CENTER); 
         contenedor.revalidate(); 
        contenedor.repaint(); 
-      // L.setVisible(true);
-    //L.setBounds(0, 0, this.getWidth(), this.getHeight());
-    //L.setBackground(Color.decode("#00BFFF"));
+      
     }
 
   
@@ -110,7 +108,7 @@ private usuarios us;
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        contenedor.setBackground(new java.awt.Color(0, 0, 0));
+        contenedor.setBackground(new java.awt.Color(0, 204, 255));
 
         javax.swing.GroupLayout contenedorLayout = new javax.swing.GroupLayout(contenedor);
         contenedor.setLayout(contenedorLayout);
@@ -125,14 +123,14 @@ private usuarios us;
 
         getContentPane().add(contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, 990, 790));
 
-        panelbotones.setBackground(new java.awt.Color(102, 102, 102));
+        panelbotones.setBackground(new java.awt.Color(0, 153, 255));
         panelbotones.setRoundBottomLeft(50);
         panelbotones.setRoundBottomRight(50);
         panelbotones.setRoundTopLeft(50);
         panelbotones.setRoundTopRight(50);
         panelbotones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnInicio.setBackground(new java.awt.Color(0, 102, 102));
+        btnInicio.setBackground(new java.awt.Color(102, 204, 255));
         btnInicio.setText("Inicio");
         btnInicio.setBackgroundHover(new java.awt.Color(153, 204, 0));
         btnInicio.setFont(new java.awt.Font("Arial Narrow", 3, 20)); // NOI18N
@@ -144,7 +142,7 @@ private usuarios us;
         });
         panelbotones.add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 210, -1));
 
-        btnCategorias.setBackground(new java.awt.Color(0, 102, 102));
+        btnCategorias.setBackground(new java.awt.Color(102, 204, 255));
         btnCategorias.setText("Categorias");
         btnCategorias.setBackgroundHover(new java.awt.Color(51, 255, 51));
         btnCategorias.setFont(new java.awt.Font("Arial Narrow", 3, 20)); // NOI18N
@@ -156,9 +154,9 @@ private usuarios us;
         });
         panelbotones.add(btnCategorias, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 210, -1));
 
-        btnClientes.setBackground(new java.awt.Color(0, 102, 102));
+        btnClientes.setBackground(new java.awt.Color(102, 204, 255));
         btnClientes.setText("Clientes");
-        btnClientes.setBackgroundHover(new java.awt.Color(204, 255, 204));
+        btnClientes.setBackgroundHover(new java.awt.Color(153, 204, 0));
         btnClientes.setFont(new java.awt.Font("Arial Narrow", 3, 20)); // NOI18N
         btnClientes.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.LANGUAGE);
         btnClientes.addActionListener(new java.awt.event.ActionListener() {
@@ -168,9 +166,9 @@ private usuarios us;
         });
         panelbotones.add(btnClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 210, -1));
 
-        btnProveedor.setBackground(new java.awt.Color(0, 102, 102));
+        btnProveedor.setBackground(new java.awt.Color(102, 204, 255));
         btnProveedor.setText("Proveedor");
-        btnProveedor.setBackgroundHover(new java.awt.Color(102, 255, 102));
+        btnProveedor.setBackgroundHover(new java.awt.Color(153, 204, 0));
         btnProveedor.setFont(new java.awt.Font("Arial Narrow", 3, 20)); // NOI18N
         btnProveedor.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.STORAGE);
         btnProveedor.addActionListener(new java.awt.event.ActionListener() {
@@ -180,8 +178,9 @@ private usuarios us;
         });
         panelbotones.add(btnProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 210, -1));
 
-        btnEntradas.setBackground(new java.awt.Color(0, 102, 102));
+        btnEntradas.setBackground(new java.awt.Color(102, 204, 255));
         btnEntradas.setText("Entrada De Productos");
+        btnEntradas.setBackgroundHover(new java.awt.Color(153, 204, 0));
         btnEntradas.setFont(new java.awt.Font("Arial Narrow", 3, 18)); // NOI18N
         btnEntradas.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.REDO);
         btnEntradas.addActionListener(new java.awt.event.ActionListener() {
@@ -191,8 +190,9 @@ private usuarios us;
         });
         panelbotones.add(btnEntradas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 210, -1));
 
-        btnProductos.setBackground(new java.awt.Color(0, 102, 102));
+        btnProductos.setBackground(new java.awt.Color(102, 204, 255));
         btnProductos.setText("Productos");
+        btnProductos.setBackgroundHover(new java.awt.Color(153, 204, 0));
         btnProductos.setFont(new java.awt.Font("Arial Narrow", 3, 18)); // NOI18N
         btnProductos.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.REDO);
         btnProductos.addActionListener(new java.awt.event.ActionListener() {
@@ -202,8 +202,9 @@ private usuarios us;
         });
         panelbotones.add(btnProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 210, -1));
 
-        btnSalidas.setBackground(new java.awt.Color(0, 102, 102));
+        btnSalidas.setBackground(new java.awt.Color(102, 204, 255));
         btnSalidas.setText("Gestion De Pedidos");
+        btnSalidas.setBackgroundHover(new java.awt.Color(153, 204, 0));
         btnSalidas.setFont(new java.awt.Font("Arial Narrow", 3, 18)); // NOI18N
         btnSalidas.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.HISTORY);
         btnSalidas.addActionListener(new java.awt.event.ActionListener() {
@@ -213,8 +214,9 @@ private usuarios us;
         });
         panelbotones.add(btnSalidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 210, -1));
 
-        btnSalida.setBackground(new java.awt.Color(0, 102, 102));
+        btnSalida.setBackground(new java.awt.Color(102, 204, 255));
         btnSalida.setText("Pedidos");
+        btnSalida.setBackgroundHover(new java.awt.Color(153, 204, 0));
         btnSalida.setFont(new java.awt.Font("Arial Narrow", 3, 18)); // NOI18N
         btnSalida.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.PERM_CONTACT_CALENDAR);
         btnSalida.addActionListener(new java.awt.event.ActionListener() {
@@ -224,9 +226,9 @@ private usuarios us;
         });
         panelbotones.add(btnSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 210, -1));
 
-        btnSalir.setBackground(new java.awt.Color(0, 102, 102));
+        btnSalir.setBackground(new java.awt.Color(102, 204, 255));
         btnSalir.setText("Salir");
-        btnSalir.setBackgroundHover(new java.awt.Color(204, 204, 0));
+        btnSalir.setBackgroundHover(new java.awt.Color(153, 204, 0));
         btnSalir.setFont(new java.awt.Font("Arial Narrow", 3, 18)); // NOI18N
         btnSalir.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SD_CARD);
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -253,8 +255,9 @@ private usuarios us;
         iconusuario.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         panelbotones.add(iconusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 190, -1));
 
-        btnCerrarSesionn.setBackground(new java.awt.Color(0, 102, 102));
+        btnCerrarSesionn.setBackground(new java.awt.Color(102, 204, 255));
         btnCerrarSesionn.setText("Cerrar Sesion");
+        btnCerrarSesionn.setBackgroundHover(new java.awt.Color(153, 204, 0));
         btnCerrarSesionn.setFont(new java.awt.Font("Arial Narrow", 3, 18)); // NOI18N
         btnCerrarSesionn.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.PERM_CONTACT_CALENDAR);
         btnCerrarSesionn.addActionListener(new java.awt.event.ActionListener() {
@@ -264,8 +267,9 @@ private usuarios us;
         });
         panelbotones.add(btnCerrarSesionn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 600, 210, -1));
 
-        btnLogin.setBackground(new java.awt.Color(0, 102, 102));
+        btnLogin.setBackground(new java.awt.Color(102, 204, 255));
         btnLogin.setText("Login");
+        btnLogin.setBackgroundHover(new java.awt.Color(153, 204, 0));
         btnLogin.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SPA);
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

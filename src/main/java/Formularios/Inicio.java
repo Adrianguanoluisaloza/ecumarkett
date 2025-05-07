@@ -3,7 +3,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package Formularios;
-
+import Dao.DaoClientes;
+import Dao.DaoEntradas;
+import Dao.DaoProductos;
+import Dao.DaoSalida;
+import Modelo.clientes;
+import Modelo.productos;
+import java.awt.Color;
+import java.text.NumberFormat;
+import java.util.List;
+import java.util.Locale;
+import javax.swing.table.DefaultTableModel;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
 
 
 /**
@@ -12,13 +27,61 @@ package Formularios;
  */
 public class Inicio extends javax.swing.JPanel {
 
+ 
+DaoClientes daoCl=new DaoClientes();
+DaoEntradas daoE=new DaoEntradas();
+DaoSalida daoS=new DaoSalida();
+DaoProductos daoPr=new DaoProductos();
+
+DefaultTableModel modeloClientesF=new DefaultTableModel();
+DefaultTableModel modeloProdF=new DefaultTableModel();
     /**
      * Creates new form Inicio
      */
     public Inicio() {
         initComponents();
-     
+      this.setBackground(new Color(0,0,0,0));
+       
+
+        listarClientesFrecuentes();
+        listarProdFrecuentes();
+
+        double totalSalidas = daoS.TotalSalidas(selectmes.getMonth()+1, selectAño.getYear());
+        double totalEntradas = daoE.TotalEntradas(selectmes.getMonth()+1, selectAño.getYear());
+        txttotalSalidas.setText("$ " + formato.format(totalSalidas));
+        txttotalEntradas.setText("$ " + formato.format(totalEntradas));
+           
     }
+
+    private void listarClientesFrecuentes(){
+        List<clientes> lista=daoCl.clientesFrecuentes();
+        modeloClientesF=(DefaultTableModel) tablaClienteF.getModel();
+        Object[] ob=new Object[3];
+        for(int i=0;i<lista.size();i++){
+            ob[0]=lista.get(i).getCantSalidas();
+            ob[1]=lista.get(i).getNombre();
+            ob[2]=lista.get(i).getDocumento();
+            modeloClientesF.addRow(ob);
+        }
+       tablaClienteF.setModel(modeloClientesF);
+
+        graficarClientesF();
+    }
+
+    private void listarProdFrecuentes(){
+        List<productos> lista=daoPr.ProdFrecuentes();
+        modeloProdF=(DefaultTableModel) tablaProductoF.getModel();
+        Object[] ob=new Object[2];
+        for(int i=0;i<lista.size();i++){
+            ob[0]=lista.get(i).getCantF();
+            ob[1]=lista.get(i).getNomProd();
+            modeloProdF.addRow(ob);
+        }
+       tablaProductoF.setModel(modeloProdF);
+
+        graficarProdF();
+    }
+NumberFormat formato = NumberFormat.getNumberInstance(Locale.US);
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -30,25 +93,157 @@ public class Inicio extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tablaClienteF = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tablaProductoF = new javax.swing.JTable();
+        panelClientesF = new javax.swing.JPanel();
+        panelProdF = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        txttotalEntradas = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        txttotalSalidas = new javax.swing.JLabel();
+        selectAño = new com.toedter.calendar.JYearChooser();
+        selectmes = new com.toedter.calendar.JMonthChooser();
+        btnProcesaar = new RSMaterialComponent.RSButtonMaterialIconDos();
 
-        jPanel1.setBackground(new java.awt.Color(255, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+
+        tablaClienteF.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Cliente", "Cant.", "Documento"
+            }
+        ));
+        jScrollPane1.setViewportView(tablaClienteF);
+
+        tablaProductoF.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Prodcuto", "Cant."
+            }
+        ));
+        jScrollPane2.setViewportView(tablaProductoF);
+
+        javax.swing.GroupLayout panelClientesFLayout = new javax.swing.GroupLayout(panelClientesF);
+        panelClientesF.setLayout(panelClientesFLayout);
+        panelClientesFLayout.setHorizontalGroup(
+            panelClientesFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 408, Short.MAX_VALUE)
+        );
+        panelClientesFLayout.setVerticalGroup(
+            panelClientesFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 314, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout panelProdFLayout = new javax.swing.GroupLayout(panelProdF);
+        panelProdF.setLayout(panelProdFLayout);
+        panelProdFLayout.setHorizontalGroup(
+            panelProdFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 430, Short.MAX_VALUE)
+        );
+        panelProdFLayout.setVerticalGroup(
+            panelProdFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 314, Short.MAX_VALUE)
+        );
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel4.setText("Entradas");
+
+        txttotalEntradas.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txttotalEntradas.setForeground(new java.awt.Color(255, 0, 51));
+        txttotalEntradas.setText("100 $/.");
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel6.setText("Salidas");
+
+        txttotalSalidas.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txttotalSalidas.setForeground(new java.awt.Color(0, 153, 51));
+        txttotalSalidas.setText("100 $/.");
+
+        btnProcesaar.setBackground(new java.awt.Color(0, 204, 255));
+        btnProcesaar.setText("Calcular");
+        btnProcesaar.setBackgroundHover(new java.awt.Color(50, 130, 181));
+        btnProcesaar.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SAVE);
+        btnProcesaar.setRound(25);
+        btnProcesaar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProcesaarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 990, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(panelClientesF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(42, 42, 42)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(panelProdF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(txttotalEntradas)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel6)
+                        .addGap(18, 18, 18)
+                        .addComponent(txttotalSalidas)
+                        .addGap(18, 18, 18)
+                        .addComponent(selectAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(selectmes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnProcesaar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 790, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(327, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txttotalEntradas)
+                            .addComponent(jLabel4)
+                            .addComponent(txttotalSalidas)
+                            .addComponent(jLabel6))
+                        .addComponent(selectAño, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(selectmes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnProcesaar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(panelClientesF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panelProdF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -56,8 +251,54 @@ public class Inicio extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnProcesaarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcesaarActionPerformed
+        // TODO add your handling code here:
+     
+formato.setMinimumFractionDigits(2);
+formato.setMaximumFractionDigits(2);
+
+double totalSalidas = daoS.TotalSalidas(selectmes.getMonth()+1, selectAño.getYear());
+double totalEntradas = daoE.TotalEntradas(selectmes.getMonth()+1, selectAño.getYear());
+
+txttotalSalidas.setText("$ " + formato.format(totalSalidas));
+txttotalEntradas.setText("$ " + formato.format(totalEntradas));
+    }//GEN-LAST:event_btnProcesaarActionPerformed
+ void graficarClientesF(){
+      DefaultCategoryDataset dtsc = new DefaultCategoryDataset();
+      for(int i=0;i<tablaClienteF.getRowCount();i++){
+        dtsc.setValue(Double.parseDouble(tablaClienteF.getValueAt(i, 0).toString()),tablaClienteF.getValueAt(i, 0).toString(),tablaClienteF.getValueAt(i, 1).toString());
+      }
+      JFreeChart ch = ChartFactory.createBarChart("3 clientes Frecuentes", "Clientes", "Salidas", dtsc,PlotOrientation.VERTICAL,true,true,true);
+      ChartPanel cp=new ChartPanel(ch);
+      panelClientesF.add(cp);
+      cp.setBounds(0,0,460, 270);
+    }
+
+    void graficarProdF(){
+      DefaultCategoryDataset dtsc = new DefaultCategoryDataset();
+      for(int i=0;i<tablaProductoF.getRowCount();i++){
+        dtsc.setValue(Double.parseDouble(tablaProductoF.getValueAt(i, 0).toString()),tablaProductoF.getValueAt(i, 0).toString(),tablaProductoF.getValueAt(i, 1).toString());
+      }
+      JFreeChart ch = ChartFactory.createBarChart("3 Productos Frecuentes", "Productos", "Salidas", dtsc,PlotOrientation.VERTICAL,true,true,true);
+      ChartPanel cp=new ChartPanel(ch);
+      panelProdF.add(cp);
+      cp.setBounds(0,0,453, 270);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private RSMaterialComponent.RSButtonMaterialIconDos btnProcesaar;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JPanel panelClientesF;
+    private javax.swing.JPanel panelProdF;
+    private com.toedter.calendar.JYearChooser selectAño;
+    private com.toedter.calendar.JMonthChooser selectmes;
+    private javax.swing.JTable tablaClienteF;
+    private javax.swing.JTable tablaProductoF;
+    private javax.swing.JLabel txttotalEntradas;
+    private javax.swing.JLabel txttotalSalidas;
     // End of variables declaration//GEN-END:variables
 }
