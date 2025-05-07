@@ -73,12 +73,12 @@ DaoUsuario daoU = new DaoUsuario();
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 204, 255));
-        jLabel5.setText("Inicia sesion");
+        jLabel5.setText("Inicia sesión");
         jpanelRound1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(102, 204, 255));
-        jLabel6.setText("Correo electronico");
+        jLabel6.setText("Correo electrónico ");
         jpanelRound1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, -1, -1));
 
         txtcorreo.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
@@ -139,7 +139,7 @@ DaoUsuario daoU = new DaoUsuario();
         btnentrar.setBackground(new java.awt.Color(0, 153, 255));
         btnentrar.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         btnentrar.setForeground(new java.awt.Color(255, 255, 255));
-        btnentrar.setText("Iniciar sesion");
+        btnentrar.setText("Inicia sesión");
         btnentrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnentrarActionPerformed(evt);

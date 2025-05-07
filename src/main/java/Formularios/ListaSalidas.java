@@ -130,7 +130,7 @@ DaoProductos daoP=new DaoProductos();
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jLabel2.setText("Numero:");
+        jLabel2.setText("Número:");
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
 
         lbl.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
@@ -176,7 +176,7 @@ DaoProductos daoP=new DaoProductos();
 
             },
             new String [] {
-                "ID", "Numero", "Id Cliente", "fecha", "subtotal", "IGV", "Total", "Estado"
+                "ID", "Número", "Id Cliente", "fecha", "subtotal", "IGV", "Total", "Estado"
             }
         ));
         tablaSalidas.addMouseListener(new java.awt.event.MouseAdapter() {

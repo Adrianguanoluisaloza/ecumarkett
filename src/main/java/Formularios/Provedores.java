@@ -111,7 +111,7 @@ proveedor p=new proveedor();
 
             },
             new String [] {
-                "ID", "Nombre", "Apellido", "Docuento", "Activadad comercial", "Direccion", "Telefono", "Correo"
+                "ID", "Nombre", "Apellido", "Documento", "Actividad comercial", "Dirección", "Teléfono", "Correo"
             }
         ));
         tablaproveedores.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -189,14 +189,14 @@ proveedor p=new proveedor();
         jpanelRound2.add(txttelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, 190, -1));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel10.setText("Telefono");
+        jLabel10.setText("Teléfono");
         jpanelRound2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, -1, -1));
 
         txtdireccion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jpanelRound2.add(txtdireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 190, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel8.setText("Direccion");
+        jLabel8.setText("Dirección");
         jpanelRound2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, -1, -1));
 
         txtRsocial.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -274,7 +274,7 @@ proveedor p=new proveedor();
         add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 760, 320));
 
         rSLabelBorderRound1.setForeground(new java.awt.Color(0, 0, 0));
-        rSLabelBorderRound1.setText("Gestion de Proveedores");
+        rSLabelBorderRound1.setText("Gestión de Proveedores");
         rSLabelBorderRound1.setAlignmentX(0.5F);
         rSLabelBorderRound1.setBgBorde(new java.awt.Color(204, 204, 204));
         rSLabelBorderRound1.setFont(new java.awt.Font("Roboto Bold", 1, 36)); // NOI18N

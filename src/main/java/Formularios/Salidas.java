@@ -346,7 +346,7 @@ int filaSeleccionada;
         jpanelRound2.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 123, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jLabel6.setText("Telefono");
+        jLabel6.setText("Teléfono");
         jpanelRound2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
         txtcorreo.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
