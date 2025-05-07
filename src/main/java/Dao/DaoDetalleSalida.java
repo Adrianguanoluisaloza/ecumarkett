@@ -8,6 +8,7 @@ import Modelo.detalleSalida;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -29,12 +30,8 @@ public class DaoDetalleSalida {
             con=cn.conectar();
             ps=con.prepareStatement(SQL);
             int n=ps.executeUpdate();
-            if(n!=0){
-                return true;
-            }else{
-                return false;
-            }
-        }catch(Exception e){
+            return n!=0;
+        }catch(SQLException e){
             JOptionPane.showConfirmDialog(null, e);
             return false;
         }
