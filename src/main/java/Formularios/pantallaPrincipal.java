@@ -12,7 +12,6 @@ import Formularios.ListaSalidas;
 import Formularios.Provedores;
 import Formularios.Salidas;
 import Formularios.Utilidades;
-import Formularios.loginn;
 import Modelo.usuarios;
 import java.awt.BorderLayout;
 import javax.swing.JOptionPane;
@@ -51,6 +50,10 @@ private usuarios us;
         Utilidades.mostrarToast(this, "¡Bienvenido, " + us.getTipoUsuario().toUpperCase() + "!"); // Muestra un mensaje de bienvenida
         
     }
+    public void cerrar(){
+    this.dispose();
+    Login L = new Login();
+    L.setVisible(true);}
     public void mostrarInicio() {
         Inicio i=new Inicio();
         i.setSize(990,790);
@@ -61,19 +64,7 @@ private usuarios us;
         contenedor.revalidate();
         contenedor.repaint();
       
-    }
-    public void mostrarLogin() {
-        loginn L = new loginn(this); 
-        L.setSize(990,790);
-        L.setLocation(0, 0); 
-        contenedor.removeAll(); 
-        contenedor.add(L, BorderLayout.CENTER); 
-        contenedor.revalidate(); 
-       contenedor.repaint(); 
-      
-    }
-
-  
+    } 
     public void mostrarRegistro() {
         Registro R = new Registro(this); 
         R.setSize(990,790); 
@@ -505,9 +496,10 @@ btnRegistro.setVisible(false);
 pantallaPrincipal.txtiduser.setText("");
 pantallaPrincipal.iconusuario.setText("");
 JOptionPane.showMessageDialog(null, "Sesión cerrada correctamente", "Cerrar sesión", JOptionPane.INFORMATION_MESSAGE);
+    cerrar();
 
 
-mostrarLogin();
+
     }//GEN-LAST:event_btnCerrarSesionnActionPerformed
 
     private void btnRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroActionPerformed
@@ -523,7 +515,7 @@ btnSalir.setSelected(false);
 btnSalida.setSelected(false);
 btnCerrarSesionn.setSelected(false); 
         btnRegistro.setSelected(true);
-        Registro R=new Registro();
+        Registro R=new Registro(this);
         R.setSize(990,790);
         R.setLocation(0,0);
 

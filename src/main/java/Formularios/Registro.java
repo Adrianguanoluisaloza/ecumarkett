@@ -74,7 +74,7 @@ public class Registro extends javax.swing.JPanel {
         txtpass = new javax.swing.JPasswordField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaUsuarios = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        btnvolver = new javax.swing.JButton();
 
         setMinimumSize(new java.awt.Dimension(1270, 790));
         setPreferredSize(new java.awt.Dimension(1270, 790));
@@ -299,17 +299,17 @@ public class Registro extends javax.swing.JPanel {
 
         jpanelRound2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, 510, 614));
 
-        jButton1.setBackground(new java.awt.Color(0, 153, 255));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Loginregister/return_121764 (1).png"))); // NOI18N
-        jButton1.setText("Volver");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnvolver.setBackground(new java.awt.Color(0, 153, 255));
+        btnvolver.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnvolver.setForeground(new java.awt.Color(255, 255, 255));
+        btnvolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Loginregister/return_121764 (1).png"))); // NOI18N
+        btnvolver.setText("Login");
+        btnvolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnvolverActionPerformed(evt);
             }
         });
-        jpanelRound2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 630, 120, 40));
+        jpanelRound2.add(btnvolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 630, 120, 40));
 
         add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1270, 790));
     }// </editor-fold>//GEN-END:initComponents
@@ -461,9 +461,21 @@ void limpiarCampos(){
         }
     }//GEN-LAST:event_tablaUsuariosMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       pP.mostrarLogin();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnvolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvolverActionPerformed
+      int confirm = JOptionPane.showConfirmDialog(
+        this,
+        "¿Esta acción también hará cerrar la sesión actual, desea continuar?",
+        "Confirmar salida",
+        JOptionPane.YES_NO_OPTION,
+        JOptionPane.QUESTION_MESSAGE
+    );
+
+    if (confirm == JOptionPane.YES_OPTION) {
+        pP.dispose();
+       new Login().setVisible(true);
+    }
+        
+    }//GEN-LAST:event_btnvolverActionPerformed
 
     private void txtdocumentoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtdocumentoFocusLost
         String documento = txtdocumento.getText().trim();
@@ -498,9 +510,9 @@ void limpiarCampos(){
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnRegistrarse1;
+    private javax.swing.JButton btnvolver;
     private javax.swing.JComboBox<String> cmbTipoUsuario;
     private javax.swing.JComboBox<String> cmbciudad;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
