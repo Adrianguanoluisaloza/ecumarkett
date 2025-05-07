@@ -10,26 +10,16 @@ import Dao.DaoDetalleSalida;
 import Dao.DaoEntradas;
 import Dao.DaoProductos;
 import Dao.DaoSalida;
-import Dao.conexion;
 import Modelo.clientes;
 import Modelo.entradas;
 import Modelo.salidas;
 import java.awt.Toolkit;
-import java.io.File;
-import java.sql.Connection;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.view.JasperViewer;
+
 
 
 
@@ -438,7 +428,7 @@ int filaSeleccionada;
            
            JOptionPane.showMessageDialog(null,"Salida Registrada Con Exito");
             restaStock();
-            GenerarPDF(txtnsalida.getText());
+//            GenerarPDF(txtnsalida.getText());
             numSalida();
             limpiarDatosPod();
             limpaDatosCliente();
@@ -554,7 +544,7 @@ private void agregaEntrada(){
             i=0-1;
         }
     }
-    private final Connection conection=new conexion().conectar();
+ /*   private final Connection conection=new conexion().conectar();
 
     void GenerarPDF(String numSalida){
         Map p=new HashMap();
@@ -571,7 +561,7 @@ private void agregaEntrada(){
         }catch(JRException e){
             e.printStackTrace();
         }
-    }
+    }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
