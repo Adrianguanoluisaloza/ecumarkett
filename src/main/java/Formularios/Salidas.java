@@ -10,15 +10,26 @@ import Dao.DaoDetalleSalida;
 import Dao.DaoEntradas;
 import Dao.DaoProductos;
 import Dao.DaoSalida;
+import Dao.conexion;
 import Modelo.clientes;
 import Modelo.entradas;
 import Modelo.salidas;
 import java.awt.Toolkit;
+import java.io.File;
+import java.sql.Connection;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
 
 
 
@@ -428,7 +439,7 @@ int filaSeleccionada;
            
            JOptionPane.showMessageDialog(null,"Salida Registrada Con Exito");
             restaStock();
-//            GenerarPDF(txtnsalida.getText());
+           GenerarPDF(txtnsalida.getText());
             numSalida();
             limpiarDatosPod();
             limpaDatosCliente();
@@ -443,7 +454,16 @@ int filaSeleccionada;
     }//GEN-LAST:event_btnGenerarActionPerformed
 
     private void tablaSalidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaSalidasMouseClicked
-  
+  filaSeleccionada=tablaSalidas.getSelectedRow();
+        txtidProducto.setText(tablaSalidas.getValueAt(filaSeleccionada, 1).toString());
+        txtcantidad.setText(tablaSalidas.getValueAt(filaSeleccionada, 4).toString());
+        txtproducto.setText(tablaSalidas.getValueAt(filaSeleccionada, 2).toString());
+        txtprecio.setText(tablaSalidas.getValueAt(filaSeleccionada, 3).toString());
+
+        e.setIdentrada(Integer.parseInt(txtidProducto.getText()));
+        if(DaoE.buscar(e)){
+           txtstock.setText(e.getStock()+"");
+        }
     }//GEN-LAST:event_tablaSalidasMouseClicked
 
     private void btnBuscarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarClientesActionPerformed
@@ -544,7 +564,7 @@ private void agregaEntrada(){
             i=0-1;
         }
     }
- /*   private final Connection conection=new conexion().conectar();
+  private final Connection conection=new conexion().conectar();
 
     void GenerarPDF(String numSalida){
         Map p=new HashMap();
@@ -553,7 +573,7 @@ private void agregaEntrada(){
         JasperPrint print;
 
         try{
-            report=JasperCompileManager.compileReport(new File("").getAbsolutePath()+"/src/reportes/Salida.jasper");
+            report=JasperCompileManager.compileReport(new File("").getAbsolutePath()+"/src/reportes/Pedidos.jrxml");
             print=JasperFillManager.fillReport(report, p, conection);
             JasperViewer view=new JasperViewer(print,false);
             view.setTitle("Documento Salida N° "+numSalida);
@@ -561,7 +581,7 @@ private void agregaEntrada(){
         }catch(JRException e){
             e.printStackTrace();
         }
-    }*/
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;

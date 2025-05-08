@@ -6,6 +6,8 @@ package Formularios;
 
 import Dao.DaoClientes;
 import Dao.conexion;
+import Modelo.ReporteFacturaSalida;
+import Modelo.ReportePDF;
 import Modelo.clientes;
 import java.awt.Toolkit;
 import java.io.File;
@@ -454,12 +456,24 @@ if (dao.buscar(c)) {
     }//GEN-LAST:event_txtdocumentoKeyTyped
 
     private void btnPdfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPdfActionPerformed
-RegenerarJasper();
+//RegenerarJasper();
     
 // TODO add your handling code here:
        //GenerarPDF();
-      // CrearReporteBasico();
+      //CrearReporteBasico();
       // JasperPrint reporteTodoProducto(); 
+    //String rutaReporte = "src/reportes/reporteClientes.jasper";
+    //String salidaPDF = "C://";  // Puedes cambiar esta ruta
+
+    // Si no tienes parámetros, solo crea un mapa vacío
+   // Map<String, Object> parametros = new HashMap<>();
+ReporteFacturaSalida r = new ReporteFacturaSalida();
+r.generarReporteSalida("001-123");
+    // Si el reporte necesita parámetros, agrégalos así:
+    // parametros.put("id_usuario", 5);
+
+    // Llamada al método
+    //ReportePDF.generarReporte(rutaReporte, parametros, salidaPDF);
 
     }//GEN-LAST:event_btnPdfActionPerformed
 
@@ -569,32 +583,9 @@ void CrearReporteBasico() {
         e.printStackTrace();
         JOptionPane.showMessageDialog(null, "Error al crear reporte básico: " + e.getMessage());
     }
-}
-*/
+}*/
 
-   void RegenerarJasper() {
-    try {
-        String jrxmlPath = "F:/Users/Adrian/Documents/NetBeansProjects/ecumarkett/target/classes/reportes/Blank_A4.jrxml";
-        // Crear el archivo .jasper en una carpeta diferente (escritorio por ejemplo)
-        String desktopPath = System.getProperty("user.home") + "/Desktop/Blank_A4.jrxml";
-        
-        // Compilar el jrxml a una nueva ubicación
-        JasperCompileManager.compileReportToFile(jrxmlPath, desktopPath);
-        System.out.println("Archivo .jasper creado exitosamente en: " + desktopPath);
-        
-        // Usar el nuevo archivo .jasper
-        Map<String, Object> parametros = new HashMap<>();
-        JasperPrint print = JasperFillManager.fillReport(desktopPath, parametros, conection);
-        JasperViewer viewer = new JasperViewer(print, false);
-        viewer.setTitle("Lista de Clientes");
-        viewer.setVisible(true);
-        
-    } catch (JRException e) {
-        e.printStackTrace();
-        JOptionPane.showMessageDialog(null, "Error al regenerar el archivo .jasper: " + e.getMessage());
-    }
-}
-
+  
     void limpiarCampos(){
         txtidcliente.setText("");
         txtnombre.setText("");
