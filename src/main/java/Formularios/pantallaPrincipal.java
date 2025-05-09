@@ -32,7 +32,14 @@ private usuarios us;
         setLocationRelativeTo(null);
          bloquearComponentes();
         
-       
+         Inicio h=new Inicio();
+        h.setSize(982,740);
+        h.setLocation(0,0);
+        
+        contenedor.removeAll();
+        contenedor.add(h,BorderLayout.CENTER);
+        contenedor.revalidate();
+        contenedor.repaint();
         
             
 }
@@ -525,52 +532,57 @@ btnCerrarSesionn.setSelected(false);
         contenedor.repaint();
     }//GEN-LAST:event_btnRegistroActionPerformed
 
+ 
     private void configurarPorRol() {
-        String tipo = us.getTipoUsuario();
-        switch (tipo) {
-            case "Vendedor" -> {
-                
-                pantallaPrincipal.btnInicio.setEnabled(true);
-                pantallaPrincipal.btnSalidas.setEnabled(true);
-                pantallaPrincipal.btnCategorias.setEnabled(false);
-                pantallaPrincipal.btnClientes.setEnabled(true);
-                pantallaPrincipal.btnEntradas.setEnabled(false);
-                pantallaPrincipal.btnProveedor.setEnabled(false);
-                pantallaPrincipal.btnProductos.setEnabled(false);
-                pantallaPrincipal.btnSalir.setEnabled(true);
-                pantallaPrincipal.btnCerrarSesionn.setEnabled(true);
-               
-            }
-            case "Almacenero" -> {
-              
-                pantallaPrincipal.btnInicio.setEnabled(true);
-                pantallaPrincipal.btnSalidas.setEnabled(false);
-                pantallaPrincipal.btnCategorias.setEnabled(true);
-                pantallaPrincipal.btnClientes.setEnabled(false);
-                pantallaPrincipal.btnEntradas.setEnabled(true);
-                pantallaPrincipal.btnProveedor.setEnabled(true);
-                pantallaPrincipal.btnProductos.setEnabled(true);
-                pantallaPrincipal.btnSalir.setEnabled(true);
-                pantallaPrincipal.btnCerrarSesionn.setEnabled(true);
-              
-            }
-            case "Administrador" -> {
-            
-                pantallaPrincipal.btnInicio.setEnabled(true);
-                pantallaPrincipal.btnSalidas.setEnabled(true);
-                pantallaPrincipal.btnCategorias.setEnabled(true);
-                pantallaPrincipal.btnClientes.setEnabled(true);
-                pantallaPrincipal.btnEntradas.setEnabled(true);
-                pantallaPrincipal.btnProveedor.setEnabled(true);
-                pantallaPrincipal.btnProductos.setEnabled(true);
-                pantallaPrincipal.btnSalir.setEnabled(true);
-                pantallaPrincipal.btnCerrarSesionn.setEnabled(true);
-           
-            }
-            default ->   JOptionPane.showMessageDialog(null, "⚠ Usuario sin rol válido.");
-        }
+    String tipo = us.getTipoUsuario();
+
+    if (tipo == null) {
+        JOptionPane.showMessageDialog(null, "⚠ Tipo de usuario no definido.");
+        return;
     }
-    
+
+    switch (tipo) {
+        case "Vendedor":
+            pantallaPrincipal.btnInicio.setEnabled(true);
+            pantallaPrincipal.btnSalidas.setEnabled(true);
+            pantallaPrincipal.btnCategorias.setEnabled(false);
+            pantallaPrincipal.btnClientes.setEnabled(true);
+            pantallaPrincipal.btnEntradas.setEnabled(false);
+            pantallaPrincipal.btnProveedor.setEnabled(false);
+            pantallaPrincipal.btnProductos.setEnabled(false);
+            pantallaPrincipal.btnSalir.setEnabled(true);
+            pantallaPrincipal.btnCerrarSesionn.setEnabled(true);
+            break;
+
+        case "Almacenero":
+            pantallaPrincipal.btnInicio.setEnabled(true);
+            pantallaPrincipal.btnSalidas.setEnabled(false);
+            pantallaPrincipal.btnCategorias.setEnabled(true);
+            pantallaPrincipal.btnClientes.setEnabled(false);
+            pantallaPrincipal.btnEntradas.setEnabled(true);
+            pantallaPrincipal.btnProveedor.setEnabled(true);
+            pantallaPrincipal.btnProductos.setEnabled(true);
+            pantallaPrincipal.btnSalir.setEnabled(true);
+            pantallaPrincipal.btnCerrarSesionn.setEnabled(true);
+            break;
+
+        case "Administrador":
+            pantallaPrincipal.btnInicio.setEnabled(true);
+            pantallaPrincipal.btnSalidas.setEnabled(true);
+            pantallaPrincipal.btnCategorias.setEnabled(true);
+            pantallaPrincipal.btnClientes.setEnabled(true);
+            pantallaPrincipal.btnEntradas.setEnabled(true);
+            pantallaPrincipal.btnProveedor.setEnabled(true);
+            pantallaPrincipal.btnProductos.setEnabled(true);
+            pantallaPrincipal.btnSalir.setEnabled(true);
+            pantallaPrincipal.btnCerrarSesionn.setEnabled(true);
+            break;
+
+        default:
+            JOptionPane.showMessageDialog(null, "⚠ Usuario sin rol válido.");
+            break;
+    }
+}
     
     private void bloquearComponentes() {
     btnInicio.setEnabled(false);

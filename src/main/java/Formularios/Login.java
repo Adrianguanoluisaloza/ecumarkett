@@ -6,6 +6,7 @@ package Formularios;
 import javax.swing.JOptionPane;
 import Dao.DaoUsuario;
 import Modelo.usuarios;
+import com.formdev.flatlaf.themes.FlatMacLightLaf;
 import java.awt.Color;
 
 /**
@@ -236,56 +237,57 @@ DaoUsuario daoU = new DaoUsuario();
     }//GEN-LAST:event_txtcontraseMousePressed
 
     private void btnentrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnentrarActionPerformed
-         us = daoU.login(txtcorreo.getText(), txtcontrase.getText());
-        if(us.getIdusuario() != 0){
+        us = daoU.login(txtcorreo.getText(), txtcontrase.getText());
+if (us.getIdusuario() != 0) {
+    pantallaPrincipal m = new pantallaPrincipal(us);
+   // Inicio h = new Inicio();
+   /// h.setSize(982, 740);
+   // h.setLocation(0, 0);
 
-            pantallaPrincipal m = new pantallaPrincipal(us);
-            Inicio h=new Inicio();
-            h.setSize(982,740);
-            h.setLocation(0,0);
+    
+    Utilidades.mostrarToast(m, "¡Bienvenido, " + us.getTipoUsuario().toUpperCase() + "!");
 
-            // Mostrar toast de bienvenida
-            Utilidades.mostrarToast(m, "¡Bienvenido, " + us.getTipoUsuario().toUpperCase() + "!");
+    String tipo = us.getTipoUsuario();
 
-            String tipo = us.getTipoUsuario();
-            switch(tipo){
-                case "Vendedor" -> {
-                    pantallaPrincipal.btnSalidas.setEnabled(true);
-                    pantallaPrincipal.btnCategorias.setEnabled(false);
-                    pantallaPrincipal.btnClientes.setEnabled(true);
-                    pantallaPrincipal.btnEntradas.setEnabled(false);
-                    pantallaPrincipal.btnProveedor.setEnabled(false);
-                    pantallaPrincipal.btnProductos.setEnabled(false);
-                }
-                case "Almacenero" -> {
-                    pantallaPrincipal.btnSalidas.setEnabled(false);
-                    pantallaPrincipal.btnCategorias.setEnabled(true);
-                    pantallaPrincipal.btnClientes.setEnabled(false);
-                    pantallaPrincipal.btnEntradas.setEnabled(true);
-                    pantallaPrincipal.btnProveedor.setEnabled(true);
-                    pantallaPrincipal.btnProductos.setEnabled(true);
-                }
-                case "Administrador" -> {
-                    pantallaPrincipal.btnSalidas.setEnabled(true);
-                    pantallaPrincipal.btnCategorias.setEnabled(true);
-                    pantallaPrincipal.btnClientes.setEnabled(true);
-                    pantallaPrincipal.btnEntradas.setEnabled(true);
-                    pantallaPrincipal.btnProveedor.setEnabled(true);
-                    pantallaPrincipal.btnProductos.setEnabled(true);
-                    pantallaPrincipal.btnRegistro.setVisible(true);
-                }
-                default -> Utilidades.mostrarToast(m, "⚠ Usuario sin rol válido.");
-            }
+    switch (tipo) {
+        case "Vendedor":
+            pantallaPrincipal.btnSalidas.setEnabled(true);
+            pantallaPrincipal.btnCategorias.setEnabled(false);
+            pantallaPrincipal.btnClientes.setEnabled(true);
+            pantallaPrincipal.btnEntradas.setEnabled(false);
+            pantallaPrincipal.btnProveedor.setEnabled(false);
+            pantallaPrincipal.btnProductos.setEnabled(false);
+            break;
 
-            pantallaPrincipal.txtiduser.setText(us.getIdusuario() + "");
-           // pantallaPrincipal.txtuser.setText(us.getUsuario());
-            m.setVisible(true);
+        case "Almacenero":
+            pantallaPrincipal.btnSalidas.setEnabled(false);
+            pantallaPrincipal.btnCategorias.setEnabled(true);
+            pantallaPrincipal.btnClientes.setEnabled(false);
+            pantallaPrincipal.btnEntradas.setEnabled(true);
+            pantallaPrincipal.btnProveedor.setEnabled(true);
+            pantallaPrincipal.btnProductos.setEnabled(true);
+            break;
 
-            dispose();
-        } else {
-            Utilidades.mostrarToast(null, "❌ Acceso denegado");
-        }
-        
+        case "Administrador":
+            pantallaPrincipal.btnSalidas.setEnabled(true);
+            pantallaPrincipal.btnCategorias.setEnabled(true);
+            pantallaPrincipal.btnClientes.setEnabled(true);
+            pantallaPrincipal.btnEntradas.setEnabled(true);
+            pantallaPrincipal.btnProveedor.setEnabled(true);
+            pantallaPrincipal.btnProductos.setEnabled(true);
+            pantallaPrincipal.btnRegistro.setVisible(true);
+            break;
+
+        default:
+            Utilidades.mostrarToast(m, "⚠ Usuario sin rol válido.");
+            break;
+    }
+
+    pantallaPrincipal.txtiduser.setText(us.getIdusuario() + "");
+    m.setVisible(true);
+} else {
+    Utilidades.mostrarToast(this, "❌ Acceso denegado. Verifica tus datos.");
+}
     }//GEN-LAST:event_btnentrarActionPerformed
 
     private void btnVerPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPasswordActionPerformed
@@ -319,22 +321,12 @@ DaoUsuario daoU = new DaoUsuario();
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+      try {
+            FlatMacLightLaf.setup();
+        } catch( Exception ex ) {
+            System.err.println( "Failed to initialize LaF" );
         }
+
         //</editor-fold>
 
         /* Create and display the form */
@@ -344,6 +336,7 @@ DaoUsuario daoU = new DaoUsuario();
             }
         });
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSalir;

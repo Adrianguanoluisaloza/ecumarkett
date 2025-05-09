@@ -6,18 +6,29 @@ package Formularios;
 
 import Dao.DaoCategoria;
 import Dao.DaoProductos;
+import Dao.conexion;
 import Formularios.BuscarDato;
 import Modelo.Categoria;
 import Modelo.productos;
+import java.io.File;
+import java.sql.Connection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
  * @author Tadeo
  */
-public class Producto extends javax.swing.JPanel {
+public final class Producto extends javax.swing.JPanel {
 productos p=new productos();
     DaoProductos daoP=new DaoProductos();
     DefaultTableModel modelo=new DefaultTableModel();
@@ -30,7 +41,7 @@ productos p=new productos();
     public Producto() {
         initComponents();
       listarProductos();
-       // numProducto();
+        numProducto();
     }
 
     private void listarProductos(){
@@ -88,6 +99,7 @@ productos p=new productos();
         btnElimar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jpanelRound3 = new Modelo.JpanelRound();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaProductos = new javax.swing.JTable();
@@ -193,7 +205,15 @@ productos p=new productos();
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LogoAplicacion/logopequeño.png"))); // NOI18N
-        jpanelRound2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, 200, 160));
+        jpanelRound2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 550, 200, 160));
+
+        jButton1.setText("Reporte");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jpanelRound2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 500, -1, -1));
 
         jpanelRound1.add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 300, 780));
 
@@ -317,6 +337,25 @@ productos p=new productos();
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        GenerarPDF("reporteProductos");
+    }//GEN-LAST:event_jButton1ActionPerformed
+private final Connection conection=new conexion().conectar();
+void GenerarPDF(String reporte){
+        Map p=new HashMap();
+        JasperReport report;
+        JasperPrint print;
+
+        try{
+            report=JasperCompileManager.compileReport(new File("").getAbsolutePath()+"/src/reportes/"+reporte+".jrxml");
+            print=JasperFillManager.fillReport(report,p, conection);
+            JasperViewer view=new JasperViewer(print,false);
+            view.setTitle("Lista De Entradas");
+            view.setVisible(true);
+        }catch(JRException e){
+            e.printStackTrace();
+        }
+    }
 private void limpiarTablaProductos() {
        for(int i=0;i<modelo.getRowCount();i++){
             modelo.removeRow(i);
@@ -338,6 +377,7 @@ txtidCategoria.setText("");
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnElimar;
     private javax.swing.JButton btnGuradar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

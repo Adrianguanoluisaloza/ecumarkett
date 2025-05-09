@@ -50,7 +50,7 @@
 	<columnHeader>
 		<band height="25" splitType="Stretch">
 			<rectangle>
-				<reportElement x="0" y="0" width="760" height="25" forecolor="#000000" backcolor="#009900" uuid="551f9914-40d5-4c5a-88cc-111513cf3045"/>
+				<reportElement x="0" y="0" width="500" height="25" forecolor="#000000" backcolor="#009900" uuid="551f9914-40d5-4c5a-88cc-111513cf3045"/>
 			</rectangle>
 			<staticText>
 				<reportElement x="0" y="5" width="100" height="20" uuid="dfe9600d-5dc2-4421-aa19-f919f580ce07"/>
@@ -59,6 +59,18 @@
 			<staticText>
 				<reportElement x="100" y="0" width="100" height="20" uuid="ef6ae13d-aa25-4a85-aa1b-9727fc2cb4db"/>
 				<text><![CDATA[nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="0" width="100" height="20" uuid="00a3faab-6640-4175-b2a4-54abce46338b"/>
+				<text><![CDATA[apellido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="0" width="100" height="20" uuid="0a218111-704b-4d68-b1a0-9dd1cca5ad52"/>
+				<text><![CDATA[documento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="0" width="100" height="20" uuid="60521ca5-1a85-4be8-a3cf-a45f22169884"/>
+				<text><![CDATA[correo]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
@@ -71,6 +83,18 @@
 			<textField>
 				<reportElement x="100" y="0" width="100" height="20" uuid="2291b061-9e0b-4838-93b8-d2199c88ee7e"/>
 				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="100" height="20" uuid="9d2f30ba-82c7-4e4e-b2ec-a915ba32c797"/>
+				<textFieldExpression><![CDATA[$F{apellido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="100" height="20" uuid="021df204-055d-4198-9d04-a8926aca9b3c"/>
+				<textFieldExpression><![CDATA[$F{documento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="100" height="20" uuid="b33b967e-ccca-4259-a93d-778e145b67a5"/>
+				<textFieldExpression><![CDATA[$F{correo}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

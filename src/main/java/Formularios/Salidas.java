@@ -573,7 +573,7 @@ private void agregaEntrada(){
         JasperPrint print;
 
         try{
-            report=JasperCompileManager.compileReport(new File("").getAbsolutePath()+"/src/reportes/Pedidos.jrxml");
+            report=JasperCompileManager.compileReport(new File("").getAbsolutePath()+"/src/reportes/Salida.jrxml");
             print=JasperFillManager.fillReport(report, p, conection);
             JasperViewer view=new JasperViewer(print,false);
             view.setTitle("Documento Salida N° "+numSalida);

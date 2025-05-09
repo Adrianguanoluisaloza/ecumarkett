@@ -6,17 +6,29 @@ package Formularios;
 
 //import Dao.DaoCategoria;
 
+import Dao.DaoCategoria;
 import Dao.DaoEntradas;
 import Dao.DaoProductos;
 import Dao.DaoProveedor;
+import Dao.conexion;
+import Modelo.Categoria;
 import Modelo.entradas;
 import Modelo.productos;
 import Modelo.proveedor;
+import java.io.File;
+import java.sql.Connection;
 import java.sql.Date;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -25,16 +37,20 @@ import javax.swing.table.DefaultTableModel;
 public class Entradas extends javax.swing.JPanel {
 entradas e=new entradas();
   
+ 
+    Categoria ct=new Categoria();
     proveedor pr=new proveedor();
     productos p=new productos();
     DaoProductos daoPr=new DaoProductos();
     DaoEntradas dao=new DaoEntradas();
-   
+    DaoCategoria daoC=new DaoCategoria();
     DaoProveedor daoP=new DaoProveedor();
     DefaultTableModel modelo=new DefaultTableModel();
+
     public static int idpNuevo;
     public static int idpOld;
     public static int cant;
+
 
     
     /**
@@ -103,6 +119,7 @@ entradas e=new entradas();
         btnGuardar = new javax.swing.JButton();
         btnActualizar = new javax.swing.JButton();
         btnElimnar = new javax.swing.JButton();
+        Reporte = new javax.swing.JButton();
         jpanelRound3 = new Modelo.JpanelRound();
         jLabel11 = new javax.swing.JLabel();
         txtidProducto = new javax.swing.JTextField();
@@ -224,7 +241,15 @@ entradas e=new entradas();
         });
         jpanelRound2.add(btnElimnar, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 430, -1, -1));
 
-        jpanelRound1.add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 400, 490));
+        Reporte.setText("Reporte");
+        Reporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReporteActionPerformed(evt);
+            }
+        });
+        jpanelRound2.add(Reporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 490, -1, -1));
+
+        jpanelRound1.add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 400, 540));
 
         jpanelRound3.setBackground(new java.awt.Color(255, 255, 255));
         jpanelRound3.setRoundBottomLeft(25);
@@ -329,11 +354,11 @@ entradas e=new entradas();
             jpanelRound5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpanelRound5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 328, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jpanelRound1.add(jpanelRound5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, 550, 340));
+        jpanelRound1.add(jpanelRound5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, 550, 380));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 56)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -509,6 +534,26 @@ entradas e=new entradas();
        m.setVisible(true);
     }//GEN-LAST:event_btnBuscarProvedorrActionPerformed
 
+    private void ReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReporteActionPerformed
+         GenerarPDF("reporteEntradas");
+    }//GEN-LAST:event_ReporteActionPerformed
+ private Connection conection=new conexion().conectar();
+
+    void GenerarPDF(String reporte){
+        Map p=new HashMap();
+        JasperReport report;
+        JasperPrint print;
+
+        try{
+            report=JasperCompileManager.compileReport(new File("").getAbsolutePath()+"/src/reportes/"+reporte+".jrxml");
+            print=JasperFillManager.fillReport(report,p, conection);
+            JasperViewer view=new JasperViewer(print,false);
+            view.setTitle("Lista De Entradas");
+            view.setVisible(true);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
  void limpiarCampos(){
         txtidentrada.setText("");
         txtnombreP.setText("");
@@ -530,6 +575,7 @@ entradas e=new entradas();
    
   
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Reporte;
     private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnBuscarProducto;
     private javax.swing.JButton btnBuscarProvedorr;

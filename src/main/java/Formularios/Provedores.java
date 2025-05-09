@@ -5,11 +5,22 @@
 package Formularios;
 
 import Dao.DaoProveedor;
+import Dao.conexion;
 import Modelo.proveedor;
 import java.awt.Toolkit;
+import java.io.File;
+import java.sql.Connection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -83,6 +94,7 @@ proveedor p=new proveedor();
         jLabel2 = new javax.swing.JLabel();
         btnBuscar = new RSMaterialComponent.RSButtonMaterialIconDos();
         btnReporte = new RSMaterialComponent.RSButtonMaterialIconDos();
+        jButton1 = new javax.swing.JButton();
         rSLabelBorderRound1 = new rojeru_san.rslabel.RSLabelBorderRound();
 
         setBackground(new java.awt.Color(51, 153, 255));
@@ -261,6 +273,14 @@ proveedor p=new proveedor();
         });
         jpanelRound2.add(btnReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 50, -1));
 
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jpanelRound2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 230, -1, -1));
+
         add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 760, 320));
 
         rSLabelBorderRound1.setForeground(new java.awt.Color(0, 0, 0));
@@ -411,10 +431,30 @@ if (dao.buscarDocumento(p)) {
     }//GEN-LAST:event_txtdocumentoKeyTyped
 
     private void btnReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReporteActionPerformed
-        // TODO add your handling code here:
+ GenerarPDF();
   
     }//GEN-LAST:event_btnReporteActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       GenerarPDF();
+    }//GEN-LAST:event_jButton1ActionPerformed
+  private final Connection conection=new conexion().conectar();
+
+    void GenerarPDF(){
+        Map p=new HashMap();
+        JasperReport report;
+        JasperPrint print;
+
+        try{
+            report=JasperCompileManager.compileReport(new File("").getAbsolutePath()+"/src/reportes/reporteProveedores.jrxml");
+            print=JasperFillManager.fillReport(report,p, conection);
+            JasperViewer view=new JasperViewer(print,false);
+            view.setTitle("Lista De Proveedore");
+            view.setVisible(true);
+        }catch(JRException e){
+            e.printStackTrace();
+        }
+    }
 void limpiarCampos(){
         txtid.setText("");
         txtnombre.setText("");
@@ -438,6 +478,7 @@ void limpiarCampos(){
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
     private RSMaterialComponent.RSButtonMaterialIconDos btnReporte;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;

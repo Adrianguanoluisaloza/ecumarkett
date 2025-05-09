@@ -7,15 +7,26 @@ package Formularios;
 import Dao.DaoDetalleSalida;
 import Dao.DaoProductos;
 import Dao.DaoSalida;
+import Dao.conexion;
 import Modelo.detalleSalida;
 import Modelo.productos;
 import Modelo.salidas;
 import com.toedter.calendar.JDateChooser;
+import java.io.File;
+import java.sql.Connection;
 import java.sql.Date;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -111,6 +122,7 @@ DaoProductos daoP=new DaoProductos();
         fechainicial = new com.toedter.calendar.JDateChooser();
         fechafinal = new com.toedter.calendar.JDateChooser();
         txtidSalida = new javax.swing.JTextField();
+        btnPDF = new javax.swing.JButton();
         jpanelRound3 = new Modelo.JpanelRound();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaSalidas = new javax.swing.JTable();
@@ -153,7 +165,7 @@ DaoProductos daoP=new DaoProductos();
                 btnBuscarPedidoActionPerformed(evt);
             }
         });
-        jPanel3.add(btnBuscarPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, 150, -1));
+        jPanel3.add(btnBuscarPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, 140, -1));
 
         btnCancelar.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         btnCancelar.setText("Cancelar Pedido");
@@ -162,10 +174,19 @@ DaoProductos daoP=new DaoProductos();
                 btnCancelarActionPerformed(evt);
             }
         });
-        jPanel3.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, -1, -1));
+        jPanel3.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, -1, -1));
         jPanel3.add(fechainicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 190, -1));
         jPanel3.add(fechafinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 190, -1));
         jPanel3.add(txtidSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 170, -1));
+
+        btnPDF.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnPDF.setText("Pdf");
+        btnPDF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPDFActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnPDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 80, 40));
 
         jpanelRound1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 570, 202));
 
@@ -293,6 +314,33 @@ DaoProductos daoP=new DaoProductos();
 
     }//GEN-LAST:event_btnCancelarActionPerformed
 
+    private void btnPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPDFActionPerformed
+       if(!txtnumSalida.getText().isEmpty()){
+            GenerarPDF(txtnumSalida.getText());
+       }else{           
+          JOptionPane.showMessageDialog(null,"Seleccione una Salida");
+        }
+    }//GEN-LAST:event_btnPDFActionPerformed
+
+    
+    private final Connection conection=new conexion().conectar();
+
+    void GenerarPDF(String numSalida){
+        Map p=new HashMap();
+        p.put("numSalida", numSalida);
+        JasperReport report;
+        JasperPrint print;
+
+        try{
+            report=JasperCompileManager.compileReport(new File("").getAbsolutePath()+"/src/reportes/Salida.jrxml");
+            print=JasperFillManager.fillReport(report, p, conection);
+            JasperViewer view=new JasperViewer(print,false);
+            view.setTitle("Documento Salida N° "+numSalida);
+            view.setVisible(true);
+        }catch(JRException e){
+            e.printStackTrace();
+        }
+    }
    void limpiarTabla(){
         for(int i=0;i<modelo.getRowCount();i++){
             modelo.removeRow(i);
@@ -342,6 +390,7 @@ private int getSelectedSalidaId() throws Exception {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarPedido;
     private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnPDF;
     private com.toedter.calendar.JDateChooser fechafinal;
     private com.toedter.calendar.JDateChooser fechainicial;
     private javax.swing.JLabel jLabel1;

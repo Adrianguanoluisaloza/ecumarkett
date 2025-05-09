@@ -6,15 +6,11 @@ package Formularios;
 
 import Dao.DaoClientes;
 import Dao.conexion;
-import Modelo.ReporteFacturaSalida;
-import Modelo.ReportePDF;
+
 import Modelo.clientes;
 import java.awt.Toolkit;
 import java.io.File;
-import java.io.InputStream;
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,14 +21,6 @@ import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.engine.design.JRDesignBand;
-import net.sf.jasperreports.engine.design.JRDesignExpression;
-import net.sf.jasperreports.engine.design.JRDesignField;
-import net.sf.jasperreports.engine.design.JRDesignSection;
-import net.sf.jasperreports.engine.design.JRDesignStaticText;
-import net.sf.jasperreports.engine.design.JRDesignTextField;
-import net.sf.jasperreports.engine.design.JasperDesign;
-import net.sf.jasperreports.engine.type.HorizontalTextAlignEnum;
 import net.sf.jasperreports.view.JasperViewer;
 
 /**
@@ -458,8 +446,8 @@ if (dao.buscar(c)) {
     private void btnPdfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPdfActionPerformed
 //RegenerarJasper();
     
-// TODO add your handling code here:
-       //GenerarPDF();
+//// TODO add your handling code here:
+       GenerarPDF();
       //CrearReporteBasico();
       // JasperPrint reporteTodoProducto(); 
     //String rutaReporte = "src/reportes/reporteClientes.jasper";
@@ -467,8 +455,8 @@ if (dao.buscar(c)) {
 
     // Si no tienes parámetros, solo crea un mapa vacío
    // Map<String, Object> parametros = new HashMap<>();
-ReporteFacturaSalida r = new ReporteFacturaSalida();
-r.generarReporteSalida("001-123");
+//ReporteFacturaSalida r = new ReporteFacturaSalida();
+//r.generarReporteSalida("001-123");
     // Si el reporte necesita parámetros, agrégalos así:
     // parametros.put("id_usuario", 5);
 
@@ -480,111 +468,23 @@ r.generarReporteSalida("001-123");
 
 private final Connection conection=new conexion().conectar();
 
-/*
-void CrearReporteBasico() {
-    try {
-        // Crear diseño de reporte desde cero
-        JasperDesign jasperDesign = new JasperDesign();
-        jasperDesign.setName("ReporteSimple");
-        jasperDesign.setPageWidth(595);
-        jasperDesign.setPageHeight(842);
-        jasperDesign.setColumnWidth(555);
-        jasperDesign.setColumnSpacing(0);
-        jasperDesign.setLeftMargin(20);
-        jasperDesign.setRightMargin(20);
-        jasperDesign.setTopMargin(20);
-        jasperDesign.setBottomMargin(20);
-        
-        // Crear un campo de origen de datos
-        JRDesignField field = new JRDesignField();
-        field.setName("id");
-        field.setValueClass(Integer.class);
-        jasperDesign.addField(field);
-        
-        field = new JRDesignField();
-        field.setName("nombre");
-        field.setValueClass(String.class);
-        jasperDesign.addField(field);
-        
-        // Crear banda de título
-        JRDesignBand titleBand = new JRDesignBand();
-        titleBand.setHeight(50);
-        
-        JRDesignStaticText titleText = new JRDesignStaticText();
-        titleText.setText("LISTA DE CLIENTES");
-        titleText.setX(0);
-        titleText.setY(10);
-        titleText.setWidth(555);
-        titleText.setHeight(30);
-        titleText.setHorizontalTextAlign(HorizontalTextAlignEnum.CENTER);
-        titleText.setFontSize(16f);
-        titleText.setBold(true);
-        titleBand.addElement(titleText);
-        jasperDesign.setTitle(titleBand);
-        
-        // Crear banda de columnas
-        JRDesignBand columnBand = new JRDesignBand();
-        columnBand.setHeight(20);
-        
-        JRDesignStaticText columnHeader1 = new JRDesignStaticText();
-        columnHeader1.setText("ID");
-        columnHeader1.setX(0);
-        columnHeader1.setY(0);
-        columnHeader1.setWidth(100);
-        columnHeader1.setHeight(20);
-        columnHeader1.setBold(true);
-        columnBand.addElement(columnHeader1);
-        
-        JRDesignStaticText columnHeader2 = new JRDesignStaticText();
-        columnHeader2.setText("NOMBRE");
-        columnHeader2.setX(120);
-        columnHeader2.setY(0);
-        columnHeader2.setWidth(200);
-        columnHeader2.setHeight(20);
-        columnHeader2.setBold(true);
-        columnBand.addElement(columnHeader2);
-        
-        jasperDesign.setColumnHeader(columnBand);
-        
-        // Crear banda de detalles
-        JRDesignBand detailBand = new JRDesignBand();
-        detailBand.setHeight(20);
-        
-        JRDesignTextField textField1 = new JRDesignTextField();
-        textField1.setX(0);
-        textField1.setY(0);
-        textField1.setWidth(100);
-        textField1.setHeight(20);
-        textField1.setExpression(new JRDesignExpression("$F{id}"));
-        detailBand.addElement(textField1);
-        
-        JRDesignTextField textField2 = new JRDesignTextField();
-        textField2.setX(120);
-        textField2.setY(0);
-        textField2.setWidth(200);
-        textField2.setHeight(20);
-        textField2.setExpression(new JRDesignExpression("$F{nombre}"));
-        detailBand.addElement(textField2);
-        
-        ((JRDesignSection)jasperDesign.getDetailSection()).addBand(detailBand);
-        
-        // Compilar el reporte
-        JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
-        
-        // Llenar el reporte con datos
-        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, new HashMap<>(), conection);
-        
-        // Mostrar el reporte
-        JasperViewer viewer = new JasperViewer(jasperPrint, false);
-        viewer.setTitle("Reporte Generado Dinámicamente");
-        viewer.setVisible(true);
-        
-    } catch (Exception e) {
-        e.printStackTrace();
-        JOptionPane.showMessageDialog(null, "Error al crear reporte básico: " + e.getMessage());
-    }
-}*/
 
+
+    void GenerarPDF(){
+        Map p=new HashMap();
+        JasperReport report;
+        JasperPrint print;
+
+        try{
+            report=JasperCompileManager.compileReport(new File("").getAbsolutePath()+"/src/reportes/reporteClientes.jrxml");
+            print=JasperFillManager.fillReport(report,p, conection);
+            JasperViewer view=new JasperViewer(print,false);
+            view.setTitle("Lista De Clientes");
+            view.setVisible(true);
+        }catch(JRException e){
+            e.printStackTrace();
+        }
+    }
   
     void limpiarCampos(){
         txtidcliente.setText("");
