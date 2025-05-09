@@ -240,6 +240,7 @@ DaoUsuario daoU = new DaoUsuario();
         us = daoU.login(txtcorreo.getText(), txtcontrase.getText());
 if (us.getIdusuario() != 0) {
     pantallaPrincipal m = new pantallaPrincipal(us);
+    this.dispose();
    // Inicio h = new Inicio();
    /// h.setSize(982, 740);
    // h.setLocation(0, 0);

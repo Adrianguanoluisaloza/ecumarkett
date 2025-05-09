@@ -33,7 +33,7 @@ private usuarios us;
          bloquearComponentes();
         
          Inicio h=new Inicio();
-        h.setSize(982,740);
+        h.setSize(990,790);
         h.setLocation(0,0);
         
         contenedor.removeAll();

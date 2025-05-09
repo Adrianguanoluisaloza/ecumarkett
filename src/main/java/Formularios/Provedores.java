@@ -94,7 +94,6 @@ proveedor p=new proveedor();
         jLabel2 = new javax.swing.JLabel();
         btnBuscar = new RSMaterialComponent.RSButtonMaterialIconDos();
         btnReporte = new RSMaterialComponent.RSButtonMaterialIconDos();
-        jButton1 = new javax.swing.JButton();
         rSLabelBorderRound1 = new rojeru_san.rslabel.RSLabelBorderRound();
 
         setBackground(new java.awt.Color(51, 153, 255));
@@ -173,7 +172,7 @@ proveedor p=new proveedor();
                 btnGuardarActionPerformed(evt);
             }
         });
-        jpanelRound2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 130, -1));
+        jpanelRound2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 140, -1));
 
         txtcorreo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtcorreo.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -273,23 +272,15 @@ proveedor p=new proveedor();
         });
         jpanelRound2.add(btnReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 50, -1));
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jpanelRound2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 230, -1, -1));
-
         add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 760, 320));
 
-        rSLabelBorderRound1.setForeground(new java.awt.Color(0, 0, 0));
+        rSLabelBorderRound1.setForeground(new java.awt.Color(255, 255, 255));
         rSLabelBorderRound1.setText("Gestión de Proveedores");
         rSLabelBorderRound1.setAlignmentX(0.5F);
-        rSLabelBorderRound1.setBgBorde(new java.awt.Color(204, 204, 204));
-        rSLabelBorderRound1.setFont(new java.awt.Font("Roboto Bold", 1, 36)); // NOI18N
+        rSLabelBorderRound1.setBgBorde(new java.awt.Color(51, 153, 255));
+        rSLabelBorderRound1.setFont(new java.awt.Font("Roboto Bold", 1, 48)); // NOI18N
         rSLabelBorderRound1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add(rSLabelBorderRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 440, 61));
+        add(rSLabelBorderRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 590, 61));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtRsocialKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRsocialKeyReleased
@@ -434,10 +425,6 @@ if (dao.buscarDocumento(p)) {
  GenerarPDF();
   
     }//GEN-LAST:event_btnReporteActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       GenerarPDF();
-    }//GEN-LAST:event_jButton1ActionPerformed
   private final Connection conection=new conexion().conectar();
 
     void GenerarPDF(){
@@ -478,7 +465,6 @@ void limpiarCampos(){
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
     private RSMaterialComponent.RSButtonMaterialIconDos btnReporte;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
