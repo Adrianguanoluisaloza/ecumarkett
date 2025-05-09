@@ -49,6 +49,7 @@ private void listarCategorias(){
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        rSPasswordMaterialIcon1 = new RSMaterialComponent.RSPasswordMaterialIcon();
         jpanelRound2 = new Modelo.JpanelRound();
         jPanel2 = new javax.swing.JPanel();
         txtidcategoria = new javax.swing.JTextField();
@@ -63,6 +64,8 @@ private void listarCategorias(){
         jScrollPane1 = new javax.swing.JScrollPane();
         tblcategorias = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
+
+        rSPasswordMaterialIcon1.setText("rSPasswordMaterialIcon1");
 
         setBackground(new java.awt.Color(102, 204, 255));
         setPreferredSize(new java.awt.Dimension(1270, 790));
@@ -274,6 +277,7 @@ private void listarCategorias(){
     private javax.swing.JScrollPane jScrollPane1;
     private Modelo.JpanelRound jpanelRound1;
     private Modelo.JpanelRound jpanelRound2;
+    private RSMaterialComponent.RSPasswordMaterialIcon rSPasswordMaterialIcon1;
     private javax.swing.JTable tblcategorias;
     private javax.swing.JTextField txtidcategoria;
     public static javax.swing.JTextField txtnomCategoria;

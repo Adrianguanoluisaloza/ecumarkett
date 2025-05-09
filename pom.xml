@@ -44,7 +44,6 @@
 <dependency>
     <groupId>com.keypoint</groupId>
     <artifactId>png-encoder</artifactId>
-    <version>1.5</version>
 </dependency>
 <dependency>
     <groupId>net.java.timingframework</groupId>
@@ -92,11 +91,7 @@
             <artifactId>jcalendar</artifactId>
             <version>1.4</version>
         </dependency>
-        <dependency>
-            <groupId>com.rojerusan</groupId>
-            <artifactId>RojeruSan</artifactId>
-            <version>9.6</version>
-        </dependency>
+        
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
@@ -120,6 +115,11 @@
             <version>3.6</version>
             <type>jar</type>
         </dependency>
+        <dependency>
+            <groupId>unknown.binary</groupId>
+            <artifactId>RojeruSan.full_9.6</artifactId>
+            <version>SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -138,7 +138,11 @@
     </build>
 
     <repositories>
-      
+        <repository>
+            <id>unknown-jars-temp-repo</id>
+            <name>A temporary repository created by NetBeans for libraries and jars it could not identify. Please replace the dependencies in this repository with correct ones and delete this repository.</name>
+            <url>file:${project.basedir}/lib</url>
+        </repository>
     </repositories>
 
     <dependencyManagement>
