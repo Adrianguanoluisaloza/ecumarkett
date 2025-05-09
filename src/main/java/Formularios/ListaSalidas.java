@@ -122,7 +122,7 @@ DaoProductos daoP=new DaoProductos();
         fechainicial = new com.toedter.calendar.JDateChooser();
         fechafinal = new com.toedter.calendar.JDateChooser();
         txtidSalida = new javax.swing.JTextField();
-        btnPDF = new javax.swing.JButton();
+        btnReporte = new RSMaterialComponent.RSButtonMaterialIconDos();
         jpanelRound3 = new Modelo.JpanelRound();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaSalidas = new javax.swing.JTable();
@@ -165,7 +165,7 @@ DaoProductos daoP=new DaoProductos();
                 btnBuscarPedidoActionPerformed(evt);
             }
         });
-        jPanel3.add(btnBuscarPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, 140, -1));
+        jPanel3.add(btnBuscarPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, 150, -1));
 
         btnCancelar.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         btnCancelar.setText("Cancelar Pedido");
@@ -179,14 +179,16 @@ DaoProductos daoP=new DaoProductos();
         jPanel3.add(fechafinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 190, -1));
         jPanel3.add(txtidSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 170, -1));
 
-        btnPDF.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        btnPDF.setText("Pdf");
-        btnPDF.addActionListener(new java.awt.event.ActionListener() {
+        btnReporte.setBackground(new java.awt.Color(213, 137, 137));
+        btnReporte.setBackgroundHover(new java.awt.Color(14, 76, 117));
+        btnReporte.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.INSERT_DRIVE_FILE);
+        btnReporte.setRound(25);
+        btnReporte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPDFActionPerformed(evt);
+                btnReporteActionPerformed(evt);
             }
         });
-        jPanel3.add(btnPDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 80, 40));
+        jPanel3.add(btnReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, 50, -1));
 
         jpanelRound1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 570, 202));
 
@@ -260,7 +262,7 @@ DaoProductos daoP=new DaoProductos();
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Loginregister/_8b4145b4-2936-42a6-8792-2d68b0d22fd6-removebg-preview (1).png"))); // NOI18N
         jpanelRound1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 70, -1, 300));
 
-        add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1260, 790));
+        add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1260, 790));
     }// </editor-fold>//GEN-END:initComponents
 
     private void tablaSalidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaSalidasMouseClicked
@@ -314,13 +316,13 @@ DaoProductos daoP=new DaoProductos();
 
     }//GEN-LAST:event_btnCancelarActionPerformed
 
-    private void btnPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPDFActionPerformed
-       if(!txtnumSalida.getText().isEmpty()){
+    private void btnReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReporteActionPerformed
+         if(!txtnumSalida.getText().isEmpty()){
             GenerarPDF(txtnumSalida.getText());
        }else{           
           JOptionPane.showMessageDialog(null,"Seleccione una Salida");
         }
-    }//GEN-LAST:event_btnPDFActionPerformed
+    }//GEN-LAST:event_btnReporteActionPerformed
 
     
     private final Connection conection=new conexion().conectar();
@@ -390,7 +392,7 @@ private int getSelectedSalidaId() throws Exception {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarPedido;
     private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnPDF;
+    private RSMaterialComponent.RSButtonMaterialIconDos btnReporte;
     private com.toedter.calendar.JDateChooser fechafinal;
     private com.toedter.calendar.JDateChooser fechainicial;
     private javax.swing.JLabel jLabel1;

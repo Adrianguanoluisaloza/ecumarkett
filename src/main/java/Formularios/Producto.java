@@ -99,7 +99,7 @@ productos p=new productos();
         btnElimar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnReporte = new RSMaterialComponent.RSButtonMaterialIconDos();
         jpanelRound3 = new Modelo.JpanelRound();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaProductos = new javax.swing.JTable();
@@ -205,17 +205,20 @@ productos p=new productos();
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LogoAplicacion/logopequeño.png"))); // NOI18N
-        jpanelRound2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 550, 200, 160));
+        jpanelRound2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 520, 200, 160));
 
-        jButton1.setText("Reporte");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnReporte.setBackground(new java.awt.Color(213, 137, 137));
+        btnReporte.setBackgroundHover(new java.awt.Color(14, 76, 117));
+        btnReporte.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.INSERT_DRIVE_FILE);
+        btnReporte.setRound(25);
+        btnReporte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnReporteActionPerformed(evt);
             }
         });
-        jpanelRound2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 500, -1, -1));
+        jpanelRound2.add(btnReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 480, 50, -1));
 
-        jpanelRound1.add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 300, 780));
+        jpanelRound1.add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, 6, 310, 780));
 
         jpanelRound3.setBackground(new java.awt.Color(255, 255, 255));
         jpanelRound3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tabla Producto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe Print", 1, 12))); // NOI18N
@@ -240,7 +243,7 @@ productos p=new productos();
 
         jpanelRound1.add(jpanelRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 690, 790));
 
-        add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 870));
+        add(jpanelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1240, 870));
     }// </editor-fold>//GEN-END:initComponents
 
     private void tablaProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaProductosMouseClicked
@@ -337,9 +340,10 @@ productos p=new productos();
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReporteActionPerformed
         GenerarPDF("reporteProductos");
-    }//GEN-LAST:event_jButton1ActionPerformed
+
+    }//GEN-LAST:event_btnReporteActionPerformed
 private final Connection conection=new conexion().conectar();
 void GenerarPDF(String reporte){
         Map p=new HashMap();
@@ -377,7 +381,7 @@ txtidCategoria.setText("");
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnElimar;
     private javax.swing.JButton btnGuradar;
-    private javax.swing.JButton jButton1;
+    private RSMaterialComponent.RSButtonMaterialIconDos btnReporte;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

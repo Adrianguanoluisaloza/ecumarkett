@@ -34,6 +34,8 @@ DaoUsuario daoU = new DaoUsuario();
         
         initComponents();
         setLocationRelativeTo(null);
+        getRootPane().setDefaultButton(btnentrar);
+        
         
         
     }
@@ -103,6 +105,14 @@ DaoUsuario daoU = new DaoUsuario();
                 txtcorreoActionPerformed(evt);
             }
         });
+        txtcorreo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtcorreoKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtcorreoKeyTyped(evt);
+            }
+        });
         jpanelRound1.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 310, -1));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
@@ -112,7 +122,7 @@ DaoUsuario daoU = new DaoUsuario();
 
         txtcontrase.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         txtcontrase.setForeground(new java.awt.Color(204, 204, 204));
-        txtcontrase.setText("********");
+        txtcontrase.setText("++++++");
         txtcontrase.setOpaque(true);
         txtcontrase.setSelectionColor(new java.awt.Color(0, 0, 0));
         txtcontrase.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -128,7 +138,7 @@ DaoUsuario daoU = new DaoUsuario();
                 txtcontraseMousePressed(evt);
             }
         });
-        jpanelRound1.add(txtcontrase, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 340, 310, -1));
+        jpanelRound1.add(txtcontrase, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 310, -1));
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -198,15 +208,15 @@ DaoUsuario daoU = new DaoUsuario();
     }//GEN-LAST:event_txtcorreoFocusGained
 
     private void txtcorreoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtcorreoFocusLost
-        if (String.valueOf(txtcontrase.getPassword()).isEmpty()) {
-            txtcontrase.setText("********");
-            txtcontrase.setForeground(Color.gray);
+        if (String.valueOf(txtcorreo.getText()).isEmpty()) {
+            txtcorreo.setText("alguien@example.com");
+            txtcorreo.setForeground(Color.gray);
         }
     }//GEN-LAST:event_txtcorreoFocusLost
 
     private void txtcorreoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtcorreoMousePressed
         if(String.valueOf(txtcontrase.getPassword()).isEmpty()){
-            txtcontrase.setText("********");
+            txtcontrase.setText("++++++");
             txtcontrase.setForeground(Color.gray);
         }
         if(txtcorreo.getText().equals("alguien@example.com")){
@@ -219,7 +229,7 @@ DaoUsuario daoU = new DaoUsuario();
     }//GEN-LAST:event_txtcorreoActionPerformed
 
     private void txtcontraseFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtcontraseFocusGained
-        if (String.valueOf(txtcontrase.getPassword()).equals("********")) {
+        if (String.valueOf(txtcontrase.getPassword()).equals("++++++")) {
             txtcontrase.setText("");
             txtcontrase.setForeground(Color.black);
         }
@@ -227,13 +237,16 @@ DaoUsuario daoU = new DaoUsuario();
 
     private void txtcontraseFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtcontraseFocusLost
         if (String.valueOf(txtcontrase.getPassword()).isEmpty()) {
-            txtcontrase.setText("**************");
+            txtcontrase.setText("++++++");
             txtcontrase.setForeground(Color.gray);
         }
     }//GEN-LAST:event_txtcontraseFocusLost
 
     private void txtcontraseMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtcontraseMousePressed
-        // TODO add your handling code here:
+       if (String.valueOf(txtcontrase.getPassword()).equals("++++++")) {
+        txtcontrase.setText("");
+        txtcontrase.setForeground(Color.black);
+    }
     }//GEN-LAST:event_txtcontraseMousePressed
 
     private void btnentrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnentrarActionPerformed
@@ -292,11 +305,19 @@ if (us.getIdusuario() != 0) {
     }//GEN-LAST:event_btnentrarActionPerformed
 
     private void btnVerPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPasswordActionPerformed
-        if(btnVerPassword.isSelected()){
-           txtcontrase.setEchoChar((char)0);
-        }else{
-           txtcontrase.setEchoChar('*');
-        }
+       String pass = String.valueOf(txtcontrase.getPassword());
+
+    // Si el texto es el placeholder, no hacemos nada
+    if (pass.equals("++++++")) {
+        btnVerPassword.setSelected(false); // Opcional: desmarcar
+        return;
+    }
+
+    if (btnVerPassword.isSelected()) {
+        txtcontrase.setEchoChar((char) 0); // Mostrar caracteres reales
+    } else {
+        txtcontrase.setEchoChar('•'); // O '*'
+    }
     }//GEN-LAST:event_btnVerPasswordActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
@@ -312,6 +333,17 @@ if (us.getIdusuario() != 0) {
         System.exit(0); 
     }
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void txtcorreoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcorreoKeyPressed
+         if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
+    txtcontrase.requestFocusInWindow();
+}
+    }//GEN-LAST:event_txtcorreoKeyPressed
+
+    private void txtcorreoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcorreoKeyTyped
+        
+        
+    }//GEN-LAST:event_txtcorreoKeyTyped
 
     /**
      * @param args the command line arguments
