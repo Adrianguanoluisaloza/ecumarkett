@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 import Dao.DaoUsuario;
 import Modelo.usuarios;
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
+
 import java.awt.Color;
 
 /**
@@ -254,9 +255,7 @@ DaoUsuario daoU = new DaoUsuario();
 if (us.getIdusuario() != 0) {
     pantallaPrincipal m = new pantallaPrincipal(us);
     this.dispose();
-   // Inicio h = new Inicio();
-   /// h.setSize(982, 740);
-   // h.setLocation(0, 0);
+ 
 
     
     Utilidades.mostrarToast(m, "¡Bienvenido, " + us.getTipoUsuario().toUpperCase() + "!");

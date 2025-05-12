@@ -476,7 +476,7 @@ private final Connection conection=new conexion().conectar();
         JasperPrint print;
 
         try{
-            report=JasperCompileManager.compileReport(new File("").getAbsolutePath()+"/src/reportes/reporteClientes.jrxml");
+            report=JasperCompileManager.compileReport(new File("").getAbsolutePath()+"/src/reportes/agua.jrxml");
             print=JasperFillManager.fillReport(report,p, conection);
             JasperViewer view=new JasperViewer(print,false);
             view.setTitle("Lista De Clientes");
