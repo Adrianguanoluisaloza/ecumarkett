@@ -130,15 +130,25 @@ productos p=new productos();
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Precio. V");
         jpanelRound2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 328, -1, -1));
+
+        txtidCategoria.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jpanelRound2.add(txtidCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 229, 120, -1));
-        jpanelRound2.add(txtid, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 49, 270, -1));
+
+        txtid.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jpanelRound2.add(txtid, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 270, -1));
+
+        txtNomCategoria.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jpanelRound2.add(txtNomCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 288, 270, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("ID");
         jpanelRound2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 24, -1, -1));
+
+        txtstock.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jpanelRound2.add(txtstock, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 158, 270, -1));
+
+        txtnombre.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jpanelRound2.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 102, 270, -1));
 
         btnBuscarIdCategiria.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -160,6 +170,8 @@ productos p=new productos();
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Categoría ");
         jpanelRound2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 266, -1, -1));
+
+        txttprecio.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jpanelRound2.add(txttprecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 350, 270, -1));
 
         btnEditar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N

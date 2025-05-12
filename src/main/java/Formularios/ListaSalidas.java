@@ -270,7 +270,7 @@ DaoProductos daoP=new DaoProductos();
         int fila=tablaSalidas.getSelectedRow();
         String num=tablaSalidas.getValueAt(fila, 1).toString();
       txtnumSalida.setText(num);
-      lbl.setText(tablaSalidas.getValueAt(fila, 0).toString());
+      txtidSalida.setText(tablaSalidas.getValueAt(fila, 0).toString());
         int idsalida=Integer.parseInt(tablaSalidas.getValueAt(fila, 0).toString());
 
         limpiarTablaDT();
@@ -381,7 +381,7 @@ txtidSalida.setText("");
 private int getSelectedSalidaId() throws Exception {
     int fila = tablaSalidas.getSelectedRow();
     if (fila != -1) {
-        return Integer.parseInt(tablaSalidas.getValueAt(fila, 0).toString()); // columna 0 = idSalida
+        return Integer.parseInt(tablaSalidas.getValueAt(fila, 0).toString()); 
     } else if (!txtidSalida.getText().isEmpty()) {
         return Integer.parseInt(txtidSalida.getText());
     } else {
