@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package Formularios;
+
 import Dao.DaoUsuario;
 import Modelo.usuarios;
 import java.awt.Toolkit;
@@ -10,6 +11,7 @@ import java.awt.Toolkit;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author LENOVO IDEAPAD
@@ -18,16 +20,19 @@ public class Registro extends javax.swing.JPanel {
 
     /**
      * Creates new form Registro
-     */ usuarios u=new usuarios();
-    DaoUsuario dao=new DaoUsuario();
-    DefaultTableModel modelo=new DefaultTableModel();
+     */
+    usuarios u = new usuarios();
+    DaoUsuario dao = new DaoUsuario();
+    DefaultTableModel modelo = new DefaultTableModel();
     pantallaPrincipal pP;
+
     public Registro(pantallaPrincipal pPi) {
-        
+
         initComponents();
         this.pP = pPi;
         listarUsuarios();
     }
+
     public Registro() {
         initComponents();
     }
@@ -313,27 +318,28 @@ public class Registro extends javax.swing.JPanel {
 
         add(jpanelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1270, 790));
     }// </editor-fold>//GEN-END:initComponents
-private void listarUsuarios(){
-        List<usuarios> lista=dao.Listar();
-        modelo=(DefaultTableModel) tablaUsuarios.getModel();
-        Object[] ob=new Object[10];
-        for(int i=0;i<lista.size();i++){
-            ob[0]=lista.get(i).getIdusuario();
-            ob[1]=lista.get(i).getNombre();
-            ob[2]=lista.get(i).getApellido();
-            ob[3]=lista.get(i).getDocumento();
-            ob[4]=lista.get(i).getDireccion();
-            ob[5]=lista.get(i).getTelefono();
-            ob[6]=lista.get(i).getCorreo();
-            ob[7]=lista.get(i).getTipoUsuario();
-            ob[8]=lista.get(i).getUsuario();
-            ob[9]=lista.get(i).getPassword();
-            
+private void listarUsuarios() {
+        List<usuarios> lista = dao.Listar();
+        modelo = (DefaultTableModel) tablaUsuarios.getModel();
+        Object[] ob = new Object[10];
+        for (int i = 0; i < lista.size(); i++) {
+            ob[0] = lista.get(i).getIdusuario();
+            ob[1] = lista.get(i).getNombre();
+            ob[2] = lista.get(i).getApellido();
+            ob[3] = lista.get(i).getDocumento();
+            ob[4] = lista.get(i).getDireccion();
+            ob[5] = lista.get(i).getTelefono();
+            ob[6] = lista.get(i).getCorreo();
+            ob[7] = lista.get(i).getTipoUsuario();
+            ob[8] = lista.get(i).getUsuario();
+            ob[9] = lista.get(i).getPassword();
+
             modelo.addRow(ob);
         }
-       tablaUsuarios.setModel(modelo);
+        tablaUsuarios.setModel(modelo);
     }
-void limpiarCampos(){
+
+    void limpiarCampos() {
         txtidusuarios.setText("");
         txtnombre.setText("");
         txtapellido.setText("");
@@ -344,18 +350,18 @@ void limpiarCampos(){
         txtusuario.setText("");
         txtpass.setText("");
     }
-    
-    void limpiarTablaUsuarios(){
-        for(int i=0;i<modelo.getRowCount();i++){
+
+    void limpiarTablaUsuarios() {
+        for (int i = 0; i < modelo.getRowCount(); i++) {
             modelo.removeRow(i);
-            i=0-1;
+            i = 0 - 1;
         }
     }
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-        int fila=tablaUsuarios.getSelectedRow();
-        if(fila==-1&&txtidusuarios.getText().isEmpty()){
-         
-        }else{
+        int fila = tablaUsuarios.getSelectedRow();
+        if (fila == -1 && txtidusuarios.getText().isEmpty()) {
+
+        } else {
             u.setIdusuario(Integer.parseInt(txtidusuarios.getText()));
             u.setNombre(txtnombre.getText());
             u.setApellido(txtapellido.getText());
@@ -366,16 +372,16 @@ void limpiarCampos(){
             u.setTipoUsuario(cmbTipoUsuario.getSelectedItem().toString());
             u.setUsuario(txtusuario.getText());
             u.setPassword(txtpass.getText());
-            
-            if(dao.editar(u.getNombre(),u.getApellido(),u.getDocumento(),u.getDireccion(),u.getTelefono(),u.getCorreo(),u.getTipoUsuario(),u.getUsuario(),u.getPassword(),u.getIdusuario())){
-             
-                //  m.exito("Se modifico con exito");
+
+            if (dao.editar(u.getNombre(), u.getApellido(), u.getDocumento(), u.getDireccion(), u.getTelefono(), u.getCorreo(), u.getTipoUsuario(), u.getUsuario(), u.getPassword(), u.getIdusuario())) {
+
+                JOptionPane.showMessageDialog(null, "Se modifico con exito");
                 limpiarCampos();
                 limpiarTablaUsuarios();
                 listarUsuarios();
-            }else{
-                // MenuPrincipal m=new MenuPrincipal();
-                // m.error("Erorr al modificar el Usuario");
+            } else {
+
+                JOptionPane.showMessageDialog(null, "Erorr al modificar el Usuario");
             }
         }
     }//GEN-LAST:event_btnActualizarActionPerformed
@@ -394,40 +400,40 @@ void limpiarCampos(){
         u.setTipoUsuario(cmbTipoUsuario.getSelectedItem().toString());
         u.setUsuario(txtusuario.getText());
         u.setPassword(txtpass.getText());
-     
-        if(dao.insertar(u.getNombre(),u.getApellido(),u.getDocumento(),u.getDireccion(),u.getTelefono(),u.getCorreo(),u.getTipoUsuario(),u.getUsuario(),u.getPassword())){
-      
-           JOptionPane.showMessageDialog(null,"Usuario Registrado Con Exito");
+
+        if (dao.insertar(u.getNombre(), u.getApellido(), u.getDocumento(), u.getDireccion(), u.getTelefono(), u.getCorreo(), u.getTipoUsuario(), u.getUsuario(), u.getPassword())) {
+
+            JOptionPane.showMessageDialog(null, "Usuario Registrado Con Exito");
             limpiarCampos();
             limpiarTablaUsuarios();
             listarUsuarios();
-        }else{
-      
-        JOptionPane.showMessageDialog(null,"No se pudo registrar el Usuario");
+        } else {
+
+            JOptionPane.showMessageDialog(null, "No se pudo registrar el Usuario");
         }
     }//GEN-LAST:event_btnRegistrarse1ActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        if(!txtidusuarios.getText().isEmpty()){
-            int confirmacion=JOptionPane.showConfirmDialog(null, "¿Es tas seguro de eliminar el Usuario?","Confirmar",2);
-            if(confirmacion==0){
+        if (!txtidusuarios.getText().isEmpty()) {
+            int confirmacion = JOptionPane.showConfirmDialog(null, "¿Es tas seguro de eliminar el Usuario?", "Confirmar", 2);
+            if (confirmacion == 0) {
                 u.setIdusuario(Integer.parseInt(txtidusuarios.getText()));
                 dao.eliminar(u);
                 limpiarCampos();
                 limpiarTablaUsuarios();
                 listarUsuarios();
-          
-                JOptionPane.showMessageDialog(null,"Se Elimino con exito el Usuario");
+
+                JOptionPane.showMessageDialog(null, "Se Elimino con exito el Usuario");
             }
-        }else{                    
-           JOptionPane.showMessageDialog(null,"Seleccione un Usuario");
+        } else {
+            JOptionPane.showMessageDialog(null, "Seleccione un Usuario");
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         u.setDocumento(txtdocumento.getText());
-        if(dao.buscar(u)){
-            txtidusuarios.setText(u.getIdusuario()+"");
+        if (dao.buscar(u)) {
+            txtidusuarios.setText(u.getIdusuario() + "");
             txtnombre.setText(u.getNombre());
             txtapellido.setText(u.getApellido());
             txtdocumento.setText(u.getDocumento());
@@ -437,14 +443,14 @@ void limpiarCampos(){
             txtusuario.setText(u.getUsuario());
             txtpass.setText(u.getPassword());
             cmbTipoUsuario.setSelectedItem(u.getTipoUsuario());
-        }else{           
-           JOptionPane.showMessageDialog(null,"El Usuario No Existe");
+        } else {
+            JOptionPane.showMessageDialog(null, "El Usuario No Existe");
             limpiarCampos();
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void tablaUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaUsuariosMouseClicked
-        int fila=tablaUsuarios.getSelectedRow();
+        int fila = tablaUsuarios.getSelectedRow();
         txtidusuarios.setText(tablaUsuarios.getValueAt(fila, 0).toString());
         txtnombre.setText(tablaUsuarios.getValueAt(fila, 1).toString());
         txtapellido.setText(tablaUsuarios.getValueAt(fila, 2).toString());
@@ -454,54 +460,55 @@ void limpiarCampos(){
         txtcorreo.setText(tablaUsuarios.getValueAt(fila, 6).toString());
         cmbTipoUsuario.setSelectedItem(tablaUsuarios.getValueAt(fila, 7).toString());
         txtusuario.setText(tablaUsuarios.getValueAt(fila, 8).toString());
-        
+
         u.setDocumento(txtdocumento.getText());
-        if(dao.buscar(u)){
+        if (dao.buscar(u)) {
             txtpass.setText(u.getPassword());
         }
     }//GEN-LAST:event_tablaUsuariosMouseClicked
 
     private void btnvolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvolverActionPerformed
-      int confirm = JOptionPane.showConfirmDialog(
-        this,
-        "¿Esta acción también hará cerrar la sesión actual, desea continuar?",
-        "Confirmar salida",
-        JOptionPane.YES_NO_OPTION,
-        JOptionPane.QUESTION_MESSAGE
-    );
+        int confirm = JOptionPane.showConfirmDialog(
+                this,
+                "¿Esta acción también hará cerrar la sesión actual, desea continuar?",
+                "Confirmar salida",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE
+        );
 
-    if (confirm == JOptionPane.YES_OPTION) {
-        pP.dispose();
-       new Login().setVisible(true);
-    }
-        
+        if (confirm == JOptionPane.YES_OPTION) {
+            pP.dispose();
+            new Login().setVisible(true);
+        }
+
     }//GEN-LAST:event_btnvolverActionPerformed
 
     private void txtdocumentoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtdocumentoFocusLost
         String documento = txtdocumento.getText().trim();
         if (!documento.matches("\\d+")) {
-             JOptionPane.showMessageDialog(null, " El documento debe contener solo números.");
+            JOptionPane.showMessageDialog(null, " El documento debe contener solo números.");
             txtdocumento.requestFocus(); // Regresa el foco al campo
         }
     }//GEN-LAST:event_txtdocumentoFocusLost
 
     private void txtcorreoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtcorreoFocusLost
-          String correo = txtcorreo.getText().trim();
+        String correo = txtcorreo.getText().trim();
         if (!correo.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
-             JOptionPane.showMessageDialog(null, " Correo no válido. Ejemplo: ejemplo@dominio.com");
+            JOptionPane.showMessageDialog(null, " Correo no válido. Ejemplo: ejemplo@dominio.com");
             txtcorreo.requestFocus(); // Vuelve al campo
         }
     }//GEN-LAST:event_txtcorreoFocusLost
 
     private void txtdocumentoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtdocumentoKeyTyped
-         char c = evt.getKeyChar();
+        char c = evt.getKeyChar();
         if (!Character.isDigit(c)) {
-            evt.consume(); 
-            Toolkit.getDefaultToolkit().beep();}
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
     }//GEN-LAST:event_txtdocumentoKeyTyped
 
     private void txtdireccionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtdireccionKeyTyped
- 
+
     }//GEN-LAST:event_txtdireccionKeyTyped
 
 

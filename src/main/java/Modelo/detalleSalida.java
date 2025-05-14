@@ -9,11 +9,12 @@ package Modelo;
  * @author Adrian
  */
 public class detalleSalida {
+
     int idDetalle;
-int idSalida;
-int idEntrada;
-int cantidad;
-double importe;
+    int idSalida;
+    int idEntrada;
+    int cantidad;
+    double importe;
 
     public detalleSalida() {
     }
@@ -65,6 +66,5 @@ double importe;
     public void setImporte(double importe) {
         this.importe = importe;
     }
-
 
 }

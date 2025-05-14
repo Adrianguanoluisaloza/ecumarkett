@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Formularios;
+
 import javax.swing.JOptionPane;
 import Dao.DaoUsuario;
 import Modelo.usuarios;
@@ -15,30 +16,29 @@ import java.awt.Color;
  * @author Adrian
  */
 public class Login extends javax.swing.JFrame {
-DaoUsuario daoU = new DaoUsuario();
+
+    DaoUsuario daoU = new DaoUsuario();
     usuarios us = new usuarios();
-    
-   pantallaPrincipal pP;
+
+    pantallaPrincipal pP;
+
     public Login(pantallaPrincipal pP) {
-        
 
         initComponents();
         this.pP = pP;
-        
-        
+
     }
+
     /**
      * Creates new form Login
      */
     public Login() {
         setUndecorated(true);
-        
+
         initComponents();
         setLocationRelativeTo(null);
         getRootPane().setDefaultButton(btnentrar);
-        
-        
-        
+
     }
 
     /**
@@ -216,13 +216,14 @@ DaoUsuario daoU = new DaoUsuario();
     }//GEN-LAST:event_txtcorreoFocusLost
 
     private void txtcorreoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtcorreoMousePressed
-        if(String.valueOf(txtcontrase.getPassword()).isEmpty()){
+        if (String.valueOf(txtcontrase.getPassword()).isEmpty()) {
             txtcontrase.setText("++++++");
             txtcontrase.setForeground(Color.gray);
         }
-        if(txtcorreo.getText().equals("alguien@example.com")){
+        if (txtcorreo.getText().equals("alguien@example.com")) {
             txtcorreo.setText("");
-            txtcorreo.setForeground(Color.black);}
+            txtcorreo.setForeground(Color.black);
+        }
     }//GEN-LAST:event_txtcorreoMousePressed
 
     private void txtcorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcorreoActionPerformed
@@ -244,104 +245,102 @@ DaoUsuario daoU = new DaoUsuario();
     }//GEN-LAST:event_txtcontraseFocusLost
 
     private void txtcontraseMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtcontraseMousePressed
-       if (String.valueOf(txtcontrase.getPassword()).equals("++++++")) {
-        txtcontrase.setText("");
-        txtcontrase.setForeground(Color.black);
-    }
+        if (String.valueOf(txtcontrase.getPassword()).equals("++++++")) {
+            txtcontrase.setText("");
+            txtcontrase.setForeground(Color.black);
+        }
     }//GEN-LAST:event_txtcontraseMousePressed
 
     private void btnentrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnentrarActionPerformed
         us = daoU.login(txtcorreo.getText(), txtcontrase.getText());
-if (us.getIdusuario() != 0) {
-    pantallaPrincipal m = new pantallaPrincipal(us);
-    this.dispose();
- 
+        if (us.getIdusuario() != 0) {
+            pantallaPrincipal m = new pantallaPrincipal(us);
+            this.dispose();
 
-    
-    Utilidades.mostrarToast(m, "¡Bienvenido, " + us.getTipoUsuario().toUpperCase() + "!");
+            Utilidades.mostrarToast(m, "¡Bienvenido, " + us.getTipoUsuario().toUpperCase() + "!");
 
-    String tipo = us.getTipoUsuario();
+            String tipo = us.getTipoUsuario();
 
-    switch (tipo) {
-        case "Vendedor":
-            pantallaPrincipal.btnSalidas.setEnabled(true);
-            pantallaPrincipal.btnCategorias.setEnabled(false);
-            pantallaPrincipal.btnClientes.setEnabled(true);
-            pantallaPrincipal.btnEntradas.setEnabled(false);
-            pantallaPrincipal.btnProveedor.setEnabled(false);
-            pantallaPrincipal.btnProductos.setEnabled(false);
-            break;
+            switch (tipo) {
+                case "Vendedor":
+                    pantallaPrincipal.btnSalidas.setEnabled(true);
+                    pantallaPrincipal.btnCategorias.setEnabled(false);
+                    pantallaPrincipal.btnClientes.setEnabled(true);
+                    pantallaPrincipal.btnEntradas.setEnabled(false);
+                    pantallaPrincipal.btnProveedor.setEnabled(false);
+                    pantallaPrincipal.btnProductos.setEnabled(false);
+                    break;
 
-        case "Almacenero":
-            pantallaPrincipal.btnSalidas.setEnabled(false);
-            pantallaPrincipal.btnCategorias.setEnabled(true);
-            pantallaPrincipal.btnClientes.setEnabled(false);
-            pantallaPrincipal.btnEntradas.setEnabled(true);
-            pantallaPrincipal.btnProveedor.setEnabled(true);
-            pantallaPrincipal.btnProductos.setEnabled(true);
-            break;
+                case "Almacenero":
+                    pantallaPrincipal.btnSalidas.setEnabled(false);
+                    pantallaPrincipal.btnCategorias.setEnabled(true);
+                    pantallaPrincipal.btnClientes.setEnabled(false);
+                    pantallaPrincipal.btnEntradas.setEnabled(true);
+                    pantallaPrincipal.btnProveedor.setEnabled(true);
+                    pantallaPrincipal.btnProductos.setEnabled(true);
+                    break;
 
-        case "Administrador":
-            pantallaPrincipal.btnSalidas.setEnabled(true);
-            pantallaPrincipal.btnCategorias.setEnabled(true);
-            pantallaPrincipal.btnClientes.setEnabled(true);
-            pantallaPrincipal.btnEntradas.setEnabled(true);
-            pantallaPrincipal.btnProveedor.setEnabled(true);
-            pantallaPrincipal.btnProductos.setEnabled(true);
-            pantallaPrincipal.btnRegistro.setVisible(true);
-            break;
+                case "Administrador":
+                    pantallaPrincipal.btnSalidas.setEnabled(true);
+                    pantallaPrincipal.btnCategorias.setEnabled(true);
+                    pantallaPrincipal.btnClientes.setEnabled(true);
+                    pantallaPrincipal.btnEntradas.setEnabled(true);
+                    pantallaPrincipal.btnProveedor.setEnabled(true);
+                    pantallaPrincipal.btnProductos.setEnabled(true);
+                    pantallaPrincipal.btnRegistro.setVisible(true);
+                    break;
 
-        default:
-            Utilidades.mostrarToast(m, "⚠ Usuario sin rol válido.");
-            break;
-    }
+                default:
+                    Utilidades.mostrarToast(m, "⚠ Usuario sin rol válido.");
+                    break;
+            }
 
-    pantallaPrincipal.txtiduser.setText(us.getIdusuario() + "");
-    m.setVisible(true);
-} else {
-    Utilidades.mostrarToast(this, "❌ Acceso denegado. Verifica tus datos.");
-}
+            pantallaPrincipal.txtiduser.setText(us.getIdusuario() + "");
+            m.setVisible(true);
+        } else {
+            Utilidades.mostrarToast(this, "❌ Acceso denegado. Verifica tus datos.");
+        }
     }//GEN-LAST:event_btnentrarActionPerformed
 
     private void btnVerPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPasswordActionPerformed
-       String pass = String.valueOf(txtcontrase.getPassword());
+        String pass = String.valueOf(txtcontrase.getPassword());
 
-    // Si el texto es el placeholder, no hacemos nada
-    if (pass.equals("++++++")) {
-        btnVerPassword.setSelected(false); // Opcional: desmarcar
-        return;
-    }
+        // Si el texto es el placeholder, no hacemos nada
+        if (pass.equals("++++++")) {
+            btnVerPassword.setSelected(false); // Opcional: desmarcar
+            return;
+        }
 
-    if (btnVerPassword.isSelected()) {
-        txtcontrase.setEchoChar((char) 0); // Mostrar caracteres reales
-    } else {
-        txtcontrase.setEchoChar('•'); // O '*'
-    }
+        if (btnVerPassword.isSelected()) {
+            txtcontrase.setEchoChar((char) 0); // Mostrar caracteres reales
+        } else {
+            txtcontrase.setEchoChar('•'); // O '*'
+        }
     }//GEN-LAST:event_btnVerPasswordActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-      int confirm = JOptionPane.showConfirmDialog(
-        this,
-        "¿Estás seguro de que quieres cerrar la aplicación?",
-        "Confirmar salida",
-        JOptionPane.YES_NO_OPTION,
-        JOptionPane.QUESTION_MESSAGE
-    );
+        int confirm = JOptionPane.showConfirmDialog(
+                this,
+                "¿Estás seguro de que quieres cerrar la aplicación?",
+                "Confirmar salida",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE
+        );
 
-    if (confirm == JOptionPane.YES_OPTION) {
-        System.exit(0); 
-    }
+        if (confirm == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void txtcorreoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcorreoKeyPressed
-         if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
-    txtcontrase.requestFocusInWindow();
-}
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
+            txtcontrase.requestFocusInWindow();
+        }
     }//GEN-LAST:event_txtcorreoKeyPressed
 
     private void txtcorreoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcorreoKeyTyped
-        
-        
+
+
     }//GEN-LAST:event_txtcorreoKeyTyped
 
     /**
@@ -353,10 +352,10 @@ if (us.getIdusuario() != 0) {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-      try {
+        try {
             FlatMacLightLaf.setup();
-        } catch( Exception ex ) {
-            System.err.println( "Failed to initialize LaF" );
+        } catch (Exception ex) {
+            System.err.println("Failed to initialize LaF");
         }
 
         //</editor-fold>
@@ -368,7 +367,7 @@ if (us.getIdusuario() != 0) {
             }
         });
     }
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSalir;

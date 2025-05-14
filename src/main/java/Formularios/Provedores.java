@@ -28,36 +28,36 @@ import net.sf.jasperreports.view.JasperViewer;
  */
 public class Provedores extends javax.swing.JPanel {
 
-proveedor p=new proveedor();
+    proveedor p = new proveedor();
 
+    DaoProveedor dao = new DaoProveedor();
+    DefaultTableModel modelo = new DefaultTableModel();
 
-    DaoProveedor dao=new DaoProveedor();
-    DefaultTableModel modelo=new DefaultTableModel();
     /**
      * Creates new form Provedores
      */
     public Provedores() {
-    
+
         initComponents();
-     listarProveedor();
+        listarProveedor();
     }
 
-   private void listarProveedor(){
-        List<proveedor> lista=dao.Listar();
-        modelo=(DefaultTableModel) tablaproveedores.getModel();
-        Object[] ob=new Object[8];
-        for(int i=0;i<lista.size();i++){
-            ob[0]=lista.get(i).getIdProveedor();
-            ob[1]=lista.get(i).getNombre();
-            ob[2]=lista.get(i).getApellido();
-            ob[3]=lista.get(i).getDocumento();
-            ob[4]=lista.get(i).getActivadad_comercial();
-            ob[5]=lista.get(i).getDireccion();
-            ob[6]=lista.get(i).getTelefono();
-            ob[7]=lista.get(i).getCorreo();
+    private void listarProveedor() {
+        List<proveedor> lista = dao.Listar();
+        modelo = (DefaultTableModel) tablaproveedores.getModel();
+        Object[] ob = new Object[8];
+        for (int i = 0; i < lista.size(); i++) {
+            ob[0] = lista.get(i).getIdProveedor();
+            ob[1] = lista.get(i).getNombre();
+            ob[2] = lista.get(i).getApellido();
+            ob[3] = lista.get(i).getDocumento();
+            ob[4] = lista.get(i).getActivadad_comercial();
+            ob[5] = lista.get(i).getDireccion();
+            ob[6] = lista.get(i).getTelefono();
+            ob[7] = lista.get(i).getCorreo();
             modelo.addRow(ob);
         }
-       tablaproveedores.setModel(modelo);
+        tablaproveedores.setModel(modelo);
     }
 
     /**
@@ -288,7 +288,7 @@ proveedor p=new proveedor();
 
     private void tablaproveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaproveedoresMouseClicked
         // TODO add your handling code here:
-        int fila=tablaproveedores.getSelectedRow();
+        int fila = tablaproveedores.getSelectedRow();
         txtid.setText(tablaproveedores.getValueAt(fila, 0).toString());
         txtnombre.setText(tablaproveedores.getValueAt(fila, 1).toString());
         txtapellido.setText(tablaproveedores.getValueAt(fila, 2).toString());
@@ -300,10 +300,10 @@ proveedor p=new proveedor();
     }//GEN-LAST:event_tablaproveedoresMouseClicked
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-      int fila=tablaproveedores.getSelectedRow();
-        if(fila==-1&&txtid.getText().isEmpty()){
-         JOptionPane.showMessageDialog(null,"Seleccione un Proveedor");
-        }else{
+        int fila = tablaproveedores.getSelectedRow();
+        if (fila == -1 && txtid.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Seleccione un Proveedor");
+        } else {
             p.setIdProveedor(Integer.parseInt(txtid.getText()));
             p.setNombre(txtnombre.getText());
             p.setApellido(txtapellido.getText());
@@ -312,25 +312,25 @@ proveedor p=new proveedor();
             p.setDireccion(txtdireccion.getText());
             p.setTelefono(txttelefono.getText());
             p.setCorreo(txtcorreo.getText());
-            if(dao.editar(p)){
-                
-             JOptionPane.showMessageDialog(null,"Se modifico con exito");
+            if (dao.editar(p)) {
+
+                JOptionPane.showMessageDialog(null, "Se modifico con exito");
                 limpiarCampos();
                 limpiarTablaProveedor();
                 listarProveedor();
-            }else{
-              
-                JOptionPane.showMessageDialog(null,"Erorr al modificar el Proveedor");
+            } else {
+
+                JOptionPane.showMessageDialog(null, "Erorr al modificar el Proveedor");
             }
         }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-       int fila=tablaproveedores.getSelectedRow();
-        if(fila==-1&&txtid.getText().isEmpty()){
-       
-        JOptionPane.showMessageDialog(null,"Seleccione un Proveedor");
-        }else{
+        int fila = tablaproveedores.getSelectedRow();
+        if (fila == -1 && txtid.getText().isEmpty()) {
+
+            JOptionPane.showMessageDialog(null, "Seleccione un Proveedor");
+        } else {
             p.setIdProveedor(Integer.parseInt(txtid.getText()));
             p.setNombre(txtnombre.getText());
             p.setApellido(txtapellido.getText());
@@ -339,108 +339,109 @@ proveedor p=new proveedor();
             p.setDireccion(txtdireccion.getText());
             p.setTelefono(txttelefono.getText());
             p.setCorreo(txtcorreo.getText());
-            if(dao.editar(p)){
-               
-             JOptionPane.showMessageDialog(null,"Se modifico con exito");
+            if (dao.editar(p)) {
+
+                JOptionPane.showMessageDialog(null, "Se modifico con exito");
                 limpiarCampos();
                 limpiarTablaProveedor();
                 listarProveedor();
-            }else{
-             
-            JOptionPane.showMessageDialog(null,"Erorr al modificar el Proveedor");
+            } else {
+
+                JOptionPane.showMessageDialog(null, "Erorr al modificar el Proveedor");
             }
         }
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-   if(!txtid.getText().isEmpty()){
-            int confirmacion=JOptionPane.showConfirmDialog(null, "¿Es tas seguro de eliminar el Proveedor?","Confirmar",2);
-            if(confirmacion==0){
+        if (!txtid.getText().isEmpty()) {
+            int confirmacion = JOptionPane.showConfirmDialog(null, "¿Es tas seguro de eliminar el Proveedor?", "Confirmar", 2);
+            if (confirmacion == 0) {
                 p.setIdProveedor(Integer.parseInt(txtid.getText()));
                 dao.eliminar(p);
-              limpiarCampos();
-               limpiarTablaProveedor();
+                limpiarCampos();
+                limpiarTablaProveedor();
                 listarProveedor();
-       
-              JOptionPane.showMessageDialog(null,"Se Elimino con exito el Proveedor");
-            }
-        }else{
 
-        JOptionPane.showMessageDialog(null,"Seleccione un Proveedor");
-        }        
+                JOptionPane.showMessageDialog(null, "Se Elimino con exito el Proveedor");
+            }
+        } else {
+
+            JOptionPane.showMessageDialog(null, "Seleccione un Proveedor");
+        }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-          p.setDocumento(txtdocumento.getText().trim());
+        p.setDocumento(txtdocumento.getText().trim());
 
-if (p.getDocumento().isEmpty()) {
-    JOptionPane.showMessageDialog(null, "Por favor, ingrese un documento válido.");
-    return;
-}
+        if (p.getDocumento().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Por favor, ingrese un documento válido.");
+            return;
+        }
 
-if (dao.buscarDocumento(p)) {
-    
-    txtid.setText(String.valueOf(p.getIdProveedor()));
-    txtnombre.setText(p.getNombre());
-    txtapellido.setText(p.getApellido());
-    txtdocumento.setText(p.getDocumento());
-    txtRsocial.setText(p.getActivadad_comercial());
-    txtdireccion.setText(p.getDireccion());
-    txttelefono.setText(p.getTelefono());
-    txtcorreo.setText(p.getCorreo());
-} else {
-    
-    JOptionPane.showMessageDialog(null, "El proveedor no existe.");
-    limpiarCampos();
-}
+        if (dao.buscarDocumento(p)) {
+
+            txtid.setText(String.valueOf(p.getIdProveedor()));
+            txtnombre.setText(p.getNombre());
+            txtapellido.setText(p.getApellido());
+            txtdocumento.setText(p.getDocumento());
+            txtRsocial.setText(p.getActivadad_comercial());
+            txtdireccion.setText(p.getDireccion());
+            txttelefono.setText(p.getTelefono());
+            txtcorreo.setText(p.getCorreo());
+        } else {
+
+            JOptionPane.showMessageDialog(null, "El proveedor no existe.");
+            limpiarCampos();
+        }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void txtcorreoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtcorreoFocusLost
-         String correo = txtcorreo.getText().trim();
+        String correo = txtcorreo.getText().trim();
         if (!correo.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
-             JOptionPane.showMessageDialog(null, "⚠ Correo no válido. Ejemplo: ejemplo@dominio.com");
-            txtcorreo.requestFocus(); 
+            JOptionPane.showMessageDialog(null, "⚠ Correo no válido. Ejemplo: ejemplo@dominio.com");
+            txtcorreo.requestFocus();
         }
     }//GEN-LAST:event_txtcorreoFocusLost
 
     private void txtdocumentoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtdocumentoFocusLost
-         String documento = txtdocumento.getText().trim();
+        String documento = txtdocumento.getText().trim();
         if (!documento.matches("\\d+")) {
-             JOptionPane.showMessageDialog(null, "⚠ El documento debe contener solo números.");
-            txtdocumento.requestFocus(); 
+            JOptionPane.showMessageDialog(null, "⚠ El documento debe contener solo números.");
+            txtdocumento.requestFocus();
         }
     }//GEN-LAST:event_txtdocumentoFocusLost
 
     private void txtdocumentoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtdocumentoKeyTyped
-       char c = evt.getKeyChar();
+        char c = evt.getKeyChar();
         if (!Character.isDigit(c)) {
-            evt.consume(); 
+            evt.consume();
             Toolkit.getDefaultToolkit().beep();
         }
     }//GEN-LAST:event_txtdocumentoKeyTyped
 
     private void btnReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReporteActionPerformed
- GenerarPDF();
-  
-    }//GEN-LAST:event_btnReporteActionPerformed
-  private final Connection conection=new conexion().conectar();
+        GenerarPDF();
 
-    void GenerarPDF(){
-        Map p=new HashMap();
+    }//GEN-LAST:event_btnReporteActionPerformed
+    private final Connection conection = new conexion().conectar();
+
+    void GenerarPDF() {
+        Map p = new HashMap();
         JasperReport report;
         JasperPrint print;
 
-        try{
-            report=JasperCompileManager.compileReport(new File("").getAbsolutePath()+"/src/reportes/reporteProveedores.jrxml");
-            print=JasperFillManager.fillReport(report,p, conection);
-            JasperViewer view=new JasperViewer(print,false);
+        try {
+            report = JasperCompileManager.compileReport(new File("").getAbsolutePath() + "/src/reportes/reporteProveedores.jrxml");
+            print = JasperFillManager.fillReport(report, p, conection);
+            JasperViewer view = new JasperViewer(print, false);
             view.setTitle("Lista De Proveedore");
             view.setVisible(true);
-        }catch(JRException e){
+        } catch (JRException e) {
             e.printStackTrace();
         }
     }
-void limpiarCampos(){
+
+    void limpiarCampos() {
         txtid.setText("");
         txtnombre.setText("");
         txtapellido.setText("");
@@ -450,13 +451,13 @@ void limpiarCampos(){
         txtcorreo.setText("");
         txtRsocial.setText("");
     }
-    
-    void limpiarTablaProveedor(){
-        for(int i=0;i<modelo.getRowCount();i++){
+
+    void limpiarTablaProveedor() {
+        for (int i = 0; i < modelo.getRowCount(); i++) {
             modelo.removeRow(i);
-            i=0-1;
+            i = 0 - 1;
         }
-    }      
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private RSMaterialComponent.RSButtonMaterialIconDos btnBuscar;
     private javax.swing.JButton btnEditar;

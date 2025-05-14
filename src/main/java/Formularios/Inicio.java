@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package Formularios;
+
 import Dao.DaoCategoria;
 import Dao.DaoClientes;
 import Dao.DaoEntradas;
@@ -23,73 +24,72 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 
-
 /**
  *
  * @author Adrian
  */
 public class Inicio extends javax.swing.JPanel {
 
- 
-DaoCategoria daoC=new DaoCategoria();
-DaoClientes daoCl=new DaoClientes();
-DaoEntradas daoE=new DaoEntradas();
-DaoProveedor daoP=new DaoProveedor();
-DaoSalida daoS=new DaoSalida();
-DaoUsuario daoU=new DaoUsuario();
-DaoProductos daoPr=new DaoProductos();
+    DaoCategoria daoC = new DaoCategoria();
+    DaoClientes daoCl = new DaoClientes();
+    DaoEntradas daoE = new DaoEntradas();
+    DaoProveedor daoP = new DaoProveedor();
+    DaoSalida daoS = new DaoSalida();
+    DaoUsuario daoU = new DaoUsuario();
+    DaoProductos daoPr = new DaoProductos();
 
-DefaultTableModel modeloClientesF=new DefaultTableModel();
-DefaultTableModel modeloProdF=new DefaultTableModel();
+    DefaultTableModel modeloClientesF = new DefaultTableModel();
+    DefaultTableModel modeloProdF = new DefaultTableModel();
+
     /**
      * Creates new form Inicio
      */
     public Inicio() {
         initComponents();
-     this.setBackground(new Color(0,0,0,0));
-        txtCantCat.setText(daoC.cantCategorias()+"");
-        txtcantClientes.setText(daoCl.cantClientes()+"");
-        txtcantEntradas.setText(daoE.cantEntradas()+"");
-        txtcantproveedores.setText(daoP.cantProveedores()+"");
-        txtcantSalidas.setText(daoS.cantSalidas()+"");
-        txtcantUsuarios.setText(daoU.cantUsuarios()+"");
+        this.setBackground(new Color(0, 0, 0, 0));
+        txtCantCat.setText(daoC.cantCategorias() + "");
+        txtcantClientes.setText(daoCl.cantClientes() + "");
+        txtcantEntradas.setText(daoE.cantEntradas() + "");
+        txtcantproveedores.setText(daoP.cantProveedores() + "");
+        txtcantSalidas.setText(daoS.cantSalidas() + "");
+        txtcantUsuarios.setText(daoU.cantUsuarios() + "");
 
         listarClientesFrecuentes();
         listarProdFrecuentes();
 
-        txttotalSalidas.setText(daoS.TotalSalidas(selectmes.getMonth()+1,selectAño.getYear())+" $/.");
-       txttotalEntradas.setText(daoE.TotalEntradas(selectmes.getMonth()+1,selectAño.getYear())+" $/.");
+        txttotalSalidas.setText(daoS.TotalSalidas(selectmes.getMonth() + 1, selectAño.getYear()) + " $/.");
+        txttotalEntradas.setText(daoE.TotalEntradas(selectmes.getMonth() + 1, selectAño.getYear()) + " $/.");
     }
 
-    private void listarClientesFrecuentes(){
-        List<clientes> lista=daoCl.clientesFrecuentes();
-        modeloClientesF=(DefaultTableModel) tablaClienteF.getModel();
-        Object[] ob=new Object[3];
-        for(int i=0;i<lista.size();i++){
-            ob[0]=lista.get(i).getCantSalidas();
-            ob[1]=lista.get(i).getNombre();
-            ob[2]=lista.get(i).getDocumento();
+    private void listarClientesFrecuentes() {
+        List<clientes> lista = daoCl.clientesFrecuentes();
+        modeloClientesF = (DefaultTableModel) tablaClienteF.getModel();
+        Object[] ob = new Object[3];
+        for (int i = 0; i < lista.size(); i++) {
+            ob[0] = lista.get(i).getCantSalidas();
+            ob[1] = lista.get(i).getNombre();
+            ob[2] = lista.get(i).getDocumento();
             modeloClientesF.addRow(ob);
         }
-       tablaClienteF.setModel(modeloClientesF);
+        tablaClienteF.setModel(modeloClientesF);
 
         graficarClientesF();
     }
 
-    private void listarProdFrecuentes(){
-        List<productos> lista=daoPr.ProdFrecuentes();
-        modeloProdF=(DefaultTableModel) tablaProductoF.getModel();
-        Object[] ob=new Object[2];
-        for(int i=0;i<lista.size();i++){
-            ob[0]=lista.get(i).getCantF();
-            ob[1]=lista.get(i).getNomProd();
+    private void listarProdFrecuentes() {
+        List<productos> lista = daoPr.ProdFrecuentes();
+        modeloProdF = (DefaultTableModel) tablaProductoF.getModel();
+        Object[] ob = new Object[2];
+        for (int i = 0; i < lista.size(); i++) {
+            ob[0] = lista.get(i).getCantF();
+            ob[1] = lista.get(i).getNomProd();
             modeloProdF.addRow(ob);
         }
-       tablaProductoF.setModel(modeloProdF);
+        tablaProductoF.setModel(modeloProdF);
 
         graficarProdF();
     }
-NumberFormat formato = NumberFormat.getNumberInstance(Locale.US);
+    NumberFormat formato = NumberFormat.getNumberInstance(Locale.US);
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -457,36 +457,36 @@ NumberFormat formato = NumberFormat.getNumberInstance(Locale.US);
 
     private void btnProcesaarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcesaarActionPerformed
         // TODO add your handling code here:
-     
-formato.setMinimumFractionDigits(2);
-formato.setMaximumFractionDigits(2);
 
-double totalSalidas = daoS.TotalSalidas(selectmes.getMonth()+1, selectAño.getYear());
-double totalEntradas = daoE.TotalEntradas(selectmes.getMonth()+1, selectAño.getYear());
+        formato.setMinimumFractionDigits(2);
+        formato.setMaximumFractionDigits(2);
 
-txttotalSalidas.setText("$ " + formato.format(totalSalidas));
-txttotalEntradas.setText("$ " + formato.format(totalEntradas));
+        double totalSalidas = daoS.TotalSalidas(selectmes.getMonth() + 1, selectAño.getYear());
+        double totalEntradas = daoE.TotalEntradas(selectmes.getMonth() + 1, selectAño.getYear());
+
+        txttotalSalidas.setText("$ " + formato.format(totalSalidas));
+        txttotalEntradas.setText("$ " + formato.format(totalEntradas));
     }//GEN-LAST:event_btnProcesaarActionPerformed
- void graficarClientesF(){
-      DefaultCategoryDataset dtsc = new DefaultCategoryDataset();
-      for(int i=0;i<tablaClienteF.getRowCount();i++){
-        dtsc.setValue(Double.parseDouble(tablaClienteF.getValueAt(i, 0).toString()),tablaClienteF.getValueAt(i, 0).toString(),tablaClienteF.getValueAt(i, 1).toString());
-      }
-      JFreeChart ch = ChartFactory.createBarChart("3 clientes Frecuentes", "Clientes", "Salidas", dtsc,PlotOrientation.VERTICAL,true,true,true);
-      ChartPanel cp=new ChartPanel(ch);
-      panelClientesF.add(cp);
-      cp.setBounds(0,0,430, 314);
+    void graficarClientesF() {
+        DefaultCategoryDataset dtsc = new DefaultCategoryDataset();
+        for (int i = 0; i < tablaClienteF.getRowCount(); i++) {
+            dtsc.setValue(Double.parseDouble(tablaClienteF.getValueAt(i, 0).toString()), tablaClienteF.getValueAt(i, 0).toString(), tablaClienteF.getValueAt(i, 1).toString());
+        }
+        JFreeChart ch = ChartFactory.createBarChart("3 clientes Frecuentes", "Clientes", "Salidas", dtsc, PlotOrientation.VERTICAL, true, true, true);
+        ChartPanel cp = new ChartPanel(ch);
+        panelClientesF.add(cp);
+        cp.setBounds(0, 0, 430, 314);
     }
 
-    void graficarProdF(){
-      DefaultCategoryDataset dtsc = new DefaultCategoryDataset();
-      for(int i=0;i<tablaProductoF.getRowCount();i++){
-        dtsc.setValue(Double.parseDouble(tablaProductoF.getValueAt(i, 0).toString()),tablaProductoF.getValueAt(i, 0).toString(),tablaProductoF.getValueAt(i, 1).toString());
-      }
-      JFreeChart ch = ChartFactory.createBarChart("3 Productos Frecuentes", "Productos", "Salidas", dtsc,PlotOrientation.VERTICAL,true,true,true);
-      ChartPanel cp=new ChartPanel(ch);
-      panelProdF.add(cp);
-      cp.setBounds(0,0,430, 314);
+    void graficarProdF() {
+        DefaultCategoryDataset dtsc = new DefaultCategoryDataset();
+        for (int i = 0; i < tablaProductoF.getRowCount(); i++) {
+            dtsc.setValue(Double.parseDouble(tablaProductoF.getValueAt(i, 0).toString()), tablaProductoF.getValueAt(i, 0).toString(), tablaProductoF.getValueAt(i, 1).toString());
+        }
+        JFreeChart ch = ChartFactory.createBarChart("3 Productos Frecuentes", "Productos", "Salidas", dtsc, PlotOrientation.VERTICAL, true, true, true);
+        ChartPanel cp = new ChartPanel(ch);
+        panelProdF.add(cp);
+        cp.setBounds(0, 0, 430, 314);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

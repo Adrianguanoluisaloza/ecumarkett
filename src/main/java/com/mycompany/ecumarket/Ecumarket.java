@@ -2,7 +2,6 @@ package com.mycompany.ecumarket;
 
 import Formularios.pantallaPrincipal;
 
-
 /**
  *
  * @author Adrian
@@ -10,6 +9,6 @@ import Formularios.pantallaPrincipal;
 public class Ecumarket {
 
     public static void main(String[] args) {
-       new pantallaPrincipal().setVisible(true);
+        new pantallaPrincipal().setVisible(true);
     }
 }

@@ -4,7 +4,6 @@
  */
 package Formularios;
 
-
 import Dao.DaoCategoria;
 import Dao.DaoProveedor;
 import Modelo.Categoria;
@@ -13,16 +12,13 @@ import java.awt.Color;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author HELIO
- */
+
 public class BuscarDato extends javax.swing.JFrame {
 
-    Categoria ct=new Categoria();
-    DaoCategoria daoCt=new DaoCategoria();
-    DaoProveedor daoP=new DaoProveedor();
-    DefaultTableModel modelo=new DefaultTableModel();
+    Categoria ct = new Categoria();
+    DaoCategoria daoCt = new DaoCategoria();
+    DaoProveedor daoP = new DaoProveedor();
+    DefaultTableModel modelo = new DefaultTableModel();
     public static boolean tipo;
     public static boolean entrada;
 
@@ -32,46 +28,46 @@ public class BuscarDato extends javax.swing.JFrame {
     public BuscarDato() {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.setBackground(new Color(0,0,0,0));
+        this.setBackground(new Color(0, 0, 0, 0));
         cabezeras();
-        if(tipo==true){
-         listarCategorias();
-        }else{
+        if (tipo == true) {
+            listarCategorias();
+        } else {
             listarProveedor();
         }
     }
 
-    private void cabezeras(){
-        modelo=new DefaultTableModel();
+    private void cabezeras() {
+        modelo = new DefaultTableModel();
         modelo.addColumn("ID");
         modelo.addColumn("Nombre");
         tabla.setModel(modelo);
     }
 
-    private void listarCategorias(){
-            List<Categoria> lista=daoCt.Listar();
-            modelo=(DefaultTableModel) tabla.getModel();
-            Object[] ob=new Object[2];
-            for(int i=0;i<lista.size();i++){
-                ob[0]=lista.get(i).getIdCategoria();
-                ob[1]=lista.get(i).getNomCategoria();
-                modelo.addRow(ob);
-            }
-           tabla.setModel(modelo);
-        }
-
-
-    private void listarProveedor(){
-        List<proveedor> lista=daoP.Listar();
-        modelo=(DefaultTableModel) tabla.getModel();
-        Object[] ob=new Object[2];
-        for(int i=0;i<lista.size();i++){
-            ob[0]=lista.get(i).getIdProveedor();
-            ob[1]=lista.get(i).getActivadad_comercial();
+    private void listarCategorias() {
+        List<Categoria> lista = daoCt.Listar();
+        modelo = (DefaultTableModel) tabla.getModel();
+        Object[] ob = new Object[2];
+        for (int i = 0; i < lista.size(); i++) {
+            ob[0] = lista.get(i).getIdCategoria();
+            ob[1] = lista.get(i).getNomCategoria();
             modelo.addRow(ob);
         }
-       tabla.setModel(modelo);
+        tabla.setModel(modelo);
     }
+
+    private void listarProveedor() {
+        List<proveedor> lista = daoP.Listar();
+        modelo = (DefaultTableModel) tabla.getModel();
+        Object[] ob = new Object[2];
+        for (int i = 0; i < lista.size(); i++) {
+            ob[0] = lista.get(i).getIdProveedor();
+            ob[1] = lista.get(i).getActivadad_comercial();
+            modelo.addRow(ob);
+        }
+        tabla.setModel(modelo);
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -166,25 +162,24 @@ public class BuscarDato extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCerrarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-    
 
-           if (tipo == true) { 
-    if (entrada == false) {
-       
-        Producto.txtNomCategoria.setText(txtnombre.getText());
-        Producto.txtidCategoria.setText(txtID.getText());
-    }
-} else { 
-    Entradas.txtidproveedor.setText(txtID.getText());
-    Entradas.txtproveedor.setText(txtnombre.getText());
-}
+        if (tipo == true) {
+            if (entrada == false) {
 
-dispose(); 
+                Producto.txtNomCategoria.setText(txtnombre.getText());
+                Producto.txtidCategoria.setText(txtID.getText());
+            }
+        } else {
+            Entradas.txtidproveedor.setText(txtID.getText());
+            Entradas.txtproveedor.setText(txtnombre.getText());
+        }
+
+        dispose();
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void tablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaMouseClicked
-        // TODO add your handling code here:
-        int fila=tabla.getSelectedRow();
+      
+        int fila = tabla.getSelectedRow();
         txtID.setText(tabla.getValueAt(fila, 0).toString());
         txtnombre.setText(tabla.getValueAt(fila, 1).toString());
     }//GEN-LAST:event_tablaMouseClicked

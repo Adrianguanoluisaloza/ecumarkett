@@ -9,14 +9,16 @@ package Modelo;
  * @author Tadeo
  */
 public class productos {
-     int idproducto										;
-   String nomProd;
-   int stock;
-   int idCategoria;
-   double precioV;
-   int cantF;
 
-    public productos() {}
+    int idproducto;
+    String nomProd;
+    int stock;
+    int idCategoria;
+    double precioV;
+    int cantF;
+
+    public productos() {
+    }
 
     public productos(int idproducto, String nomProd, int stock, int idCategoria, double precioV, int cantF) {
         this.idproducto = idproducto;
@@ -27,7 +29,6 @@ public class productos {
         this.cantF = cantF;
     }
 
-    
     public int getIdproducto() {
         return idproducto;
     }
@@ -35,8 +36,6 @@ public class productos {
     public void setIdproducto(int idproducto) {
         this.idproducto = idproducto;
     }
-
-    
 
     public String getNomProd() {
         return nomProd;
@@ -78,6 +77,4 @@ public class productos {
         this.cantF = cantF;
     }
 
-   
 }
-

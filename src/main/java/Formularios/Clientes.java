@@ -28,32 +28,36 @@ import net.sf.jasperreports.view.JasperViewer;
  * @author Adrian
  */
 public class Clientes extends javax.swing.JPanel {
-clientes c=new clientes();
-    DaoClientes dao=new DaoClientes();
-    DefaultTableModel modeloClientes=new DefaultTableModel();
+
+    clientes c = new clientes();
+    DaoClientes dao = new DaoClientes();
+    DefaultTableModel modeloClientes = new DefaultTableModel();
+
     /**
      * Creates new form Clientes
      */
     public Clientes() {
         initComponents();
-         listarClientes();
+        listarClientes();
     }
-private void listarClientes(){
-        List<clientes> lista=dao.Listar();
-        modeloClientes=(DefaultTableModel) tablaclientes.getModel();
-        Object[] ob=new Object[7];
-        for(int i=0;i<lista.size();i++){
-            ob[0]=lista.get(i).getIdCliente();
-            ob[1]=lista.get(i).getNombre();
-            ob[2]=lista.get(i).getApellido();
-            ob[3]=lista.get(i).getDocumento();
-            ob[4]=lista.get(i).getDireccion();
-            ob[5]=lista.get(i).getTelefono();
-            ob[6]=lista.get(i).getCorreo();
+
+    private void listarClientes() {
+        List<clientes> lista = dao.Listar();
+        modeloClientes = (DefaultTableModel) tablaclientes.getModel();
+        Object[] ob = new Object[7];
+        for (int i = 0; i < lista.size(); i++) {
+            ob[0] = lista.get(i).getIdCliente();
+            ob[1] = lista.get(i).getNombre();
+            ob[2] = lista.get(i).getApellido();
+            ob[3] = lista.get(i).getDocumento();
+            ob[4] = lista.get(i).getDireccion();
+            ob[5] = lista.get(i).getTelefono();
+            ob[6] = lista.get(i).getCorreo();
             modeloClientes.addRow(ob);
         }
-       tablaclientes.setModel(modeloClientes);
+        tablaclientes.setModel(modeloClientes);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -266,227 +270,195 @@ private void listarClientes(){
     private void tablaclientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaclientesMouseClicked
         // TODO add your handling code here:
         int fila = tablaclientes.getSelectedRow();
-        if (fila != -1) { 
-        txtidcliente.setText(tablaclientes.getValueAt(fila, 0).toString());
-        txtnombre.setText(tablaclientes.getValueAt(fila, 1).toString());
-        txtapellido.setText(tablaclientes.getValueAt(fila, 2).toString());
-        txtdocumento.setText(tablaclientes.getValueAt(fila, 3).toString());
-        txtdireccion.setText(tablaclientes.getValueAt(fila, 4).toString());
-        txttelefono.setText(tablaclientes.getValueAt(fila, 5).toString());
-        txtcorreo.setText(tablaclientes.getValueAt(fila, 6).toString());
-    } else {
-        JOptionPane.showMessageDialog(null, "No se seleccionó ninguna fila.");
-    }
-
-
+        if (fila != -1) {
+            txtidcliente.setText(tablaclientes.getValueAt(fila, 0).toString());
+            txtnombre.setText(tablaclientes.getValueAt(fila, 1).toString());
+            txtapellido.setText(tablaclientes.getValueAt(fila, 2).toString());
+            txtdocumento.setText(tablaclientes.getValueAt(fila, 3).toString());
+            txtdireccion.setText(tablaclientes.getValueAt(fila, 4).toString());
+            txttelefono.setText(tablaclientes.getValueAt(fila, 5).toString());
+            txtcorreo.setText(tablaclientes.getValueAt(fila, 6).toString());
+        } else {
+            JOptionPane.showMessageDialog(null, "No se seleccionó ninguna fila.");
+        }
     }//GEN-LAST:event_tablaclientesMouseClicked
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-       if (txtnombre.getText().trim().isEmpty() ||
-        txtapellido.getText().trim().isEmpty() ||
-        txtdocumento.getText().trim().isEmpty() ||
-        txtdireccion.getText().trim().isEmpty() ||
-        txttelefono.getText().trim().isEmpty() ||
-        txtcorreo.getText().trim().isEmpty()) {
-        
-        JOptionPane.showMessageDialog(null, "Todos los campos deben estar llenos.");
-        return;
-    }
+        if (txtnombre.getText().trim().isEmpty()
+                || txtapellido.getText().trim().isEmpty()
+                || txtdocumento.getText().trim().isEmpty()
+                || txtdireccion.getText().trim().isEmpty()
+                || txttelefono.getText().trim().isEmpty()
+                || txtcorreo.getText().trim().isEmpty()) {
 
-    
-    if (!txtcorreo.getText().trim().matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
-        JOptionPane.showMessageDialog(null, "Correo no válido.");
-        return;
-    }
+            JOptionPane.showMessageDialog(null, "Todos los campos deben estar llenos.");
+            return;
+        }
+        if (!txtcorreo.getText().trim().matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
+            JOptionPane.showMessageDialog(null, "Correo no válido.");
+            return;
+        }
+        if (!txttelefono.getText().trim().matches("\\d+")) {
+            JOptionPane.showMessageDialog(null, "El teléfono debe contener solo números.");
+            return;
+        }
+        c.setNombre(txtnombre.getText().trim());
+        c.setApellido(txtapellido.getText().trim());
+        c.setDocumento(txtdocumento.getText().trim());
+        c.setDireccion(txtdireccion.getText().trim());
+        c.setTelefono(txttelefono.getText().trim());
+        c.setCorreo(txtcorreo.getText().trim());
 
-    
-    if (!txttelefono.getText().trim().matches("\\d+")) {
-        JOptionPane.showMessageDialog(null, "El teléfono debe contener solo números.");
-        return;
-    }
-
-    
-    c.setNombre(txtnombre.getText().trim());
-    c.setApellido(txtapellido.getText().trim());
-    c.setDocumento(txtdocumento.getText().trim());
-    c.setDireccion(txtdireccion.getText().trim());
-    c.setTelefono(txttelefono.getText().trim());
-    c.setCorreo(txtcorreo.getText().trim());
-
-   
-    if (dao.insertar(c)) {
-        JOptionPane.showMessageDialog(null, "Cliente registrado con éxito.");
-        limpiarCampos();
-        limpiarTablaCLientes();
-        listarClientes();
-    } else {
-        JOptionPane.showMessageDialog(null, "No se pudo registrar el cliente.");
-    }
-
+        if (dao.insertar(c)) {
+            JOptionPane.showMessageDialog(null, "Cliente registrado con éxito.");
+            limpiarCampos();
+            limpiarTablaCLientes();
+            listarClientes();
+        } else {
+            JOptionPane.showMessageDialog(null, "No se pudo registrar el cliente.");
+        }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-     int fila = tablaclientes.getSelectedRow();
-if (fila == -1 && txtidcliente.getText().trim().isEmpty()) {
-    JOptionPane.showMessageDialog(null, "Seleccione un cliente de la tabla o ingrese un ID válido.");
-    return;
-}
-if (txtnombre.getText().trim().isEmpty() ||
-    txtapellido.getText().trim().isEmpty() ||
-    txtdocumento.getText().trim().isEmpty() ||
-    txtdireccion.getText().trim().isEmpty() ||
-    txttelefono.getText().trim().isEmpty() ||
-    txtcorreo.getText().trim().isEmpty()) {
+        int fila = tablaclientes.getSelectedRow();
+        if (fila == -1 && txtidcliente.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Seleccione un cliente de la tabla o ingrese un ID válido.");
+            return;
+        }
+        if (txtnombre.getText().trim().isEmpty()
+                || txtapellido.getText().trim().isEmpty()
+                || txtdocumento.getText().trim().isEmpty()
+                || txtdireccion.getText().trim().isEmpty()
+                || txttelefono.getText().trim().isEmpty()
+                || txtcorreo.getText().trim().isEmpty()) {
 
-    JOptionPane.showMessageDialog(null, "Todos los campos deben estar llenos.");
-    return;
-}
-if (!txtcorreo.getText().trim().matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
-    JOptionPane.showMessageDialog(null, "Correo no válido.");
-    return;
-}
-try {
-    c.setIdCliente(Integer.parseInt(txtidcliente.getText().trim()));
-    c.setNombre(txtnombre.getText().trim());
-    c.setApellido(txtapellido.getText().trim());
-    c.setDocumento(txtdocumento.getText().trim());
-    c.setDireccion(txtdireccion.getText().trim());
-    c.setTelefono(txttelefono.getText().trim());
-    c.setCorreo(txtcorreo.getText().trim());
-
-    if (dao.editar(c)) {
-        JOptionPane.showMessageDialog(null, "Cliente modificado con éxito.");
-        limpiarTablaCLientes();
-        listarClientes();
-        limpiarCampos();
-    } else {
-        JOptionPane.showMessageDialog(null, "No se pudo modificar el cliente.");
-    }
-} catch (NumberFormatException e) {
-    JOptionPane.showMessageDialog(null, "El ID debe ser un número válido.");
-}
-    }//GEN-LAST:event_btnEditarActionPerformed
-
-    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-         if (!txtidcliente.getText().trim().isEmpty()) {
-    try {
-        int confirmacion = JOptionPane.showConfirmDialog(
-            null,
-            "¿Estás seguro de eliminar el cliente?",
-            "Confirmar",
-            JOptionPane.YES_NO_OPTION
-        );
-
-        if (confirmacion == JOptionPane.YES_OPTION) {
+            JOptionPane.showMessageDialog(null, "Todos los campos deben estar llenos.");
+            return;
+        }
+        if (!txtcorreo.getText().trim().matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
+            JOptionPane.showMessageDialog(null, "Correo no válido.");
+            return;
+        }
+        try {
             c.setIdCliente(Integer.parseInt(txtidcliente.getText().trim()));
-            
-            if (dao.eliminar(c)) {
+            c.setNombre(txtnombre.getText().trim());
+            c.setApellido(txtapellido.getText().trim());
+            c.setDocumento(txtdocumento.getText().trim());
+            c.setDireccion(txtdireccion.getText().trim());
+            c.setTelefono(txttelefono.getText().trim());
+            c.setCorreo(txtcorreo.getText().trim());
+
+            if (dao.editar(c)) {
+                JOptionPane.showMessageDialog(null, "Cliente modificado con éxito.");
                 limpiarTablaCLientes();
                 listarClientes();
                 limpiarCampos();
-                JOptionPane.showMessageDialog(null, "Cliente eliminado con éxito.");
             } else {
-                JOptionPane.showMessageDialog(null, "No se pudo eliminar el cliente.");
+                JOptionPane.showMessageDialog(null, "No se pudo modificar el cliente.");
             }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "El ID debe ser un número válido.");
         }
-    } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(null, "El ID del cliente debe ser un número válido.");
-    }
-} else {
-    JOptionPane.showMessageDialog(null, "Seleccione un cliente primero.");
-}
+    }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        if (!txtidcliente.getText().trim().isEmpty()) {
+            try {
+                int confirmacion = JOptionPane.showConfirmDialog(
+                        null,
+                        "¿Estás seguro de eliminar el cliente?",
+                        "Confirmar",
+                        JOptionPane.YES_NO_OPTION
+                );
+
+                if (confirmacion == JOptionPane.YES_OPTION) {
+                    c.setIdCliente(Integer.parseInt(txtidcliente.getText().trim()));
+
+                    if (dao.eliminar(c)) {
+                        limpiarTablaCLientes();
+                        listarClientes();
+                        limpiarCampos();
+                        JOptionPane.showMessageDialog(null, "Cliente eliminado con éxito.");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No se pudo eliminar el cliente.");
+                    }
+                }
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "El ID del cliente debe ser un número válido.");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Seleccione un cliente primero.");
+        }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         String documento = txtdocumento.getText().trim();
 
-if (documento.isEmpty()) {
-    JOptionPane.showMessageDialog(null, "Ingrese el número de documento.");
-    return;
-}
+        if (documento.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese el número de documento.");
+            return;
+        }
 
+        if (!documento.matches("\\d+")) {
+            JOptionPane.showMessageDialog(null, "El documento debe contener solo números.");
+            return;
+        }
 
-if (!documento.matches("\\d+")) {
-    JOptionPane.showMessageDialog(null, "El documento debe contener solo números.");
-    return;
-}
+        c.setDocumento(documento);
 
-c.setDocumento(documento);
-
-if (dao.buscar(c)) {
-    txtidcliente.setText(String.valueOf(c.getIdCliente()));
-    txtnombre.setText(c.getNombre());
-    txtapellido.setText(c.getApellido());
-    txtdocumento.setText(c.getDocumento());
-    txtdireccion.setText(c.getDireccion());
-    txttelefono.setText(c.getTelefono());
-    txtcorreo.setText(c.getCorreo());
-} else {
-    JOptionPane.showMessageDialog(null, "El cliente no existe.");
-    limpiarCampos();
-}
-
+        if (dao.buscar(c)) {
+            txtidcliente.setText(String.valueOf(c.getIdCliente()));
+            txtnombre.setText(c.getNombre());
+            txtapellido.setText(c.getApellido());
+            txtdocumento.setText(c.getDocumento());
+            txtdireccion.setText(c.getDireccion());
+            txttelefono.setText(c.getTelefono());
+            txtcorreo.setText(c.getCorreo());
+        } else {
+            JOptionPane.showMessageDialog(null, "El cliente no existe.");
+            limpiarCampos();
+        }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void txtcorreoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtcorreoFocusLost
-          String correo = txtcorreo.getText().trim();
+        String correo = txtcorreo.getText().trim();
         if (!correo.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
-             JOptionPane.showMessageDialog(null, "⚠ Correo no válido. Ejemplo: ejemplo@dominio.com");
+            JOptionPane.showMessageDialog(null, "⚠ Correo no válido. Ejemplo: ejemplo@dominio.com");
             txtcorreo.requestFocus(); // Vuelve al campo
         }
     }//GEN-LAST:event_txtcorreoFocusLost
 
     private void txtdocumentoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtdocumentoKeyTyped
-       char c = evt.getKeyChar();
+        char c = evt.getKeyChar();
         if (!Character.isDigit(c)) {
             evt.consume(); // 
-            Toolkit.getDefaultToolkit().beep();}
+            Toolkit.getDefaultToolkit().beep();
+        }
     }//GEN-LAST:event_txtdocumentoKeyTyped
 
     private void btnPdfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPdfActionPerformed
-//RegenerarJasper();
-    
-//// TODO add your handling code here:
-       GenerarPDF();
-      //CrearReporteBasico();
-      // JasperPrint reporteTodoProducto(); 
-    //String rutaReporte = "src/reportes/reporteClientes.jasper";
-    //String salidaPDF = "C://";  // Puedes cambiar esta ruta
-
-    // Si no tienes parámetros, solo crea un mapa vacío
-   // Map<String, Object> parametros = new HashMap<>();
-//ReporteFacturaSalida r = new ReporteFacturaSalida();
-//r.generarReporteSalida("001-123");
-    // Si el reporte necesita parámetros, agrégalos así:
-    // parametros.put("id_usuario", 5);
-
-    // Llamada al método
-    //ReportePDF.generarReporte(rutaReporte, parametros, salidaPDF);
-
+        GenerarPDF();
     }//GEN-LAST:event_btnPdfActionPerformed
 
+    private final Connection conection = new conexion().conectar();
 
-private final Connection conection=new conexion().conectar();
-
-
-
-    void GenerarPDF(){
-        Map p=new HashMap();
+    void GenerarPDF() {
+        Map p = new HashMap();
         JasperReport report;
         JasperPrint print;
 
-        try{
-            report=JasperCompileManager.compileReport(new File("").getAbsolutePath()+"/src/reportes/agua.jrxml");
-            print=JasperFillManager.fillReport(report,p, conection);
-            JasperViewer view=new JasperViewer(print,false);
+        try {
+            report = JasperCompileManager.compileReport(new File("").getAbsolutePath() + "/src/reportes/agua.jrxml");
+            print = JasperFillManager.fillReport(report, p, conection);
+            JasperViewer view = new JasperViewer(print, false);
             view.setTitle("Lista De Clientes");
             view.setVisible(true);
-        }catch(JRException e){
+        } catch (JRException e) {
             e.printStackTrace();
         }
     }
-  
-    void limpiarCampos(){
+
+    void limpiarCampos() {
         txtidcliente.setText("");
         txtnombre.setText("");
         txtapellido.setText("");
@@ -495,15 +467,14 @@ private final Connection conection=new conexion().conectar();
         txttelefono.setText("");
         txtcorreo.setText("");
     }
-    
-    void limpiarTablaCLientes(){
-        for(int i=0;i<modeloClientes.getRowCount();i++){
+
+    void limpiarTablaCLientes() {
+        for (int i = 0; i < modeloClientes.getRowCount(); i++) {
             modeloClientes.removeRow(i);
-            i=0-1;
+            i = 0 - 1;
         }
     }
-   
-   
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private RSMaterialComponent.RSButtonMaterialIconDos btnBuscar;

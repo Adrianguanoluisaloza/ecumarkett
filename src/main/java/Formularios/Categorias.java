@@ -15,10 +15,11 @@ import javax.swing.table.DefaultTableModel;
  * @author Tadeo
  */
 public class Categorias extends javax.swing.JPanel {
-Categoria ct=new Categoria();
-    DaoCategoria daoCt=new DaoCategoria();
-    
-    DefaultTableModel modeloCategoria=new DefaultTableModel();
+
+    Categoria ct = new Categoria();
+    DaoCategoria daoCt = new DaoCategoria();
+
+    DefaultTableModel modeloCategoria = new DefaultTableModel();
 
     /**
      * Creates new form Categorias
@@ -26,20 +27,21 @@ Categoria ct=new Categoria();
     public Categorias() {
         initComponents();
         listarCategorias();
-      
-        
+
     }
-private void listarCategorias(){
-        List<Categoria> lista=daoCt.Listar();
-        modeloCategoria=(DefaultTableModel) tblcategorias.getModel();
-        Object[] ob=new Object[2];
-        for(int i=0;i<lista.size();i++){
-            ob[0]=lista.get(i).getIdCategoria();
-            ob[1]=lista.get(i).getNomCategoria();
+
+    private void listarCategorias() {
+        List<Categoria> lista = daoCt.Listar();
+        modeloCategoria = (DefaultTableModel) tblcategorias.getModel();
+        Object[] ob = new Object[2];
+        for (int i = 0; i < lista.size(); i++) {
+            ob[0] = lista.get(i).getIdCategoria();
+            ob[1] = lista.get(i).getNomCategoria();
             modeloCategoria.addRow(ob);
         }
-       tblcategorias.setModel(modeloCategoria);
+        tblcategorias.setModel(modeloCategoria);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -185,84 +187,84 @@ private void listarCategorias(){
 
     private void tblcategoriasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblcategoriasMouseClicked
         // TODO add your handling code here:
-        int fila=tblcategorias.getSelectedRow();
+        int fila = tblcategorias.getSelectedRow();
         txtidcategoria.setText(tblcategorias.getValueAt(fila, 0).toString());
         txtnomCategoria.setText(tblcategorias.getValueAt(fila, 1).toString());
     }//GEN-LAST:event_tblcategoriasMouseClicked
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-     ct.setNomCategoria(txtnomCategoria.getText());
-        if(daoCt.insertar(ct)){
+        ct.setNomCategoria(txtnomCategoria.getText());
+        if (daoCt.insertar(ct)) {
             JOptionPane.showMessageDialog(null, "Categoria Registrada Con Exito");
-       
-       }else{
+
+        } else {
             JOptionPane.showMessageDialog(null, "No se pudo registrar la Categoria");
-        
+
         }
         limpiarTablaCategoria();
         listarCategorias();
         limpiarCampos();
-       
+
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        int fila=tblcategorias.getSelectedRow();
-        if(fila==-1&&txtidcategoria.getText().isEmpty()){
+        int fila = tblcategorias.getSelectedRow();
+        if (fila == -1 && txtidcategoria.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Seleccione una categoria");
-          
-        }else{
+
+        } else {
             ct.setIdCategoria(Integer.parseInt(txtidcategoria.getText()));
             ct.setNomCategoria(txtnomCategoria.getText());
-            if(daoCt.editar(ct)){
+            if (daoCt.editar(ct)) {
                 JOptionPane.showMessageDialog(null, "Se modifico con exito");
-              
+
                 limpiarTablaCategoria();
                 listarCategorias();
                 limpiarCampos();
-           
+
             }
         }
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnElimarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElimarActionPerformed
-         if(!txtidcategoria.getText().isEmpty()){
-            int confirmacion=JOptionPane.showConfirmDialog(null, "¿Es tas seguro de eliminar la categoria?","Confirmar",2);
-            if(confirmacion==0){
+        if (!txtidcategoria.getText().isEmpty()) {
+            int confirmacion = JOptionPane.showConfirmDialog(null, "¿Es tas seguro de eliminar la categoria?", "Confirmar", 2);
+            if (confirmacion == 0) {
                 ct.setIdCategoria(Integer.parseInt(txtidcategoria.getText()));
                 daoCt.eliminar(ct);
                 limpiarTablaCategoria();
                 listarCategorias();
                 limpiarCampos();
                 JOptionPane.showMessageDialog(null, "Se Elimino con exito la cetegoria");
-             
+
             }
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "Seleccione una categoria");
-            
+
         }
     }//GEN-LAST:event_btnElimarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-       ct.setIdCategoria(Integer.parseInt(txtidcategoria.getText()));
-        if(daoCt.buscar(ct)){
-            txtidcategoria.setText(ct.getIdCategoria()+"");
+        ct.setIdCategoria(Integer.parseInt(txtidcategoria.getText()));
+        if (daoCt.buscar(ct)) {
+            txtidcategoria.setText(ct.getIdCategoria() + "");
             txtnomCategoria.setText(ct.getNomCategoria());
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "La Categoria No Existe");
-          
+
             limpiarCampos();
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
- void limpiarCampos(){
+    void limpiarCampos() {
         txtidcategoria.setText("");
         txtnomCategoria.setText("");
     }
-    
-    void limpiarTablaCategoria(){
-        for(int i=0;i<modeloCategoria.getRowCount();i++){
+
+    void limpiarTablaCategoria() {
+        for (int i = 0; i < modeloCategoria.getRowCount(); i++) {
             modeloCategoria.removeRow(i);
-            i=0-1;
+            i = 0 - 1;
         }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables

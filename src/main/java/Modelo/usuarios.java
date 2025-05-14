@@ -9,9 +9,7 @@ package Modelo;
  * @author Adrian
  */
 public class usuarios {
-   
-  
-    
+
     int idusuario;
     String nombre;
     String apellido;
@@ -118,6 +116,5 @@ public class usuarios {
     public void setPassword(String password) {
         this.password = password;
     }
-    
-    
-  }
+
+}

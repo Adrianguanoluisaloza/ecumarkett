@@ -4,7 +4,6 @@
  */
 package Formularios;
 
-//import Dao.DaoCategoria;
 
 import Dao.DaoCategoria;
 import Dao.DaoEntradas;
@@ -24,6 +23,7 @@ import java.util.List;
 import java.util.Map;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -35,60 +35,59 @@ import net.sf.jasperreports.view.JasperViewer;
  * @author Personal
  */
 public class Entradas extends javax.swing.JPanel {
-entradas e=new entradas();
-  
- 
-    Categoria ct=new Categoria();
-    proveedor pr=new proveedor();
-    productos p=new productos();
-    DaoProductos daoPr=new DaoProductos();
-    DaoEntradas dao=new DaoEntradas();
-    DaoCategoria daoC=new DaoCategoria();
-    DaoProveedor daoP=new DaoProveedor();
-    DefaultTableModel modelo=new DefaultTableModel();
+
+    entradas e = new entradas();
+
+    Categoria ct = new Categoria();
+    proveedor pr = new proveedor();
+    productos p = new productos();
+    DaoProductos daoPr = new DaoProductos();
+    DaoEntradas dao = new DaoEntradas();
+    DaoCategoria daoC = new DaoCategoria();
+    DaoProveedor daoP = new DaoProveedor();
+    DefaultTableModel modelo = new DefaultTableModel();
 
     public static int idpNuevo;
     public static int idpOld;
     public static int cant;
 
-
-    
     /**
      * Creates new form Entradas
      */
     public Entradas() {
         initComponents();
-       listarEntradas();
+        listarEntradas();
     }
 
-    private void listarEntradas(){
-        List<entradas> lista=dao.Listar();
-        modelo=(DefaultTableModel) tablaEntradas.getModel();
-        Object[] ob=new Object[8];
-        for(int i=0;i<lista.size();i++){
-            ob[0]=lista.get(i).getIdentrada();
-            ob[1]=lista.get(i).getIdproducto();
-            ob[2]=lista.get(i).getStock();
-            ob[3]=lista.get(i).getFecha();
-            ob[4]=lista.get(i).getIdproveedor();
-            ob[5]=lista.get(i).getPrecioE();
-            ob[6]=lista.get(i).getPrecioV();
-            ob[7]=lista.get(i).getTotal();
+    private void listarEntradas() {
+        List<entradas> lista = dao.Listar();
+        modelo = (DefaultTableModel) tablaEntradas.getModel();
+        Object[] ob = new Object[8];
+        for (int i = 0; i < lista.size(); i++) {
+            ob[0] = lista.get(i).getIdentrada();
+            ob[1] = lista.get(i).getIdproducto();
+            ob[2] = lista.get(i).getStock();
+            ob[3] = lista.get(i).getFecha();
+            ob[4] = lista.get(i).getIdproveedor();
+            ob[5] = lista.get(i).getPrecioE();
+            ob[6] = lista.get(i).getPrecioV();
+            ob[7] = lista.get(i).getTotal();
             modelo.addRow(ob);
         }
-       tablaEntradas.setModel(modelo);
+        tablaEntradas.setModel(modelo);
     }
 
-   void numProducto(){
-        int numero=daoPr.numProducto();
-        if(numero==0){
-        txtidProducto.setText("1");
-       }else{
-       int i=numero;
-        i=i+1;
-       txtidProducto.setText(i+"");
-        
-    }}
+    void numProducto() {
+        int numero = daoPr.numProducto();
+        if (numero == 0) {
+            txtidProducto.setText("1");
+        } else {
+            int i = numero;
+            i = i + 1;
+            txtidProducto.setText(i + "");
+
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -369,7 +368,7 @@ entradas e=new entradas();
     }// </editor-fold>//GEN-END:initComponents
 
     private void tablaEntradasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaEntradasMouseClicked
-     int fila=tablaEntradas.getSelectedRow();
+        int fila = tablaEntradas.getSelectedRow();
         txtidentrada.setText(tablaEntradas.getValueAt(fila, 0).toString());
         txtidProducto.setText(tablaEntradas.getValueAt(fila, 1).toString());
         txtstock.setText(tablaEntradas.getValueAt(fila, 2).toString());
@@ -379,182 +378,182 @@ entradas e=new entradas();
         txtprecioV.setText(tablaEntradas.getValueAt(fila, 6).toString());
         txtTotal.setText(tablaEntradas.getValueAt(fila, 7).toString());
 
-        
         pr.setIdProveedor(Integer.parseInt(txtidproveedor.getText()));
-        if(daoP.buscar(pr)){
-            txtproveedor.setText(pr.getActivadad_comercial() );
-        }else{
+        if (daoP.buscar(pr)) {
+            txtproveedor.setText(pr.getActivadad_comercial());
+        } else {
             txtproveedor.setText("Error");
         }
         p.setIdproducto(Integer.parseInt(txtidProducto.getText()));
-        if(daoPr.buscar(p)){
-           txtnombreP.setText(p.getNomProd());
-        }else{
+        if (daoPr.buscar(p)) {
+            txtnombreP.setText(p.getNomProd());
+        } else {
             txtproveedor.setText("Error");
         }
-        idpOld=Integer.parseInt(txtidProducto.getText());
-        cant=Integer.parseInt(txtstock.getText());
-        idpNuevo=Integer.parseInt(txtidProducto.getText());
+        idpOld = Integer.parseInt(txtidProducto.getText());
+        cant = Integer.parseInt(txtstock.getText());
+        idpNuevo = Integer.parseInt(txtidProducto.getText());
     }//GEN-LAST:event_tablaEntradasMouseClicked
 
     private void txtprecioEKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtprecioEKeyReleased
         // TODO add your handling code here:
-        double cant,precio;
-        if(!txtstock.getText().isEmpty()){
-            cant=Double.parseDouble(txtstock.getText());
-            precio=Double.parseDouble(txtprecioE.getText());
-            txtTotal.setText(cant*precio+"");
-        }else{
+        double cant, precio;
+        if (!txtstock.getText().isEmpty()) {
+            cant = Double.parseDouble(txtstock.getText());
+            precio = Double.parseDouble(txtprecioE.getText());
+            txtTotal.setText(cant * precio + "");
+        } else {
         }
     }//GEN-LAST:event_txtprecioEKeyReleased
 
     private void txtstockKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtstockKeyReleased
         // TODO add your handling code here:
-        double cant,precio;
-        if(!txtprecioE.getText().isEmpty()){
-            cant=Double.parseDouble(txtstock.getText());
-            precio=Double.parseDouble(txtprecioE.getText());
-            txtTotal.setText(cant*precio+"");
-        }else{
+        double cant, precio;
+        if (!txtprecioE.getText().isEmpty()) {
+            cant = Double.parseDouble(txtstock.getText());
+            precio = Double.parseDouble(txtprecioE.getText());
+            txtTotal.setText(cant * precio + "");
+        } else {
         }
     }//GEN-LAST:event_txtstockKeyReleased
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
 
-    Calendar cal;
-            int d,m,a;
-            cal=dateFecha.getCalendar();
-            d=cal.get(Calendar.DAY_OF_MONTH);
-            m=cal.get(Calendar.MONTH);
-            a=cal.get(Calendar.YEAR)-1900;
-            e.setIdproducto(Integer.parseInt(txtidProducto.getText()));
-            e.setStock(Integer.parseInt(txtstock.getText()));
-            e.setFecha(new Date(a,m,d));
-            e.setIdproveedor(Integer.parseInt(txtidproveedor.getText()));
-            e.setPrecioE(Double.parseDouble(txtprecioE.getText()));
-            e.setPrecioV(Double.parseDouble(txtprecioV.getText()));
-            e.setTotal(Double.parseDouble(txtTotal.getText()));
-            p.setIdproducto(Integer.parseInt(txtidProducto.getText()));
-            p.setPrecioV(Double.parseDouble(txtprecioV.getText()));
-            if(dao.insertar(e)&&daoPr.sumarStock(Integer.parseInt(txtidProducto.getText()), Integer.parseInt(txtstock.getText()))&&daoPr.editarPrecioV(p)){
-              
-               JOptionPane.showMessageDialog(null,"Entrada Registrada Con Exito");
-            }else{
-              
-             JOptionPane.showMessageDialog(null,"No se pudo registrar la entrada");
-            }
-            limpiarCampos();
+        Calendar cal;
+        int d, m, a;
+        cal = dateFecha.getCalendar();
+        d = cal.get(Calendar.DAY_OF_MONTH);
+        m = cal.get(Calendar.MONTH);
+        a = cal.get(Calendar.YEAR) - 1900;
+        e.setIdproducto(Integer.parseInt(txtidProducto.getText()));
+        e.setStock(Integer.parseInt(txtstock.getText()));
+        e.setFecha(new Date(a, m, d));
+        e.setIdproveedor(Integer.parseInt(txtidproveedor.getText()));
+        e.setPrecioE(Double.parseDouble(txtprecioE.getText()));
+        e.setPrecioV(Double.parseDouble(txtprecioV.getText()));
+        e.setTotal(Double.parseDouble(txtTotal.getText()));
+        p.setIdproducto(Integer.parseInt(txtidProducto.getText()));
+        p.setPrecioV(Double.parseDouble(txtprecioV.getText()));
+        if (dao.insertar(e) && daoPr.sumarStock(Integer.parseInt(txtidProducto.getText()), Integer.parseInt(txtstock.getText())) && daoPr.editarPrecioV(p)) {
+
+            JOptionPane.showMessageDialog(null, "Entrada Registrada Con Exito");
+        } else {
+
+            JOptionPane.showMessageDialog(null, "No se pudo registrar la entrada");
+        }
+        limpiarCampos();
         limpiarTablaEntradas();
         listarEntradas();
         numProducto();
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-     int fila=tablaEntradas.getSelectedRow();
-        if(fila==-1&&txtidentrada.getText().isEmpty()){
-          
-          JOptionPane.showMessageDialog(null,"Seleccione una Entrada");
-        }else{
+        int fila = tablaEntradas.getSelectedRow();
+        if (fila == -1 && txtidentrada.getText().isEmpty()) {
+
+            JOptionPane.showMessageDialog(null, "Seleccione una Entrada");
+        } else {
             int cantNueva;
-            cantNueva=Integer.parseInt(txtstock.getText()); 
+            cantNueva = Integer.parseInt(txtstock.getText());
             Calendar cal;
-            int d,m,a;
-            cal=dateFecha.getCalendar();
-            d=cal.get(Calendar.DAY_OF_MONTH);
-            m=cal.get(Calendar.MONTH);
-            a=cal.get(Calendar.YEAR)-1900;
+            int d, m, a;
+            cal = dateFecha.getCalendar();
+            d = cal.get(Calendar.DAY_OF_MONTH);
+            m = cal.get(Calendar.MONTH);
+            a = cal.get(Calendar.YEAR) - 1900;
             e.setIdproducto(Integer.parseInt(txtidProducto.getText()));
             e.setStock(Integer.parseInt(txtstock.getText()));
-            e.setFecha(new Date(a,m,d));
+            e.setFecha(new Date(a, m, d));
             e.setIdproveedor(Integer.parseInt(txtidproveedor.getText()));
             e.setPrecioE(Double.parseDouble(txtprecioE.getText()));
             e.setPrecioV(Double.parseDouble(txtprecioV.getText()));
             e.setTotal(Double.parseDouble(txtTotal.getText()));
             e.setIdentrada(Integer.parseInt(txtidentrada.getText()));
- 
-            DaoProductos daoPro=new DaoProductos();
-            if(dao.editar(e)){
-                 if(idpOld==idpNuevo){
-                    if(cantNueva>cant){
-                       int c=cantNueva-cant;
-                        if(daoPro.sumarStock(idpOld, c)){ 
+
+            DaoProductos daoPro = new DaoProductos();
+            if (dao.editar(e)) {
+                if (idpOld == idpNuevo) {
+                    if (cantNueva > cant) {
+                        int c = cantNueva - cant;
+                        if (daoPro.sumarStock(idpOld, c)) {
                         }
-                    }else{
-                         int c=cant-cantNueva;
-                       if(daoPro.restarStock(idpOld, c)){
+                    } else {
+                        int c = cant - cantNueva;
+                        if (daoPro.restarStock(idpOld, c)) {
                         }
                     }
-                }else{
-                daoPro.restarStock(idpOld, cant);
-                daoPro.sumarStock(idpNuevo, Integer.parseInt(txtstock.getText()));
+                } else {
+                    daoPro.restarStock(idpOld, cant);
+                    daoPro.sumarStock(idpNuevo, Integer.parseInt(txtstock.getText()));
                 }
-               
-               JOptionPane.showMessageDialog(null,"Se modifico con exito");
+
+                JOptionPane.showMessageDialog(null, "Se modifico con exito");
                 limpiarCampos();
                 limpiarTablaEntradas();
                 listarEntradas();
-            }else{
-              
-                JOptionPane.showMessageDialog(null,"Erorr al modificar la entrada");
+            } else {
+
+                JOptionPane.showMessageDialog(null, "Erorr al modificar la entrada");
             }
         }
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void btnElimnarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElimnarActionPerformed
-        if(!txtidentrada.getText().isEmpty()){
-            int confirmacion=JOptionPane.showConfirmDialog(null, "¿Es tas seguro de eliminar la entrada?","Confirmar",2);
-            if(confirmacion==0){
+        if (!txtidentrada.getText().isEmpty()) {
+            int confirmacion = JOptionPane.showConfirmDialog(null, "¿Es tas seguro de eliminar la entrada?", "Confirmar", 2);
+            if (confirmacion == 0) {
                 e.setIdentrada(Integer.parseInt(txtidentrada.getText()));
                 dao.buscar(e);
-                int idP=e.getIdproducto();
-                int cant=e.getStock();
+                int idP = e.getIdproducto();
+                int cant = e.getStock();
                 daoPr.restarStock(idP, cant);
                 dao.eliminar(e);
                 limpiarCampos();
                 limpiarTablaEntradas();
                 listarEntradas();
-              
-             JOptionPane.showMessageDialog(null,"Se Elimino con exito La Entrada");
+
+                JOptionPane.showMessageDialog(null, "Se Elimino con exito La Entrada");
             }
-        }else{
-          
-        JOptionPane.showMessageDialog(null,"Seleccione una Entrada");
+        } else {
+
+            JOptionPane.showMessageDialog(null, "Seleccione una Entrada");
         }
     }//GEN-LAST:event_btnElimnarActionPerformed
 
     private void btnBuscarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarProductoActionPerformed
-       BuscaProductos.tipo=false;
-        BuscaProductos m=new BuscaProductos();
-     m.setVisible(true);
+        BuscaProductos.tipo = false;
+        BuscaProductos m = new BuscaProductos();
+        m.setVisible(true);
     }//GEN-LAST:event_btnBuscarProductoActionPerformed
 
     private void btnBuscarProvedorrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarProvedorrActionPerformed
-      BuscarDato.tipo=false;
-       BuscarDato m=new BuscarDato();
-       m.setVisible(true);
+        BuscarDato.tipo = false;
+        BuscarDato m = new BuscarDato();
+        m.setVisible(true);
     }//GEN-LAST:event_btnBuscarProvedorrActionPerformed
 
     private void ReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReporteActionPerformed
-         GenerarPDF("reporteEntradas");
+        GenerarPDF("reporteEntradas");
     }//GEN-LAST:event_ReporteActionPerformed
- private Connection conection=new conexion().conectar();
+    private final Connection conection = new conexion().conectar();
 
-    void GenerarPDF(String reporte){
-        Map p=new HashMap();
+    void GenerarPDF(String reporte) {
+        Map p = new HashMap();
         JasperReport report;
         JasperPrint print;
 
-        try{
-            report=JasperCompileManager.compileReport(new File("").getAbsolutePath()+"/src/reportes/"+reporte+".jrxml");
-            print=JasperFillManager.fillReport(report,p, conection);
-            JasperViewer view=new JasperViewer(print,false);
+        try {
+            report = JasperCompileManager.compileReport(new File("").getAbsolutePath() + "/src/reportes/" + reporte + ".jrxml");
+            print = JasperFillManager.fillReport(report, p, conection);
+            JasperViewer view = new JasperViewer(print, false);
             view.setTitle("Lista De Entradas");
             view.setVisible(true);
-        }catch(Exception e){
+        } catch (JRException e) {
             e.printStackTrace();
         }
     }
- void limpiarCampos(){
+
+    void limpiarCampos() {
         txtidentrada.setText("");
         txtnombreP.setText("");
         txtstock.setText("");
@@ -564,16 +563,15 @@ entradas e=new entradas();
         txtproveedor.setText("");
         txtproveedor.setText("");
     }
-    
-    void limpiarTablaEntradas(){
-        for(int i=0;i<modelo.getRowCount();i++){
+
+    void limpiarTablaEntradas() {
+        for (int i = 0; i < modelo.getRowCount(); i++) {
             modelo.removeRow(i);
-            i=0-1;
+            i = 0 - 1;
         }
     }
 
-   
-  
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Reporte;
     private javax.swing.JButton btnActualizar;

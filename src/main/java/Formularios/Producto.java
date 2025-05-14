@@ -29,44 +29,46 @@ import net.sf.jasperreports.view.JasperViewer;
  * @author Tadeo
  */
 public final class Producto extends javax.swing.JPanel {
-productos p=new productos();
-    DaoProductos daoP=new DaoProductos();
-    DefaultTableModel modelo=new DefaultTableModel();
 
-    Categoria ct=new Categoria();
-    DaoCategoria daoCt=new DaoCategoria();
+    productos p = new productos();
+    DaoProductos daoP = new DaoProductos();
+    DefaultTableModel modelo = new DefaultTableModel();
+
+    Categoria ct = new Categoria();
+    DaoCategoria daoCt = new DaoCategoria();
+
     /**
      * Creates new form Producto
      */
     public Producto() {
         initComponents();
-      listarProductos();
+        listarProductos();
         numProducto();
     }
 
-    private void listarProductos(){
-        List<productos> lista=daoP.Listar();
-        modelo=(DefaultTableModel) tablaProductos.getModel();
-        Object[] ob=new Object[5];
-        for(int i=0;i<lista.size();i++){
-            ob[0]=lista.get(i).getIdproducto();
-            ob[1]=lista.get(i).getNomProd();
-            ob[2]=lista.get(i).getStock();
-            ob[3]=lista.get(i).getIdCategoria();
-            ob[4]=lista.get(i).getPrecioV();
+    private void listarProductos() {
+        List<productos> lista = daoP.Listar();
+        modelo = (DefaultTableModel) tablaProductos.getModel();
+        Object[] ob = new Object[5];
+        for (int i = 0; i < lista.size(); i++) {
+            ob[0] = lista.get(i).getIdproducto();
+            ob[1] = lista.get(i).getNomProd();
+            ob[2] = lista.get(i).getStock();
+            ob[3] = lista.get(i).getIdCategoria();
+            ob[4] = lista.get(i).getPrecioV();
             modelo.addRow(ob);
         }
-       tablaProductos.setModel(modelo);
+        tablaProductos.setModel(modelo);
     }
 
-    void numProducto(){
-        int numero=daoP.numProducto();
-        if(numero==0){
-        txtid.setText("1");
-        }else{
-        int i=numero;
-        i=i+1;
-        txtid.setText(i+"");
+    void numProducto() {
+        int numero = daoP.numProducto();
+        if (numero == 0) {
+            txtid.setText("1");
+        } else {
+            int i = numero;
+            i = i + 1;
+            txtid.setText(i + "");
         }
     }
 
@@ -259,7 +261,7 @@ productos p=new productos();
     }// </editor-fold>//GEN-END:initComponents
 
     private void tablaProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaProductosMouseClicked
-   int fila=tablaProductos.getSelectedRow();
+        int fila = tablaProductos.getSelectedRow();
         txtid.setText(tablaProductos.getValueAt(fila, 0).toString());
         txtnombre.setText(tablaProductos.getValueAt(fila, 1).toString());
         txtstock.setText(tablaProductos.getValueAt(fila, 2).toString());
@@ -267,7 +269,7 @@ productos p=new productos();
         txttprecio.setText(tablaProductos.getValueAt(fila, 4).toString());
 
         ct.setIdCategoria(Integer.parseInt(txtidCategoria.getText()));
-        if(daoCt.buscar(ct)){
+        if (daoCt.buscar(ct)) {
             txtNomCategoria.setText(ct.getNomCategoria());
         }
     }//GEN-LAST:event_tablaProductosMouseClicked
@@ -275,79 +277,79 @@ productos p=new productos();
     private void btnGuradarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuradarActionPerformed
         p.setIdproducto(Integer.parseInt(txtid.getText()));
         p.setNomProd(txtnombre.getText());
-       p.setStock(Integer.parseInt(txtstock.getText()));
+        p.setStock(Integer.parseInt(txtstock.getText()));
         p.setIdCategoria(Integer.parseInt(txtidCategoria.getText()));
         p.setPrecioV(Double.parseDouble(txttprecio.getText()));
-        if(daoP.insertar(p)){
-           
-            JOptionPane.showMessageDialog(null,"Producto Registrado Con Exito");
+        if (daoP.insertar(p)) {
+
+            JOptionPane.showMessageDialog(null, "Producto Registrado Con Exito");
             limpiarTablaProductos();
             listarProductos();
             numProducto();
-        }else{
-        JOptionPane.showMessageDialog(null, "No se pudo registrar el Producto");   
+        } else {
+            JOptionPane.showMessageDialog(null, "No se pudo registrar el Producto");
         }
     }//GEN-LAST:event_btnGuradarActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-         int fila=tablaProductos.getSelectedRow();
-        if(fila==-1&&txtid.getText().isEmpty()){
-           
-          JOptionPane.showMessageDialog(null,"Seleccione un Proveedor");
-        }else{
+        int fila = tablaProductos.getSelectedRow();
+        if (fila == -1 && txtid.getText().isEmpty()) {
+
+            JOptionPane.showMessageDialog(null, "Seleccione un Proveedor");
+        } else {
             p.setIdproducto(Integer.parseInt(txtid.getText()));
             p.setNomProd(txtnombre.getText());
-             p.setStock(Integer.parseInt(txtstock.getText()));
+            p.setStock(Integer.parseInt(txtstock.getText()));
             p.setIdCategoria(Integer.parseInt(txtidCategoria.getText()));
             p.setPrecioV(Double.parseDouble(txttprecio.getText()));
-            if(daoP.editar(p)){
-             
+            if (daoP.editar(p)) {
+
                 limpiarCampos();
                 limpiarTablaProductos();
                 listarProductos();
-            }else{
-              JOptionPane.showMessageDialog(null,"Se edito con exito");
+            } else {
+                JOptionPane.showMessageDialog(null, "Se edito con exito");
             }
         }
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnElimarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElimarActionPerformed
-        if(!txtid.getText().isEmpty()){
-            int confirmacion=JOptionPane.showConfirmDialog(null, "¿Es tas seguro de eliminar el Producto?","Confirmar",2);
-            if(confirmacion==0){
+        if (!txtid.getText().isEmpty()) {
+            int confirmacion = JOptionPane.showConfirmDialog(null, "¿Es tas seguro de eliminar el Producto?", "Confirmar", 2);
+            if (confirmacion == 0) {
                 p.setIdproducto(Integer.parseInt(txtid.getText()));
                 daoP.eliminar(p);
                 limpiarCampos();
                 limpiarTablaProductos();
                 listarProductos();
-            
+
             }
-        }else{
-          JOptionPane.showMessageDialog(null,"Se elimino con exito");
-        }        
+        } else {
+            JOptionPane.showMessageDialog(null, "Se elimino con exito");
+        }
     }//GEN-LAST:event_btnElimarActionPerformed
 
     private void btnBuscarIdCategiriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarIdCategiriaActionPerformed
-        BuscarDato.tipo=true;
-        BuscarDato.entrada=false;
-        BuscarDato m=new BuscarDato();
+        BuscarDato.tipo = true;
+        BuscarDato.entrada = false;
+        BuscarDato m = new BuscarDato();
         m.setVisible(true);
     }//GEN-LAST:event_btnBuscarIdCategiriaActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         p.setIdproducto(Integer.parseInt(txtid.getText()));
-        if(daoP.buscar(p)){
-            txtid.setText(p.getIdproducto()+"");
+        if (daoP.buscar(p)) {
+            txtid.setText(p.getIdproducto() + "");
             txtnombre.setText(p.getNomProd());
-            txtidCategoria.setText(p.getIdCategoria()+"");
-            txttprecio.setText(p.getPrecioV()+"");
-            txtstock.setText(p.getStock()+"");
+            txtidCategoria.setText(p.getIdCategoria() + "");
+            txttprecio.setText(p.getPrecioV() + "");
+            txtstock.setText(p.getStock() + "");
             ct.setIdCategoria(Integer.parseInt(txtidCategoria.getText()));
-            if(daoCt.buscar(ct)){
+            if (daoCt.buscar(ct)) {
                 txtNomCategoria.setText(ct.getNomCategoria());
             }
-        }else{
-           JOptionPane.showMessageDialog(null,"El Producto No Existe");
+        } else {
+            JOptionPane.showMessageDialog(null, "El Producto No Existe");
             limpiarCampos();
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
@@ -356,36 +358,38 @@ productos p=new productos();
         GenerarPDF("reporteProductos");
 
     }//GEN-LAST:event_btnReporteActionPerformed
-private final Connection conection=new conexion().conectar();
-void GenerarPDF(String reporte){
-        Map p=new HashMap();
+    private final Connection conection = new conexion().conectar();
+
+    void GenerarPDF(String reporte) {
+        Map p = new HashMap();
         JasperReport report;
         JasperPrint print;
 
-        try{
-            report=JasperCompileManager.compileReport(new File("").getAbsolutePath()+"/src/reportes/"+reporte+".jrxml");
-            print=JasperFillManager.fillReport(report,p, conection);
-            JasperViewer view=new JasperViewer(print,false);
+        try {
+            report = JasperCompileManager.compileReport(new File("").getAbsolutePath() + "/src/reportes/" + reporte + ".jrxml");
+            print = JasperFillManager.fillReport(report, p, conection);
+            JasperViewer view = new JasperViewer(print, false);
             view.setTitle("Lista De Entradas");
             view.setVisible(true);
-        }catch(JRException e){
+        } catch (JRException e) {
             e.printStackTrace();
         }
     }
-private void limpiarTablaProductos() {
-       for(int i=0;i<modelo.getRowCount();i++){
+
+    private void limpiarTablaProductos() {
+        for (int i = 0; i < modelo.getRowCount(); i++) {
             modelo.removeRow(i);
-            i=0-1;
+            i = 0 - 1;
         }
     }
 
     private void limpiarCampos() {
-       txtid.setText("");
-txtnombre.setText("");
-txtstock.setText("");
-txtNomCategoria.setText("");
-txttprecio.setText("");
-txtidCategoria.setText("");
+        txtid.setText("");
+        txtnombre.setText("");
+        txtstock.setText("");
+        txtNomCategoria.setText("");
+        txttprecio.setText("");
+        txtidCategoria.setText("");
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;

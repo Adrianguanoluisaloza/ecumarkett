@@ -11,16 +11,18 @@ import java.sql.Date;
  * @author Adrian
  */
 public class entradas {
-    int identrada										;
-   int idproducto;
-   int stock;
-   Date fecha;
-   int idproveedor;
-   double precioE;
-   double precioV;
-   double total;
 
-    public entradas() {}
+    int identrada;
+    int idproducto;
+    int stock;
+    Date fecha;
+    int idproveedor;
+    double precioE;
+    double precioV;
+    double total;
+
+    public entradas() {
+    }
 
     public entradas(int identrada, int idproducto, int stock, Date fecha, int idproveedor, double precioE, double precioV, double total) {
         this.identrada = identrada;
@@ -32,8 +34,6 @@ public class entradas {
         this.precioV = precioV;
         this.total = total;
     }
-
-   
 
     public int getIdentrada() {
         return identrada;
@@ -51,8 +51,6 @@ public class entradas {
         this.idproducto = idproducto;
     }
 
-   
-
     public int getStock() {
         return stock;
     }
@@ -60,8 +58,6 @@ public class entradas {
     public void setStock(int stock) {
         this.stock = stock;
     }
-
- 
 
     public int getIdproveedor() {
         return idproveedor;
@@ -87,8 +83,6 @@ public class entradas {
         this.precioV = precioV;
     }
 
-    
-
     public double getTotal() {
         return total;
     }
@@ -104,7 +98,5 @@ public class entradas {
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
-   
-   
-}
 
+}

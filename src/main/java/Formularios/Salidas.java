@@ -4,7 +4,6 @@
  */
 package Formularios;
 
-
 import Dao.DaoClientes;
 import Dao.DaoDetalleSalida;
 import Dao.DaoEntradas;
@@ -31,41 +30,40 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.view.JasperViewer;
 
-
-
-
 /**
  *
  * @author Personal
  */
 public class Salidas extends javax.swing.JPanel {
-salidas s=new salidas();
-DaoSalida daoS=new DaoSalida();
-DaoDetalleSalida daoDS=new DaoDetalleSalida();
-clientes c=new clientes();
-DaoClientes daoC=new DaoClientes();
-DefaultTableModel modelo=new DefaultTableModel();
 
-entradas e=new entradas();
-DaoEntradas DaoE=new DaoEntradas();
-DaoProductos daoPR=new DaoProductos();
-int filaSeleccionada;
+    salidas s = new salidas();
+    DaoSalida daoS = new DaoSalida();
+    DaoDetalleSalida daoDS = new DaoDetalleSalida();
+    clientes c = new clientes();
+    DaoClientes daoC = new DaoClientes();
+    DefaultTableModel modelo = new DefaultTableModel();
+
+    entradas e = new entradas();
+    DaoEntradas DaoE = new DaoEntradas();
+    DaoProductos daoPR = new DaoProductos();
+    int filaSeleccionada;
+
     /**
      * Creates new form Salidas
      */
     public Salidas() {
         initComponents();
-    numSalida();
+        numSalida();
     }
 
-    void numSalida(){
-        String numero=daoS.numSalida();
-        if(numero==null){
-        txtnsalida.setText("001");
-        }else{
-        int i=Integer.parseInt(numero);
-        i=i+1;
-        txtnsalida.setText("00"+i);
+    void numSalida() {
+        String numero = daoS.numSalida();
+        if (numero == null) {
+            txtnsalida.setText("001");
+        } else {
+            int i = Integer.parseInt(numero);
+            i = i + 1;
+            txtnsalida.setText("00" + i);
         }
     }
 
@@ -373,26 +371,25 @@ int filaSeleccionada;
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarProductoActionPerformed
-       c.setDocumento(txtdocumento.getText());
-        if(daoC.buscar(c)){
-            txtidcliente.setText(c.getIdCliente()+"");
-            txtnombreCliente.setText(c.getNombre()+" "+c.getApellido());
+        c.setDocumento(txtdocumento.getText());
+        if (daoC.buscar(c)) {
+            txtidcliente.setText(c.getIdCliente() + "");
+            txtnombreCliente.setText(c.getNombre() + " " + c.getApellido());
             txtdocumento.setText(c.getDocumento());
             txtTelefono.setText(c.getTelefono());
             txtcorreo.setText(c.getCorreo());
-        }else{
-           
-     JOptionPane.showMessageDialog(null,"No se encuentra el producto");
+        } else {
+
+            JOptionPane.showMessageDialog(null, "No se encuentra el producto");
         }
     }//GEN-LAST:event_btnBuscarProductoActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
 
+        for (int i = 0; i < tablaSalidas.getRowCount(); i++) {
+            if (tablaSalidas.getValueAt(i, 1).toString().equals(txtidProducto.getText())) {
 
-        for(int i=0;i<tablaSalidas.getRowCount();i++){
-            if(tablaSalidas.getValueAt(i, 1).toString().equals(txtidProducto.getText())){
-      
-            JOptionPane.showMessageDialog(null,"El Producto ya esta agregado");
+                JOptionPane.showMessageDialog(null, "El Producto ya esta agregado");
                 modelo.removeRow(i);
             }
         }
@@ -402,44 +399,44 @@ int filaSeleccionada;
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnRecargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecargarActionPerformed
-        
-   double precio,cant;
-        precio=Double.parseDouble(txtprecio.getText());
-        cant=Double.parseDouble(txtcantidad.getText());
+
+        double precio, cant;
+        precio = Double.parseDouble(txtprecio.getText());
+        cant = Double.parseDouble(txtcantidad.getText());
         modelo.setValueAt(txtcantidad.getText().trim(), filaSeleccionada, 4);
-        modelo.setValueAt((precio*cant)+"", filaSeleccionada, 5);
+        modelo.setValueAt((precio * cant) + "", filaSeleccionada, 5);
         sumarTotal();
     }//GEN-LAST:event_btnRecargarActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        if(filaSeleccionada==-1){
-          
-         JOptionPane.showMessageDialog(null,"Seleccione un producto de la tabla para eliminar");
-        }else{
+        if (filaSeleccionada == -1) {
+
+            JOptionPane.showMessageDialog(null, "Seleccione un producto de la tabla para eliminar");
+        } else {
             modelo.removeRow(filaSeleccionada);
             sumarTotal();
         }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarActionPerformed
-    s.setNumSalida(txtnsalida.getText());
+        s.setNumSalida(txtnsalida.getText());
         s.setIdCliente(Integer.parseInt(txtidcliente.getText()));
         s.setSubtotal(Double.parseDouble(txtsubtotal.getText()));
         s.setIgv(Double.parseDouble(txtigv.getText()));
         s.setTotal(Double.parseDouble(txtTotal.getText()));
         Calendar cal;
-        int d,m,a;
-        cal=jcFecha.getCalendar();
-        d=cal.get(Calendar.DAY_OF_MONTH);
-        m=cal.get(Calendar.MONTH);
-        a=cal.get(Calendar.YEAR)-1900;
-        s.setFecha(new Date(a,m,d));
-        if(daoS.insertar(s)){
+        int d, m, a;
+        cal = jcFecha.getCalendar();
+        d = cal.get(Calendar.DAY_OF_MONTH);
+        m = cal.get(Calendar.MONTH);
+        a = cal.get(Calendar.YEAR) - 1900;
+        s.setFecha(new Date(a, m, d));
+        if (daoS.insertar(s)) {
             guardarDetalle();
-           
-           JOptionPane.showMessageDialog(null,"Salida Registrada Con Exito");
+
+            JOptionPane.showMessageDialog(null, "Salida Registrada Con Exito");
             restaStock();
-           GenerarPDF(txtnsalida.getText());
+            GenerarPDF(txtnsalida.getText());
             numSalida();
             limpiarDatosPod();
             limpaDatosCliente();
@@ -447,28 +444,28 @@ int filaSeleccionada;
             txtsubtotal.setText("");
             txtigv.setText("");
             limpiarTablaSalida();
-        }else{
-            
-           JOptionPane.showMessageDialog(null,"No se pudo registrar la Salida");
+        } else {
+
+            JOptionPane.showMessageDialog(null, "No se pudo registrar la Salida");
         }
     }//GEN-LAST:event_btnGenerarActionPerformed
 
     private void tablaSalidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaSalidasMouseClicked
-  filaSeleccionada=tablaSalidas.getSelectedRow();
+        filaSeleccionada = tablaSalidas.getSelectedRow();
         txtidProducto.setText(tablaSalidas.getValueAt(filaSeleccionada, 1).toString());
         txtcantidad.setText(tablaSalidas.getValueAt(filaSeleccionada, 4).toString());
         txtproducto.setText(tablaSalidas.getValueAt(filaSeleccionada, 2).toString());
         txtprecio.setText(tablaSalidas.getValueAt(filaSeleccionada, 3).toString());
 
         e.setIdentrada(Integer.parseInt(txtidProducto.getText()));
-        if(DaoE.buscar(e)){
-           txtstock.setText(e.getStock()+"");
+        if (DaoE.buscar(e)) {
+            txtstock.setText(e.getStock() + "");
         }
     }//GEN-LAST:event_tablaSalidasMouseClicked
 
     private void btnBuscarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarClientesActionPerformed
-    BuscaProductos.tipo=true;
-        BuscaProductos m=new BuscaProductos();
+        BuscaProductos.tipo = true;
+        BuscaProductos m = new BuscaProductos();
         m.setVisible(true);
     }//GEN-LAST:event_btnBuscarClientesActionPerformed
 
@@ -479,70 +476,70 @@ int filaSeleccionada;
             Toolkit.getDefaultToolkit().beep();
         }
     }//GEN-LAST:event_txtdocumentoKeyTyped
-private void agregaEntrada(){
-        double precio,total,importe;
-        modelo=(DefaultTableModel) tablaSalidas.getModel();
-        int idEntrada=Integer.parseInt(txtidProducto.getText());
-        int idSalida=Integer.parseInt(txtnsalida.getText());
-        int cantidad=Integer.parseInt(txtcantidad.getText());
-        precio=Double.parseDouble(txtprecio.getText());
-        String prod=txtproducto.getText();
-        importe=cantidad*precio;
-        int stock=Integer.parseInt(txtstock.getText());
-        ArrayList lista=new ArrayList();
-        if(stock>0 && cantidad<=stock){
+    private void agregaEntrada() {
+        double precio, total, importe;
+        modelo = (DefaultTableModel) tablaSalidas.getModel();
+        int idEntrada = Integer.parseInt(txtidProducto.getText());
+        int idSalida = Integer.parseInt(txtnsalida.getText());
+        int cantidad = Integer.parseInt(txtcantidad.getText());
+        precio = Double.parseDouble(txtprecio.getText());
+        String prod = txtproducto.getText();
+        importe = cantidad * precio;
+        int stock = Integer.parseInt(txtstock.getText());
+        ArrayList lista = new ArrayList();
+        if (stock > 0 && cantidad <= stock) {
             lista.add(idSalida);
             lista.add(idEntrada);
             lista.add(prod);
             lista.add(precio);
             lista.add(cantidad);
             lista.add(importe);
-            Object[] ob=new Object[6];
-            ob[0]=lista.get(0);
-            ob[1]=lista.get(1);
-            ob[2]=lista.get(2);
-            ob[3]=lista.get(3);
-            ob[4]=lista.get(4);
-            ob[5]=lista.get(5);
+            Object[] ob = new Object[6];
+            ob[0] = lista.get(0);
+            ob[1] = lista.get(1);
+            ob[2] = lista.get(2);
+            ob[3] = lista.get(3);
+            ob[4] = lista.get(4);
+            ob[5] = lista.get(5);
             modelo.addRow(ob);
             tablaSalidas.setModel(modelo);
-        }else{
-          JOptionPane.showMessageDialog(null, "No se pudo registrar.");
+        } else {
+            JOptionPane.showMessageDialog(null, "No se pudo registrar.");
         }
     }
 
-    void guardarDetalle(){
-        for(int i=0;i<tablaSalidas.getRowCount();i++){
-        int idSalida=Integer.parseInt(tablaSalidas.getValueAt(i, 0).toString());
-        int idEntrada=Integer.parseInt(tablaSalidas.getValueAt(i, 1).toString());
-        int cant=Integer.parseInt(tablaSalidas.getValueAt(i, 4).toString());
-        Double importe=Double.valueOf(tablaSalidas.getValueAt(i, 5).toString());
-        daoDS.insertar(idSalida, idEntrada, cant, importe);
+    void guardarDetalle() {
+        for (int i = 0; i < tablaSalidas.getRowCount(); i++) {
+            int idSalida = Integer.parseInt(tablaSalidas.getValueAt(i, 0).toString());
+            int idEntrada = Integer.parseInt(tablaSalidas.getValueAt(i, 1).toString());
+            int cant = Integer.parseInt(tablaSalidas.getValueAt(i, 4).toString());
+            Double importe = Double.valueOf(tablaSalidas.getValueAt(i, 5).toString());
+            daoDS.insertar(idSalida, idEntrada, cant, importe);
         }
     }
 
-    void restaStock(){
-        for(int i=0;i<tablaSalidas.getRowCount();i++){
-        int idEntrada=Integer.parseInt(tablaSalidas.getValueAt(i, 1).toString());
-        int cant=Integer.parseInt(tablaSalidas.getValueAt(i, 4).toString());
-        daoPR.restarStock(idEntrada, cant);
+    void restaStock() {
+        for (int i = 0; i < tablaSalidas.getRowCount(); i++) {
+            int idEntrada = Integer.parseInt(tablaSalidas.getValueAt(i, 1).toString());
+            int cant = Integer.parseInt(tablaSalidas.getValueAt(i, 4).toString());
+            daoPR.restarStock(idEntrada, cant);
         }
     }
 
-    void sumarTotal(){
-        double fila,igv,subtotal,total = 0.00;
-        for(int i=0;i<tablaSalidas.getRowCount();i++){
-        fila=Double.parseDouble(tablaSalidas.getValueAt(i, 5).toString());
-        total+=fila;
-        igv=total*0.18;
-        subtotal=total-igv;
-        txtTotal.setText(String.format("%.2f", total).replace(",", "."));
-        txtsubtotal.setText(String.format("%.2f", subtotal).replace(",", "."));
-        txtigv.setText(String.format("%.2f", igv).replace(",", "."));
+    void sumarTotal() {
+        double fila, igv, subtotal, total = 0.00;
+        for (int i = 0; i < tablaSalidas.getRowCount(); i++) {
+            fila = Double.parseDouble(tablaSalidas.getValueAt(i, 5).toString());
+            total += fila;
+            igv = total * 0.18;
+            subtotal = total - igv;
+            txtTotal.setText(String.format("%.2f", total).replace(",", "."));
+            txtsubtotal.setText(String.format("%.2f", subtotal).replace(",", "."));
+            txtigv.setText(String.format("%.2f", igv).replace(",", "."));
         }
     }
 
-    void limpiarDatosPod(){
+    void limpiarDatosPod() {
         txtidProducto.setText("");
         txtproducto.setText("");
         txtstock.setText("");
@@ -550,7 +547,7 @@ private void agregaEntrada(){
         txtcantidad.setText("");
     }
 
-    void limpaDatosCliente(){
+    void limpaDatosCliente() {
         txtTelefono.setText("");
         txtdocumento.setText("");
         txtidcliente.setText("");
@@ -558,27 +555,27 @@ private void agregaEntrada(){
         txtcorreo.setText("");
     }
 
-    void limpiarTablaSalida(){
-        for(int i=0;i<modelo.getRowCount();i++){
+    void limpiarTablaSalida() {
+        for (int i = 0; i < modelo.getRowCount(); i++) {
             modelo.removeRow(i);
-            i=0-1;
+            i = 0 - 1;
         }
     }
-  private final Connection conection=new conexion().conectar();
+    private final Connection conection = new conexion().conectar();
 
-    void GenerarPDF(String numSalida){
-        Map p=new HashMap();
+    void GenerarPDF(String numSalida) {
+        Map p = new HashMap();
         p.put("numSalida", numSalida);
         JasperReport report;
         JasperPrint print;
 
-        try{
-            report=JasperCompileManager.compileReport(new File("").getAbsolutePath()+"/src/reportes/Salida.jrxml");
-            print=JasperFillManager.fillReport(report, p, conection);
-            JasperViewer view=new JasperViewer(print,false);
-            view.setTitle("Documento Salida N° "+numSalida);
+        try {
+            report = JasperCompileManager.compileReport(new File("").getAbsolutePath() + "/src/reportes/Salida.jrxml");
+            print = JasperFillManager.fillReport(report, p, conection);
+            JasperViewer view = new JasperViewer(print, false);
+            view.setTitle("Documento Salida N° " + numSalida);
             view.setVisible(true);
-        }catch(JRException e){
+        } catch (JRException e) {
             e.printStackTrace();
         }
     }

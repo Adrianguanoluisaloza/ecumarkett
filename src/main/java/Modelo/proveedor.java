@@ -9,14 +9,15 @@ package Modelo;
  * @author Adrian
  */
 public class proveedor {
- int idProveedor;
-   String nombre;
-   String apellido;
-   String documento;
-   String Activadad_comercial;
-   String direccion;
-   String telefono;
-   String correo;
+
+    int idProveedor;
+    String nombre;
+    String apellido;
+    String documento;
+    String Activadad_comercial;
+    String direccion;
+    String telefono;
+    String correo;
 
     public proveedor() {
     }
@@ -95,6 +96,5 @@ public class proveedor {
     public void setCorreo(String correo) {
         this.correo = correo;
     }
-
 
 }

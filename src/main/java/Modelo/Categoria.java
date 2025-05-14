@@ -5,7 +5,8 @@ package Modelo;
  * @author Tadeo
  */
 public class Categoria {
- int idCategoria;
+
+    int idCategoria;
     String nomCategoria;
 
     public Categoria() {
@@ -31,6 +32,5 @@ public class Categoria {
     public void setNomCategoria(String nomCategoria) {
         this.nomCategoria = nomCategoria;
     }
-    
-    
+
 }

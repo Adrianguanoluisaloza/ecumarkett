@@ -33,17 +33,17 @@ import net.sf.jasperreports.view.JasperViewer;
  * @author Adrian
  */
 public class ListaSalidas extends javax.swing.JPanel {
-DefaultTableModel modelo=new DefaultTableModel();
-DaoSalida dao=new DaoSalida();
-salidas s=new salidas();
 
-detalleSalida ds=new detalleSalida();
-DaoDetalleSalida daoDs=new DaoDetalleSalida();
-DefaultTableModel modelodt=new DefaultTableModel();
+    DefaultTableModel modelo = new DefaultTableModel();
+    DaoSalida dao = new DaoSalida();
+    salidas s = new salidas();
 
-productos p=new productos();
-DaoProductos daoP=new DaoProductos();
+    detalleSalida ds = new detalleSalida();
+    DaoDetalleSalida daoDs = new DaoDetalleSalida();
+    DefaultTableModel modelodt = new DefaultTableModel();
 
+    productos p = new productos();
+    DaoProductos daoP = new DaoProductos();
 
     /**
      * Creates new form ListaSalidas
@@ -53,52 +53,52 @@ DaoProductos daoP=new DaoProductos();
         listarSalidas();
     }
 
-    private void listarSalidas(){
-        List<salidas> lista=dao.Listar();
-        modelo=(DefaultTableModel) tablaSalidas.getModel();
-        Object[] ob=new Object[8];
-        for(int i=0;i<lista.size();i++){
-            ob[0]=lista.get(i).getIdSalida();
-            ob[1]=lista.get(i).getNumSalida();
-            ob[2]=lista.get(i).getIdCliente();
-            ob[3]=lista.get(i).getFecha();
-            ob[4]=lista.get(i).getSubtotal();
-            ob[5]=lista.get(i).getIgv();
-            ob[6]=lista.get(i).getTotal();
-            ob[7]=lista.get(i).getEstado();
+    private void listarSalidas() {
+        List<salidas> lista = dao.Listar();
+        modelo = (DefaultTableModel) tablaSalidas.getModel();
+        Object[] ob = new Object[8];
+        for (int i = 0; i < lista.size(); i++) {
+            ob[0] = lista.get(i).getIdSalida();
+            ob[1] = lista.get(i).getNumSalida();
+            ob[2] = lista.get(i).getIdCliente();
+            ob[3] = lista.get(i).getFecha();
+            ob[4] = lista.get(i).getSubtotal();
+            ob[5] = lista.get(i).getIgv();
+            ob[6] = lista.get(i).getTotal();
+            ob[7] = lista.get(i).getEstado();
             modelo.addRow(ob);
         }
-       tablaSalidas.setModel(modelo);
+        tablaSalidas.setModel(modelo);
     }
 
-    private void listarSalidasPorFecha(String fecha1,String fecha2){
-        List<salidas> lista=dao.ListarPorFecha(fecha1, fecha2);
-        modelo=(DefaultTableModel) tablaSalidas.getModel();
-        Object[] ob=new Object[8];
-        for(int i=0;i<lista.size();i++){
-            ob[0]=lista.get(i).getIdSalida();
-            ob[1]=lista.get(i).getNumSalida();
-            ob[2]=lista.get(i).getIdCliente();
-            ob[3]=lista.get(i).getFecha();
-            ob[4]=lista.get(i).getSubtotal();
-            ob[5]=lista.get(i).getIgv();
-            ob[6]=lista.get(i).getTotal();
-            ob[7]=lista.get(i).getEstado();
+    private void listarSalidasPorFecha(String fecha1, String fecha2) {
+        List<salidas> lista = dao.ListarPorFecha(fecha1, fecha2);
+        modelo = (DefaultTableModel) tablaSalidas.getModel();
+        Object[] ob = new Object[8];
+        for (int i = 0; i < lista.size(); i++) {
+            ob[0] = lista.get(i).getIdSalida();
+            ob[1] = lista.get(i).getNumSalida();
+            ob[2] = lista.get(i).getIdCliente();
+            ob[3] = lista.get(i).getFecha();
+            ob[4] = lista.get(i).getSubtotal();
+            ob[5] = lista.get(i).getIgv();
+            ob[6] = lista.get(i).getTotal();
+            ob[7] = lista.get(i).getEstado();
             modelo.addRow(ob);
         }
-       tablaSalidas.setModel(modelo);
+        tablaSalidas.setModel(modelo);
     }
 
-    private void listarDetalle(int idS){
-        List<detalleSalida> lista=daoDs.buscar(idS);
-        modelodt=(DefaultTableModel) tablaDetalle.getModel();
-        Object[] ob=new Object[2];
-        for(int i=0;i<lista.size();i++){
-            ob[0]=lista.get(i).getIdEntrada();
-            ob[1]=lista.get(i).getCantidad();
+    private void listarDetalle(int idS) {
+        List<detalleSalida> lista = daoDs.buscar(idS);
+        modelodt = (DefaultTableModel) tablaDetalle.getModel();
+        Object[] ob = new Object[2];
+        for (int i = 0; i < lista.size(); i++) {
+            ob[0] = lista.get(i).getIdEntrada();
+            ob[1] = lista.get(i).getCantidad();
             modelodt.addRow(ob);
         }
-       tablaDetalle.setModel(modelodt);
+        tablaDetalle.setModel(modelodt);
     }
 
     /**
@@ -267,11 +267,11 @@ DaoProductos daoP=new DaoProductos();
 
     private void tablaSalidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaSalidasMouseClicked
         // TODO add your handling code here:
-        int fila=tablaSalidas.getSelectedRow();
-        String num=tablaSalidas.getValueAt(fila, 1).toString();
-      txtnumSalida.setText(num);
-      txtidSalida.setText(tablaSalidas.getValueAt(fila, 0).toString());
-        int idsalida=Integer.parseInt(tablaSalidas.getValueAt(fila, 0).toString());
+        int fila = tablaSalidas.getSelectedRow();
+        String num = tablaSalidas.getValueAt(fila, 1).toString();
+        txtnumSalida.setText(num);
+        txtidSalida.setText(tablaSalidas.getValueAt(fila, 0).toString());
+        int idsalida = Integer.parseInt(tablaSalidas.getValueAt(fila, 0).toString());
 
         limpiarTablaDT();
         listarDetalle(idsalida);
@@ -282,112 +282,114 @@ DaoProductos daoP=new DaoProductos();
     }//GEN-LAST:event_tablaDetalleMouseClicked
 
     private void btnBuscarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarPedidoActionPerformed
-       limpiarTabla();
-        
-        String fecha1=obtenerFechas(fechainicial)+"";
-        String fecha2=obtenerFechas(fechafinal)+"";
-        listarSalidasPorFecha(fecha1,fecha2);
+        limpiarTabla();
+
+        String fecha1 = obtenerFechas(fechainicial) + "";
+        String fecha2 = obtenerFechas(fechafinal) + "";
+        listarSalidasPorFecha(fecha1, fecha2);
     }//GEN-LAST:event_btnBuscarPedidoActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-     int fila = tablaSalidas.getSelectedRow();
-    if (fila == -1 && txtnumSalida.getText().isEmpty()) {
-        JOptionPane.showMessageDialog(null, "Seleccione una salida de la tabla o ingrese un número de salida");
-    } else {
-        try {
-            int idSalida = getSelectedSalidaId(); // Método que explico abajo
-            s.setIdSalida(idSalida);
-            s.setEstado("Anulada");
+        int fila = tablaSalidas.getSelectedRow();
+        if (fila == -1 && txtnumSalida.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Seleccione una salida de la tabla o ingrese un número de salida");
+        } else {
+            try {
+                int idSalida = getSelectedSalidaId(); // Método que explico abajo
+                s.setIdSalida(idSalida);
+                s.setEstado("Anulada");
 
-            if (dao.anularSalida(s)) {
-                limpiarTabla();
-                listarSalidas();
-                limpiarCampos();
-                sumarStock();
-                limpiarTablaDT();
-                JOptionPane.showMessageDialog(null, "Salida anulada exitosamente.");
-            } else {
-                JOptionPane.showMessageDialog(null, " No se pudo anular la salida.");
+                if (dao.anularSalida(s)) {
+                    limpiarTabla();
+                    listarSalidas();
+                    limpiarCampos();
+                    sumarStock();
+                    limpiarTablaDT();
+                    JOptionPane.showMessageDialog(null, "Salida anulada exitosamente.");
+                } else {
+                    JOptionPane.showMessageDialog(null, " No se pudo anular la salida.");
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error al procesar: " + e.getMessage());
             }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error al procesar: " + e.getMessage());
         }
-    }
 
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReporteActionPerformed
-         if(!txtnumSalida.getText().isEmpty()){
+        if (!txtnumSalida.getText().isEmpty()) {
             GenerarPDF(txtnumSalida.getText());
-       }else{           
-          JOptionPane.showMessageDialog(null,"Seleccione una Salida");
+        } else {
+            JOptionPane.showMessageDialog(null, "Seleccione una Salida");
         }
     }//GEN-LAST:event_btnReporteActionPerformed
 
-    
-    private final Connection conection=new conexion().conectar();
+    private final Connection conection = new conexion().conectar();
 
-    void GenerarPDF(String numSalida){
-        Map p=new HashMap();
+    void GenerarPDF(String numSalida) {
+        Map p = new HashMap();
         p.put("numSalida", numSalida);
         JasperReport report;
         JasperPrint print;
 
-        try{
-            report=JasperCompileManager.compileReport(new File("").getAbsolutePath()+"/src/reportes/Salida.jrxml");
-            print=JasperFillManager.fillReport(report, p, conection);
-            JasperViewer view=new JasperViewer(print,false);
-            view.setTitle("Documento Salida N° "+numSalida);
+        try {
+            report = JasperCompileManager.compileReport(new File("").getAbsolutePath() + "/src/reportes/Salida.jrxml");
+            print = JasperFillManager.fillReport(report, p, conection);
+            JasperViewer view = new JasperViewer(print, false);
+            view.setTitle("Documento Salida N° " + numSalida);
             view.setVisible(true);
-        }catch(JRException e){
+        } catch (JRException e) {
             e.printStackTrace();
         }
     }
-   void limpiarTabla(){
-        for(int i=0;i<modelo.getRowCount();i++){
+
+    void limpiarTabla() {
+        for (int i = 0; i < modelo.getRowCount(); i++) {
             modelo.removeRow(i);
-            i=0-1;
+            i = 0 - 1;
         }
     }
-    void limpiarTablaDT(){
-        for(int i=0;i<modelodt.getRowCount();i++){
+
+    void limpiarTablaDT() {
+        for (int i = 0; i < modelodt.getRowCount(); i++) {
             modelodt.removeRow(i);
-            i=0-1;
+            i = 0 - 1;
         }
     }
 
-    public Date obtenerFechas(JDateChooser dch){
+    public Date obtenerFechas(JDateChooser dch) {
         Calendar cal;
-        int d,m,a;
-        cal=dch.getCalendar();
-        d=cal.get(Calendar.DAY_OF_MONTH);
-        m=cal.get(Calendar.MONTH);
-        a=cal.get(Calendar.YEAR)-1900;
-        return new Date(a,m,d);
-}
+        int d, m, a;
+        cal = dch.getCalendar();
+        d = cal.get(Calendar.DAY_OF_MONTH);
+        m = cal.get(Calendar.MONTH);
+        a = cal.get(Calendar.YEAR) - 1900;
+        return new Date(a, m, d);
+    }
 
-    void sumarStock(){
-        for(int i=0;i<tablaDetalle.getRowCount();i++){
-        int idProducto=Integer.parseInt(tablaDetalle.getValueAt(i, 0).toString());
-        int cant=Integer.parseInt(tablaDetalle.getValueAt(i, 1).toString());
-        daoP.sumarStock(idProducto, cant);
+    void sumarStock() {
+        for (int i = 0; i < tablaDetalle.getRowCount(); i++) {
+            int idProducto = Integer.parseInt(tablaDetalle.getValueAt(i, 0).toString());
+            int cant = Integer.parseInt(tablaDetalle.getValueAt(i, 1).toString());
+            daoP.sumarStock(idProducto, cant);
         }
     }
 
     private void limpiarCampos() {
         txtnumSalida.setText("");
-txtidSalida.setText("");
+        txtidSalida.setText("");
     }
-private int getSelectedSalidaId() throws Exception {
-    int fila = tablaSalidas.getSelectedRow();
-    if (fila != -1) {
-        return Integer.parseInt(tablaSalidas.getValueAt(fila, 0).toString()); 
-    } else if (!txtidSalida.getText().isEmpty()) {
-        return Integer.parseInt(txtidSalida.getText());
-    } else {
-        throw new Exception("No se pudo obtener el ID de salida");
+
+    private int getSelectedSalidaId() throws Exception {
+        int fila = tablaSalidas.getSelectedRow();
+        if (fila != -1) {
+            return Integer.parseInt(tablaSalidas.getValueAt(fila, 0).toString());
+        } else if (!txtidSalida.getText().isEmpty()) {
+            return Integer.parseInt(txtidSalida.getText());
+        } else {
+            throw new Exception("No se pudo obtener el ID de salida");
+        }
     }
-}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarPedido;

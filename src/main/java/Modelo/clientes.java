@@ -9,13 +9,14 @@ package Modelo;
  * @author Adrian
  */
 public class clientes {
+
     int idCliente;
-   String nombre;
-   String apellido;
-   String documento;
-   String direccion;
-   String telefono;
-   String correo;
+    String nombre;
+    String apellido;
+    String documento;
+    String direccion;
+    String telefono;
+    String correo;
     double cantSalidas;
 
     public clientes() {
@@ -31,8 +32,6 @@ public class clientes {
         this.correo = correo;
         this.cantSalidas = cantSalidas;
     }
-
-    
 
     public int getIdCliente() {
         return idCliente;
@@ -97,7 +96,5 @@ public class clientes {
     public void setCantSalidas(double cantSalidas) {
         this.cantSalidas = cantSalidas;
     }
-   
-   
 
 }

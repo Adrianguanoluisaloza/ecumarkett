@@ -8,20 +8,19 @@ import java.sql.Date;
 
 public class salidas {
 
-int idSalida;
-String numSalida;
-int idCliente;
-Date fecha;
-double subtotal;
-double igv;
-double total;
-String estado;
-
+    int idSalida;
+    String numSalida;
+    int idCliente;
+    Date fecha;
+    double subtotal;
+    double igv;
+    double total;
+    String estado;
 
     public salidas() {
     }
 
-    public salidas(int idSalida, String numSalida, int idCliente, Date fecha, double subtotal, double igv, double total,String estado) {
+    public salidas(int idSalida, String numSalida, int idCliente, Date fecha, double subtotal, double igv, double total, String estado) {
         this.idSalida = idSalida;
         this.numSalida = numSalida;
         this.idCliente = idCliente;
@@ -29,7 +28,7 @@ String estado;
         this.subtotal = subtotal;
         this.igv = igv;
         this.total = total;
-        this.estado=estado;
+        this.estado = estado;
     }
 
     public String getNumSalida() {
@@ -40,7 +39,6 @@ String estado;
         this.numSalida = numSalida;
     }
 
-    
     public int getIdSalida() {
         return idSalida;
     }
@@ -48,8 +46,6 @@ String estado;
     public void setIdSalida(int idSalida) {
         this.idSalida = idSalida;
     }
-
-  
 
     public int getIdCliente() {
         return idCliente;
@@ -98,6 +94,5 @@ String estado;
     public void setEstado(String estado) {
         this.estado = estado;
     }
-
 
 }
