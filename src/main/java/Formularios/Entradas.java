@@ -21,7 +21,10 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
@@ -57,8 +60,16 @@ public class Entradas extends javax.swing.JPanel {
     public Entradas() {
         initComponents();
         listarEntradas();
+         conexion.agregarRefresco(() -> {
+        modelo.setRowCount(0);
+        listarEntradas();
+    });
     }
 
+    
+    
+  
+    
     private void listarEntradas() {
         List<entradas> lista = dao.Listar();
         modelo = (DefaultTableModel) tablaEntradas.getModel();
@@ -158,6 +169,11 @@ public class Entradas extends javax.swing.JPanel {
         jpanelRound2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, -1, -1));
 
         txtprecioV.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtprecioV.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtprecioVKeyReleased(evt);
+            }
+        });
         jpanelRound2.add(txtprecioV, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 330, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
@@ -165,11 +181,6 @@ public class Entradas extends javax.swing.JPanel {
         jpanelRound2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
 
         txtprecioE.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        txtprecioE.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtprecioEKeyReleased(evt);
-            }
-        });
         jpanelRound2.add(txtprecioE, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 330, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
@@ -395,17 +406,6 @@ public class Entradas extends javax.swing.JPanel {
         idpNuevo = Integer.parseInt(txtidProducto.getText());
     }//GEN-LAST:event_tablaEntradasMouseClicked
 
-    private void txtprecioEKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtprecioEKeyReleased
-        // TODO add your handling code here:
-        double cant, precio;
-        if (!txtstock.getText().isEmpty()) {
-            cant = Double.parseDouble(txtstock.getText());
-            precio = Double.parseDouble(txtprecioE.getText());
-            txtTotal.setText(cant * precio + "");
-        } else {
-        }
-    }//GEN-LAST:event_txtprecioEKeyReleased
-
     private void txtstockKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtstockKeyReleased
         // TODO add your handling code here:
         double cant, precio;
@@ -535,6 +535,16 @@ public class Entradas extends javax.swing.JPanel {
     private void ReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReporteActionPerformed
         GenerarPDF("reporteEntradas");
     }//GEN-LAST:event_ReporteActionPerformed
+
+    private void txtprecioVKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtprecioVKeyReleased
+               double cant, precio;
+        if (!txtstock.getText().isEmpty()) {
+            cant = Double.parseDouble(txtstock.getText());
+            precio = Double.parseDouble(txtprecioV.getText());
+            txtTotal.setText(cant * precio + "");
+        } else {
+        }
+    }//GEN-LAST:event_txtprecioVKeyReleased
     private final Connection conection = new conexion().conectar();
 
     void GenerarPDF(String reporte) {

@@ -19,7 +19,10 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
@@ -51,6 +54,10 @@ public class ListaSalidas extends javax.swing.JPanel {
     public ListaSalidas() {
         initComponents();
         listarSalidas();
+        conexion.agregarRefresco(() -> {
+            modelodt.setRowCount(0);
+            listarSalidas();
+        });
     }
 
     private void listarSalidas() {

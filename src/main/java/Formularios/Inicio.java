@@ -23,6 +23,7 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.general.DefaultPieDataset;
 
 /**
  *
@@ -53,6 +54,7 @@ public class Inicio extends javax.swing.JPanel {
         txtcantproveedores.setText(daoP.cantProveedores() + "");
         txtcantSalidas.setText(daoS.cantSalidas() + "");
         txtcantUsuarios.setText(daoU.cantUsuarios() + "");
+        
 
         listarClientesFrecuentes();
         listarProdFrecuentes();
@@ -173,7 +175,7 @@ public class Inicio extends javax.swing.JPanel {
             .addGap(0, 314, Short.MAX_VALUE)
         );
 
-        jPanel1.add(panelClientesF, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, -1, -1));
+        jPanel1.add(panelClientesF, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 430, -1));
 
         javax.swing.GroupLayout panelProdFLayout = new javax.swing.GroupLayout(panelProdF);
         panelProdF.setLayout(panelProdFLayout);
@@ -205,8 +207,6 @@ public class Inicio extends javax.swing.JPanel {
         txttotalSalidas.setForeground(new java.awt.Color(0, 153, 51));
         txttotalSalidas.setText("100 $/.");
         jPanel1.add(txttotalSalidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 285, -1, -1));
-
-        selectAño.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jPanel1.add(selectAño, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 290, -1, -1));
 
         selectmes.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -488,6 +488,56 @@ public class Inicio extends javax.swing.JPanel {
         panelProdF.add(cp);
         cp.setBounds(0, 0, 430, 314);
     }
+    
+    /*
+    void graficarClientesF() {
+    DefaultPieDataset dtsc = new DefaultPieDataset();
+    for (int i = 0; i < tablaClienteF.getRowCount(); i++) {
+        dtsc.setValue(tablaClienteF.getValueAt(i, 1).toString(), Double.parseDouble(tablaClienteF.getValueAt(i, 0).toString()));
+    }
+    JFreeChart chart = ChartFactory.createPieChart(
+        "3 Clientes Frecuentes", 
+        dtsc,                  
+        true,                  
+        true,                   
+        false                  
+    );
+    ChartPanel cp = new ChartPanel(chart);
+    panelClientesF.removeAll(); 
+    panelClientesF.add(cp);
+    cp.setBounds(0, 0, 430, 314);
+    panelClientesF.repaint(); 
+}
+    
+    
+    void graficarProdF() {
+    DefaultPieDataset dtsc = new DefaultPieDataset();
+    for (int i = 0; i < tablaProductoF.getRowCount(); i++) {
+        dtsc.setValue(tablaProductoF.getValueAt(i, 1).toString(), Double.parseDouble(tablaProductoF.getValueAt(i, 0).toString()));
+    }
+    JFreeChart chart = ChartFactory.createPieChart(
+        "3 Productos Frecuentes", 
+        dtsc,                    
+        true,                   
+        true,                    
+        false                    
+    );
+    ChartPanel cp = new ChartPanel(chart);
+    panelProdF.removeAll(); 
+    panelProdF.add(cp);
+    cp.setBounds(0, 0, 430, 314);
+    panelProdF.repaint(); 
+}
+    
+    
+    
+    */
+    
+    
+    
+    
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private RSMaterialComponent.RSButtonMaterialIconDos btnProcesaar;

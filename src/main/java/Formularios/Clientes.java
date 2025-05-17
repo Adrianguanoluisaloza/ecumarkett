@@ -14,7 +14,10 @@ import java.sql.Connection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
@@ -39,8 +42,12 @@ public class Clientes extends javax.swing.JPanel {
     public Clientes() {
         initComponents();
         listarClientes();
-    }
-
+              conexion.agregarRefresco(() -> {
+        modeloClientes.setRowCount(0);
+        listarClientes();
+    });
+    }  
+  
     private void listarClientes() {
         List<clientes> lista = dao.Listar();
         modeloClientes = (DefaultTableModel) tablaclientes.getModel();
@@ -448,7 +455,7 @@ public class Clientes extends javax.swing.JPanel {
         JasperPrint print;
 
         try {
-            report = JasperCompileManager.compileReport(new File("").getAbsolutePath() + "/src/reportes/agua.jrxml");
+            report = JasperCompileManager.compileReport(new File("").getAbsolutePath() + "/src/reportes/.jrxml");
             print = JasperFillManager.fillReport(report, p, conection);
             JasperViewer view = new JasperViewer(print, false);
             view.setTitle("Lista De Clientes");

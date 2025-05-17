@@ -1,4 +1,4 @@
-package button;
+package Modelo;
 
 import java.awt.Color;
 import java.awt.Graphics;

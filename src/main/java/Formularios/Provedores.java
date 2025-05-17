@@ -13,7 +13,10 @@ import java.sql.Connection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
@@ -40,7 +43,13 @@ public class Provedores extends javax.swing.JPanel {
 
         initComponents();
         listarProveedor();
+       conexion.agregarRefresco(() -> {
+        modelo.setRowCount(0);
+        listarProveedor();
+    });   
     }
+
+                  
 
     private void listarProveedor() {
         List<proveedor> lista = dao.Listar();

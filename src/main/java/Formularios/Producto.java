@@ -15,7 +15,10 @@ import java.sql.Connection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
@@ -44,7 +47,15 @@ public final class Producto extends javax.swing.JPanel {
         initComponents();
         listarProductos();
         numProducto();
+             conexion.agregarRefresco(() -> {
+        modelo.setRowCount(0);
+        listarProductos();
+    });  
     }
+
+   
+    
+    
 
     private void listarProductos() {
         List<productos> lista = daoP.Listar();
@@ -130,7 +141,7 @@ public final class Producto extends javax.swing.JPanel {
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Precio. V");
+        jLabel8.setText("Precio Venta");
         jpanelRound2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 328, -1, -1));
 
         txtidCategoria.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -243,7 +254,7 @@ public final class Producto extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID", "Nombre", "Stocok", "IdCat", "Precio V"
+                "ID", "Nombre", "Stock", "IdCat", "Precio V"
             }
         ));
         tablaProductos.addMouseListener(new java.awt.event.MouseAdapter() {

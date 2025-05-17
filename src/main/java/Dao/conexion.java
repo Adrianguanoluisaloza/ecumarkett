@@ -7,6 +7,9 @@ package Dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Timer;
+import java.util.TimerTask;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,7 +18,7 @@ import javax.swing.JOptionPane;
  */
 public class conexion {
 
-      Connection con;
+   /*   Connection con;
     String bd="inventario2";
     String url="jdbc:mysql://localhost/"+bd;
     String user="root";
@@ -31,28 +34,92 @@ public class conexion {
         return con;
     }
 }
-
-    /*
-      private static final String URL = "jdbc:mysql://localhost:3306/ecumarket";
-    private static final String USUARIO = "root";  // Cambia si tu usuario es distinto
-    private static final String CONTRASEÑA = "";   // Y pon tu contraseña si tienes
-
-    public static Connection conectar() {
-        try {
-            Connection conn = DriverManager.getConnection(URL, USUARIO, CONTRASEÑA);
-            System.out.println("✅ Conexión exitosa a la base de datos");
-            return conn;
-        } catch (SQLException e) {
-            System.out.println("❌ Error de conexión: " + e.getMessage());
-            return null;
-        }
-    }
-
-    Solo para probar que conecta correctamente
+*/
     
+    
+ // conexion multiple que hace explotar la base de datos
+    
+  /*  Connection con;
+
+    // 🔄 Datos de conexión a la base en la nube
+    String url = "jdbc:mysql://sql10.freesqldatabase.com:3306/sql10779437?useSSL=false&serverTimezone=UTC";
+    String user = "sql10779437";
+    String pass = "ZMwAAPfV5Q";  // 👈 Reemplaza esto por tu contraseña real
+
+    public Connection conectar() {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(url, user, pass);
+            System.out.println("✅ Conectado a la base de datos en la nube correctamente.");
+        } catch (ClassNotFoundException | SQLException e) {
+            JOptionPane.showMessageDialog(null, "❌ Error de conexión: " + e.getMessage());
+        }
+        return con;
+    }
+}*/
+    
+
+  // 🔁 Instancia única
+ 
+ 
+
+    // 🔁 Instancia única
+    private static Connection con = null;
+    // 🔒 Datos de conexión
+    private static final String URL = "jdbc:mysql://sql10.freesqldatabase.com:3306/sql10779437?useSSL=false&serverTimezone=UTC";
+    private static final String USER = "sql10779437";
+    private static final String PASS = "ZMwAAPfV5Q";  // Usa tu contraseña real
+private static final long REFRESCO_INTERVAL = 5_000;
+   private static final Timer timer = new Timer(true);
+    public static Connection conectar() {
+        if (con == null) {
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                con = DriverManager.getConnection(URL, USER, PASS);
+                System.out.println("✅ Conectado a la base de datos en la nube correctamente.");
+                mantenerConexionViva(); 
+            } catch (ClassNotFoundException | SQLException e) {
+                JOptionPane.showMessageDialog(null, "❌ Error de conexión: " + e.getMessage());
+            }
+        } else {
+            System.out.println("🔁 Reutilizando conexión existente.");
+        }
+        return con;
+    }
+    
+    private static void mantenerConexionViva() {
+        Timer timer = new Timer(true); 
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                try {
+                    if (con != null && !con.isClosed()) {
+                        Statement stmt = con.createStatement();
+                        stmt.executeQuery("SELECT 1"); // 📡 Ping
+                        stmt.close();
+                        System.out.println("📶 Ping enviado para mantener la conexión activa.");
+                    }
+                } catch (SQLException e) {
+                    System.out.println("⚠️ Error al hacer ping: " + e.getMessage());
+                }
+            }
+        }, 0, 240_000); 
+    }
+    public static void agregarRefresco(Runnable tareaRefresco) {
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                tareaRefresco.run();
+            }
+        }, 0, REFRESCO_INTERVAL);
     }
 }
-    */
     
     
     
+    
+
+
+
+
+

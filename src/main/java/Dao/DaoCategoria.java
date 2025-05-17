@@ -8,6 +8,7 @@ import Modelo.Categoria;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -34,7 +35,7 @@ public class DaoCategoria {
             }else{
                 return false;
             }
-        }catch(Exception e){
+        }catch(SQLException e){
             JOptionPane.showConfirmDialog(null, e);
             return false;
         }
@@ -53,7 +54,7 @@ public class DaoCategoria {
                 c.setNomCategoria(rs.getString(2));
                 lista.add(c);
             }
-        }catch(Exception e){
+        }catch(SQLException e){
             JOptionPane.showConfirmDialog(null, e);
         }
         return lista;
@@ -72,7 +73,7 @@ public class DaoCategoria {
             }else{
                 return false;
             }
-        }catch(Exception e){
+        }catch(SQLException e){
             JOptionPane.showConfirmDialog(null, e);
             return false;
         }
@@ -90,7 +91,7 @@ public class DaoCategoria {
             }else{
                 return false;
             }
-        }catch(Exception e){
+        }catch(SQLException e){
             JOptionPane.showConfirmDialog(null, e);
             return false;
         }
@@ -110,7 +111,7 @@ public class DaoCategoria {
             }else{
                 return false;
             }
-        }catch(Exception e){
+        }catch(SQLException e){
             JOptionPane.showConfirmDialog(null, e);
             return false;
         }
@@ -128,7 +129,7 @@ public class DaoCategoria {
             }else{
                cant=0; 
             }
-        }catch(Exception e){
+        }catch(SQLException e){
             JOptionPane.showConfirmDialog(null, e);
             
         }
