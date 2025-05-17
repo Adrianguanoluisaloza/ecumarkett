@@ -60,13 +60,21 @@ public class Entradas extends javax.swing.JPanel {
     public Entradas() {
         initComponents();
         listarEntradas();
-         conexion.agregarRefresco(() -> {
-        modelo.setRowCount(0);
-        listarEntradas();
-    });
+         Timer timer = new Timer();
+    timer.scheduleAtFixedRate(new TimerTask() {
+        @Override
+        public void run() {
+            SwingUtilities.invokeLater(() -> {
+                actualizarTablaEntradas(); // 👈 Limpiar y volver a cargar
+            });
+        }
+    }, 0, 5000);   
     }
 
-    
+    private void actualizarTablaEntradas() {
+    modelo.setRowCount(0); 
+    listarEntradas();      
+}
     
   
     

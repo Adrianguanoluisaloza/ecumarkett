@@ -47,13 +47,21 @@ public final class Producto extends javax.swing.JPanel {
         initComponents();
         listarProductos();
         numProducto();
-             conexion.agregarRefresco(() -> {
-        modelo.setRowCount(0);
-        listarProductos();
-    });  
+         Timer timer = new Timer();
+    timer.scheduleAtFixedRate(new TimerTask() {
+        @Override
+        public void run() {
+            SwingUtilities.invokeLater(() -> {
+                actualizartablaProductos(); 
+            });
+        }
+    }, 0, 5000);   
     }
 
-   
+    private void actualizartablaProductos() {
+    modelo.setRowCount(0); 
+    listarProductos();      
+}
     
     
 

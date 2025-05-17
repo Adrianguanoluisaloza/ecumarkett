@@ -42,12 +42,23 @@ public class Clientes extends javax.swing.JPanel {
     public Clientes() {
         initComponents();
         listarClientes();
-              conexion.agregarRefresco(() -> {
-        modeloClientes.setRowCount(0);
-        listarClientes();
-    });
-    }  
+               Timer timer = new Timer();
+    timer.scheduleAtFixedRate(new TimerTask() {
+        @Override
+        public void run() {
+            SwingUtilities.invokeLater(() -> {
+                actualizartablaclientes(); 
+            });
+        }
+    }, 0, 5000); 
+    }
+
   
+    
+  private void actualizartablaclientes() {
+    modeloClientes.setRowCount(0); 
+     listarClientes();      
+}
     private void listarClientes() {
         List<clientes> lista = dao.Listar();
         modeloClientes = (DefaultTableModel) tablaclientes.getModel();

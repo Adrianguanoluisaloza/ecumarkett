@@ -10,5 +10,6 @@ public class Ecumarket {
 
     public static void main(String[] args) {
         new pantallaPrincipal().setVisible(true);
+        
     }
 }

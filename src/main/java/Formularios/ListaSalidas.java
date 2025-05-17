@@ -54,11 +54,21 @@ public class ListaSalidas extends javax.swing.JPanel {
     public ListaSalidas() {
         initComponents();
         listarSalidas();
-        conexion.agregarRefresco(() -> {
-            modelodt.setRowCount(0);
-            listarSalidas();
-        });
-    }
+       Timer timer = new Timer();
+    timer.scheduleAtFixedRate(new TimerTask() {
+        @Override
+        public void run() {
+            SwingUtilities.invokeLater(() -> {
+                actualizartablaSalidas(); 
+            });
+        }
+    }, 0, 5000); 
+    }  
+  private void actualizartablaSalidas() {
+    modelodt.setRowCount(0); 
+     listarSalidas();      
+}
+    
 
     private void listarSalidas() {
         List<salidas> lista = dao.Listar();

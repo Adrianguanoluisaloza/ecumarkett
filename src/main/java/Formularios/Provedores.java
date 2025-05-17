@@ -43,13 +43,20 @@ public class Provedores extends javax.swing.JPanel {
 
         initComponents();
         listarProveedor();
-       conexion.agregarRefresco(() -> {
-        modelo.setRowCount(0);
-        listarProveedor();
-    });   
+         Timer timer = new Timer();
+    timer.scheduleAtFixedRate(new TimerTask() {
+        public void run() {
+            SwingUtilities.invokeLater(() -> {
+                actualizartablaproveedores(); 
+            });
+        }
+    }, 0, 5000);   
     }
 
-                  
+    private void actualizartablaproveedores() {
+    modelo.setRowCount(0); 
+    listarProveedor();      
+}                  
 
     private void listarProveedor() {
         List<proveedor> lista = dao.Listar();

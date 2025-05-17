@@ -7,7 +7,10 @@ package Formularios;
 import Dao.DaoCategoria;
 import Modelo.Categoria;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -27,9 +30,22 @@ public class Categorias extends javax.swing.JPanel {
     public Categorias() {
         initComponents();
         listarCategorias();
+        Timer timer = new Timer();
+    timer.scheduleAtFixedRate(new TimerTask() {
+        @Override
+        public void run() {
+            SwingUtilities.invokeLater(() -> {
+                actualizarTablaEntradas(); // 👈 Limpiar y volver a cargar
+            });
+        }
+    }, 0, 5000); 
+        
 
     }
-
+ private void actualizarTablaEntradas() {
+    modeloCategoria.setRowCount(0); 
+    listarCategorias();      
+}
     private void listarCategorias() {
         List<Categoria> lista = daoCt.Listar();
         modeloCategoria = (DefaultTableModel) tblcategorias.getModel();

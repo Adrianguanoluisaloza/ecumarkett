@@ -64,20 +64,21 @@ public class conexion {
  
 
     // 🔁 Instancia única
-    private static Connection con = null;
-    // 🔒 Datos de conexión
+     private static Connection con = null;
     private static final String URL = "jdbc:mysql://sql10.freesqldatabase.com:3306/sql10779437?useSSL=false&serverTimezone=UTC";
     private static final String USER = "sql10779437";
-    private static final String PASS = "ZMwAAPfV5Q";  // Usa tu contraseña real
-private static final long REFRESCO_INTERVAL = 5_000;
-   private static final Timer timer = new Timer(true);
+    private static final String PASS = "ZMwAAPfV5Q";
+    private static final Timer timer = new Timer(true);
+    private static final long PING_INTERVAL = 240_000; // 4 minutos
+    private static final long REFRESCO_INTERVAL = 60_000; // 1 min
+
     public static Connection conectar() {
         if (con == null) {
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 con = DriverManager.getConnection(URL, USER, PASS);
                 System.out.println("✅ Conectado a la base de datos en la nube correctamente.");
-                mantenerConexionViva(); 
+                mantenerConexionViva(); // 🔄 Inicia ping
             } catch (ClassNotFoundException | SQLException e) {
                 JOptionPane.showMessageDialog(null, "❌ Error de conexión: " + e.getMessage());
             }
@@ -86,32 +87,33 @@ private static final long REFRESCO_INTERVAL = 5_000;
         }
         return con;
     }
-    
+
     private static void mantenerConexionViva() {
-        Timer timer = new Timer(true); 
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
                 try {
                     if (con != null && !con.isClosed()) {
                         Statement stmt = con.createStatement();
-                        stmt.executeQuery("SELECT 1"); // 📡 Ping
+                        stmt.executeQuery("SELECT 1");
                         stmt.close();
                         System.out.println("📶 Ping enviado para mantener la conexión activa.");
                     }
                 } catch (SQLException e) {
-                    System.out.println("⚠️ Error al hacer ping: " + e.getMessage());
+                    System.out.println("⚠️ Error de ping: " + e.getMessage());
                 }
             }
-        }, 0, 240_000); 
+        }, 0, 1000);
     }
+
+    // 🧠 Esto lo puedes usar para refrescar cualquier tabla cada X tiempo
     public static void agregarRefresco(Runnable tareaRefresco) {
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
                 tareaRefresco.run();
             }
-        }, 0, REFRESCO_INTERVAL);
+        }, 0, 5000);
     }
 }
     
