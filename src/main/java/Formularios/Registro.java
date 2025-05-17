@@ -9,7 +9,10 @@ import Modelo.usuarios;
 import java.awt.Toolkit;
 
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -31,8 +34,20 @@ public class Registro extends javax.swing.JPanel {
         initComponents();
         this.pP = pPi;
         listarUsuarios();
+        Timer timer = new Timer();
+    timer.scheduleAtFixedRate(new TimerTask() {
+        @Override
+        public void run() {
+            SwingUtilities.invokeLater(() -> {
+                actualizartablausuarios(); // 👈 Limpiar y volver a cargar
+            });
+        }
+    }, 0, 15000);  
     }
-
+private void actualizartablausuarios() {
+    modelo.setRowCount(0); 
+     listarUsuarios();      
+}
     public Registro() {
         initComponents();
     }
@@ -358,39 +373,11 @@ private void listarUsuarios() {
         }
     }
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-        int fila = tablaUsuarios.getSelectedRow();
-        if (fila == -1 && txtidusuarios.getText().isEmpty()) {
-
-        } else {
-            u.setIdusuario(Integer.parseInt(txtidusuarios.getText()));
-            u.setNombre(txtnombre.getText());
-            u.setApellido(txtapellido.getText());
-            u.setDocumento(txtdocumento.getText());
-            u.setDireccion(txtdireccion.getText());
-            u.setTelefono(txttelefono.getText());
-            u.setCorreo(txtcorreo.getText());
-            u.setTipoUsuario(cmbTipoUsuario.getSelectedItem().toString());
-            u.setUsuario(txtusuario.getText());
-            u.setPassword(txtpass.getText());
-
-            if (dao.editar(u.getNombre(), u.getApellido(), u.getDocumento(), u.getDireccion(), u.getTelefono(), u.getCorreo(), u.getTipoUsuario(), u.getUsuario(), u.getPassword(), u.getIdusuario())) {
-
-                JOptionPane.showMessageDialog(null, "Se modifico con exito");
-                limpiarCampos();
-                limpiarTablaUsuarios();
-                listarUsuarios();
-            } else {
-
-                JOptionPane.showMessageDialog(null, "Erorr al modificar el Usuario");
-            }
-        }
-    }//GEN-LAST:event_btnActualizarActionPerformed
-
-    private void txtidusuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidusuariosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtidusuariosActionPerformed
-
-    private void btnRegistrarse1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarse1ActionPerformed
+     int fila = tablaUsuarios.getSelectedRow();
+    if (fila == -1 && txtidusuarios.getText().isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Selecciona un usuario para modificar.");
+    } else {
+        u.setIdusuario(Integer.parseInt(txtidusuarios.getText()));
         u.setNombre(txtnombre.getText());
         u.setApellido(txtapellido.getText());
         u.setDocumento(txtdocumento.getText());
@@ -401,16 +388,59 @@ private void listarUsuarios() {
         u.setUsuario(txtusuario.getText());
         u.setPassword(txtpass.getText());
 
-        if (dao.insertar(u.getNombre(), u.getApellido(), u.getDocumento(), u.getDireccion(), u.getTelefono(), u.getCorreo(), u.getTipoUsuario(), u.getUsuario(), u.getPassword())) {
+        // Validar si el nombre de usuario ya lo usa otro
+        if (dao.existeUsuarioParaOtro(u.getUsuario(), u.getIdusuario())) {
+            JOptionPane.showMessageDialog(null, "🚫 El nombre de usuario ya está en uso por otro usuario.");
+            return; // Salimos sin hacer nada
+        }
 
-            JOptionPane.showMessageDialog(null, "Usuario Registrado Con Exito");
+        // Si todo bien, actualizar
+        if (dao.editar(u.getNombre(), u.getApellido(), u.getDocumento(), u.getDireccion(), u.getTelefono(), u.getCorreo(), u.getTipoUsuario(), u.getUsuario(), u.getPassword(), u.getIdusuario())) {
+            JOptionPane.showMessageDialog(null, "✅ Se modificó con éxito el usuario.");
             limpiarCampos();
             limpiarTablaUsuarios();
             listarUsuarios();
         } else {
-
-            JOptionPane.showMessageDialog(null, "No se pudo registrar el Usuario");
+            JOptionPane.showMessageDialog(null, "❌ Error al modificar el usuario.");
         }
+    }
+    }//GEN-LAST:event_btnActualizarActionPerformed
+
+    private void txtidusuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidusuariosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtidusuariosActionPerformed
+
+    private void btnRegistrarse1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarse1ActionPerformed
+        u.setNombre(txtnombre.getText());
+    u.setApellido(txtapellido.getText());
+    u.setDocumento(txtdocumento.getText());
+    u.setDireccion(txtdireccion.getText());
+    u.setTelefono(txttelefono.getText());
+    u.setCorreo(txtcorreo.getText());
+    u.setTipoUsuario(cmbTipoUsuario.getSelectedItem().toString());
+    u.setUsuario(txtusuario.getText());
+    u.setPassword(txtpass.getText());
+
+    try {
+          if (dao.existeUsuarioParaOtro(u.getUsuario(), u.getIdusuario())) {
+            JOptionPane.showMessageDialog(null, "🚫 El nombre de usuario ya está en uso por otro usuario.");
+            return; // Salimos sin hacer nada
+        }
+        if (dao.insertar(u.getNombre(), u.getApellido(), u.getDocumento(), u.getDireccion(), u.getTelefono(), u.getCorreo(), u.getTipoUsuario(), u.getUsuario(), u.getPassword())) {
+            JOptionPane.showMessageDialog(null, "✅ Usuario Registrado con Éxito");
+            limpiarCampos();
+            limpiarTablaUsuarios();
+            listarUsuarios();
+        } else {
+            JOptionPane.showMessageDialog(null, "❌ No se pudo registrar el usuario");
+        }
+    } catch (Exception e) {
+        if (e.getMessage().contains("Duplicate entry") && e.getMessage().contains("usuario")) {
+            JOptionPane.showMessageDialog(null, "🚫 El nombre de usuario ya está en uso. Elige otro.");
+        } else {
+            JOptionPane.showMessageDialog(null, "⚠️ Error al registrar usuario: " + e.getMessage());
+        }
+    }
     }//GEN-LAST:event_btnRegistrarse1ActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed

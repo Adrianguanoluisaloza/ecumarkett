@@ -38,7 +38,7 @@ public class Categorias extends javax.swing.JPanel {
                 actualizarTablaEntradas(); // 👈 Limpiar y volver a cargar
             });
         }
-    }, 0, 5000); 
+    }, 0, 15000); 
         
 
     }

@@ -55,7 +55,7 @@ public final class Producto extends javax.swing.JPanel {
                 actualizartablaProductos(); 
             });
         }
-    }, 0, 5000);   
+    }, 0, 15000);   
     }
 
     private void actualizartablaProductos() {

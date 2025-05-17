@@ -68,7 +68,7 @@ public class Entradas extends javax.swing.JPanel {
                 actualizarTablaEntradas(); // 👈 Limpiar y volver a cargar
             });
         }
-    }, 0, 5000);   
+    }, 0, 15000);   
     }
 
     private void actualizarTablaEntradas() {

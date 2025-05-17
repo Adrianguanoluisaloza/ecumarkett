@@ -62,7 +62,7 @@ public class ListaSalidas extends javax.swing.JPanel {
                 actualizartablaSalidas(); 
             });
         }
-    }, 0, 5000); 
+    }, 0, 15000); 
     }  
   private void actualizartablaSalidas() {
     modelodt.setRowCount(0); 

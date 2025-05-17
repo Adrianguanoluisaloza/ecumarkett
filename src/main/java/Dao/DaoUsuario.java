@@ -128,7 +128,7 @@ public class DaoUsuario {
 
     public boolean editar(String nombre,String apellido,String documento,String dire,
                             String tel,String correo,String tusuario,String user,String pass,int id){
-
+ 
         String SQL="update usuarios SET nombre='"+nombre+"',apellido='"+apellido+"',documento='"+documento+"',direccion='"+dire+"',telefono='"+tel+"'\n" +
                     ",correo='"+correo+"',tipoUsuario='"+tusuario+"',usuario='"+user+"',pass=aes_encrypt('"+pass+"','clave') WHERE idUsuario="+id;
         try{
@@ -163,7 +163,24 @@ public class DaoUsuario {
             return false;
         }
     }
-
+public boolean existeUsuarioParaOtro(String usuario, int idActual) {
+    String SQL = "SELECT COUNT(*) FROM usuarios WHERE usuario = ? AND idusuario != ?";
+    try {
+        con = cn.conectar();
+        ps = con.prepareStatement(SQL);
+        ps.setString(1, usuario);
+        ps.setInt(2, idActual);
+        rs = ps.executeQuery();
+        if (rs.next()) {
+            int count = rs.getInt(1);
+            return count > 0; // Si hay al menos 1, ya existe ese nombre de usuario
+        }
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, "Error al verificar si el usuario existe: " + e.getMessage());
+        return false; // Si ocurre un error, asumimos que no existe el usuario
+    }
+    return false; // Si no existe el usuario
+}
     public int cantUsuarios(){
         String SQL="SELECT COUNT(idUsuario) FROM usuarios";
         int cant = 0;

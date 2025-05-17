@@ -50,7 +50,7 @@ public class Provedores extends javax.swing.JPanel {
                 actualizartablaproveedores(); 
             });
         }
-    }, 0, 5000);   
+    }, 0, 15000);   
     }
 
     private void actualizartablaproveedores() {
