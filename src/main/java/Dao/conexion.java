@@ -68,9 +68,8 @@ public class conexion {
     private static final String URL = "jdbc:mysql://sql10.freesqldatabase.com:3306/sql10779437?useSSL=false&serverTimezone=UTC";
     private static final String USER = "sql10779437";
     private static final String PASS = "ZMwAAPfV5Q";
-    private static final Timer timer = new Timer(true);
-    private static final long PING_INTERVAL = 240_000; // 4 minutos
-    private static final long REFRESCO_INTERVAL = 60_000; // 1 min
+    
+  
 
     public static Connection conectar() {
         if (con == null) {
@@ -89,6 +88,7 @@ public class conexion {
     }
 
     private static void mantenerConexionViva() {
+        Timer timer= new Timer(true);
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
@@ -103,18 +103,10 @@ public class conexion {
                     System.out.println("⚠️ Error de ping: " + e.getMessage());
                 }
             }
-        }, 0, 1000);
+        }, 0, 240000);
     }
 
-    // 🧠 Esto lo puedes usar para refrescar cualquier tabla cada X tiempo
-    public static void agregarRefresco(Runnable tareaRefresco) {
-        timer.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                tareaRefresco.run();
-            }
-        }, 0, 5000);
-    }
+    
 }
     
     
