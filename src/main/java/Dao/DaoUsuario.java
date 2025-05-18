@@ -177,9 +177,9 @@ public boolean existeUsuarioParaOtro(String usuario, int idActual) {
         }
     } catch (Exception e) {
         JOptionPane.showMessageDialog(null, "Error al verificar si el usuario existe: " + e.getMessage());
-        return false; // Si ocurre un error, asumimos que no existe el usuario
+        return false; 
     }
-    return false; // Si no existe el usuario
+    return false; 
 }
     public int cantUsuarios(){
         String SQL="SELECT COUNT(idUsuario) FROM usuarios";
