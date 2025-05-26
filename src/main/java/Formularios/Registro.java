@@ -63,7 +63,7 @@ public class Registro extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jpanelRound2 = new Modelo.JpanelRound();
+        jpanelRound2 = new Extras.JpanelRound();
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -390,13 +390,11 @@ private void listarUsuarios() {
             u.setUsuario(txtusuario.getText());
             u.setPassword(txtpass.getText());
 
-            
             if (dao.existeUsuarioParaOtro(u.getUsuario(), u.getIdusuario())) {
                 JOptionPane.showMessageDialog(null, "🚫 El nombre de usuario ya está en uso por otro usuario.");
-                return; 
+                return;
             }
 
-            // Si todo bien, actualizar
             if (dao.editar(u.getNombre(), u.getApellido(), u.getDocumento(), u.getDireccion(), u.getTelefono(), u.getCorreo(), u.getTipoUsuario(), u.getUsuario(), u.getPassword(), u.getIdusuario())) {
                 JOptionPane.showMessageDialog(null, "✅ Se modificó con éxito el usuario.");
                 limpiarCampos();
@@ -426,7 +424,7 @@ private void listarUsuarios() {
         try {
             if (dao.existeUsuarioParaOtro(u.getUsuario(), u.getIdusuario())) {
                 JOptionPane.showMessageDialog(null, "🚫 El nombre de usuario ya está en uso por otro usuario.");
-                return; 
+                return;
             }
             if (dao.insertar(u.getNombre(), u.getApellido(), u.getDocumento(), u.getDireccion(), u.getTelefono(), u.getCorreo(), u.getTipoUsuario(), u.getUsuario(), u.getPassword())) {
                 JOptionPane.showMessageDialog(null, "✅ Usuario Registrado con Éxito");
@@ -519,7 +517,7 @@ private void listarUsuarios() {
         String documento = txtdocumento.getText().trim();
         if (!documento.matches("\\d+")) {
             JOptionPane.showMessageDialog(null, " El documento debe contener solo números.");
-            txtdocumento.requestFocus(); // Regresa el foco al campo
+            txtdocumento.requestFocus();
         }
     }//GEN-LAST:event_txtdocumentoFocusLost
 
@@ -527,7 +525,7 @@ private void listarUsuarios() {
         String correo = txtcorreo.getText().trim();
         if (!correo.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
             JOptionPane.showMessageDialog(null, " Correo no válido. Ejemplo: ejemplo@dominio.com");
-            txtcorreo.requestFocus(); // Vuelve al campo
+            txtcorreo.requestFocus();
         }
     }//GEN-LAST:event_txtcorreoFocusLost
 
@@ -567,7 +565,7 @@ private void listarUsuarios() {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private Modelo.JpanelRound jpanelRound2;
+    private Extras.JpanelRound jpanelRound2;
     private javax.swing.JLabel lbllogo;
     private javax.swing.JTable tablaUsuarios;
     private javax.swing.JTextField txtapellido;

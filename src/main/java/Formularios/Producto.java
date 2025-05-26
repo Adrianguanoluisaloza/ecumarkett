@@ -100,8 +100,8 @@ public final class Producto extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jpanelRound1 = new Modelo.JpanelRound();
-        jpanelRound2 = new Modelo.JpanelRound();
+        jpanelRound1 = new Extras.JpanelRound();
+        jpanelRound2 = new Extras.JpanelRound();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -121,7 +121,7 @@ public final class Producto extends javax.swing.JPanel {
         btnBuscar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnReporte = new RSMaterialComponent.RSButtonMaterialIconDos();
-        jpanelRound3 = new Modelo.JpanelRound();
+        jpanelRound3 = new Extras.JpanelRound();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaProductos = new javax.swing.JTable();
 
@@ -425,9 +425,9 @@ public final class Producto extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private Modelo.JpanelRound jpanelRound1;
-    private Modelo.JpanelRound jpanelRound2;
-    private Modelo.JpanelRound jpanelRound3;
+    private Extras.JpanelRound jpanelRound1;
+    private Extras.JpanelRound jpanelRound2;
+    private Extras.JpanelRound jpanelRound3;
     private javax.swing.JTable tablaProductos;
     public static javax.swing.JTextField txtNomCategoria;
     private javax.swing.JTextField txtid;

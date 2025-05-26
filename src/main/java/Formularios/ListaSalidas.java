@@ -127,7 +127,7 @@ public class ListaSalidas extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jpanelRound1 = new Modelo.JpanelRound();
+        jpanelRound1 = new Extras.JpanelRound();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         lbl = new javax.swing.JLabel();
@@ -140,11 +140,11 @@ public class ListaSalidas extends javax.swing.JPanel {
         fechafinal = new com.toedter.calendar.JDateChooser();
         txtidSalida = new javax.swing.JTextField();
         btnReporte = new RSMaterialComponent.RSButtonMaterialIconDos();
-        jpanelRound3 = new Modelo.JpanelRound();
+        jpanelRound3 = new Extras.JpanelRound();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaSalidas = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jpanelRound4 = new Modelo.JpanelRound();
+        jpanelRound4 = new Extras.JpanelRound();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaDetalle = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
@@ -422,9 +422,9 @@ public class ListaSalidas extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private Modelo.JpanelRound jpanelRound1;
-    private Modelo.JpanelRound jpanelRound3;
-    private Modelo.JpanelRound jpanelRound4;
+    private Extras.JpanelRound jpanelRound1;
+    private Extras.JpanelRound jpanelRound3;
+    private Extras.JpanelRound jpanelRound4;
     private javax.swing.JLabel lbl;
     private javax.swing.JTable tablaDetalle;
     private javax.swing.JTable tablaSalidas;

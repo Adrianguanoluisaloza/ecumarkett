@@ -85,10 +85,10 @@ public class Provedores extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jpanelRound1 = new Modelo.JpanelRound();
+        jpanelRound1 = new Extras.JpanelRound();
         jScrollPane3 = new javax.swing.JScrollPane();
         tablaproveedores = new javax.swing.JTable();
-        jpanelRound2 = new Modelo.JpanelRound();
+        jpanelRound2 = new Extras.JpanelRound();
         btnEliminar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
@@ -489,8 +489,8 @@ public class Provedores extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane3;
-    private Modelo.JpanelRound jpanelRound1;
-    private Modelo.JpanelRound jpanelRound2;
+    private Extras.JpanelRound jpanelRound1;
+    private Extras.JpanelRound jpanelRound2;
     private rojeru_san.rslabel.RSLabelBorderRound rSLabelBorderRound1;
     private javax.swing.JTable tablaproveedores;
     private javax.swing.JTextField txtRsocial;

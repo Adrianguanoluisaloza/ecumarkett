@@ -4,6 +4,7 @@
  */
 package Formularios;
 
+import Extras.Utilidades;
 import javax.swing.JOptionPane;
 import Dao.DaoUsuario;
 import Modelo.usuarios;
@@ -50,7 +51,7 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jpanelRound1 = new Modelo.JpanelRound();
+        jpanelRound1 = new Extras.JpanelRound();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txtcorreo = new javax.swing.JTextField();
@@ -305,14 +306,14 @@ public class Login extends javax.swing.JFrame {
     private void btnVerPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPasswordActionPerformed
         String pass = String.valueOf(txtcontrase.getPassword());
 
-        // Si el texto es el placeholder, no hacemos nada
+ 
         if (pass.equals("++++++")) {
-            btnVerPassword.setSelected(false); // Opcional: desmarcar
+            btnVerPassword.setSelected(false); 
             return;
         }
 
         if (btnVerPassword.isSelected()) {
-            txtcontrase.setEchoChar((char) 0); // Mostrar caracteres reales
+            txtcontrase.setEchoChar((char) 0); 
         } else {
             txtcontrase.setEchoChar('•'); // O '*'
         }
@@ -379,7 +380,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private Modelo.JpanelRound jpanelRound1;
+    private Extras.JpanelRound jpanelRound1;
     private rojeru_san.rslabel.RSLabelBorderRound rSLabelBorderRound1;
     private javax.swing.JPasswordField txtcontrase;
     private javax.swing.JTextField txtcorreo;

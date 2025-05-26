@@ -12,7 +12,6 @@ import java.awt.Color;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
-
 public class BuscarDato extends javax.swing.JFrame {
 
     Categoria ct = new Categoria();
@@ -178,7 +177,7 @@ public class BuscarDato extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void tablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaMouseClicked
-      
+
         int fila = tabla.getSelectedRow();
         txtID.setText(tabla.getValueAt(fila, 0).toString());
         txtnombre.setText(tabla.getValueAt(fila, 1).toString());

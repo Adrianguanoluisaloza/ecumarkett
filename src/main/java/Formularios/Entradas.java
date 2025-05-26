@@ -46,7 +46,7 @@ public class Entradas extends javax.swing.JPanel {
     productos p = new productos();
     DaoProductos daoPr = new DaoProductos();
     DaoEntradas dao = new DaoEntradas();
-    DaoCategoria daoC = new DaoCategoria();
+   // DaoCategoria daoC = new DaoCategoria();
     DaoProveedor daoP = new DaoProveedor();
     DefaultTableModel modelo = new DefaultTableModel();
 
@@ -65,7 +65,7 @@ public class Entradas extends javax.swing.JPanel {
         @Override
         public void run() {
             SwingUtilities.invokeLater(() -> {
-                actualizarTablaEntradas(); // 👈 Limpiar y volver a cargar
+                actualizarTablaEntradas();
             });
         }
     }, 0, 15000);   
@@ -118,8 +118,8 @@ public class Entradas extends javax.swing.JPanel {
     private void initComponents() {
 
         rSButtonMaterialIconDos1 = new RSMaterialComponent.RSButtonMaterialIconDos();
-        jpanelRound1 = new Modelo.JpanelRound();
-        jpanelRound2 = new Modelo.JpanelRound();
+        jpanelRound1 = new Extras.JpanelRound();
+        jpanelRound2 = new Extras.JpanelRound();
         txtTotal = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         txtprecioV = new javax.swing.JTextField();
@@ -138,19 +138,19 @@ public class Entradas extends javax.swing.JPanel {
         btnActualizar = new javax.swing.JButton();
         btnElimnar = new javax.swing.JButton();
         Reporte = new javax.swing.JButton();
-        jpanelRound3 = new Modelo.JpanelRound();
+        jpanelRound3 = new Extras.JpanelRound();
         jLabel11 = new javax.swing.JLabel();
         txtidProducto = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
         btnBuscarProducto = new javax.swing.JButton();
-        jpanelRound4 = new Modelo.JpanelRound();
+        jpanelRound4 = new Extras.JpanelRound();
         jLabel21 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         txtidproveedor = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         txtproveedor = new javax.swing.JTextField();
         btnBuscarProvedorr = new javax.swing.JButton();
-        jpanelRound5 = new Modelo.JpanelRound();
+        jpanelRound5 = new Extras.JpanelRound();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaEntradas = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
@@ -612,11 +612,11 @@ public class Entradas extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private Modelo.JpanelRound jpanelRound1;
-    private Modelo.JpanelRound jpanelRound2;
-    private Modelo.JpanelRound jpanelRound3;
-    private Modelo.JpanelRound jpanelRound4;
-    private Modelo.JpanelRound jpanelRound5;
+    private Extras.JpanelRound jpanelRound1;
+    private Extras.JpanelRound jpanelRound2;
+    private Extras.JpanelRound jpanelRound3;
+    private Extras.JpanelRound jpanelRound4;
+    private Extras.JpanelRound jpanelRound5;
     private RSMaterialComponent.RSButtonMaterialIconDos rSButtonMaterialIconDos1;
     private javax.swing.JTable tablaEntradas;
     private javax.swing.JTextField txtTotal;

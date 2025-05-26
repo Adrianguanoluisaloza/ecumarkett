@@ -68,7 +68,7 @@ public class Categorias extends javax.swing.JPanel {
     private void initComponents() {
 
         rSPasswordMaterialIcon1 = new RSMaterialComponent.RSPasswordMaterialIcon();
-        jpanelRound2 = new Modelo.JpanelRound();
+        jpanelRound2 = new Extras.JpanelRound();
         jPanel2 = new javax.swing.JPanel();
         txtidcategoria = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -78,7 +78,7 @@ public class Categorias extends javax.swing.JPanel {
         btnBuscar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
         btnElimar = new javax.swing.JButton();
-        jpanelRound1 = new Modelo.JpanelRound();
+        jpanelRound1 = new Extras.JpanelRound();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblcategorias = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
@@ -293,8 +293,8 @@ public class Categorias extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private Modelo.JpanelRound jpanelRound1;
-    private Modelo.JpanelRound jpanelRound2;
+    private Extras.JpanelRound jpanelRound1;
+    private Extras.JpanelRound jpanelRound2;
     private RSMaterialComponent.RSPasswordMaterialIcon rSPasswordMaterialIcon1;
     private javax.swing.JTable tblcategorias;
     private javax.swing.JTextField txtidcategoria;

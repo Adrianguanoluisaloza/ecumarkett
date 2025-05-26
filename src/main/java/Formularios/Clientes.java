@@ -85,7 +85,7 @@ public class Clientes extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jpanelRound4 = new Modelo.JpanelRound();
+        jpanelRound4 = new Extras.JpanelRound();
         jLabel2 = new javax.swing.JLabel();
         txtidcliente = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -105,7 +105,7 @@ public class Clientes extends javax.swing.JPanel {
         btnGuardar = new javax.swing.JButton();
         btnBuscar = new RSMaterialComponent.RSButtonMaterialIconDos();
         btnPdf = new RSMaterialComponent.RSButtonMaterialIconDos();
-        jpanelRound5 = new Modelo.JpanelRound();
+        jpanelRound5 = new Extras.JpanelRound();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaclientes = new javax.swing.JTable();
         lblGestionClientes = new rojeru_san.rslabel.RSLabelBorderRound();
@@ -466,7 +466,7 @@ public class Clientes extends javax.swing.JPanel {
         JasperPrint print;
 
         try {
-            report = JasperCompileManager.compileReport(new File("").getAbsolutePath() + "/src/reportes/.jrxml");
+            report = JasperCompileManager.compileReport(new File("").getAbsolutePath() + "/src/reportes/reporteClientes.jrxml");
             print = JasperFillManager.fillReport(report, p, conection);
             JasperViewer view = new JasperViewer(print, false);
             view.setTitle("Lista De Clientes");
@@ -508,8 +508,8 @@ public class Clientes extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private Modelo.JpanelRound jpanelRound4;
-    private Modelo.JpanelRound jpanelRound5;
+    private Extras.JpanelRound jpanelRound4;
+    private Extras.JpanelRound jpanelRound5;
     private rojeru_san.rslabel.RSLabelBorderRound lblGestionClientes;
     private javax.swing.JTable tablaclientes;
     private javax.swing.JTextField txtapellido;

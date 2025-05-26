@@ -26,7 +26,7 @@
     <Property name="useNullLayout" type="boolean" value="false"/>
   </Layout>
   <SubComponents>
-    <Container class="Modelo.JpanelRound" name="jpanelRound4">
+    <Container class="Extras.JpanelRound" name="jpanelRound4">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="cc" red="66" type="rgb"/>
@@ -344,7 +344,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="Modelo.JpanelRound" name="jpanelRound5">
+    <Container class="Extras.JpanelRound" name="jpanelRound5">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="cc" red="66" type="rgb"/>

@@ -1,3 +1,47 @@
-agregar esto en esta dirección si hay algún error 
+🔧 ¿Cómo instalar correctamente el plugin RojeruSan.full_9.6 en Maven y evitar errores?
+📍 PASO 1: Coloca el .jar en tu repositorio local
+El repositorio local de Maven está en esta ruta:
 
-C:\Users\Tu usuario\.m2\repository\com
+
+
+C:\Users\TU_USUARIO\.m2\repository\com
+
+Cambia TU_USUARIO por el nombre de tu cuenta en tu PC.
+Ejemplo real:
+C:\Users\adrian\.m2\repository\com
+
+Ahí debes crear una carpeta nueva con esta estructura si no existe todavía:
+
+com\rojerusan\full_9.6\1.0\
+O sea, la ruta completa quedaría así:
+
+
+C:\Users\TU_USUARIO\.m2\repository\com\rojerusan\full_9.6\1.0\
+Y dentro de esa carpeta, pones el archivo .jar que descargaste y lo renombras así:
+
+
+full_9.6-1.0.jar
+📄 PASO 2: Elimina la dependencia incorrecta del pom.xml
+Busca esto en tu archivo pom.xml y bórralo:
+
+
+<dependency>
+    <groupId>unknown.binary</groupId>
+    <artifactId>RojeruSan.full_9.6</artifactId>
+    <version>SNAPSHOT</version>
+</dependency>
+✅ PASO 3: Agrega la dependencia correcta
+Ahora, justo donde estaba la anterior, pega esta nueva dependencia que sí es válida:
+
+
+<dependency>
+    <groupId>com.rojerusan</groupId>
+    <artifactId>full_9.6</artifactId>
+    <version>1.0</version>
+</dependency>
+🎉 ¿Qué logras con esto?
+Ya no te va a salir el mensaje en naranja o rojo en la consola.
+
+Maven reconocerá el plugin como si lo hubiera descargado de Internet.
+
+Tu proyecto se compilará sin problemas ni advertencias.

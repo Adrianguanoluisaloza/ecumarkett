@@ -116,22 +116,22 @@ public class Inicio extends javax.swing.JPanel {
         selectAño = new com.toedter.calendar.JYearChooser();
         selectmes = new com.toedter.calendar.JMonthChooser();
         btnProcesaar = new RSMaterialComponent.RSButtonMaterialIconDos();
-        jpanelRound1 = new Modelo.JpanelRound();
+        jpanelRound1 = new Extras.JpanelRound();
         txtCantCat = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jpanelRound7 = new Modelo.JpanelRound();
+        jpanelRound7 = new Extras.JpanelRound();
         txtcantClientes = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jpanelRound8 = new Modelo.JpanelRound();
+        jpanelRound8 = new Extras.JpanelRound();
         jLabel7 = new javax.swing.JLabel();
         txtcantproveedores = new javax.swing.JLabel();
-        jpanelRound9 = new Modelo.JpanelRound();
+        jpanelRound9 = new Extras.JpanelRound();
         txtcantEntradas = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jpanelRound10 = new Modelo.JpanelRound();
+        jpanelRound10 = new Extras.JpanelRound();
         jLabel11 = new javax.swing.JLabel();
         txtcantUsuarios = new javax.swing.JLabel();
-        jpanelRound11 = new Modelo.JpanelRound();
+        jpanelRound11 = new Extras.JpanelRound();
         jLabel9 = new javax.swing.JLabel();
         txtcantSalidas = new javax.swing.JLabel();
 
@@ -489,6 +489,8 @@ public class Inicio extends javax.swing.JPanel {
         cp.setBounds(0, 0, 430, 314);
     }
     
+    
+    // este es para cambiar a pastel el grafico de barrar de a pastel para explicacion 
     /*
     void graficarClientesF() {
     DefaultPieDataset dtsc = new DefaultPieDataset();
@@ -552,12 +554,12 @@ public class Inicio extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private Modelo.JpanelRound jpanelRound1;
-    private Modelo.JpanelRound jpanelRound10;
-    private Modelo.JpanelRound jpanelRound11;
-    private Modelo.JpanelRound jpanelRound7;
-    private Modelo.JpanelRound jpanelRound8;
-    private Modelo.JpanelRound jpanelRound9;
+    private Extras.JpanelRound jpanelRound1;
+    private Extras.JpanelRound jpanelRound10;
+    private Extras.JpanelRound jpanelRound11;
+    private Extras.JpanelRound jpanelRound7;
+    private Extras.JpanelRound jpanelRound8;
+    private Extras.JpanelRound jpanelRound9;
     private javax.swing.JPanel panelClientesF;
     private javax.swing.JPanel panelProdF;
     private com.toedter.calendar.JYearChooser selectAño;

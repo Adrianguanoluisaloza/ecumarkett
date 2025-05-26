@@ -55,7 +55,7 @@
         </DimensionLayout>
       </Layout>
     </Container>
-    <Container class="Modelo.JpanelRound" name="panelbotones">
+    <Container class="Extras.JpanelRound" name="panelbotones">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="99" red="0" type="rgb"/>

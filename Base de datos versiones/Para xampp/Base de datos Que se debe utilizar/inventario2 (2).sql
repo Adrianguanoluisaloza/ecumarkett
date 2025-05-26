@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-05-2025 a las 16:31:56
+-- Tiempo de generación: 26-05-2025 a las 19:50:56
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -316,10 +316,13 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`idUsuario`, `nombre`, `apellido`, `documento`, `direccion`, `telefono`, `correo`, `tipoUsuario`, `usuario`, `pass`) VALUES
-(1, 'Tadeo', 'Ballesteros', '74850994', 'Universidad', '963258741', 'Angel@gmail.com', 'Administrador', 'Angel', 0x7b3f57093f3f0e00673f1f153f3f6c3f),
-(2, 'sofia', 'dominguez perez', '85214785', 'av rosales 35', '985698587', 'sofia@gmail.com', 'Vendedor', 'sofia', 0xcf9ee6f98d1436218774b1a9b685d3ec),
-(4, 'pedro', 'puentes torres', '85214785', 'Calderon ', '963258789', 'pedro.p@gmail.com', 'Almacenero', 'pedro', 0x7bc5570986930e0067e31f15eccc6c86),
-(6, 'aDRIAN', 'puentes torres', '85214785', 'acasias', '963258789', 'adr@gmail.com', 'Administrador', 'aDRI', 0xcf9ee6f98d1436218774b1a9b685d3ec);
+(1, 'Tadeo', 'Ballesteros', '74850994', 'Universidad', '963258741', 'Angel@gmail.com', 'Administrador', 'Angel', 0xcf9ee6f98d1436218774b1a9b685d3ec),
+(2, 'David', 'no me acuerdo', '85214785', 'casa bonita', '985698587', 'David@gmail.com', 'Vendedor', 'David', 0xcf9ee6f98d1436218774b1a9b685d3ec),
+(4, 'Franco', 'Herrera', '85214785', 'Calderon ', '963258789', 'Franco@gmail.com', 'Administrador', 'Franco', 0xcf9ee6f98d1436218774b1a9b685d3ec),
+(6, 'Adrian', 'Guanoluisa', '5616581698', 'Aire libre', '963258789', 'adr@gmail.com', 'Administrador', 'AdrinJ', 0xcf9ee6f98d1436218774b1a9b685d3ec),
+(8, 'TadeoVende', 'Ballesteros', '74850994', 'Universidad', '963258741', 'Angel1@gmail.com', 'Vendedor', 'AngelVende', 0x7bc5570986930e0067e31f15eccc6c86),
+(9, 'Francovende', 'Herrera', '85214785', 'aguas del mar ja', '963258789', 'Franco1@gmail.com', 'Vendedor', 'Francovende', 0x7bc5570986930e0067e31f15eccc6c86),
+(10, 'Davidalma', 'simeacuerdo', '85214785', 'casa bonita', '985698587', 'David1@gmail.com', 'Almacenero', 'Davidalma', 0x7bc5570986930e0067e31f15eccc6c86);
 
 --
 -- Índices para tablas volcadas
@@ -422,7 +425,7 @@ ALTER TABLE `salidas`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restricciones para tablas volcadas

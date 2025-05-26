@@ -53,7 +53,7 @@ public class Salidas extends javax.swing.JPanel {
      */
     public Salidas() {
         initComponents();
-        numSalida();
+        //numSalida();
     }
 
     void numSalida() {
@@ -79,7 +79,7 @@ public class Salidas extends javax.swing.JPanel {
         rSTextFullRound1 = new rojeru_san.rsfield.RSTextFullRound();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jpanelRound1 = new Modelo.JpanelRound();
+        jpanelRound1 = new Extras.JpanelRound();
         jLabel11 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -96,7 +96,7 @@ public class Salidas extends javax.swing.JPanel {
         btnBuscarClientes = new RSMaterialComponent.RSButtonMaterialIconDos();
         txtidProducto = new javax.swing.JTextField();
         txtproducto = new javax.swing.JTextField();
-        jpanelRound5 = new Modelo.JpanelRound();
+        jpanelRound5 = new Extras.JpanelRound();
         jLabel16 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
@@ -108,10 +108,10 @@ public class Salidas extends javax.swing.JPanel {
         btnDelete = new javax.swing.JButton();
         btnGenerar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jpanelRound4 = new Modelo.JpanelRound();
+        jpanelRound4 = new Extras.JpanelRound();
         jScrollPane3 = new javax.swing.JScrollPane();
         tablaSalidas = new javax.swing.JTable();
-        jpanelRound2 = new Modelo.JpanelRound();
+        jpanelRound2 = new Extras.JpanelRound();
         jLabel14 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -477,7 +477,7 @@ public class Salidas extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_txtdocumentoKeyTyped
     private void agregaEntrada() {
-        double precio, total, importe;
+        double precio/*, total*/, importe;
         modelo = (DefaultTableModel) tablaSalidas.getModel();
         int idEntrada = Integer.parseInt(txtidProducto.getText());
         int idSalida = Integer.parseInt(txtnsalida.getText());
@@ -609,10 +609,10 @@ public class Salidas extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane3;
     private com.toedter.calendar.JDateChooser jcFecha;
-    private Modelo.JpanelRound jpanelRound1;
-    private Modelo.JpanelRound jpanelRound2;
-    private Modelo.JpanelRound jpanelRound4;
-    private Modelo.JpanelRound jpanelRound5;
+    private Extras.JpanelRound jpanelRound1;
+    private Extras.JpanelRound jpanelRound2;
+    private Extras.JpanelRound jpanelRound4;
+    private Extras.JpanelRound jpanelRound5;
     private rojeru_san.rsfield.RSTextFullRound rSTextFullRound1;
     private javax.swing.JTable tablaSalidas;
     private javax.swing.JTextField txtTelefono;

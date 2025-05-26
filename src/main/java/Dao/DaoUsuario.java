@@ -173,7 +173,7 @@ public boolean existeUsuarioParaOtro(String usuario, int idActual) {
         rs = ps.executeQuery();
         if (rs.next()) {
             int count = rs.getInt(1);
-            return count > 0; // Si hay al menos 1, ya existe ese nombre de usuario
+            return count > 0; 
         }
     } catch (Exception e) {
         JOptionPane.showMessageDialog(null, "Error al verificar si el usuario existe: " + e.getMessage());

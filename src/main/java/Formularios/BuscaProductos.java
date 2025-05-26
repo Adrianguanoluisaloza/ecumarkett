@@ -19,10 +19,10 @@ import javax.swing.table.DefaultTableModel;
  */
 public class BuscaProductos extends javax.swing.JFrame {
 
-DefaultTableModel modelo=new DefaultTableModel();
-productos p=new productos();
-DaoProductos dao=new DaoProductos();
-public static boolean tipo;
+    DefaultTableModel modelo = new DefaultTableModel();
+    productos p = new productos();
+    DaoProductos dao = new DaoProductos();
+    public static boolean tipo;
 
     /**
      * Creates new form BuscaEntradas
@@ -30,22 +30,22 @@ public static boolean tipo;
     public BuscaProductos() {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.setBackground(new Color(0,0,0,0));
+        this.setBackground(new Color(0, 0, 0, 0));
         listarProductos();
     }
 
-    private void listarProductos(){
-        List<productos> lista=dao.Listar();
-        modelo=(DefaultTableModel) prodcutos.getModel();
-        Object[] ob=new Object[4];
-        for(int i=0;i<lista.size();i++){
-            ob[0]=lista.get(i).getIdproducto();
-            ob[1]=lista.get(i).getNomProd();
-            ob[2]=lista.get(i).getStock();
-            ob[3]=lista.get(i).getPrecioV();
+    private void listarProductos() {
+        List<productos> lista = dao.Listar();
+        modelo = (DefaultTableModel) prodcutos.getModel();
+        Object[] ob = new Object[4];
+        for (int i = 0; i < lista.size(); i++) {
+            ob[0] = lista.get(i).getIdproducto();
+            ob[1] = lista.get(i).getNomProd();
+            ob[2] = lista.get(i).getStock();
+            ob[3] = lista.get(i).getPrecioV();
             modelo.addRow(ob);
         }
-       prodcutos.setModel(modelo);
+        prodcutos.setModel(modelo);
     }
 
     /**
@@ -57,15 +57,15 @@ public static boolean tipo;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jpanelRound2 = new Modelo.JpanelRound();
-        jpanelRound3 = new Modelo.JpanelRound();
+        jpanelRound2 = new Extras.JpanelRound();
+        jpanelRound3 = new Extras.JpanelRound();
         txtid = new javax.swing.JTextField();
         txtnombre = new javax.swing.JTextField();
         txtstock = new javax.swing.JTextField();
         txtprecio = new javax.swing.JTextField();
         btnCerrar = new javax.swing.JButton();
         btnEnviar = new javax.swing.JButton();
-        jpanelRound4 = new Modelo.JpanelRound();
+        jpanelRound4 = new Extras.JpanelRound();
         jScrollPane1 = new javax.swing.JScrollPane();
         prodcutos = new javax.swing.JTable();
 
@@ -100,7 +100,7 @@ public static boolean tipo;
                 btnCerrarActionPerformed(evt);
             }
         });
-        jpanelRound3.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, 110, 30));
+        jpanelRound3.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, 140, 30));
 
         btnEnviar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnEnviar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagenes Loginregister/ic_send_128_28719.png"))); // NOI18N
@@ -110,7 +110,7 @@ public static boolean tipo;
                 btnEnviarActionPerformed(evt);
             }
         });
-        jpanelRound3.add(btnEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 110, 30));
+        jpanelRound3.add(btnEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 130, 30));
 
         jpanelRound2.add(jpanelRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 780, 270));
 
@@ -143,7 +143,7 @@ public static boolean tipo;
 
     private void prodcutosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prodcutosMouseClicked
         // TODO add your handling code here:
-        int fila=prodcutos.getSelectedRow();
+        int fila = prodcutos.getSelectedRow();
         txtid.setText(prodcutos.getValueAt(fila, 0).toString());
         txtnombre.setText(prodcutos.getValueAt(fila, 1).toString());
         txtstock.setText(prodcutos.getValueAt(fila, 2).toString());
@@ -151,24 +151,23 @@ public static boolean tipo;
     }//GEN-LAST:event_prodcutosMouseClicked
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
-         dispose();
+        dispose();
     }//GEN-LAST:event_btnCerrarActionPerformed
 
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
-        if(tipo==true){
-        Salidas.txtidProducto.setText(txtid.getText());
-        Salidas.txtprecio.setText(txtprecio.getText());
-        Salidas.txtproducto.setText(txtnombre.getText());
-        Salidas.txtstock.setText(txtstock.getText());
-       }else{
-        Entradas.txtnombreP.setText(txtnombre.getText());
-        Entradas.txtprecioV.setText(txtprecio.getText());
-        Entradas.txtidProducto.setText(txtid.getText());
-        Entradas.idpNuevo=Integer.parseInt(txtid.getText());
-       }
+        if (tipo == true) {
+            Salidas.txtidProducto.setText(txtid.getText());
+            Salidas.txtprecio.setText(txtprecio.getText());
+            Salidas.txtproducto.setText(txtnombre.getText());
+            Salidas.txtstock.setText(txtstock.getText());
+        } else {
+            Entradas.txtnombreP.setText(txtnombre.getText());
+            Entradas.txtprecioV.setText(txtprecio.getText());
+            Entradas.txtidProducto.setText(txtid.getText());
+            Entradas.idpNuevo = Integer.parseInt(txtid.getText());
+        }
         dispose();
     }//GEN-LAST:event_btnEnviarActionPerformed
-                                 
 
     /**
      * @param args the command line arguments
@@ -212,9 +211,9 @@ public static boolean tipo;
     private javax.swing.JButton btnCerrar;
     private javax.swing.JButton btnEnviar;
     private javax.swing.JScrollPane jScrollPane1;
-    private Modelo.JpanelRound jpanelRound2;
-    private Modelo.JpanelRound jpanelRound3;
-    private Modelo.JpanelRound jpanelRound4;
+    private Extras.JpanelRound jpanelRound2;
+    private Extras.JpanelRound jpanelRound3;
+    private Extras.JpanelRound jpanelRound4;
     private javax.swing.JTable prodcutos;
     private javax.swing.JTextField txtid;
     private javax.swing.JTextField txtnombre;
