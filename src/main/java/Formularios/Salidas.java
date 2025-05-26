@@ -53,7 +53,7 @@ public class Salidas extends javax.swing.JPanel {
      */
     public Salidas() {
         initComponents();
-        //numSalida();
+        numSalida();
     }
 
     void numSalida() {
@@ -182,6 +182,7 @@ public class Salidas extends javax.swing.JPanel {
 
         txtnsalida.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         txtnsalida.setForeground(new java.awt.Color(153, 153, 153));
+        txtnsalida.setText("1");
         jpanelRound1.add(txtnsalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 20, 60, 20));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -380,7 +381,7 @@ public class Salidas extends javax.swing.JPanel {
             txtcorreo.setText(c.getCorreo());
         } else {
 
-            JOptionPane.showMessageDialog(null, "No se encuentra el producto");
+            JOptionPane.showMessageDialog(null, "No se encuentra el cliente");
         }
     }//GEN-LAST:event_btnBuscarProductoActionPerformed
 
