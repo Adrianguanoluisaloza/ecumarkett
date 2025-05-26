@@ -46,7 +46,7 @@ public class Entradas extends javax.swing.JPanel {
     productos p = new productos();
     DaoProductos daoPr = new DaoProductos();
     DaoEntradas dao = new DaoEntradas();
-   // DaoCategoria daoC = new DaoCategoria();
+   DaoCategoria daoC = new DaoCategoria();
     DaoProveedor daoP = new DaoProveedor();
     DefaultTableModel modelo = new DefaultTableModel();
 
