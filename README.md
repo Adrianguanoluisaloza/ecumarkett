@@ -1,54 +1,33 @@
 # Ecumarkett
 
-Ecumarkett nació como mi **segundo proyecto**.  
-Al inicio, la idea fue hacer algo tipo Temu en NetBeans, pero en ese momento todavía no tenía clara la arquitectura correcta. Con el tiempo, el enfoque cambió hacia una base web más moderna y mantenible.
+Ecumarkett es mi segundo proyecto y también una de las primeras ideas grandes que intenté construir. Nació cuando todavía estaba aprendiendo por mi cuenta, viendo tutoriales, probando cosas y tratando de entender cómo convertir una idea tipo marketplace en algo real.
 
-Este repositorio se mantiene con un enfoque educativo: documentar el proceso real de aprendizaje, desde una idea inicial hasta una arquitectura más clara.
+Al principio fue un experimento hecho con lo que tenía a mano. Con el tiempo, el proyecto fue tomando forma y se fue reordenando hacia una base más clara, más mantenible y más cercana a algo publicable.
 
-## Arquitectura objetivo (moderna)
+## Qué es
 
-- **Frontend:** React + Vite + TypeScript  
-- **Backend:** Cloudflare Workers con Hono  
-- **Base de datos:** Cloudflare D1  
-- **Storage:** Cloudflare R2  
-- **Autenticación:** JWT/cookies o una alternativa basada en Cloudflare
+Ecumarkett es una app orientada a catálogo, inventario y gestión de productos. La idea es cubrir el flujo básico de un e-commerce pequeño o mediano: navegar productos, iniciar sesión, gestionar carrito, confirmar pedidos y administrar inventario.
 
-## Árbol de carpetas sugerido
+## Enfoque técnico
 
-```txt
-ecumarkett/
-├─ frontend/
-│  └─ src/
-│     ├─ components/
-│     ├─ pages/
-│     ├─ routes/
-│     ├─ services/
-│     └─ main.tsx
-├─ backend/
-│  └─ src/
-│     ├─ routes/
-│     ├─ controllers/
-│     ├─ services/
-│     ├─ middlewares/
-│     └─ app.ts
-├─ shared/
-│  └─ types/
-└─ docs/
-   └─ architecture.md
-```
+- **Frontend:** React + Vite + TypeScript
+- **Backend:** Cloudflare Workers con Hono
+- **Base de datos:** Cloudflare D1
+- **Storage:** Cloudflare R2
+- **Autenticación:** JWT, cookies o una alternativa apoyada en Cloudflare
 
-## Flujo base de la app
+## Flujo general
 
-1. **Browse products:** el usuario entra, navega categorías y ve detalles de productos.
-2. **Login/Register:** crea cuenta o inicia sesión para guardar carrito y órdenes.
-3. **Cart:** agrega, quita y actualiza cantidades antes de comprar.
-4. **Checkout:** confirma dirección, método de pago y crea el pedido.
-5. **Admin:** gestiona productos, inventario, pedidos y estado de ventas.
+1. El usuario entra al catálogo y navega categorías.
+2. El usuario se registra o inicia sesión para guardar su experiencia.
+3. El carrito permite sumar, quitar y actualizar productos.
+4. El checkout confirma la compra y genera el pedido.
+5. El panel admin administra productos, inventario y ventas.
 
-## Nota pública del proyecto
+## Contexto público
 
-Este README no incluye secretos, credenciales, variables de entorno, correos personales ni datos privados.
+Este repositorio está compartido como parte de mi proceso de aprendizaje. No incluye credenciales, secretos ni datos personales.
 
 ---
 
-Y así queda Ecumarkett como un capítulo cerrado de aprendizaje: empezó como una idea confusa, pero con la nueva arquitectura evolucionó a una base real de lo que quería construir.
+Empecé este proyecto cuando apenas estaba entendiendo cómo funciona todo. Hoy queda como una muestra más honesta de ese proceso: una idea ambiciosa, mucho aprendizaje en el camino y una base mejor ordenada para seguir construyendo.
