@@ -1,6 +1,6 @@
 package com.mycompany.ecumarket;
 
-import com.ecumarket.ui.forms.pantallaPrincipal;
+import com.ecumarket.ui.forms.PantallaPrincipal;
 
 /**
  *
@@ -9,7 +9,7 @@ import com.ecumarket.ui.forms.pantallaPrincipal;
 public class Ecumarket {
 
     public static void main(String[] args) {
-        new pantallaPrincipal().setVisible(true);
+        new PantallaPrincipal().setVisible(true);
         
     }
 }

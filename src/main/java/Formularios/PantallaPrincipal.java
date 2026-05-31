@@ -20,11 +20,11 @@ import javax.swing.JPanel;
  *
  * @author Adrian
  */
-public final class pantallaPrincipal extends javax.swing.JFrame {
+public final class PantallaPrincipal extends javax.swing.JFrame {
 
     private usuarios us;
 
-    public pantallaPrincipal() {
+    public PantallaPrincipal() {
         initComponents();
         setLocationRelativeTo(null);
         bloquearComponentes();
@@ -40,7 +40,7 @@ public final class pantallaPrincipal extends javax.swing.JFrame {
 
     }
 
-    public pantallaPrincipal(usuarios usuarioLogueado) {
+    public PantallaPrincipal(usuarios usuarioLogueado) {
         initComponents();
         btnRegistro.setVisible(false);
         setLocationRelativeTo(null);
@@ -498,8 +498,8 @@ private usuarios usuarioActual;
 
         bloquearComponentes();
         btnRegistro.setVisible(false);
-        pantallaPrincipal.txtiduser.setText("");
-        pantallaPrincipal.iconusuario.setText("");
+        PantallaPrincipal.txtiduser.setText("");
+        PantallaPrincipal.iconusuario.setText("");
         JOptionPane.showMessageDialog(null, "Sesión cerrada correctamente", "Cerrar sesión", JOptionPane.INFORMATION_MESSAGE);
         cerrar();
 
@@ -539,39 +539,39 @@ private usuarios usuarioActual;
 
         switch (tipo) {
             case "Vendedor":
-                pantallaPrincipal.btnInicio.setEnabled(true);
-                pantallaPrincipal.btnSalidas.setEnabled(true);
-                pantallaPrincipal.btnCategorias.setEnabled(false);
-                pantallaPrincipal.btnClientes.setEnabled(true);
-                pantallaPrincipal.btnEntradas.setEnabled(false);
-                pantallaPrincipal.btnProveedor.setEnabled(false);
-                pantallaPrincipal.btnProductos.setEnabled(false);
-                pantallaPrincipal.btnSalir.setEnabled(true);
-                pantallaPrincipal.btnCerrarSesionn.setEnabled(true);
+                PantallaPrincipal.btnInicio.setEnabled(true);
+                PantallaPrincipal.btnSalidas.setEnabled(true);
+                PantallaPrincipal.btnCategorias.setEnabled(false);
+                PantallaPrincipal.btnClientes.setEnabled(true);
+                PantallaPrincipal.btnEntradas.setEnabled(false);
+                PantallaPrincipal.btnProveedor.setEnabled(false);
+                PantallaPrincipal.btnProductos.setEnabled(false);
+                PantallaPrincipal.btnSalir.setEnabled(true);
+                PantallaPrincipal.btnCerrarSesionn.setEnabled(true);
                 break;
 
             case "Almacenero":
-                pantallaPrincipal.btnInicio.setEnabled(true);
-                pantallaPrincipal.btnSalidas.setEnabled(false);
-                pantallaPrincipal.btnCategorias.setEnabled(true);
-                pantallaPrincipal.btnClientes.setEnabled(false);
-                pantallaPrincipal.btnEntradas.setEnabled(true);
-                pantallaPrincipal.btnProveedor.setEnabled(true);
-                pantallaPrincipal.btnProductos.setEnabled(true);
-                pantallaPrincipal.btnSalir.setEnabled(true);
-                pantallaPrincipal.btnCerrarSesionn.setEnabled(true);
+                PantallaPrincipal.btnInicio.setEnabled(true);
+                PantallaPrincipal.btnSalidas.setEnabled(false);
+                PantallaPrincipal.btnCategorias.setEnabled(true);
+                PantallaPrincipal.btnClientes.setEnabled(false);
+                PantallaPrincipal.btnEntradas.setEnabled(true);
+                PantallaPrincipal.btnProveedor.setEnabled(true);
+                PantallaPrincipal.btnProductos.setEnabled(true);
+                PantallaPrincipal.btnSalir.setEnabled(true);
+                PantallaPrincipal.btnCerrarSesionn.setEnabled(true);
                 break;
 
             case "Administrador":
-                pantallaPrincipal.btnInicio.setEnabled(true);
-                pantallaPrincipal.btnSalidas.setEnabled(true);
-                pantallaPrincipal.btnCategorias.setEnabled(true);
-                pantallaPrincipal.btnClientes.setEnabled(true);
-                pantallaPrincipal.btnEntradas.setEnabled(true);
-                pantallaPrincipal.btnProveedor.setEnabled(true);
-                pantallaPrincipal.btnProductos.setEnabled(true);
-                pantallaPrincipal.btnSalir.setEnabled(true);
-                pantallaPrincipal.btnCerrarSesionn.setEnabled(true);
+                PantallaPrincipal.btnInicio.setEnabled(true);
+                PantallaPrincipal.btnSalidas.setEnabled(true);
+                PantallaPrincipal.btnCategorias.setEnabled(true);
+                PantallaPrincipal.btnClientes.setEnabled(true);
+                PantallaPrincipal.btnEntradas.setEnabled(true);
+                PantallaPrincipal.btnProveedor.setEnabled(true);
+                PantallaPrincipal.btnProductos.setEnabled(true);
+                PantallaPrincipal.btnSalir.setEnabled(true);
+                PantallaPrincipal.btnCerrarSesionn.setEnabled(true);
                 break;
 
             default:
@@ -638,13 +638,13 @@ private usuarios usuarioActual;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(pantallaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PantallaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(pantallaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PantallaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(pantallaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PantallaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(pantallaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PantallaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -654,7 +654,7 @@ private usuarios usuarioActual;
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new pantallaPrincipal().setVisible(true);
+                new PantallaPrincipal().setVisible(true);
             }
         });
     }

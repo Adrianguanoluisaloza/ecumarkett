@@ -1,10 +1,10 @@
 package com.ecumarket;
 
-import com.ecumarket.ui.forms.pantallaPrincipal;
+import com.ecumarket.ui.forms.PantallaPrincipal;
 
 public class Main {
 
     public static void main(String[] args) {
-        new pantallaPrincipal().setVisible(true);
+        new PantallaPrincipal().setVisible(true);
     }
 }

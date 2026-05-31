@@ -21,9 +21,9 @@ public class Login extends javax.swing.JFrame {
     DaoUsuario daoU = new DaoUsuario();
     usuarios us = new usuarios();
 
-    pantallaPrincipal pP;
+    PantallaPrincipal pP;
 
-    public Login(pantallaPrincipal pP) {
+    public Login(PantallaPrincipal pP) {
 
         initComponents();
         this.pP = pP;
@@ -255,7 +255,7 @@ public class Login extends javax.swing.JFrame {
     private void btnentrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnentrarActionPerformed
         us = daoU.login(txtcorreo.getText(), txtcontrase.getText());
         if (us.getIdusuario() != 0) {
-            pantallaPrincipal m = new pantallaPrincipal(us);
+            PantallaPrincipal m = new PantallaPrincipal(us);
             this.dispose();
 
             Utilidades.mostrarToast(m, "¡Bienvenido, " + us.getTipoUsuario().toUpperCase() + "!");
@@ -264,31 +264,31 @@ public class Login extends javax.swing.JFrame {
 
             switch (tipo) {
                 case "Vendedor":
-                    pantallaPrincipal.btnSalidas.setEnabled(true);
-                    pantallaPrincipal.btnCategorias.setEnabled(false);
-                    pantallaPrincipal.btnClientes.setEnabled(true);
-                    pantallaPrincipal.btnEntradas.setEnabled(false);
-                    pantallaPrincipal.btnProveedor.setEnabled(false);
-                    pantallaPrincipal.btnProductos.setEnabled(false);
+                    PantallaPrincipal.btnSalidas.setEnabled(true);
+                    PantallaPrincipal.btnCategorias.setEnabled(false);
+                    PantallaPrincipal.btnClientes.setEnabled(true);
+                    PantallaPrincipal.btnEntradas.setEnabled(false);
+                    PantallaPrincipal.btnProveedor.setEnabled(false);
+                    PantallaPrincipal.btnProductos.setEnabled(false);
                     break;
 
                 case "Almacenero":
-                    pantallaPrincipal.btnSalidas.setEnabled(false);
-                    pantallaPrincipal.btnCategorias.setEnabled(true);
-                    pantallaPrincipal.btnClientes.setEnabled(false);
-                    pantallaPrincipal.btnEntradas.setEnabled(true);
-                    pantallaPrincipal.btnProveedor.setEnabled(true);
-                    pantallaPrincipal.btnProductos.setEnabled(true);
+                    PantallaPrincipal.btnSalidas.setEnabled(false);
+                    PantallaPrincipal.btnCategorias.setEnabled(true);
+                    PantallaPrincipal.btnClientes.setEnabled(false);
+                    PantallaPrincipal.btnEntradas.setEnabled(true);
+                    PantallaPrincipal.btnProveedor.setEnabled(true);
+                    PantallaPrincipal.btnProductos.setEnabled(true);
                     break;
 
                 case "Administrador":
-                    pantallaPrincipal.btnSalidas.setEnabled(true);
-                    pantallaPrincipal.btnCategorias.setEnabled(true);
-                    pantallaPrincipal.btnClientes.setEnabled(true);
-                    pantallaPrincipal.btnEntradas.setEnabled(true);
-                    pantallaPrincipal.btnProveedor.setEnabled(true);
-                    pantallaPrincipal.btnProductos.setEnabled(true);
-                    pantallaPrincipal.btnRegistro.setVisible(true);
+                    PantallaPrincipal.btnSalidas.setEnabled(true);
+                    PantallaPrincipal.btnCategorias.setEnabled(true);
+                    PantallaPrincipal.btnClientes.setEnabled(true);
+                    PantallaPrincipal.btnEntradas.setEnabled(true);
+                    PantallaPrincipal.btnProveedor.setEnabled(true);
+                    PantallaPrincipal.btnProductos.setEnabled(true);
+                    PantallaPrincipal.btnRegistro.setVisible(true);
                     break;
 
                 default:
@@ -296,7 +296,7 @@ public class Login extends javax.swing.JFrame {
                     break;
             }
 
-            pantallaPrincipal.txtiduser.setText(us.getIdusuario() + "");
+            PantallaPrincipal.txtiduser.setText(us.getIdusuario() + "");
             m.setVisible(true);
         } else {
             Utilidades.mostrarToast(this, "❌ Acceso denegado. Verifica tus datos.");

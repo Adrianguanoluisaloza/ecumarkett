@@ -27,9 +27,9 @@ public class Registro extends javax.swing.JPanel {
     usuarios u = new usuarios();
     DaoUsuario dao = new DaoUsuario();
     DefaultTableModel modelo = new DefaultTableModel();
-    pantallaPrincipal pP;
+    PantallaPrincipal pP;
 
-    public Registro(pantallaPrincipal pPi) {
+    public Registro(PantallaPrincipal pPi) {
 
         initComponents();
         this.pP = pPi;
