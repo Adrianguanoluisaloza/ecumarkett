@@ -1,6 +1,6 @@
-package Dao;
+package com.ecumarket.dao;
 
-import Modelo.productos;
+import com.ecumarket.model.productos;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

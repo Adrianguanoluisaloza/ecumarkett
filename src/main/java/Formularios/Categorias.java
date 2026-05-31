@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package Formularios;
+package com.ecumarket.ui.forms;
 
-import Dao.DaoCategoria;
-import Modelo.Categoria;
+import com.ecumarket.dao.DaoCategoria;
+import com.ecumarket.model.Categoria;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -68,7 +68,7 @@ public class Categorias extends javax.swing.JPanel {
     private void initComponents() {
 
         rSPasswordMaterialIcon1 = new RSMaterialComponent.RSPasswordMaterialIcon();
-        jpanelRound2 = new Extras.JpanelRound();
+        jpanelRound2 = new com.ecumarket.util.JpanelRound();
         jPanel2 = new javax.swing.JPanel();
         txtidcategoria = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -78,7 +78,7 @@ public class Categorias extends javax.swing.JPanel {
         btnBuscar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
         btnElimar = new javax.swing.JButton();
-        jpanelRound1 = new Extras.JpanelRound();
+        jpanelRound1 = new com.ecumarket.util.JpanelRound();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblcategorias = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
@@ -293,8 +293,8 @@ public class Categorias extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private Extras.JpanelRound jpanelRound1;
-    private Extras.JpanelRound jpanelRound2;
+    private com.ecumarket.util.JpanelRound jpanelRound1;
+    private com.ecumarket.util.JpanelRound jpanelRound2;
     private RSMaterialComponent.RSPasswordMaterialIcon rSPasswordMaterialIcon1;
     private javax.swing.JTable tblcategorias;
     private javax.swing.JTextField txtidcategoria;

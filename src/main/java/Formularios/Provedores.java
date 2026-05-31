@@ -2,11 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package Formularios;
+package com.ecumarket.ui.forms;
 
-import Dao.DaoProveedor;
-import Dao.conexion;
-import Modelo.proveedor;
+import com.ecumarket.dao.DaoProveedor;
+import com.ecumarket.dao.conexion;
+import com.ecumarket.model.proveedor;
 import java.awt.Toolkit;
 import java.io.File;
 import java.sql.Connection;
@@ -85,10 +85,10 @@ public class Provedores extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jpanelRound1 = new Extras.JpanelRound();
+        jpanelRound1 = new com.ecumarket.util.JpanelRound();
         jScrollPane3 = new javax.swing.JScrollPane();
         tablaproveedores = new javax.swing.JTable();
-        jpanelRound2 = new Extras.JpanelRound();
+        jpanelRound2 = new com.ecumarket.util.JpanelRound();
         btnEliminar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
@@ -489,8 +489,8 @@ public class Provedores extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane3;
-    private Extras.JpanelRound jpanelRound1;
-    private Extras.JpanelRound jpanelRound2;
+    private com.ecumarket.util.JpanelRound jpanelRound1;
+    private com.ecumarket.util.JpanelRound jpanelRound2;
     private rojeru_san.rslabel.RSLabelBorderRound rSLabelBorderRound1;
     private javax.swing.JTable tablaproveedores;
     private javax.swing.JTextField txtRsocial;

@@ -2,14 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package Formularios;
+package com.ecumarket.ui.forms;
 
-import Dao.DaoCategoria;
-import Dao.DaoProductos;
-import Dao.conexion;
-import Formularios.BuscarDato;
-import Modelo.Categoria;
-import Modelo.productos;
+import com.ecumarket.dao.DaoCategoria;
+import com.ecumarket.dao.DaoProductos;
+import com.ecumarket.dao.conexion;
+import com.ecumarket.ui.forms.BuscarDato;
+import com.ecumarket.model.Categoria;
+import com.ecumarket.model.productos;
 import java.io.File;
 import java.sql.Connection;
 import java.util.HashMap;
@@ -100,8 +100,8 @@ public final class Producto extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jpanelRound1 = new Extras.JpanelRound();
-        jpanelRound2 = new Extras.JpanelRound();
+        jpanelRound1 = new com.ecumarket.util.JpanelRound();
+        jpanelRound2 = new com.ecumarket.util.JpanelRound();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -121,7 +121,7 @@ public final class Producto extends javax.swing.JPanel {
         btnBuscar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnReporte = new RSMaterialComponent.RSButtonMaterialIconDos();
-        jpanelRound3 = new Extras.JpanelRound();
+        jpanelRound3 = new com.ecumarket.util.JpanelRound();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaProductos = new javax.swing.JTable();
 
@@ -425,9 +425,9 @@ public final class Producto extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private Extras.JpanelRound jpanelRound1;
-    private Extras.JpanelRound jpanelRound2;
-    private Extras.JpanelRound jpanelRound3;
+    private com.ecumarket.util.JpanelRound jpanelRound1;
+    private com.ecumarket.util.JpanelRound jpanelRound2;
+    private com.ecumarket.util.JpanelRound jpanelRound3;
     private javax.swing.JTable tablaProductos;
     public static javax.swing.JTextField txtNomCategoria;
     private javax.swing.JTextField txtid;

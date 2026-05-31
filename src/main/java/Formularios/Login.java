@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Formularios;
+package com.ecumarket.ui.forms;
 
-import Extras.Utilidades;
+import com.ecumarket.util.Utilidades;
 import javax.swing.JOptionPane;
-import Dao.DaoUsuario;
-import Modelo.usuarios;
+import com.ecumarket.dao.DaoUsuario;
+import com.ecumarket.model.usuarios;
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
 
 import java.awt.Color;
@@ -51,7 +51,7 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jpanelRound1 = new Extras.JpanelRound();
+        jpanelRound1 = new com.ecumarket.util.JpanelRound();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txtcorreo = new javax.swing.JTextField();
@@ -380,7 +380,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private Extras.JpanelRound jpanelRound1;
+    private com.ecumarket.util.JpanelRound jpanelRound1;
     private rojeru_san.rslabel.RSLabelBorderRound rSLabelBorderRound1;
     private javax.swing.JPasswordField txtcontrase;
     private javax.swing.JTextField txtcorreo;

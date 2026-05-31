@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package Formularios;
+package com.ecumarket.ui.forms;
 
-import Dao.DaoUsuario;
-import Modelo.usuarios;
+import com.ecumarket.dao.DaoUsuario;
+import com.ecumarket.model.usuarios;
 import java.awt.Toolkit;
 
 import java.util.List;
@@ -63,7 +63,7 @@ public class Registro extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jpanelRound2 = new Extras.JpanelRound();
+        jpanelRound2 = new com.ecumarket.util.JpanelRound();
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -565,7 +565,7 @@ private void listarUsuarios() {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private Extras.JpanelRound jpanelRound2;
+    private com.ecumarket.util.JpanelRound jpanelRound2;
     private javax.swing.JLabel lbllogo;
     private javax.swing.JTable tablaUsuarios;
     private javax.swing.JTextField txtapellido;

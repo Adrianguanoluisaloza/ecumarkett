@@ -2,16 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Formularios;
+package com.ecumarket.ui.forms;
 
-import Formularios.Clientes;
-import Formularios.Entradas;
-import Formularios.Inicio;
-import Formularios.ListaSalidas;
-import Formularios.Provedores;
-import Formularios.Salidas;
-import Extras.Utilidades;
-import Modelo.usuarios;
+import com.ecumarket.ui.forms.Clientes;
+import com.ecumarket.ui.forms.Entradas;
+import com.ecumarket.ui.forms.Inicio;
+import com.ecumarket.ui.forms.ListaSalidas;
+import com.ecumarket.ui.forms.Provedores;
+import com.ecumarket.ui.forms.Salidas;
+import com.ecumarket.util.Utilidades;
+import com.ecumarket.model.usuarios;
 import java.awt.BorderLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -97,7 +97,7 @@ public final class pantallaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         contenedor = new javax.swing.JPanel();
-        panelbotones = new Extras.JpanelRound();
+        panelbotones = new com.ecumarket.util.JpanelRound();
         btnInicio = new RSMaterialComponent.RSButtonMaterialIconShadow();
         btnCategorias = new RSMaterialComponent.RSButtonMaterialIconShadow();
         btnClientes = new RSMaterialComponent.RSButtonMaterialIconDos();
@@ -673,7 +673,7 @@ private usuarios usuarioActual;
     public static RSMaterialComponent.RSButtonMaterialIconDos btnSalir;
     private javax.swing.JPanel contenedor;
     public static RSMaterialComponent.RSLabelTextIcon iconusuario;
-    public static Extras.JpanelRound panelbotones;
+    public static com.ecumarket.util.JpanelRound panelbotones;
     private rojeru_san.rslabel.RSLabelBorderRound rSLabelBorderRound1;
     public static javax.swing.JLabel txtiduser;
     // End of variables declaration//GEN-END:variables

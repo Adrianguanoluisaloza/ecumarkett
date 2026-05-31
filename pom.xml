@@ -5,14 +5,14 @@
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.mycompany</groupId>
+    <groupId>com.ecumarket</groupId>
     <artifactId>Ecumarket</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>23</maven.compiler.release>
-        <exec.mainClass>com.mycompany.ecumarket.Ecumarket</exec.mainClass>
+        <exec.mainClass>com.ecumarket.Main</exec.mainClass>
     </properties>    
     <dependencies>
         <dependency>

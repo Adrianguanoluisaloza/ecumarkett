@@ -1,6 +1,6 @@
-package com.mycompany.ecumarket;
+package com.ecumarket;
 
-import Formularios.pantallaPrincipal;
+import com.ecumarket.ui.forms.pantallaPrincipal;
 
 /**
  *

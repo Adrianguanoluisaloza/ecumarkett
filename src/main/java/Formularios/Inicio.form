@@ -237,7 +237,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Container class="Extras.JpanelRound" name="jpanelRound1">
+        <Container class="com.ecumarket.util.JpanelRound" name="jpanelRound1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="0" type="rgb"/>
@@ -307,7 +307,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="Extras.JpanelRound" name="jpanelRound7">
+        <Container class="com.ecumarket.util.JpanelRound" name="jpanelRound7">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="0" type="rgb"/>
@@ -374,7 +374,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="Extras.JpanelRound" name="jpanelRound8">
+        <Container class="com.ecumarket.util.JpanelRound" name="jpanelRound8">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="0" type="rgb"/>
@@ -438,7 +438,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="Extras.JpanelRound" name="jpanelRound9">
+        <Container class="com.ecumarket.util.JpanelRound" name="jpanelRound9">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="0" type="rgb"/>
@@ -505,7 +505,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="Extras.JpanelRound" name="jpanelRound10">
+        <Container class="com.ecumarket.util.JpanelRound" name="jpanelRound10">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="0" type="rgb"/>
@@ -572,7 +572,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="Extras.JpanelRound" name="jpanelRound11">
+        <Container class="com.ecumarket.util.JpanelRound" name="jpanelRound11">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="0" type="rgb"/>

@@ -2,15 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package Formularios;
+package com.ecumarket.ui.forms;
 
-import Dao.DaoDetalleSalida;
-import Dao.DaoProductos;
-import Dao.DaoSalida;
-import Dao.conexion;
-import Modelo.detalleSalida;
-import Modelo.productos;
-import Modelo.salidas;
+import com.ecumarket.dao.DaoDetalleSalida;
+import com.ecumarket.dao.DaoProductos;
+import com.ecumarket.dao.DaoSalida;
+import com.ecumarket.dao.conexion;
+import com.ecumarket.model.detalleSalida;
+import com.ecumarket.model.productos;
+import com.ecumarket.model.salidas;
 import com.toedter.calendar.JDateChooser;
 import java.io.File;
 import java.sql.Connection;
@@ -127,7 +127,7 @@ public class ListaSalidas extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jpanelRound1 = new Extras.JpanelRound();
+        jpanelRound1 = new com.ecumarket.util.JpanelRound();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         lbl = new javax.swing.JLabel();
@@ -140,11 +140,11 @@ public class ListaSalidas extends javax.swing.JPanel {
         fechafinal = new com.toedter.calendar.JDateChooser();
         txtidSalida = new javax.swing.JTextField();
         btnReporte = new RSMaterialComponent.RSButtonMaterialIconDos();
-        jpanelRound3 = new Extras.JpanelRound();
+        jpanelRound3 = new com.ecumarket.util.JpanelRound();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaSalidas = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jpanelRound4 = new Extras.JpanelRound();
+        jpanelRound4 = new com.ecumarket.util.JpanelRound();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaDetalle = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
@@ -422,9 +422,9 @@ public class ListaSalidas extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private Extras.JpanelRound jpanelRound1;
-    private Extras.JpanelRound jpanelRound3;
-    private Extras.JpanelRound jpanelRound4;
+    private com.ecumarket.util.JpanelRound jpanelRound1;
+    private com.ecumarket.util.JpanelRound jpanelRound3;
+    private com.ecumarket.util.JpanelRound jpanelRound4;
     private javax.swing.JLabel lbl;
     private javax.swing.JTable tablaDetalle;
     private javax.swing.JTable tablaSalidas;

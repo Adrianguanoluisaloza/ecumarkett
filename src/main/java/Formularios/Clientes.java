@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package Formularios;
+package com.ecumarket.ui.forms;
 
-import Dao.DaoClientes;
-import Dao.conexion;
+import com.ecumarket.dao.DaoClientes;
+import com.ecumarket.dao.conexion;
 
-import Modelo.clientes;
+import com.ecumarket.model.clientes;
 import java.awt.Toolkit;
 import java.io.File;
 import java.sql.Connection;
@@ -85,7 +85,7 @@ public class Clientes extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jpanelRound4 = new Extras.JpanelRound();
+        jpanelRound4 = new com.ecumarket.util.JpanelRound();
         jLabel2 = new javax.swing.JLabel();
         txtidcliente = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -105,7 +105,7 @@ public class Clientes extends javax.swing.JPanel {
         btnGuardar = new javax.swing.JButton();
         btnBuscar = new RSMaterialComponent.RSButtonMaterialIconDos();
         btnPdf = new RSMaterialComponent.RSButtonMaterialIconDos();
-        jpanelRound5 = new Extras.JpanelRound();
+        jpanelRound5 = new com.ecumarket.util.JpanelRound();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaclientes = new javax.swing.JTable();
         lblGestionClientes = new rojeru_san.rslabel.RSLabelBorderRound();
@@ -508,8 +508,8 @@ public class Clientes extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private Extras.JpanelRound jpanelRound4;
-    private Extras.JpanelRound jpanelRound5;
+    private com.ecumarket.util.JpanelRound jpanelRound4;
+    private com.ecumarket.util.JpanelRound jpanelRound5;
     private rojeru_san.rslabel.RSLabelBorderRound lblGestionClientes;
     private javax.swing.JTable tablaclientes;
     private javax.swing.JTextField txtapellido;
