@@ -20,4 +20,4 @@ La conexion actual apunta a una base local llamada `inventario2`.
 
 ## Nota
 
-Si cambias de entorno, el archivo que controla la conexion es [src/main/java/Dao/conexion.java](../src/main/java/Dao/conexion.java).
+Si cambias de entorno, el archivo que controla la conexion es [src/main/java/Dao/conexion.java](https://github.com/Adrianguanoluisaloza/ecumarkett/blob/main/src/main/java/Dao/conexion.java).

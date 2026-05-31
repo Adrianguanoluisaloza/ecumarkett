@@ -101,7 +101,7 @@ Ecumarkett empezo como un proyecto de practica y fue creciendo por etapas. La id
 
 ## Wiki del proyecto
 
-La version resumida de la documentacion esta en [wiki/Home.md](wiki/Home.md).
+La version resumida de la documentacion esta en la wiki publicada del repo: https://github.com/Adrianguanoluisaloza/ecumarkett/wiki
 
 ## Licencia de uso
 
