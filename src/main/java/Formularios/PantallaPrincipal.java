@@ -2,16 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Formularios;
+package com.ecumarket.ui.forms;
 
-import Formularios.Clientes;
-import Formularios.Entradas;
-import Formularios.Inicio;
-import Formularios.ListaSalidas;
-import Formularios.Provedores;
-import Formularios.Salidas;
-import Extras.Utilidades;
-import Modelo.usuarios;
+import com.ecumarket.ui.forms.Clientes;
+import com.ecumarket.ui.forms.Entradas;
+import com.ecumarket.ui.forms.Inicio;
+import com.ecumarket.ui.forms.ListaSalidas;
+import com.ecumarket.ui.forms.Provedores;
+import com.ecumarket.ui.forms.Salidas;
+import com.ecumarket.util.Utilidades;
+import com.ecumarket.model.usuarios;
 import java.awt.BorderLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -20,11 +20,11 @@ import javax.swing.JPanel;
  *
  * @author Adrian
  */
-public final class pantallaPrincipal extends javax.swing.JFrame {
+public final class PantallaPrincipal extends javax.swing.JFrame {
 
     private usuarios us;
 
-    public pantallaPrincipal() {
+    public PantallaPrincipal() {
         initComponents();
         setLocationRelativeTo(null);
         bloquearComponentes();
@@ -40,7 +40,7 @@ public final class pantallaPrincipal extends javax.swing.JFrame {
 
     }
 
-    public pantallaPrincipal(usuarios usuarioLogueado) {
+    public PantallaPrincipal(usuarios usuarioLogueado) {
         initComponents();
         btnRegistro.setVisible(false);
         setLocationRelativeTo(null);
@@ -97,7 +97,7 @@ public final class pantallaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         contenedor = new javax.swing.JPanel();
-        panelbotones = new Extras.JpanelRound();
+        panelbotones = new com.ecumarket.util.JpanelRound();
         btnInicio = new RSMaterialComponent.RSButtonMaterialIconShadow();
         btnCategorias = new RSMaterialComponent.RSButtonMaterialIconShadow();
         btnClientes = new RSMaterialComponent.RSButtonMaterialIconDos();
@@ -498,8 +498,8 @@ private usuarios usuarioActual;
 
         bloquearComponentes();
         btnRegistro.setVisible(false);
-        pantallaPrincipal.txtiduser.setText("");
-        pantallaPrincipal.iconusuario.setText("");
+        PantallaPrincipal.txtiduser.setText("");
+        PantallaPrincipal.iconusuario.setText("");
         JOptionPane.showMessageDialog(null, "Sesión cerrada correctamente", "Cerrar sesión", JOptionPane.INFORMATION_MESSAGE);
         cerrar();
 
@@ -539,39 +539,39 @@ private usuarios usuarioActual;
 
         switch (tipo) {
             case "Vendedor":
-                pantallaPrincipal.btnInicio.setEnabled(true);
-                pantallaPrincipal.btnSalidas.setEnabled(true);
-                pantallaPrincipal.btnCategorias.setEnabled(false);
-                pantallaPrincipal.btnClientes.setEnabled(true);
-                pantallaPrincipal.btnEntradas.setEnabled(false);
-                pantallaPrincipal.btnProveedor.setEnabled(false);
-                pantallaPrincipal.btnProductos.setEnabled(false);
-                pantallaPrincipal.btnSalir.setEnabled(true);
-                pantallaPrincipal.btnCerrarSesionn.setEnabled(true);
+                PantallaPrincipal.btnInicio.setEnabled(true);
+                PantallaPrincipal.btnSalidas.setEnabled(true);
+                PantallaPrincipal.btnCategorias.setEnabled(false);
+                PantallaPrincipal.btnClientes.setEnabled(true);
+                PantallaPrincipal.btnEntradas.setEnabled(false);
+                PantallaPrincipal.btnProveedor.setEnabled(false);
+                PantallaPrincipal.btnProductos.setEnabled(false);
+                PantallaPrincipal.btnSalir.setEnabled(true);
+                PantallaPrincipal.btnCerrarSesionn.setEnabled(true);
                 break;
 
             case "Almacenero":
-                pantallaPrincipal.btnInicio.setEnabled(true);
-                pantallaPrincipal.btnSalidas.setEnabled(false);
-                pantallaPrincipal.btnCategorias.setEnabled(true);
-                pantallaPrincipal.btnClientes.setEnabled(false);
-                pantallaPrincipal.btnEntradas.setEnabled(true);
-                pantallaPrincipal.btnProveedor.setEnabled(true);
-                pantallaPrincipal.btnProductos.setEnabled(true);
-                pantallaPrincipal.btnSalir.setEnabled(true);
-                pantallaPrincipal.btnCerrarSesionn.setEnabled(true);
+                PantallaPrincipal.btnInicio.setEnabled(true);
+                PantallaPrincipal.btnSalidas.setEnabled(false);
+                PantallaPrincipal.btnCategorias.setEnabled(true);
+                PantallaPrincipal.btnClientes.setEnabled(false);
+                PantallaPrincipal.btnEntradas.setEnabled(true);
+                PantallaPrincipal.btnProveedor.setEnabled(true);
+                PantallaPrincipal.btnProductos.setEnabled(true);
+                PantallaPrincipal.btnSalir.setEnabled(true);
+                PantallaPrincipal.btnCerrarSesionn.setEnabled(true);
                 break;
 
             case "Administrador":
-                pantallaPrincipal.btnInicio.setEnabled(true);
-                pantallaPrincipal.btnSalidas.setEnabled(true);
-                pantallaPrincipal.btnCategorias.setEnabled(true);
-                pantallaPrincipal.btnClientes.setEnabled(true);
-                pantallaPrincipal.btnEntradas.setEnabled(true);
-                pantallaPrincipal.btnProveedor.setEnabled(true);
-                pantallaPrincipal.btnProductos.setEnabled(true);
-                pantallaPrincipal.btnSalir.setEnabled(true);
-                pantallaPrincipal.btnCerrarSesionn.setEnabled(true);
+                PantallaPrincipal.btnInicio.setEnabled(true);
+                PantallaPrincipal.btnSalidas.setEnabled(true);
+                PantallaPrincipal.btnCategorias.setEnabled(true);
+                PantallaPrincipal.btnClientes.setEnabled(true);
+                PantallaPrincipal.btnEntradas.setEnabled(true);
+                PantallaPrincipal.btnProveedor.setEnabled(true);
+                PantallaPrincipal.btnProductos.setEnabled(true);
+                PantallaPrincipal.btnSalir.setEnabled(true);
+                PantallaPrincipal.btnCerrarSesionn.setEnabled(true);
                 break;
 
             default:
@@ -638,13 +638,13 @@ private usuarios usuarioActual;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(pantallaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PantallaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(pantallaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PantallaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(pantallaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PantallaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(pantallaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PantallaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -654,7 +654,7 @@ private usuarios usuarioActual;
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new pantallaPrincipal().setVisible(true);
+                new PantallaPrincipal().setVisible(true);
             }
         });
     }
@@ -673,7 +673,7 @@ private usuarios usuarioActual;
     public static RSMaterialComponent.RSButtonMaterialIconDos btnSalir;
     private javax.swing.JPanel contenedor;
     public static RSMaterialComponent.RSLabelTextIcon iconusuario;
-    public static Extras.JpanelRound panelbotones;
+    public static com.ecumarket.util.JpanelRound panelbotones;
     private rojeru_san.rslabel.RSLabelBorderRound rSLabelBorderRound1;
     public static javax.swing.JLabel txtiduser;
     // End of variables declaration//GEN-END:variables

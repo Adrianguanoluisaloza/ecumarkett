@@ -3,17 +3,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package Formularios;
+package com.ecumarket.ui.forms;
 
-import Dao.DaoClientes;
-import Dao.DaoDetalleSalida;
-import Dao.DaoEntradas;
-import Dao.DaoProductos;
-import Dao.DaoSalida;
-import Dao.conexion;
-import Modelo.clientes;
-import Modelo.entradas;
-import Modelo.salidas;
+import com.ecumarket.dao.DaoClientes;
+import com.ecumarket.dao.DaoDetalleSalida;
+import com.ecumarket.dao.DaoEntradas;
+import com.ecumarket.dao.DaoProductos;
+import com.ecumarket.dao.DaoSalida;
+import com.ecumarket.dao.conexion;
+import com.ecumarket.model.clientes;
+import com.ecumarket.model.entradas;
+import com.ecumarket.model.salidas;
 import java.awt.Toolkit;
 import java.io.File;
 import java.sql.Connection;
@@ -83,7 +83,7 @@ public class Salidas extends javax.swing.JPanel {
         rSTextFullRound1 = new rojeru_san.rsfield.RSTextFullRound();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jpanelRound1 = new Extras.JpanelRound();
+        jpanelRound1 = new com.ecumarket.util.JpanelRound();
         jLabel11 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -100,7 +100,7 @@ public class Salidas extends javax.swing.JPanel {
         btnBuscarClientes = new RSMaterialComponent.RSButtonMaterialIconDos();
         txtidProducto = new javax.swing.JTextField();
         txtproducto = new javax.swing.JTextField();
-        jpanelRound5 = new Extras.JpanelRound();
+        jpanelRound5 = new com.ecumarket.util.JpanelRound();
         jLabel16 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
@@ -112,10 +112,10 @@ public class Salidas extends javax.swing.JPanel {
         btnDelete = new javax.swing.JButton();
         btnGenerar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jpanelRound4 = new Extras.JpanelRound();
+        jpanelRound4 = new com.ecumarket.util.JpanelRound();
         jScrollPane3 = new javax.swing.JScrollPane();
         tablaSalidas = new javax.swing.JTable();
-        jpanelRound2 = new Extras.JpanelRound();
+        jpanelRound2 = new com.ecumarket.util.JpanelRound();
         jLabel14 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -614,10 +614,10 @@ public class Salidas extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane3;
     private com.toedter.calendar.JDateChooser jcFecha;
-    private Extras.JpanelRound jpanelRound1;
-    private Extras.JpanelRound jpanelRound2;
-    private Extras.JpanelRound jpanelRound4;
-    private Extras.JpanelRound jpanelRound5;
+    private com.ecumarket.util.JpanelRound jpanelRound1;
+    private com.ecumarket.util.JpanelRound jpanelRound2;
+    private com.ecumarket.util.JpanelRound jpanelRound4;
+    private com.ecumarket.util.JpanelRound jpanelRound5;
     private rojeru_san.rsfield.RSTextFullRound rSTextFullRound1;
     private javax.swing.JTable tablaSalidas;
     private javax.swing.JTextField txtTelefono;

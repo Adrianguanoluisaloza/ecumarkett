@@ -2,17 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package Formularios;
+package com.ecumarket.ui.forms;
 
-import Dao.DaoCategoria;
-import Dao.DaoClientes;
-import Dao.DaoEntradas;
-import Dao.DaoProductos;
-import Dao.DaoProveedor;
-import Dao.DaoSalida;
-import Dao.DaoUsuario;
-import Modelo.clientes;
-import Modelo.productos;
+import com.ecumarket.dao.DaoCategoria;
+import com.ecumarket.dao.DaoClientes;
+import com.ecumarket.dao.DaoEntradas;
+import com.ecumarket.dao.DaoProductos;
+import com.ecumarket.dao.DaoProveedor;
+import com.ecumarket.dao.DaoSalida;
+import com.ecumarket.dao.DaoUsuario;
+import com.ecumarket.model.clientes;
+import com.ecumarket.model.productos;
 import java.awt.Color;
 import java.text.NumberFormat;
 import java.util.List;
@@ -116,22 +116,22 @@ public class Inicio extends javax.swing.JPanel {
         selectAño = new com.toedter.calendar.JYearChooser();
         selectmes = new com.toedter.calendar.JMonthChooser();
         btnProcesaar = new RSMaterialComponent.RSButtonMaterialIconDos();
-        jpanelRound1 = new Extras.JpanelRound();
+        jpanelRound1 = new com.ecumarket.util.JpanelRound();
         txtCantCat = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jpanelRound7 = new Extras.JpanelRound();
+        jpanelRound7 = new com.ecumarket.util.JpanelRound();
         txtcantClientes = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jpanelRound8 = new Extras.JpanelRound();
+        jpanelRound8 = new com.ecumarket.util.JpanelRound();
         jLabel7 = new javax.swing.JLabel();
         txtcantproveedores = new javax.swing.JLabel();
-        jpanelRound9 = new Extras.JpanelRound();
+        jpanelRound9 = new com.ecumarket.util.JpanelRound();
         txtcantEntradas = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jpanelRound10 = new Extras.JpanelRound();
+        jpanelRound10 = new com.ecumarket.util.JpanelRound();
         jLabel11 = new javax.swing.JLabel();
         txtcantUsuarios = new javax.swing.JLabel();
-        jpanelRound11 = new Extras.JpanelRound();
+        jpanelRound11 = new com.ecumarket.util.JpanelRound();
         jLabel9 = new javax.swing.JLabel();
         txtcantSalidas = new javax.swing.JLabel();
 
@@ -554,12 +554,12 @@ public class Inicio extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private Extras.JpanelRound jpanelRound1;
-    private Extras.JpanelRound jpanelRound10;
-    private Extras.JpanelRound jpanelRound11;
-    private Extras.JpanelRound jpanelRound7;
-    private Extras.JpanelRound jpanelRound8;
-    private Extras.JpanelRound jpanelRound9;
+    private com.ecumarket.util.JpanelRound jpanelRound1;
+    private com.ecumarket.util.JpanelRound jpanelRound10;
+    private com.ecumarket.util.JpanelRound jpanelRound11;
+    private com.ecumarket.util.JpanelRound jpanelRound7;
+    private com.ecumarket.util.JpanelRound jpanelRound8;
+    private com.ecumarket.util.JpanelRound jpanelRound9;
     private javax.swing.JPanel panelClientesF;
     private javax.swing.JPanel panelProdF;
     private com.toedter.calendar.JYearChooser selectAño;

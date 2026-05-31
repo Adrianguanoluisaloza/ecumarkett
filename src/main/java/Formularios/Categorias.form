@@ -44,7 +44,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="Extras.JpanelRound" name="jpanelRound2">
+    <Container class="com.ecumarket.util.JpanelRound" name="jpanelRound2">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -209,7 +209,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Container class="Extras.JpanelRound" name="jpanelRound1">
+            <Container class="com.ecumarket.util.JpanelRound" name="jpanelRound1">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>

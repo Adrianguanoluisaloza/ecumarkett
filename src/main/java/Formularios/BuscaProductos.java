@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Formularios;
+package com.ecumarket.ui.forms;
 
-import Dao.DaoProductos;
-import Formularios.Entradas;
-import Formularios.Salidas;
-import Modelo.productos;
+import com.ecumarket.dao.DaoProductos;
+import com.ecumarket.ui.forms.Entradas;
+import com.ecumarket.ui.forms.Salidas;
+import com.ecumarket.model.productos;
 
 import java.awt.Color;
 import java.util.List;
@@ -57,15 +57,15 @@ public class BuscaProductos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jpanelRound2 = new Extras.JpanelRound();
-        jpanelRound3 = new Extras.JpanelRound();
+        jpanelRound2 = new com.ecumarket.util.JpanelRound();
+        jpanelRound3 = new com.ecumarket.util.JpanelRound();
         txtid = new javax.swing.JTextField();
         txtnombre = new javax.swing.JTextField();
         txtstock = new javax.swing.JTextField();
         txtprecio = new javax.swing.JTextField();
         btnCerrar = new javax.swing.JButton();
         btnEnviar = new javax.swing.JButton();
-        jpanelRound4 = new Extras.JpanelRound();
+        jpanelRound4 = new com.ecumarket.util.JpanelRound();
         jScrollPane1 = new javax.swing.JScrollPane();
         prodcutos = new javax.swing.JTable();
 
@@ -211,9 +211,9 @@ public class BuscaProductos extends javax.swing.JFrame {
     private javax.swing.JButton btnCerrar;
     private javax.swing.JButton btnEnviar;
     private javax.swing.JScrollPane jScrollPane1;
-    private Extras.JpanelRound jpanelRound2;
-    private Extras.JpanelRound jpanelRound3;
-    private Extras.JpanelRound jpanelRound4;
+    private com.ecumarket.util.JpanelRound jpanelRound2;
+    private com.ecumarket.util.JpanelRound jpanelRound3;
+    private com.ecumarket.util.JpanelRound jpanelRound4;
     private javax.swing.JTable prodcutos;
     private javax.swing.JTextField txtid;
     private javax.swing.JTextField txtnombre;

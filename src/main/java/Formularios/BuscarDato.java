@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Formularios;
+package com.ecumarket.ui.forms;
 
-import Dao.DaoCategoria;
-import Dao.DaoProveedor;
-import Modelo.Categoria;
-import Modelo.proveedor;
+import com.ecumarket.dao.DaoCategoria;
+import com.ecumarket.dao.DaoProveedor;
+import com.ecumarket.model.Categoria;
+import com.ecumarket.model.proveedor;
 import java.awt.Color;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
