@@ -1,4 +1,4 @@
-package com.ecumarket;
+package com.mycompany.ecumarket;
 
 import com.ecumarket.ui.forms.pantallaPrincipal;
 
