@@ -98,3 +98,7 @@ Archivo relacionado: [src/main/java/Dao/conexion.java](src/main/java/Dao/conexio
 ## Sobre el origen del proyecto
 
 Ecumarkett empezo como un proyecto de practica y fue creciendo por etapas. La idea de dejar este repo publico es mostrar la estructura real de trabajo: formularios, modelos, DAOs, reportes y conexion local, todo en un mismo lugar y de forma entendible.
+
+## Licencia de uso
+
+Este proyecto se publica bajo la licencia MIT. Traduccion rapida: lo puedes usar, copiar, modificar y compartir, siempre que conserves el aviso de copyright y la licencia.
