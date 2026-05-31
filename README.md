@@ -1,33 +1,100 @@
 # Ecumarkett
 
-Ecumarkett es mi segundo proyecto y también una de las primeras ideas grandes que intenté construir. Nació cuando todavía estaba aprendiendo por mi cuenta, viendo tutoriales, probando cosas y tratando de entender cómo convertir una idea tipo marketplace en algo real.
+Ecumarkett es una aplicacion de escritorio hecha en Java para gestionar productos, categorias, clientes, proveedores, entradas, salidas y reportes. El proyecto nacio como una idea de aprendizaje y hoy queda ordenado como una base clara para mostrar, estudiar o seguir mejorando.
 
-Al principio fue un experimento hecho con lo que tenía a mano. Con el tiempo, el proyecto fue tomando forma y se fue reordenando hacia una base más clara, más mantenible y más cercana a algo publicable.
+## Resumen
 
-## Qué es
+La aplicacion esta pensada para un flujo de inventario y venta sencillo:
 
-Ecumarkett es una app orientada a catálogo, inventario y gestión de productos. La idea es cubrir el flujo básico de un e-commerce pequeño o mediano: navegar productos, iniciar sesión, gestionar carrito, confirmar pedidos y administrar inventario.
+1. Registrar usuarios y autenticarse.
+2. Crear y mantener catalogos de productos, clientes, categorias y proveedores.
+3. Controlar entradas y salidas de mercaderia.
+4. Generar reportes impresos con JasperReports.
 
-## Enfoque técnico
+## Tecnologia usada
 
-- **Frontend:** React + Vite + TypeScript
-- **Backend:** Cloudflare Workers con Hono
-- **Base de datos:** Cloudflare D1
-- **Storage:** Cloudflare R2
-- **Autenticación:** JWT, cookies o una alternativa apoyada en Cloudflare
+- Java 23
+- Maven
+- MySQL local con XAMPP
+- Swing y formularios de NetBeans
+- JasperReports
+- JFreeChart
+- FlatLaf para la interfaz
 
-## Flujo general
+## Estructura del proyecto
 
-1. El usuario entra al catálogo y navega categorías.
-2. El usuario se registra o inicia sesión para guardar su experiencia.
-3. El carrito permite sumar, quitar y actualizar productos.
-4. El checkout confirma la compra y genera el pedido.
-5. El panel admin administra productos, inventario y ventas.
+```text
+Ecumarkett/
+|-- pom.xml
+|-- README.md
+|-- src/
+|   |-- main/
+|   |   |-- java/
+|   |   |   |-- com/
+|   |   |   |   |-- ecumarket/
+|   |   |   |   |   |-- Main.java
+|   |   |   |   |-- mycompany/
+|   |   |   |       |-- ecumarket/
+|   |   |   |           |-- Ecumarket.java
+|   |   |   |-- Dao/
+|   |   |   |-- Extras/
+|   |   |   |-- Formularios/
+|   |   |   |-- Modelo/
+|   |   |-- resources/
+|   |   |   |-- Imagenes/
+|   |   |-- reportes/
+|   |   |   |-- *.jrxml
+|   |   |   |-- *.jasper
+|-- reportes/
+|   |-- *.jrxml
+|   |-- *.jasper
+|-- Base de datos versiones/
+|   |-- Para xampp/
+|   |-- Para nuebe creacion de tablas/
+|-- lib/
+|-- target/
+```
 
-## Contexto público
+## Que hace cada carpeta
 
-Este repositorio está compartido como parte de mi proceso de aprendizaje. No incluye credenciales, secretos ni datos personales.
+- `Dao/`: acceso a datos, conexion JDBC y consultas para cada entidad.
+- `Formularios/`: pantallas de la aplicacion y archivos `.form` generados por NetBeans.
+- `Modelo/`: clases con la estructura de los datos del sistema.
+- `Extras/`: utilidades y componentes extra de interfaz.
+- `com/ecumarket/Main.java`: punto de arranque principal de la aplicacion.
+- `com/mycompany/ecumarket/Ecumarket.java`: clase heredada o de compatibilidad historica.
+- `src/main/reportes/` y `reportes/`: plantillas y archivos compilados de reportes; el proyecto conserva ambas rutas por su historia en NetBeans.
+- `src/main/resources/Imagenes/`: imagenes usadas por la interfaz.
+- `Base de datos versiones/`: scripts SQL historicos de referencia.
+- `lib/`: librerias locales que Maven o NetBeans resolvieron de forma manual.
+- `target/`: salida generada por compilacion. No se edita a mano.
 
----
+## Base de datos local
 
-Empecé este proyecto cuando apenas estaba entendiendo cómo funciona todo. Hoy queda como una muestra más honesta de ese proceso: una idea ambiciosa, mucho aprendizaje en el camino y una base mejor ordenada para seguir construyendo.
+La conexion actual apunta a una base local llamada `inventario2` en MySQL/XAMPP.
+
+Archivo relacionado: [src/main/java/Dao/conexion.java](src/main/java/Dao/conexion.java)
+
+## Requisitos para abrirlo en local
+
+- JDK 23
+- Maven
+- XAMPP con MySQL activo
+- NetBeans o un IDE compatible con formularios Swing
+
+## Como ejecutarlo
+
+1. Levanta MySQL desde XAMPP.
+2. Crea la base `inventario2` si no existe.
+3. Abre el proyecto en NetBeans o ejecuta `mvn clean package`.
+4. Corre la clase principal configurada en `pom.xml`.
+
+## Notas del proyecto
+
+- Este repositorio esta ordenado para lectura publica y para seguir trabajando sobre una base local.
+- Los formularios y la estructura reflejan el flujo original del sistema, sin esconder su etapa de aprendizaje.
+- Si quieres adaptar la conexion a otro entorno, el punto a cambiar es `conexion.java`.
+
+## Sobre el origen del proyecto
+
+Ecumarkett empezo como un proyecto de practica y fue creciendo por etapas. La idea de dejar este repo publico es mostrar la estructura real de trabajo: formularios, modelos, DAOs, reportes y conexion local, todo en un mismo lugar y de forma entendible.
